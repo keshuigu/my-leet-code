@@ -28,7 +28,7 @@
     # args 输入的参数
     # 下面语句测试题目1,输入的参数为[2,7,11,15], 9
     # 输出为[0, 1]
-    print(test_any(index=1, args=[[2, 7, 11, 15], 9]))
+    print(test_any(index="1", args=[[2, 7, 11, 15], 9]))
     ```
 
 2.  使用test.py 
