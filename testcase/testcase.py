@@ -19,3 +19,19 @@ def testcase_13():
     print(solution_13('IX'))
     print(solution_13('LVIII'))
     print(solution_13('MCMXCIV'))
+
+
+def testcase_14():
+    print(solution_14(["flower", "flow", "flight"]))
+    print(solution_14(["dog", "racecar", "car"]))
+
+
+def testcase_14_2():
+    print(solution_14_2(["flower", "flow", "flight"]))
+    print(solution_14_2(["dog", "racecar", "car"]))
+
+
+def testcase_20():
+    print(solution_20("()"))
+    print(solution_20("()[]{}"))
+    print(solution_20("(]"))

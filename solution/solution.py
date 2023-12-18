@@ -1,4 +1,5 @@
 from typing import *
+from .data_struct import *
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -32,68 +33,6 @@ def solution_9(x: int) -> bool:
 
 def solution_13(s: str) -> int:
     # 将特殊情况视为2长度的字符串
-    # 无字典
-    # ret = 0
-    # index = 0
-    # while index < len(s) - 1:
-    #     if s[index] == 'I':
-    #         if s[index + 1] == 'V':
-    #             ret += 4
-    #             index += 2
-    #         elif s[index + 1] == 'X':
-    #             ret += 9
-    #             index += 2
-    #         else:
-    #             ret += 1
-    #             index += 1
-    #     elif s[index] == 'V':
-    #         ret += 5
-    #         index += 1
-    #     elif s[index] == 'X':
-    #         if s[index + 1] == 'L':
-    #             ret += 40
-    #             index += 2
-    #         elif s[index + 1] == 'C':
-    #             ret += 90
-    #             index += 2
-    #         else:
-    #             ret += 10
-    #             index += 1
-    #     elif s[index] == 'L':
-    #         ret += 50
-    #         index += 1
-    #     elif s[index] == 'C':
-    #         if s[index + 1] == 'D':
-    #             ret += 400
-    #             index += 2
-    #         elif s[index + 1] == 'M':
-    #             ret += 900
-    #             index += 2
-    #         else:
-    #             ret += 100
-    #             index += 1
-    #     elif s[index] == 'D':
-    #         ret += 500
-    #         index += 1
-    #     elif s[index] == 'M':
-    #         ret += 1000
-    #         index += 1
-    # if index == len(s) - 1:
-    #     if s[index] == 'I':
-    #         ret += 1
-    #     elif s[index] == 'V':
-    #         ret += 5
-    #     elif s[index] == 'X':
-    #         ret += 10
-    #     elif s[index] == 'L':
-    #         ret += 50
-    #     elif s[index] == 'C':
-    #         ret += 100
-    #     elif s[index] == 'D':
-    #         ret += 500
-    #     elif s[index] == 'M':
-    #         ret += 1000
-
     # 使用字典
     f_dict = {
         'I': 1,
@@ -146,3 +85,60 @@ def solution_13_2(s: str) -> int:
         else:
             ret -= f_dict[c]
     return ret
+
+
+def solution_14(strs: List[str]) -> str:
+    # 少个找最短字符串的步骤
+    ret = strs[0]
+    while len(ret) > 0:
+        flag = True
+        for i in range(1, len(strs)):
+            if len(strs[i]) < len(ret) or strs[i][:len(ret)] != ret:
+                flag = False
+                break
+        if flag:
+            return ret
+        ret = ret[:-1]
+    return ret
+
+
+def solution_14_2(strs: List[str]) -> str:
+    temp = strs[0]
+    ret = temp
+    for i in range(1, len(strs)):
+        ret = ""
+        for j in range(min(len(temp), len(strs[i]))):
+            if strs[i][j] == temp[j]:
+                ret += temp[j]
+            else:
+                break
+        temp = ret
+    return ret
+
+
+def solution_20(s: str) -> bool:
+    stack = Stack20(100000)
+    # 奇数长度必为False
+    if len(s) % 2 == 1:
+        return False
+    if len(s) == 0:
+        return True
+    f_dict = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    }
+    if s[0] in f_dict.keys():
+        return False
+    stack.push(s[0])
+    index = 1
+    while index < len(s):
+        if s[index] in f_dict.keys():
+            if not stack.is_empty() and f_dict[s[index]] == stack.peek():
+                stack.pop()
+            else:
+                return False
+        else:
+            stack.push(s[index])
+        index += 1
+    return stack.is_empty()
