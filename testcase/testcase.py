@@ -35,3 +35,10 @@ def testcase_20():
     print(solution_20("()"))
     print(solution_20("()[]{}"))
     print(solution_20("(]"))
+
+
+def testcase_21():
+    print(solution_21(
+        ListNode21(1, ListNode21(2, ListNode21(4))), ListNode21(1, ListNode21(3, ListNode21(4)))))
+    print(solution_21(None, None))
+    print(solution_21(None, ListNode21(0)))

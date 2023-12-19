@@ -28,7 +28,21 @@ class Stack20:
         if self.is_empty():
             raise Exception('Stack Underflow')
         else:
-            return self.items[self.top-1]
+            return self.items[self.top - 1]
 
     def size(self):
         return len(self.items)
+
+
+class ListNode21:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def __str__(self):
+        ret = str(self.val)
+        temp = self.next
+        while temp is not None:
+            ret += '->' + str(temp.val)
+            temp = temp.next
+        return ret

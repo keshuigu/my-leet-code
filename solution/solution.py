@@ -142,3 +142,35 @@ def solution_20(s: str) -> bool:
             stack.push(s[index])
         index += 1
     return stack.is_empty()
+
+
+def solution_21(list1: Optional[ListNode21], list2: Optional[ListNode21]) -> Optional[ListNode21]:
+    if list1 is None:
+        return list2
+    if list2 is None:
+        return list1
+    if list1.val < list2.val:
+        temp = ListNode21(list1.val)
+        list1 = list1.next
+    else:
+        temp = ListNode21(list2.val)
+        list2 = list2.next
+    ret = temp
+    while list1 is not None and list2 is not None:
+        if list1.val < list2.val:
+            temp.next = ListNode21(list1.val)
+            temp = temp.next
+            list1 = list1.next
+        else:
+            temp.next = ListNode21(list2.val)
+            temp = temp.next
+            list2 = list2.next
+    while list1 is not None:
+        temp.next = ListNode21(list1.val)
+        temp = temp.next
+        list1 = list1.next
+    while list2 is not None:
+        temp.next = ListNode21(list2.val)
+        temp = temp.next
+        list2 = list2.next
+    return ret
