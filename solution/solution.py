@@ -174,3 +174,35 @@ def solution_21(list1: Optional[ListNode21], list2: Optional[ListNode21]) -> Opt
         temp = temp.next
         list2 = list2.next
     return ret
+
+
+def solution_26(nums: List[int]) -> int:
+    if nums is None:
+        return 0
+    if len(nums) < 2:
+        return len(nums)
+    p = 1
+    temp = nums[0]
+    for i in range(1, len(nums)):
+        if nums[i] == temp:
+            continue
+        else:
+            temp = nums[i]
+            nums[p] = nums[i]
+            p += 1
+    return p
+
+
+def solution_27(nums: List[int], val: int) -> int:
+    if nums is None:
+        return 0
+    p = 0
+    for i in range(len(nums)):
+        if nums[i] != val:
+            nums[p] = nums[i]
+            p += 1
+    return p
+
+def solution_28(haystack:str, needle: str) -> int:
+    # KMP
+    next = []

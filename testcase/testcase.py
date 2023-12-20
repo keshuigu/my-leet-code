@@ -42,3 +42,21 @@ def testcase_21():
         ListNode21(1, ListNode21(2, ListNode21(4))), ListNode21(1, ListNode21(3, ListNode21(4)))))
     print(solution_21(None, None))
     print(solution_21(None, ListNode21(0)))
+
+
+def testcase_26():
+    nums = [1, 1, 2]
+    print(solution_26(nums))
+    print(nums)
+    nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    print(solution_26(nums))
+    print(nums)
+
+
+def testcase_27():
+    nums = [3, 2, 2, 3]
+    print(solution_27(nums, 3))
+    print(nums)
+    nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    print(solution_27(nums, 2))
+    print(nums)

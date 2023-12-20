@@ -6,3 +6,8 @@
 - [x] [14.最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)
 - [x] [20.有效的括号](https://leetcode.cn/problems/valid-parentheses/)
 - [x] [21.合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
+- [x] [26.删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+- [x] [27.移除元素](https://leetcode.cn/problems/remove-element/)
+- [ ] [28.找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+
+    - 考虑使用KMP算法：[参考1](https://zhuanlan.zhihu.com/p/83334559), 算法导论32.4节
