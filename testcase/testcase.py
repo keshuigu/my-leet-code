@@ -60,3 +60,15 @@ def testcase_27():
     nums = [0, 1, 2, 2, 3, 0, 4, 2]
     print(solution_27(nums, 2))
     print(nums)
+
+
+def testcase_28():
+    print(solution_28("sadbutsad", "sad"))
+    print(solution_28("leetcode", "leeto"))
+
+
+def testcase_28_1():
+    print(solution_28_1("sadbutsad", "sad"))
+    print(solution_28_1("leetcode", "leeto"))
+    print(solution_28_1("a", "a"))
+    print(solution_28_1("mississippi", "issip"))

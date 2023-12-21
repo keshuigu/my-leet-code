@@ -203,6 +203,58 @@ def solution_27(nums: List[int], val: int) -> int:
             p += 1
     return p
 
-def solution_28(haystack:str, needle: str) -> int:
-    # KMP
-    next = []
+
+def solution_28(haystack: str, needle: str) -> int:
+    # 朴素字符串匹配算法
+    n = len(haystack)
+    m = len(needle)
+    for i in range(n - m + 1):
+        for j in range(m):
+            if haystack[i + j] != needle[j]:
+                break
+        else:
+            return i
+    return -1
+
+
+def solution_28_1(haystack: str, needle: str) -> int:
+    # KMP算法
+
+    def compute_next(pattern: str):
+        """
+        计算next数组
+        :param pattern: 模式字符串
+        :return: next数组
+        """
+        pm = len(pattern)  # pattern长度
+        ret = [0] * pm  # next数组
+        ret[0] = -1  # 默认next[0] = -1
+        j = -1  # j为当前匹配的位置
+        for k in range(1, pm):
+            # 当前匹配失败时,回溯到上一个匹配位置
+            # 持续迭代直到匹配成功或者回溯到-1
+            while j > -1 and pattern[j + 1] != pattern[k]:
+                j = ret[j]
+            # 匹配成功时,更新j
+            if pattern[j + 1] == pattern[k]:
+                j += 1
+            ret[k] = j
+        return ret
+
+    n = len(haystack)
+    m = len(needle)
+    pat_next = compute_next(needle)
+    q = -1  # 当前匹配的位置
+    for i in range(n):
+        # 当前匹配失败时,回溯到上一个匹配位置
+        # 持续迭代直到匹配成功或者回溯到-1
+        while q > -1 and needle[q + 1] != haystack[i]:
+            q = pat_next[q]
+        # 匹配成功时,更新q
+        if needle[q + 1] == haystack[i]:
+            q += 1
+        # 匹配成功时,返回匹配位置
+        if q == m - 1:
+            return i - m + 1
+    # 匹配失败时,返回-1
+    return -1
