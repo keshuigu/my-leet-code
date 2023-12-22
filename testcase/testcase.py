@@ -72,3 +72,11 @@ def testcase_28_1():
     print(solution_28_1("leetcode", "leeto"))
     print(solution_28_1("a", "a"))
     print(solution_28_1("mississippi", "issip"))
+
+
+def testcase_35():
+    print(solution_35([1, 3, 5, 6], 5))  # 2
+    print(solution_35([1, 3, 5, 6], 2))  # 1
+    print(solution_35([1, 3, 5, 6], 7))  # 4
+    print(solution_35([1, 3, 5, 6], 0))  # 0
+    print(solution_35([1, 3, 5, 6,8], 4))  # 2

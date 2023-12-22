@@ -258,3 +258,37 @@ def solution_28_1(haystack: str, needle: str) -> int:
             return i - m + 1
     # 匹配失败时,返回-1
     return -1
+
+
+def solution_35(nums: List[int], target: int) -> int:
+    left = 0
+    right = len(nums) - 1
+    if target < nums[left]:
+        return 0
+    elif target > nums[right]:
+        return len(nums)
+    while left < right:
+        mid = (left + right) // 2
+        if target == nums[mid]:
+            return mid
+        elif target > nums[mid]:
+            left = mid + 1
+        else:
+            right = mid - 1
+    if target <= nums[left]:
+        return left
+    else:
+        return left + 1
+
+
+def solution_35_2(nums: List[int], target: int) -> int:
+    left = 0
+    right = len(nums) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if target > nums[mid]:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return left
+
