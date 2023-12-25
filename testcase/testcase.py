@@ -79,4 +79,16 @@ def testcase_35():
     print(solution_35([1, 3, 5, 6], 2))  # 1
     print(solution_35([1, 3, 5, 6], 7))  # 4
     print(solution_35([1, 3, 5, 6], 0))  # 0
-    print(solution_35([1, 3, 5, 6,8], 4))  # 2
+    print(solution_35([1, 3, 5, 6, 8], 4))  # 2
+
+
+def testcase_58():
+    print(solution_58("Hello World"))
+    print(solution_58("   fly me   to   the moon  "))
+    print(solution_58("luffy is still joyboy"))
+
+
+def testcase_58_2():
+    print(solution_58("Hello World"))
+    print(solution_58("   fly me   to   the moon  "))
+    print(solution_58("luffy is still joyboy"))

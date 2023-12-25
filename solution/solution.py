@@ -292,3 +292,27 @@ def solution_35_2(nums: List[int], target: int) -> int:
             right = mid - 1
     return left
 
+
+def solution_58(s: str) -> int:
+    p = -1
+    q = 0
+    k = len(s) - 1
+    while s[k] == " ":
+        k = k - 1
+    while q <= k:
+        if s[q] == " ":
+            p = q
+        q = q + 1
+    return q - p - 1
+
+
+def solution_58_2(s: str) -> int:
+    k = len(s) - 1
+    while s[k] == " ":
+        k = k - 1
+    q = k
+    while q >= 0:
+        if s[q] == " ":
+            return k - q
+        q = q - 1
+    return k - q  # 前端没有空格
