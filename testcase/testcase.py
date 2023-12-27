@@ -92,3 +92,27 @@ def testcase_58_2():
     print(solution_58("Hello World"))
     print(solution_58("   fly me   to   the moon  "))
     print(solution_58("luffy is still joyboy"))
+
+
+def testcase_66():
+    print(solution_66([1, 2, 3]))
+    print(solution_66([4, 3, 2, 1]))
+    print(solution_66([0]))
+    print(solution_66([9, 9, 9]))
+    print(solution_66([1, 9, 9]))
+
+
+def testcase_67():
+    print(solution_67("11", "1"))
+    print(solution_67("1010", "1011"))
+    print(solution_67("1111", "1111"))
+    print(solution_67("1111", "1110"))
+    print(solution_67("1110", "1111"))
+
+
+def testcase_69():
+    print(solution_69(4))
+    print(solution_69(8))
+    print(solution_69(9))
+    print(solution_69(10))
+    print(solution_69(2147395600))

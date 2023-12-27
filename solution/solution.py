@@ -316,3 +316,59 @@ def solution_58_2(s: str) -> int:
             return k - q
         q = q - 1
     return k - q  # 前端没有空格
+
+
+def solution_66(digits: List[int]) -> List[int]:
+    n = len(digits) - 1
+    c = 1  # 进位
+    while n >= 0:
+        digits[n] = digits[n] + c
+        if digits[n] == 10:
+            c = 1
+            digits[n] = 0
+        else:
+            return digits
+        n = n - 1
+    else:
+        return [1, *digits]
+
+
+def solution_67(a: str, b: str) -> str:
+    # 使用0补齐短的字符串
+    if len(a) < len(b):
+        a = '0' * (len(b) - len(a)) + a
+    else:
+        b = '0' * (len(a) - len(b)) + b
+    f_dict = {
+        "1": 1,
+        "0": 0
+    }
+    c = 0
+    p = len(a) - 1
+    ret = list(range(p + 1))
+    while p >= 0:
+        ret[p] = f_dict[a[p]] + f_dict[b[p]] + c
+        if ret[p] >= 2:
+            ret[p] = ret[p] - 2
+            c = 1
+        else:
+            c = 0
+        p = p - 1
+    if c == 1:
+        return ''.join(str(num) for num in [1, *ret])
+    else:
+        return ''.join(str(num) for num in ret)
+
+
+def solution_69(x: int) -> int:
+    # 牛顿迭代
+    # x^2 - A = 0
+    # 求x
+    # 迭代公式 x(n+1) = x(n) - f(x(n))/f'(x(n))
+    # 对于本题目 f(x(n)) = x(n)^2 -A, f'(x(n)) = 2x(n)
+    x0 = x
+    x1 = x0 - (x0 * x0 - x) / (2 * x0)
+    while x0 - x1 > 10e-6 or x1 - x0 > 10e-6:
+        x0 = x1
+        x1 = x0 - (x0 * x0 - x) / (2 * x0)
+    return int(x1)
