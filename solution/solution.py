@@ -372,3 +372,53 @@ def solution_69(x: int) -> int:
         x0 = x1
         x1 = x0 - (x0 * x0 - x) / (2 * x0)
     return int(x1)
+
+
+def solution_70(n: int) -> int:
+    # 递归 爆栈
+    # if n == 0:
+    #     return 0
+    # if n == 1:
+    #     return 1
+    # if n == 2:
+    #     return 2
+    # return solution_70(n - 2) + solution_70(n - 1)
+    # 数组存放已求解的值
+    if n < 3:
+        return n
+    ret = list(range(n + 1))
+    ret[0] = 0
+    ret[1] = 1
+    ret[2] = 2
+    for i in range(3, n + 1):
+        ret[i] = ret[i - 1] + ret[i - 2]
+    return ret[n]
+
+
+def solution_70_2(n: int) -> int:
+    """
+    矩阵快速幂
+    f(x+2) = f(x+1) + f(x)
+    -> |f(x+2)| = |1 1| * |f(x+1)|
+       |f(x+1)|   |1 0|   |f(x)  |
+    -> |f(x+2)| = |1 1| * |1 1| * |f(x)  | = |1 1|^n+1 * |f(1)  |
+       |f(x+1)|   |1 0|   |1 0|   |f(x-1)|   |1 0|       |f(0)|
+      |1 1| n次幂的求解
+      |1 0|
+    """
+    # 本算法对2*2矩阵的乘法进行特化
+    def mul_simple(x, y):
+        # x = [..,..,..,..]
+        return [x[0] * y[0] + x[1] * y[2],
+                x[0] * y[1] + x[1] * y[3],
+                x[2] * y[0] + x[3] * y[2],
+                x[2] * y[1] + x[3] * y[3]]
+    f = [1, 1, 1, 0]
+    ans = [1, 0, 0, 1]  # 单位阵
+    n = n - 1
+    while n > 0:  # 指数不为0
+        if n & 1:  # 二进制当前为1,说明结果需要乘以当前底数的2的若干次方
+            ans = mul_simple(f, ans)
+        f = mul_simple(f, f)  # 计算下一个底数的2的若干次方
+        n = n >> 1
+    return ans[0] + ans[1]

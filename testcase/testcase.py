@@ -116,3 +116,27 @@ def testcase_69():
     print(solution_69(9))
     print(solution_69(10))
     print(solution_69(2147395600))
+
+
+def testcase_70():
+    print(solution_70(2))
+    print(solution_70(3))
+    print(solution_70(4))  # 1.1.1.1 / 1.2.1 / 2.2 /1.1.2/2.1.1
+    print(solution_70(5))
+    print(solution_70(6))
+    print(solution_70(7))
+    print(solution_70(8))
+    print(solution_70(9))
+    print(solution_70(44))
+
+
+def testcase_70_2():
+    print(solution_70_2(2))
+    print(solution_70_2(3))
+    print(solution_70_2(4))  # 1.1.1.1 / 1.2.1 / 2.2 /1.1.2/2.1.1
+    print(solution_70_2(5))
+    print(solution_70_2(6))
+    print(solution_70_2(7))
+    print(solution_70_2(8))
+    print(solution_70_2(9))
+    print(solution_70_2(44))

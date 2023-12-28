@@ -20,16 +20,11 @@ def matrix_mul(x, y):
     return res
 
 
-def mul_simple(x, y):
-    # x = [..,..,..,..]
-    return [x[0] * y[0] + x[1] * y[2],
-            x[0] * y[1] + x[0] * y[3],
-            x[2] * y[0] + x[3] * y[2],
-            x[2] * y[1] + x[3] * y[3]]
-
-if __name__ == '__main__':
-    x = [[1,1],[1,0]]
-    print(matrix_mul(x,x))
-    print(mul_simple([1,1,1,0],[1,1,1,0]))
-    print(len(x[0]))
-    print(x[1][1])
+def quick_pow(a: int, n: int) -> int:
+    ans = 1
+    while n > 0:  # 指数不为0
+        if n & 1:  # 二进制当前为1,说明结果需要乘以当前底数的2的若干次方
+            ans *= a
+        a *= a  # 计算下一个底数的2的若干次方
+        n = n >> 1
+    return ans
