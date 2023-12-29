@@ -198,3 +198,9 @@ def testcase_383():
     print(solution_383("a", "b"))
     print(solution_383("aa", "ab"))
     print(solution_383("aa", "aab"))
+
+
+def testcase_2706():
+    print(solution_2706([1, 2, 2], 3))
+    print(solution_2706([98, 54, 6, 34, 66, 63, 52, 39], 62))
+    print(solution_2706([90, 29, 6, 74], 82))

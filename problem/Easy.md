@@ -44,3 +44,4 @@
 - [x] [1480.一维数组的动态和](https://leetcode.cn/problems/running-sum-of-1d-array/)
 - [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
+- [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)
