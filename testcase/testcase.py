@@ -39,9 +39,9 @@ def testcase_20():
 
 def testcase_21():
     print(solution_21(
-        ListNode21(1, ListNode21(2, ListNode21(4))), ListNode21(1, ListNode21(3, ListNode21(4)))))
+        ListNode(1, ListNode(2, ListNode(4))), ListNode(1, ListNode(3, ListNode(4)))))
     print(solution_21(None, None))
-    print(solution_21(None, ListNode21(0)))
+    print(solution_21(None, ListNode(0)))
 
 
 def testcase_26():
@@ -140,3 +140,61 @@ def testcase_70_2():
     print(solution_70_2(8))
     print(solution_70_2(9))
     print(solution_70_2(44))
+
+
+def testcase_1480():
+    print(solution_1480([1, 2, 3, 4]))
+    print(solution_1480([1, 1, 1, 1, 1]))
+    print(solution_1480([3, 1, 2, 10, 1]))
+
+
+def testcase_1342():
+    print(solution_1342(14))
+    print(solution_1342(8))
+    print(solution_1342(123))
+
+
+def testcase_1342_2():
+    print(solution_1342_2(14))
+    print(solution_1342_2(8))
+    print(solution_1342_2(123))
+
+
+def testcase_1672():
+    print(solution_1672([[1, 2, 3], [3, 2, 1]]))
+    print(solution_1672([[1, 5], [7, 3], [3, 5]]))
+    print(solution_1672([[2, 8, 7], [7, 1, 3], [1, 9, 5]]))
+
+
+def testcase_2235():
+    print(solution_2235(12, 5))
+    print(solution_2235(-10, 4))
+
+
+def testcase_412():
+    print(solution_412(3))
+    print(solution_412(5))
+    print(solution_412(15))
+
+
+def testcase_876():
+    print(solution_876(
+        ListNode(1,
+                 ListNode(2,
+                          ListNode(3,
+                                   ListNode(4,
+                                            ListNode(5)))))))
+
+    print(solution_876(
+        ListNode(1,
+                 ListNode(2,
+                          ListNode(3,
+                                   ListNode(4,
+                                            ListNode(5,
+                                                     ListNode(6))))))))
+
+
+def testcase_383():
+    print(solution_383("a", "b"))
+    print(solution_383("aa", "ab"))
+    print(solution_383("aa", "aab"))

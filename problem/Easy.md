@@ -32,3 +32,15 @@
           return ans
       ```
     - 实际上对于任意类型的可以进行乘法和满足结合律的a,只需要重载a的乘法运算即可
+
+- [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
+- [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
+- [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
+- [x] [1342.将数字变成0的操作次数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/)
+  
+  - [计算二进制0的个数和1的个数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/solutions/1237903/jiang-shu-zi-bian-cheng-0-de-cao-zuo-ci-ucaa4/)
+  - [求1的个数的参考](https://zhuanlan.zhihu.com/p/161927442)
+
+- [x] [1480.一维数组的动态和](https://leetcode.cn/problems/running-sum-of-1d-array/)
+- [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
+- [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)

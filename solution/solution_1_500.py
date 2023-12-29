@@ -117,7 +117,7 @@ def solution_14_2(strs: List[str]) -> str:
 
 
 def solution_20(s: str) -> bool:
-    stack = Stack20(100000)
+    stack = Stack(100000)
     # 奇数长度必为False
     if len(s) % 2 == 1:
         return False
@@ -144,33 +144,33 @@ def solution_20(s: str) -> bool:
     return stack.is_empty()
 
 
-def solution_21(list1: Optional[ListNode21], list2: Optional[ListNode21]) -> Optional[ListNode21]:
+def solution_21(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     if list1 is None:
         return list2
     if list2 is None:
         return list1
     if list1.val < list2.val:
-        temp = ListNode21(list1.val)
+        temp = ListNode(list1.val)
         list1 = list1.next
     else:
-        temp = ListNode21(list2.val)
+        temp = ListNode(list2.val)
         list2 = list2.next
     ret = temp
     while list1 is not None and list2 is not None:
         if list1.val < list2.val:
-            temp.next = ListNode21(list1.val)
+            temp.next = ListNode(list1.val)
             temp = temp.next
             list1 = list1.next
         else:
-            temp.next = ListNode21(list2.val)
+            temp.next = ListNode(list2.val)
             temp = temp.next
             list2 = list2.next
     while list1 is not None:
-        temp.next = ListNode21(list1.val)
+        temp.next = ListNode(list1.val)
         temp = temp.next
         list1 = list1.next
     while list2 is not None:
-        temp.next = ListNode21(list2.val)
+        temp.next = ListNode(list2.val)
         temp = temp.next
         list2 = list2.next
     return ret
@@ -406,6 +406,7 @@ def solution_70_2(n: int) -> int:
       |1 1| n次幂的求解
       |1 0|
     """
+
     # 本算法对2*2矩阵的乘法进行特化
     def mul_simple(x, y):
         # x = [..,..,..,..]
@@ -413,6 +414,7 @@ def solution_70_2(n: int) -> int:
                 x[0] * y[1] + x[1] * y[3],
                 x[2] * y[0] + x[3] * y[2],
                 x[2] * y[1] + x[3] * y[3]]
+
     f = [1, 1, 1, 0]
     ans = [1, 0, 0, 1]  # 单位阵
     n = n - 1
@@ -422,3 +424,38 @@ def solution_70_2(n: int) -> int:
         f = mul_simple(f, f)  # 计算下一个底数的2的若干次方
         n = n >> 1
     return ans[0] + ans[1]
+
+
+def solution_412(n: int) -> List[str]:
+    answers = list(range(n + 1))
+    p = 3
+    q = 5
+    for i in range(1, n + 1):
+        if not (i == p or i == q):
+            answers[i] = str(i)
+            continue
+        answers[i] = ''
+        if i == p:
+            answers[i] += 'Fizz'
+            p = p + 3
+        if i == q:
+            answers[i] += 'Buzz'
+            q = q + 5
+    return answers[1:]
+
+
+def solution_383(ransomNote: str, magazine: str) -> bool:
+    f_dict = dict()
+    for i in range(len(magazine)):
+        temp = magazine[i]
+        if temp not in f_dict:
+            f_dict[temp] = 1
+        else:
+            f_dict[temp] += 1
+    for i in range(len(ransomNote)):
+        temp = ransomNote[i]
+        if temp not in f_dict or not f_dict[temp] > 0:
+            return False
+        else:
+            f_dict[temp] -= 1
+    return True

@@ -1,4 +1,4 @@
-class Stack20:
+class Stack:
     def __init__(self, max_size):
         self.max = max_size
         self.items = []
@@ -34,7 +34,7 @@ class Stack20:
         return len(self.items)
 
 
-class ListNode21:
+class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
