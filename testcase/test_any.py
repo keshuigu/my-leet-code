@@ -1,4 +1,4 @@
-from solution import *
+import solution
 
 
 def test_any(**kwargs):

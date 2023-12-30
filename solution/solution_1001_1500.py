@@ -47,3 +47,41 @@ def solution_1342_2(num: int) -> int:
     temp = (temp & 0x00FF00FF) + ((temp >> 8) & 0x00FF00FF)
     temp = (temp & 0x0000FFFF) + ((temp >> 16) & 0x0000FFFF)
     return 32 - clz - 1 + temp
+
+
+def solution_1185(day: int, month: int, year: int) -> str:
+    week = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    day_of_year = [0, 365, 731, 1096]
+    # 31, 28, 31, 30, 31, 30, 31,31, 30, 31, 30, 31
+    day_of_week_1 = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    day_of_week_2 = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
+    # 1971.1.1 "Friday"
+    temp_year = year - 1971
+    temp_month = month - 1
+    temp_day = day - 1
+    total = (temp_year // 4) * 1461 + day_of_year[temp_year % 4]
+    total += day_of_week_2[temp_month] if year % 4 == 0 else day_of_week_1[temp_month]
+    total += temp_day
+    if year == 2100 and month > 2:
+        total -= 1
+    return week[total % 7]
+
+
+def solution_1185_2(day: int, month: int, year: int) -> str:
+    # 蔡勒公式
+    # w = (y + int(y/4) + int(c/4) -2*c +　int((13(m+1))/5) + d -1) mod 7
+    week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    century = int(year / 100)
+    temp_year = year - century * 100
+    if month == 1 or month == 2:
+        month = month + 12
+        if temp_year == 0:
+            temp_year = 99
+            century -= 1
+        else:
+            temp_year = temp_year - 1
+    total = temp_year + int(temp_year / 4) + int(century / 4) - 2 * century + int((26 * (month + 1)) / 10) + day - 1
+    if total < 0:
+        return week[(total % 7 + 7) % 7]
+    else:
+        return week[total % 7]
