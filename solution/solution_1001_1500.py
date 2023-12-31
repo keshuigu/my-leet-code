@@ -85,3 +85,16 @@ def solution_1185_2(day: int, month: int, year: int) -> str:
         return week[(total % 7 + 7) % 7]
     else:
         return week[total % 7]
+
+
+def solution_1154(date: str) -> int:
+    year, month, day = date.split("-")
+    year = int(year)
+    month = int(month)
+    day = int(day)
+    day_1 = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    day_2 = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        return day_2[month - 1] + day
+    else:
+        return day_1[month - 1] + day
