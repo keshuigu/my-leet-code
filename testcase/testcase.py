@@ -210,3 +210,11 @@ def testcase_1154():
     print(solution_1154("2019-01-09"))
     print(solution_1154("2019-02-10"))
     print(solution_1154("2000-03-11"))
+
+
+def testcase_1599():
+    print(solution_1599([8, 3], 5, 6))
+    print(solution_1599([10, 9, 6], 6, 4))
+    print(solution_1599([3, 4, 0, 5, 1], 1, 92))
+    print(solution_1599([2], 2, 4))
+    print(solution_1599([0, 0, 0, 0, 0, 50], 100, 1))
