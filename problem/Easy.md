@@ -36,8 +36,10 @@
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
+- [x] [1154.一年中的第几天](https://leetcode.cn/problems/day-of-the-year/)
+- [x] [1185.一周中的第几天](https://leetcode.cn/problems/day-of-the-week/)
 - [x] [1342.将数字变成0的操作次数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/)
-  
+
   - [计算二进制0的个数和1的个数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/solutions/1237903/jiang-shu-zi-bian-cheng-0-de-cao-zuo-ci-ucaa4/)
   - [求1的个数的参考](https://zhuanlan.zhihu.com/p/161927442)
 
