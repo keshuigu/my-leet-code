@@ -218,3 +218,50 @@ def testcase_1599():
     print(solution_1599([3, 4, 0, 5, 1], 1, 92))
     print(solution_1599([2], 2, 4))
     print(solution_1599([0, 0, 0, 0, 0, 50], 100, 1))
+
+
+def testcase_83():
+    print(solution_83(
+        ListNode(1,
+                 ListNode(1,
+                          ListNode(2, None)))))
+
+    print(solution_83(
+        ListNode(1,
+                 ListNode(1,
+                          ListNode(2,
+                                   ListNode(3,
+                                            ListNode(3, None)))))))
+
+
+def testcase_88():
+    num1 = [1, 2, 3, 0, 0, 0]
+    num2 = [2, 5, 6]
+    solution_88(num1, 3, num2, 3)
+    print(num1)
+    num1 = [1]
+    num2 = []
+    solution_88(num1, 1, num2, 0)
+    print(num1)
+    num1 = [0]
+    num2 = [1]
+    solution_88(num1, 0, num2, 1)
+    print(num1)
+
+
+def testcase_94():
+    print(solution_94(TreeNode(1, None,
+                               TreeNode(2,
+                                        TreeNode(3, None, None), None))))
+    print(solution_94(TreeNode(1, TreeNode(4, None, None),
+                               TreeNode(2,
+                                        TreeNode(3, None, TreeNode(5, None, None)), None))))
+
+
+def testcase_94_2():
+    print(solution_94_2(TreeNode(1, None,
+                               TreeNode(2,
+                                        TreeNode(3, None, None), None))))
+    print(solution_94_2(TreeNode(1, TreeNode(4, None, None),
+                               TreeNode(2,
+                                        TreeNode(3, None, TreeNode(5, None, None)), None))))

@@ -46,3 +46,10 @@ class ListNode:
             ret += '->' + str(temp.val)
             temp = temp.next
         return ret
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right

@@ -459,3 +459,99 @@ def solution_383(ransomNote: str, magazine: str) -> bool:
         else:
             f_dict[temp] -= 1
     return True
+
+
+def solution_83(head: Optional[ListNode]) -> Optional[ListNode]:
+    if head is None:
+        return None
+    p = head
+    while p is not None:
+        q = p.next
+        if q is None:
+            return head
+        if q.val == p.val:
+            p.next = q.next
+            continue
+        p = p.next
+    return head
+
+
+def solution_88(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    p = m - 1
+    q = n - 1
+    k = m + n - 1
+    while q >= 0 and p >= 0:
+        if nums2[q] <= nums1[p]:
+            nums1[k] = nums1[p]
+            p -= 1
+        else:
+            nums1[k] = nums2[q]
+            q -= 1
+        k -= 1
+    while q >= 0:
+        nums1[k] = nums2[q]
+        k -= 1
+        q -= 1
+    while p >= 0:
+        nums1[k] = nums1[p]
+        k -= 1
+        p -= 1
+
+
+def solution_94(root: Optional[TreeNode]) -> List[int]:
+    # 先左后中再右
+    if root is None:
+        return []
+    if root.left is None and root.right is None:
+        return [root.val]
+    # 递归写法
+    # return [*solution_94(root.left), root.val, *solution_94(root.right)]
+    # 迭代写法 栈
+    # s = []
+    # p = root
+    # res = []
+    # while p is not None:
+    #     s.append(p)
+    #     p = p.left
+    # while not len(s) == 0:
+    #     top = s.pop()
+    #     res.append(top.val)
+    #     if top.right is not None:
+    #         p = top.right
+    #         while p is not None:
+    #             s.append(p)
+    #             p = p.left
+    # return res
+    # 更简洁的写法
+    s = []
+    res = []
+    while root is not None or len(s) != 0:
+        while root is not None:
+            s.append(root)
+            root = root.left
+        root = s.pop()
+        res.append(root.val)
+        root = root.right
+    return res
+
+
+def solution_94_2(root: Optional[TreeNode]) -> List[int]:
+    # morris
+    # 每个节点会被访问两次，但是省去了栈
+    res = []
+    while root is not None:
+        if root.left is not None:
+            predecessor = root.left
+            while predecessor.right is not None and predecessor.right is not root:
+                predecessor = predecessor.right
+            if predecessor.right is None:
+                predecessor.right = root
+                root = root.left
+            else:  # 此处为遍历取值的情况，此时左子树遍历完，取root值遍历右子树
+                res.append(root.val)
+                predecessor.right = None
+                root = root.right
+        else:
+            res.append(root.val)
+            root = root.right
+    return res
