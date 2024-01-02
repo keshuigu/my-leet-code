@@ -1,3 +1,6 @@
+import queue
+
+
 class Stack:
     def __init__(self, max_size):
         self.max = max_size

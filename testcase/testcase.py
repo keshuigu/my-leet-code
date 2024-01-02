@@ -293,3 +293,19 @@ def testcase_466_2():
         1000000,
         "xtlsgypsfadpooefxzbcoejuvpvaboygpoeylfpbnpljvrvipyamyehwqnqrqpmxujjloovaowuxwhmsncbxcoksfzkvatxdknly",
         100))
+
+
+def testcase_100():
+    print(solution_100(TreeNode(1, None,
+                                TreeNode(2,
+                                         TreeNode(3, None, None), None)),
+                       TreeNode(1, None,
+                                TreeNode(2,
+                                         TreeNode(3, None, None), None))
+                       ))
+    print(solution_100(TreeNode(1, TreeNode(4, None, None),
+                                TreeNode(2,
+                                         TreeNode(3, None, TreeNode(5, None, None)), None)),
+                       TreeNode(1, TreeNode(4, None, None),
+                                TreeNode(2,
+                                         TreeNode(3, None, TreeNode(5, None, None)), None))))

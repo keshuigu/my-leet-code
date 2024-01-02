@@ -627,3 +627,34 @@ def solution_466_2(s1: str, n1: int, s2: str, n2: int) -> int:
         cnt, j = d[j]
         ans += cnt
     return ans // n2
+
+
+def solution_100(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    # 递归写法
+    # DFS
+    # if p is None and q is None:
+    #     return True
+    # elif p is None and q is not None:
+    #     return False
+    # elif q is None and p is not None:
+    #     return False
+    # return p.val == q.val and solution_100(p.left, q.left) and solution_100(p.right, q.right)
+    # 迭代写法
+    # BFS
+    bfs_q = queue.Queue()
+    if p is None and q is None:
+        return True
+    bfs_q.put(p)
+    bfs_q.put(q)
+    while not bfs_q.empty():
+        t1 = bfs_q.get()
+        t2 = bfs_q.get()
+        if t1 is None and t2 is None:
+            continue
+        if t1 is None or t2 is None or t1.val != t2.val:
+            return False
+        bfs_q.put(t1.left)
+        bfs_q.put(t2.left)
+        bfs_q.put(t1.right)
+        bfs_q.put(t2.right)
+    return True
