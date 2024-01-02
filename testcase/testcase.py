@@ -260,8 +260,36 @@ def testcase_94():
 
 def testcase_94_2():
     print(solution_94_2(TreeNode(1, None,
-                               TreeNode(2,
-                                        TreeNode(3, None, None), None))))
+                                 TreeNode(2,
+                                          TreeNode(3, None, None), None))))
     print(solution_94_2(TreeNode(1, TreeNode(4, None, None),
-                               TreeNode(2,
-                                        TreeNode(3, None, TreeNode(5, None, None)), None))))
+                                 TreeNode(2,
+                                          TreeNode(3, None, TreeNode(5, None, None)), None))))
+
+
+def testcase_466():
+    print(solution_466("acb", 4, "ab", 2))
+    print(solution_466("acb", 1, "acb", 1))
+    print(solution_466("abdbec", 1, "abc", 1))
+    print(solution_466("asc", 3, "ca", 1))
+    print(solution_466("ecbafedcba", 4, "abcdef", 1))
+    print(solution_466("niconiconi", 99981, "nico", 81))
+    print(solution_466(
+        "phqghumeaylnlfdxfircvscxggbwkfnqduxwfnfozvsrtkjprepggxrpnrvystmwcysyycqpevikeffmznimkkasvwsrenzkycxf",
+        1000000,
+        "xtlsgypsfadpooefxzbcoejuvpvaboygpoeylfpbnpljvrvipyamyehwqnqrqpmxujjloovaowuxwhmsncbxcoksfzkvatxdknly",
+        100))
+
+
+def testcase_466_2():
+    print(solution_466_2("acb", 4, "ab", 2))
+    print(solution_466_2("acb", 1, "acb", 1))
+    print(solution_466_2("abdbec", 1, "abc", 1))
+    print(solution_466_2("asc", 3, "ca", 1))
+    print(solution_466_2("ecbafedcba", 4, "abcdef", 1))
+    print(solution_466_2("niconiconi", 99981, "nico", 81))
+    print(solution_466_2(
+        "phqghumeaylnlfdxfircvscxggbwkfnqduxwfnfozvsrtkjprepggxrpnrvystmwcysyycqpevikeffmznimkkasvwsrenzkycxf",
+        1000000,
+        "xtlsgypsfadpooefxzbcoejuvpvaboygpoeylfpbnpljvrvipyamyehwqnqrqpmxujjloovaowuxwhmsncbxcoksfzkvatxdknly",
+        100))

@@ -555,3 +555,75 @@ def solution_94_2(root: Optional[TreeNode]) -> List[int]:
             res.append(root.val)
             root = root.right
     return res
+
+
+def solution_466(s1: str, n1: int, s2: str, n2: int) -> int:
+    if n1 == 0:
+        return 0
+    s1cnt, s2cnt, index = 0, 0, 0
+    # recall 是我们用来找循环节的变量，它是一个哈希映射
+    # 我们如何找循环节？假设我们遍历了 s1cnt 个 s1，此时匹配到了第 s2cnt 个 s2 中的第 index 个字符
+    # 如果我们之前遍历了 s1cnt' 个 s1 时，匹配到的是第 s2cnt' 个 s2 中同样的第 index 个字符，那么就有循环节了
+    # 注意:
+    # 在不同的s1末尾出现同一个s2的index,说明从此处开始匹配和最开始开始匹配的过程将完全一致
+    # 我们用 (s1cnt', s2cnt', index) 和 (s1cnt, s2cnt, index) 表示两次包含相同 index 的匹配结果
+    # 那么哈希映射中的键就是 index，值就是 (s1cnt', s2cnt') 这个二元组
+    # 循环节就是；
+    #    - 前 s1cnt' 个 s1 包含了 s2cnt' 个 s2
+    #    - 以后的每 (s1cnt - s1cnt') 个 s1 包含了 (s2cnt - s2cnt') 个 s2
+    # 那么还会剩下 (n1 - s1cnt') % (s1cnt - s1cnt') 个 s1, 我们对这些与 s2 进行暴力匹配
+    # 注意 s2 要从第 index 个字符开始匹配
+    recall = {}
+    while True:
+        for ch in s1:
+            if ch == s2[index]:
+                index += 1
+                if index == len(s2):
+                    s2cnt, index = s2cnt + 1, 0  # 匹配完了1个s2
+        # 遍历完了一个s1,考察此时index的位置
+        s1cnt += 1
+        if s1cnt == n1:
+            return s2cnt // n2  # n1用完没找到循环节
+        if index in recall:
+            # 前s1cnt_prime个s1包含了s2cnt_prime个s2,并拼到了s2的index位置
+            s1cnt_prime, s2cnt_prime = recall[index]
+            pre_loop = (s1cnt_prime, s2cnt_prime)
+            in_loop = (s1cnt - s1cnt_prime, s2cnt - s2cnt_prime)
+            break
+        else:
+            recall[index] = (s1cnt, s2cnt)
+    # ans保存循环节中匹配的s2的数量
+    ans = pre_loop[1] + (n1 - pre_loop[0]) // in_loop[0] * in_loop[1]
+    rest = (n1 - pre_loop[0]) % in_loop[0]
+    for i in range(rest):
+        for ch in s1:
+            if ch == s2[index]:
+                index += 1
+                if index == len(s2):
+                    ans, index = ans + 1, 0  # 匹配完了1个s2
+    return ans // n2
+
+
+def solution_466_2(s1: str, n1: int, s2: str, n2: int) -> int:
+    # 我们预处理出以字符串 s2 的每个位置 i 开始匹配一个完整的 s1 后，下一个位置 j 以及经过了多少个 s2，即 d[i]=(cnt,j)，
+    # 其中 cnt 表示匹配了多少个 s2，而 j 表示字符串 s2 的下一个位置。
+    # 接下来，我们初始化 j=0，然后循环 n1 次，每一次将 d[j][0] 加到答案中，然后更新 j=d[j][1]
+    # 最后得到的答案就是 n1 个 s1 所能匹配的 s2 的个数，除以 n2 即可得到答案
+    n = len(s2)
+    d = {}
+    for i in range(n):
+        cnt = 0
+        j = i
+        for c in s1:
+            if c == s2[j]:
+                j += 1
+            if j == n:
+                cnt += 1
+                j = 0
+        d[i] = (cnt, j)
+    ans = 0
+    j = 0
+    for _ in range(n1):
+        cnt, j = d[j]
+        ans += cnt
+    return ans // n2
