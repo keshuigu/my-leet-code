@@ -1,14 +1,15 @@
 import random
 import time
+from solution.data_struct import *
 
 if __name__ == '__main__':
-    now = time.time()
-    for i in range(1000000):
-        a = random.randint(1, 100)
-        b = a if a < 50 else 50
-    print(f'time: {time.time() - now:.2f}s')
-    now = time.time()
-    for i in range(1000000):
-        a = random.randint(1, 100)
-        b = min(a, 50)
-    print(f'time: {time.time() - now:.2f}s')
+    head = ListNode(0, ListNode(1, ListNode(2, ListNode(3, ListNode(4)))))
+    d_head = DListNode(head)
+    p = head
+    q1 = d_head
+    while p.next is not None:
+        q1.next = DListNode(p.next)
+        q1.next.prev = q1
+        q1 = q1.next
+        p = p.next
+    print(d_head)

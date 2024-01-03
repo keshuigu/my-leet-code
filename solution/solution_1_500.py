@@ -658,3 +658,60 @@ def solution_100(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         bfs_q.put(t1.right)
         bfs_q.put(t2.right)
     return True
+
+
+def solution_101(root: Optional[TreeNode]) -> bool:
+    if root is None:
+        return True
+    bfs_q = queue.Queue()
+    bfs_q.put(root.left)
+    bfs_q.put(root.right)
+    while not bfs_q.empty():
+        t1 = bfs_q.get()
+        t2 = bfs_q.get()
+        if t1 is None and t2 is None:
+            continue
+        if t1 is None or t2 is None or t1.val != t2.val:
+            return False
+        bfs_q.put(t1.left)
+        bfs_q.put(t2.right)
+        bfs_q.put(t1.right)
+        bfs_q.put(t2.left)
+    return True
+
+
+def solution_104(root: Optional[TreeNode]) -> int:
+    # if root is None:
+    #     return 0
+    # bfs_q = queue.Queue()
+    # bfs_q.put(root)
+    # label = TreeNode(-101)
+    # bfs_q.put(label)
+    # count = 0
+    # while not bfs_q.empty():
+    #     t = bfs_q.get()
+    #     if t.val == -101:
+    #         count += 1
+    #         if bfs_q.empty():
+    #             return count
+    #         bfs_q.put(label)
+    #         continue
+    #     if t.left is not None:
+    #         bfs_q.put(t.left)
+    #     if t.right is not None:
+    #         bfs_q.put(t.right)
+    # 上面的有点麻烦了
+    # 每一层用一个队列，用完丢掉就可以了
+    if not root:
+        return 0
+    my_queue, res = [root], 0
+    while my_queue:
+        tmp = []
+        for node in my_queue:
+            if node.left:
+                tmp.append(node.left)
+            if node.right:
+                tmp.append(node.right)
+        my_queue = tmp
+        res += 1
+    return res
