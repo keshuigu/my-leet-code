@@ -51,6 +51,29 @@ class ListNode:
         return ret
 
 
+class DListNode:
+    def __init__(self, val=0, next=None, prev=None):
+        self.val = val
+        self.next = next
+        self.prev = prev
+
+    def __str__(self):
+        ret = str(self.val)
+        temp = self.next
+        tail = None
+        while temp is not None:
+            ret += ' => ' + str(temp.val)
+            tail = temp
+            temp = temp.next
+        ret += '\n'
+        ret += str(tail.val)
+        tail = tail.prev
+        while tail is not None:
+            ret += ' <= ' + str(tail.val)
+            tail = tail.prev
+        return ret
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val

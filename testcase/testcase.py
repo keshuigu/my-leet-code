@@ -309,3 +309,56 @@ def testcase_100():
                        TreeNode(1, TreeNode(4, None, None),
                                 TreeNode(2,
                                          TreeNode(3, None, TreeNode(5, None, None)), None))))
+
+
+def testcase_101():
+    print(solution_101(TreeNode(1, TreeNode(2, TreeNode(3), TreeNode(4)),
+                                TreeNode(2,
+                                         TreeNode(4), TreeNode(3)))
+                       ))
+    print(solution_101(TreeNode(1,
+                                TreeNode(2, None, TreeNode(3)),
+                                TreeNode(2, None, TreeNode(3)))
+                       ))
+    # [9,-42,-42,null,76,76,null,null,13,null,13]
+    print(solution_101(TreeNode(9,
+                                TreeNode(-42, None, TreeNode(76, None, TreeNode(13))),
+                                TreeNode(-42, TreeNode(76, None, TreeNode(13)), None))
+                       ))
+
+
+def testcase_2487():
+    print(solution_2487(
+        ListNode(5, ListNode(2, ListNode(3, ListNode(13, ListNode(3, ListNode(8))))))
+    ))
+    print(solution_2487(
+        ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1))))))
+    ))
+
+
+def testcase_2487_2():
+    print(solution_2487_2(
+        ListNode(5, ListNode(2, ListNode(3, ListNode(13, ListNode(3, ListNode(8))))))
+    ))
+    print(solution_2487_2(
+        ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1))))))
+    ))
+
+
+def testcase_2487_3():
+    print(solution_2487_3(
+        ListNode(5, ListNode(2, ListNode(3, ListNode(13, ListNode(3, ListNode(8))))))
+    ))
+    print(solution_2487_3(
+        ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1))))))
+    ))
+
+
+def testcase_104():
+    print(solution_104(
+        TreeNode(3, TreeNode(9),
+                 TreeNode(20, TreeNode(15), TreeNode(7))
+                 )))
+    print(solution_104(
+        TreeNode(1, None, TreeNode(2))
+    ))
