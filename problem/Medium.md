@@ -1,6 +1,10 @@
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
+- [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)
+
+    - [Gosper's Hack](https://zhuanlan.zhihu.com/p/360512296)
+
 - [x] [2487.从链表中移除节点](https://leetcode.cn/problems/add-two-integers/)
 
-  - [单调栈](https://blog.csdn.net/qq_58035032/article/details/129581665)
-  - 链表反转
+    - [单调栈](https://blog.csdn.net/qq_58035032/article/details/129581665)
+    - 链表反转
 

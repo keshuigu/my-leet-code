@@ -362,3 +362,18 @@ def testcase_104():
     print(solution_104(
         TreeNode(1, None, TreeNode(2))
     ))
+
+
+def testcase_2397():
+    print(solution_2397([[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 0, 1]], 2))
+    print(solution_2397([[1], [0]], 1))
+
+
+def testcase_2397_2():
+    print(solution_2397_2([[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 0, 1]], 2))
+    print(solution_2397_2([[1], [0]], 1))
+
+
+def testcase_108():
+    print(solution_108([-10, -3, 0, 5, 9]))
+    print(solution_108([1, 3]))

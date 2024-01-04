@@ -715,3 +715,51 @@ def solution_104(root: Optional[TreeNode]) -> int:
         my_queue = tmp
         res += 1
     return res
+
+
+def solution_108(nums: List[int]) -> Optional[TreeNode]:
+    # bfs_q = queue.Queue()
+    # n = len(nums)
+    # mid = n // 2
+    # root = TreeNode(nums[mid])
+    # bfs_q.put((0, mid, root))
+    # bfs_q.put((mid + 1, n, root))
+    # while not bfs_q.empty():
+    #     llow, lhigh, p = bfs_q.get()
+    #     if llow < lhigh:
+    #         lmid = (lhigh - llow) // 2 + llow
+    #         p.left = TreeNode(nums[lmid])
+    #         bfs_q.put((llow, lmid, p.left))
+    #         bfs_q.put((lmid + 1, lhigh, p.left))
+    #     rlow, rhigh, p = bfs_q.get()
+    #     if rlow < rhigh:
+    #         rmid = (rhigh - rlow) // 2 + rlow
+    #         p.right = TreeNode(nums[rmid])
+    #         bfs_q.put((rlow, rmid, p.right))
+    #         bfs_q.put((rmid + 1, rhigh, p.right))
+    # return root
+    bfs_q = []
+    n = len(nums)
+    mid = n // 2
+    root = TreeNode(nums[mid])
+    bfs_q.append((0, mid, root))
+    bfs_q.append((mid + 1, n, root))
+    while bfs_q:
+        tmp = []
+        i = 0
+        while i < len(bfs_q):
+            llow, lhigh, p = bfs_q[i]
+            if llow < lhigh:
+                lmid = (lhigh - llow) // 2 + llow
+                p.left = TreeNode(nums[lmid])
+                tmp.append((llow, lmid, p.left))
+                tmp.append((lmid + 1, lhigh, p.left))
+            rlow, rhigh, p = bfs_q[i + 1]
+            if rlow < rhigh:
+                rmid = (rhigh - rlow) // 2 + rlow
+                p.right = TreeNode(nums[rmid])
+                tmp.append((rlow, rmid, p.right))
+                tmp.append((rmid + 1, rhigh, p.right))
+            i += 2
+        bfs_q = tmp
+    return root

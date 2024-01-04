@@ -74,8 +74,35 @@ class DListNode:
         return ret
 
 
+class DListNode:
+    def __init__(self, val=0, next=None, prev=None):
+        self.val = val
+        self.next = next
+        self.prev = prev
+
+    def __str__(self):
+        ret = str(self.val)
+        temp = self.next
+        while temp is not None:
+            ret += '->' + str(temp.val)
+            temp = temp.next
+        return ret
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
+    def __str__(self):
+        bfs_q = queue.Queue()
+        ret = []
+        bfs_q.put(self)
+        while not bfs_q.empty():
+            t = bfs_q.get()
+            if t is not None:
+                ret.append(t.val)
+                bfs_q.put(t.left)
+                bfs_q.put(t.right)
+        return str(ret)
