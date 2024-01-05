@@ -377,3 +377,24 @@ def testcase_2397_2():
 def testcase_108():
     print(solution_108([-10, -3, 0, 5, 9]))
     print(solution_108([1, 3]))
+
+
+def testcase_1944():
+    print(solution_1944([10, 6, 8, 5, 11, 9]))
+    print(solution_1944([5, 1, 2, 3, 10]))
+
+
+def testcase_110():
+    print(solution_110(TreeNode(3, TreeNode(9),
+                                TreeNode(20, TreeNode(15), TreeNode(7))
+                                )))
+    print(solution_110(TreeNode(1, TreeNode(2, TreeNode(3, TreeNode(4)), TreeNode(3)),
+                                TreeNode(2)
+                                )))
+
+
+def testcase_111():
+    print(solution_111(TreeNode(3, TreeNode(9),
+                                TreeNode(20, TreeNode(15), TreeNode(7))
+                                )))
+    print(solution_111(TreeNode(2, None, TreeNode(3, None, TreeNode(4, None, TreeNode(5, None, TreeNode(6)))))))

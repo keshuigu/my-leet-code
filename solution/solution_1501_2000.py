@@ -32,3 +32,25 @@ def solution_1599(customers: List[int], boardingCost: int, runningCost: int) -> 
                 return -1
             else:
                 return profit.index(final_profit) + 1
+
+
+def solution_1944(heights: List[int]) -> List[int]:
+    stack = []
+    res = []
+    for height in reversed(heights):
+        count = 0
+        while len(stack) != 0:
+            p = stack[-1]
+            if p < height:
+                stack.pop()
+                count += 1
+            else:
+                stack.append(height)
+                break
+        if len(stack) == 0:
+            stack.append(height)
+            res.append(count)
+            continue
+        else:
+            res.append(count + 1)
+    return res[::-1]

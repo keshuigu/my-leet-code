@@ -1,3 +1,4 @@
+import collections
 from typing import *
 from .data_struct import *
 
@@ -763,3 +764,49 @@ def solution_108(nums: List[int]) -> Optional[TreeNode]:
             i += 2
         bfs_q = tmp
     return root
+
+
+def solution_110(root: Optional[TreeNode]) -> bool:
+    # 递归
+    def helper(p):
+        if p is None:
+            return 0
+        left_height = helper(p.left)
+        right_height = helper(p.right)
+        # 用-1标记不平衡
+        if left_height == -1 or right_height == -1 or abs(left_height - right_height) > 1:
+            return -1
+        else:
+            return max(left_height, right_height) + 1
+
+    return helper(root) >= 0
+
+
+def solution_111(root: Optional[TreeNode]) -> int:
+    # 递归
+    if root is None:
+        return 0
+    if root.left is None and root.right is None:
+        return 1
+    elif root.left is None:
+        return solution_111(root.right) + 1
+    elif root.right is None:
+        return solution_111(root.left) + 1
+    else:
+        return min(solution_111(root.left), solution_111(root.right)) + 1
+
+
+def solution_111_2(root: Optional[TreeNode]) -> int:
+    # bfs
+    if not root:
+        return 0
+    que = collections.deque([(root, 1)])
+    while que:
+        node, depth = que.popleft()
+        if not node.left and not node.right:
+            return depth
+        if node.left:
+            que.append((node.left, depth + 1))
+        if node.right:
+            que.append((node.right, depth + 1))
+    return 0
