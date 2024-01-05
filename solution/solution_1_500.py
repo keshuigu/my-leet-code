@@ -810,3 +810,34 @@ def solution_111_2(root: Optional[TreeNode]) -> int:
         if node.right:
             que.append((node.right, depth + 1))
     return 0
+
+
+def solution_112(root: Optional[TreeNode], targetSum: int) -> bool:
+    # 递归
+    # if not root:
+    #     return False
+    # if not root.left or not root.right:
+    #     return targetSum == root.val
+    # return solution_112(root.left, targetSum - root.val) or solution_112(root.right, targetSum - root.val)
+    if not root:
+        return False
+    stack = [(root, False)]
+    total = 0
+    while stack:
+        node, flag = stack[-1]
+        if not node:
+            stack.pop()
+            continue
+        if flag:
+            total = total - node.val
+            stack.pop()
+            continue
+        if not node.left and not node.right and total + node.val == targetSum:
+            return True
+        total += node.val
+        stack[-1] = (node, True)
+        if node.left:
+            stack.append((node.left, False))
+        if node.right:
+            stack.append((node.right, False))
+    return False
