@@ -408,3 +408,19 @@ def testcase_112():
     print(solution_112(TreeNode(1, TreeNode(2), TreeNode(3)), 5))
     print(solution_112(TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
                                 TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1)))), 22))
+
+
+def testcase_2807():
+    print(solution_2807(ListNode(5, ListNode(2, ListNode(6, ListNode(18, ListNode(3, ListNode(8))))))))
+    print(solution_2807(ListNode(18, ListNode(6, ListNode(10, ListNode(3))))))
+
+
+def testcase_118():
+    print(solution_118(5))
+    print(solution_118(1))
+
+
+def testcase_119():
+    print(solution_119(3))
+    print(solution_119(0))
+    print(solution_119(33))

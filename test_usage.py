@@ -4,4 +4,4 @@ from solution.data_struct import *
 from solution.method import *
 
 if __name__ == '__main__':
-    print(TreeNode(3))
+    print(list(range(2, 0, -1)))

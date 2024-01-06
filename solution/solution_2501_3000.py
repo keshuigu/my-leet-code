@@ -1,5 +1,6 @@
 from typing import *
 from .data_struct import *
+from .method import *
 
 
 def solution_2706(prices: List[int], money: int) -> int:
@@ -13,3 +14,16 @@ def solution_2706(prices: List[int], money: int) -> int:
             min_2 = price
     res = money - min_1 - min_2
     return money if res < 0 else res
+
+
+def solution_2807(head: Optional[ListNode]) -> Optional[ListNode]:
+    if not head or not head.next:
+        return head
+    p, q = head, head.next
+    while p and q:
+        tmp = gcd_euclid(p.val, q.val)
+        p.next = ListNode(tmp)
+        p.next.next = q
+        p = q
+        q = q.next
+    return head

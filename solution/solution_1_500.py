@@ -841,3 +841,33 @@ def solution_112(root: Optional[TreeNode], targetSum: int) -> bool:
         if node.right:
             stack.append((node.right, False))
     return False
+
+
+def solution_118(numRows: int) -> List[List[int]]:
+    if numRows == 1:
+        return [[1]]
+    if numRows == 2:
+        return [[1], [1, 1]]
+    res = [[1], [1, 1]]
+    for i in range(2, numRows):
+        tmp = [0] * (i + 1)
+        last = res[i - 1]
+        for j in range(1, i):
+            tmp[j] = last[j - 1] + last[j]
+        tmp[0], tmp[-1] = 1, 1
+        res.append(tmp)
+    return res
+
+
+def solution_119(rowIndex: int) -> List[int]:
+    res = [1] * (rowIndex + 1)
+    # 正向计算
+    # 由于需要j-1处的数值，所以需要保留副本
+    # for i in range(1, rowIndex + 1):
+    #     last = list(res)
+    #     for j in range(1, i):
+    #         res[j] = last[j - 1] + last[j]
+    for i in range(1, rowIndex + 1):
+        for j in range(i - 1, 0, -1):
+            res[j] = res[j - 1] + res[j]
+    return res

@@ -45,6 +45,8 @@
 - [x] [108.将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)
 - [x] [110.平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)
 - [x] [111.二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)
+- [x] [118.杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
+- [x] [119.杨辉三角Ⅱ](https://leetcode.cn/problems/pascals-triangle-ii/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)

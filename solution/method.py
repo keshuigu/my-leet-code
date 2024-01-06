@@ -101,3 +101,12 @@ def gospers_hack(k, n):
         lb = cur & -cur  # 取最低位的1
         r = cur + lb  # 在cur最低位的1上加1
         cur = ((r ^ cur) >> count_trailing_zeros(lb) + 2) | r
+
+
+def gcd_euclid(a: int, b: int) -> int:
+    """
+    Compute the greatest common
+    """
+    while a % b != 0:
+        a, b = b, a % b
+    return b
