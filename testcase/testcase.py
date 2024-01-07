@@ -424,3 +424,20 @@ def testcase_119():
     print(solution_119(3))
     print(solution_119(0))
     print(solution_119(33))
+
+
+def testcase_121():
+    print(solution_121([7, 1, 5, 3, 6, 4]))
+    print(solution_121([7, 6, 4, 3, 1]))
+
+
+def testcase_125():
+    print(solution_125("A man, a plan, a canal: Panama"))
+    print(solution_125("race a car"))
+    print(solution_125(" "))
+    print(solution_125("0P"))
+
+
+def testcase_136():
+    print(solution_136([2, 2, 1]))
+    print(solution_136([4, 1, 2, 1, 2]))

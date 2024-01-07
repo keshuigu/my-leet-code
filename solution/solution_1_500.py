@@ -871,3 +871,75 @@ def solution_119(rowIndex: int) -> List[int]:
         for j in range(i - 1, 0, -1):
             res[j] = res[j - 1] + res[j]
     return res
+
+
+def solution_121(prices: List[int]) -> int:
+    # 超出内存限制
+    # # dp
+    # n = len(prices)
+    # profit = []
+    # for i in range(n):
+    #     profit.append([0] * n)
+    # # 初始化
+    # for i in range(n - 1):
+    #     profit[i][i + 1] = prices[i + 1] - prices[i]
+    # for i in range(n - 2, 0, -1):
+    #     for j in range(i):
+    #         profit[j][j + n - i] = profit[j][j + n - i - 1] + profit[j + n - i - 1][j + n - i]
+    # return max(max(x) for x in profit)
+    # 先找卖出日前的最小值，记录最大利润值
+    inf = int(1e9)
+    min_price = inf
+    max_profit = 0
+    for price in prices:
+        max_profit = max(price - min_price, max_profit)  # 保证非全局最小点取到的最优值也能被记录并返回，如3，1000，1，5
+        min_price = min(price, min_price)
+    return max_profit
+
+
+def solution_125(s: str) -> bool:
+    # tmp = ""
+    # for i in range(len(s)):
+    #     num = ord(s[i])
+    #     if 65 <= num <= 90:
+    #         tmp += chr(num + 32)
+    #     elif 97 <= num <= 122:
+    #         tmp += s[i]
+    #     elif 48 <= num <= 57:
+    #         tmp += s[i]
+    # for i in range(len(tmp) // 2):
+    #     if tmp[i] != tmp[len(tmp) - 1 - i]:
+    #         return False
+    # return True
+    # 不做预处理
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        while left < right and not s[left].isalnum():
+            left += 1
+        while left < right and not s[right].isalnum():
+            right -= 1
+        if left < right:
+            if s[left].lower() != s[right].lower():
+                return False
+            left, right = left + 1, right - 1
+    return True
+
+
+def solution_136(nums: List[int]) -> int:
+    # a ^ b ^ c <= > a ^ c ^ b
+    # 0 ^ n = > n
+    # 相同的数异或为0: n ^ n = > 0
+    res = 0
+    for num in nums:
+        res ^= num
+    return res
+    # 两个数奇数次
+    # eor, eor1 = 0, 0
+    # for num in nums:
+    #     eor ^= num
+    # right = eor & (-eor) # 两个数肯定不相等，因此至少有1位为1，用这个1做分组
+    # for num in nums:
+    #     if right & num:
+    #         eor1 ^= num
+    # return eor1, eor ^ eor1 # eor是两个数异或的结果，再异或一次另一个值就出来了

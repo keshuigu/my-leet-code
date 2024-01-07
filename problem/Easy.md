@@ -47,6 +47,12 @@
 - [x] [111.二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)
 - [x] [118.杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
 - [x] [119.杨辉三角Ⅱ](https://leetcode.cn/problems/pascals-triangle-ii/)
+- [x] [121.买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
+- [x] [125.验证回文串](https://leetcode.cn/problems/valid-palindrome/)
+- [x] [136.只出现一次的数组](https://leetcode.cn/problems/single-number/)
+
+  - 异或运算
+
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
