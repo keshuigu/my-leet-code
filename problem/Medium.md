@@ -1,3 +1,4 @@
+- [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
 - [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)
 

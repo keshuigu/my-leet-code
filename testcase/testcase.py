@@ -441,3 +441,54 @@ def testcase_125():
 def testcase_136():
     print(solution_136([2, 2, 1]))
     print(solution_136([4, 1, 2, 1, 2]))
+
+
+def testcase_447():
+    print(solution_447([[0, 0], [1, 0], [2, 0], [-1, 0]]))
+    print(solution_447([[1, 1], [2, 2], [3, 3], [0, 0]]))
+    print(solution_447([[1, 1]]))
+
+
+def testcase_141():
+    tail = ListNode(-4)
+    mid = ListNode(2, ListNode(0, tail))
+    head = ListNode(3, mid)
+    tail.next = mid
+    print(solution_141(head))
+    tail = ListNode(2)
+    mid = ListNode(1, tail)
+    head = mid
+    tail.next = mid
+    print(solution_141(head))
+    head = ListNode(1)
+    print(solution_141(head))
+
+
+def testcase_144():
+    print(solution_144(TreeNode(3, TreeNode(9),
+                                TreeNode(20, TreeNode(15), TreeNode(7))
+                                )))
+    print(solution_144(TreeNode(2, None, TreeNode(3, None, TreeNode(4, None, TreeNode(5, None, TreeNode(6)))))))
+    print(solution_144(TreeNode(1, TreeNode(2), TreeNode(3))))
+    print(solution_144(TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
+                                TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1))))))
+
+
+def testcase_144_2():
+    print(solution_144_2(TreeNode(3, TreeNode(9),
+                                  TreeNode(20, TreeNode(15), TreeNode(7))
+                                  )))
+    print(solution_144_2(TreeNode(2, None, TreeNode(3, None, TreeNode(4, None, TreeNode(5, None, TreeNode(6)))))))
+    print(solution_144_2(TreeNode(1, TreeNode(2), TreeNode(3))))
+    print(solution_144_2(TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
+                                  TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1))))))
+
+
+def testcase_145():
+    print(solution_145(TreeNode(3, TreeNode(9),
+                                TreeNode(20, TreeNode(15), TreeNode(7))
+                                )))
+    print(solution_145(TreeNode(2, None, TreeNode(3, None, TreeNode(4, None, TreeNode(5, None, TreeNode(6)))))))
+    print(solution_145(TreeNode(1, TreeNode(2), TreeNode(3))))
+    print(solution_145(TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
+                                TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1))))))

@@ -53,6 +53,9 @@
 
   - 异或运算
 
+- [x] [141.环形链表](https://leetcode.cn/problems/linked-list-cycle/)
+- [x] [144.二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
+- [x] [145.二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)

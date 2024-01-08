@@ -1,4 +1,5 @@
 import collections
+import math
 from typing import *
 from .data_struct import *
 
@@ -943,3 +944,162 @@ def solution_136(nums: List[int]) -> int:
     #     if right & num:
     #         eor1 ^= num
     # return eor1, eor ^ eor1 # eor是两个数异或的结果，再异或一次另一个值就出来了
+
+
+def solution_447(points: List[List[int]]) -> int:
+    def distance(x1, x2):
+        return (x1[0] - x2[0]) ** 2 + (x1[1] - x2[1]) ** 2
+
+    count = 0
+    for point in points:
+        f_dict = {}
+        for point1 in points:
+            dis = distance(point, point1)
+            f_dict[dis] = f_dict.get(dis, 0) + 1
+        for x in f_dict:
+            if f_dict[x] >= 2:
+                count += math.perm(f_dict[x], 2)
+    return count
+
+
+def solution_141(head: Optional[ListNode]) -> bool:
+    if not head or not head.next:
+        return False
+    p, q, = head.next.next, head.next
+    while p and q:
+        if p == q:
+            return True
+        if not p.next or not p.next.next:
+            return False
+        p = p.next.next
+        q = q.next
+    return False
+
+
+def solution_144(root: Optional[TreeNode]) -> List[int]:
+    # 递归
+    # def helper(p, res):
+    #     if not p:
+    #         return
+    #     res.append(p.val)
+    #     helper(p.left, res)
+    #     helper(p.right, res)
+    #
+    # result = []
+    # helper(root, result)
+    # return result
+    if not root:
+        return []
+    result = []
+    # stack = [(root, False)]
+    # while stack:
+    #     p, flag = stack[-1]
+    #     if not flag:
+    #         result.append(p.val)
+    #         stack[-1] = p, True
+    #         if p.right:
+    #             stack.append((p.right, False))
+    #         if p.left:
+    #             stack.append((p.left, False))
+    #     else:
+    #         stack.pop()
+    # return result
+    stack = []
+    p = root
+    while stack or p:
+        while p:
+            result.append(p.val)
+            stack.append(p)
+            p = p.left
+        p = stack.pop()
+        p = p.right
+    return result
+
+
+def solution_144_2(root: Optional[TreeNode]) -> List[int]:
+    # morris
+    res = []
+    p = root
+    while p:
+        if p.left:
+            predecessor = p.left
+            while predecessor.right and not predecessor.right == p:
+                predecessor = predecessor.right
+            if predecessor.right == p:
+                predecessor.right = None
+                p = p.right
+            else:
+                predecessor.right = p
+                res.append(p.val)
+                p = p.left
+        else:
+            res.append(p.val)
+            p = p.right
+    return res
+
+
+def solution_145(root: Optional[TreeNode]) -> List[int]:
+    # def helper(p, res):
+    #     if not p:
+    #         return
+    #     helper(p.left, res)
+    #     helper(p.right, res)
+    #     res.append(p.val)
+
+    res = []
+
+    # helper(root, result)
+    # return result
+    # 迭代
+    # stack = []
+    # p = root
+    # prev = None
+    # while stack or p:
+    #     while p:
+    #         stack.append(p)
+    #         p = p.left
+    #     p = stack.pop()
+    #     if not p.right or p.right == prev:
+    #         result.append(p.val)
+    #         prev = p  # 说明p的右子树遍历完了,该输出自己的值了
+    #         p = None
+    #     else:
+    #         stack.append(p)
+    #         p = p.right
+    # return result
+    # morris
+    # 该函数每次会拿出树的最右侧一排数值
+    # 而后序遍历时会从最左侧开始,一次次地拿最右侧的一排数值
+    def addPath(node: TreeNode):
+        count = 0
+        while node:
+            count += 1
+            res.append(node.val)
+            node = node.right
+        # 前后反转
+        i, j = len(res) - count, len(res) - 1
+        while i < j:
+            res[i], res[j] = res[j], res[i]
+            i += 1
+            j -= 1
+
+    if not root:
+        return list()
+
+    p = root
+    while p:
+        if p.left:
+            predecessor = p.left
+            while predecessor.right and predecessor.right != p:
+                predecessor = predecessor.right
+            if predecessor.right == p:
+                predecessor.right = None
+                addPath(p.left)
+                p = p.right
+            else:
+                predecessor.right = p
+                p = p.left
+        else:
+            p = p.right
+    addPath(root)
+    return res
