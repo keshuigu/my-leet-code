@@ -492,3 +492,68 @@ def testcase_145():
     print(solution_145(TreeNode(1, TreeNode(2), TreeNode(3))))
     print(solution_145(TreeNode(5, TreeNode(4, TreeNode(11, TreeNode(7), TreeNode(2))),
                                 TreeNode(8, TreeNode(13), TreeNode(4, None, TreeNode(1))))))
+
+
+def testcase_208():
+    trie = Trie()
+    trie.insert("apple")
+    print(trie.search("apple"))
+    print(trie.search("app"))
+    print(trie.starts_with("app"))
+    trie.insert("app")
+    print(trie.search("app"))
+
+
+def testcase_2707():
+    print(solution_2707("leetscode", ["leet", "code", "leetcode"]))
+    print(solution_2707("sayhelloworld", ["hello", "world"]))
+
+
+def testcase_160():
+    headA = ListNode(4, ListNode(1))
+    headB = ListNode(5, ListNode(6, ListNode(1)))
+    mid = ListNode(8, ListNode(4, ListNode(5)))
+    headA.next = mid
+    headB.next = mid
+    print(solution_160(headA, headB))
+    headA = ListNode(1, ListNode(9, ListNode(1)))
+    headB = ListNode(3)
+    mid = ListNode(2, ListNode(4))
+    headA.next = mid
+    headB.next = mid
+    print(solution_160(headA, headB))
+    headA = ListNode(2, ListNode(6, ListNode(4)))
+    headB = ListNode(1, ListNode(5))
+    print(solution_160(headA, headB))
+
+
+def testcase_160_2():
+    headA = ListNode(4, ListNode(1))
+    headB = ListNode(5, ListNode(6, ListNode(1)))
+    mid = ListNode(8, ListNode(4, ListNode(5)))
+    headA.next = mid
+    headB.next = mid
+    print(solution_160_2(headA, headB))
+    headA = ListNode(1, ListNode(9, ListNode(1)))
+    headB = ListNode(3)
+    mid = ListNode(2, ListNode(4))
+    headA.next = mid
+    headB.next = mid
+    print(solution_160_2(headA, headB))
+    headA = ListNode(2, ListNode(6, ListNode(4)))
+    headB = ListNode(1, ListNode(5))
+    print(solution_160_2(headA, headB))
+
+
+def testcase_168():
+    print(solution_168(1))
+    print(solution_168(28))
+    print(solution_168(70))
+    print(solution_168(2147483647))
+
+
+def testcase_171():
+    print(solution_171("A"))
+    print(solution_171("AB"))
+    print(solution_171("ZY"))
+    print(solution_171("FXSHRXW"))

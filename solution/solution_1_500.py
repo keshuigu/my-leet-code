@@ -1103,3 +1103,77 @@ def solution_145(root: Optional[TreeNode]) -> List[int]:
             p = p.right
     addPath(root)
     return res
+
+
+def solution_208():
+    # 该题需要建立trie树,详见data_struct.py
+    pass
+
+
+def solution_160(headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    """
+    移除较长链表的开头部分,两个指针共同前进
+    """
+    p, q, m, n = headA, headB, 0, 0
+    while p:
+        m += 1
+        p = p.next
+    while q:
+        n += 1
+        q = q.next
+    p, q = headA, headB
+    if m >= n:
+        tmp = m - n
+        for _ in range(tmp):
+            p = p.next
+    else:
+        tmp = n - m
+        for _ in range(tmp):
+            q = q.next
+    while p and q:
+        if p == q:
+            return p
+        p = p.next
+        q = q.next
+    return None
+
+
+def solution_160_2(headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    """
+    考虑两种情况，第一种情况是两个链表相交，第二种情况是两个链表不相交。
+    情况一：两个链表相交
+    链表 headA 和 headB 的长度分别是 m 和 n。
+    假设链表 headA 的不相交部分有 a个节点，链表 headB 的不相交部分有 b 个节点，两个链表相交的部分有 c 个节点，
+    则有 a+c=m，b+c=n。
+    如果 a=b，则两个指针会同时到达两个链表相交的节点，此时返回相交的节点；
+    如果 a≠b，则指针 pApA 会遍历完链表 headA，指针 pB 会遍历完链表 headB，两个指针不会同时到达链表的尾节点，
+    然后指针 pA 移到链表 headB 的头节点，指针 pB 移到链表 headA 的头节点，然后两个指针继续移动，
+    在指针 pA 移动了 a+c+b 次、指针 pB移动了 b+c+a 次之后，两个指针会同时到达两个链表相交的节点，该节点也是两个指针第一次同时指向的节点，此时返回相交的节点。
+    情况二：两个链表不相交
+    链表 headA 和 headB 的长度分别是 m 和 n。考虑当 m=n 和 m≠n时，两个指针分别会如何移动：
+    如果 m=n 则两个指针会同时到达两个链表的尾节点，然后同时变成空值 null，此时返回 null；
+    如果 m≠n 则由于两个链表没有公共节点，两个指针也不会同时到达两个链表的尾节点，因此两个指针都会遍历完两个链表，在指针 pA 移动了 m+n 次、指针 pB 移动了 n+m 次之后，两个指针会同时变成空值 null，此时返回 null
+    """
+    p1, p2 = headA, headB
+    while p1 != p2:
+        p1 = p1.next if p1 is not None else headB
+        p2 = p2.next if p2 is not None else headA
+    return p1
+
+
+def solution_168(columnNumber: int) -> str:
+    s = []
+    while columnNumber > 0:
+        columnNumber -= 1
+        remainder = columnNumber % 26
+        columnNumber = columnNumber // 26
+        s.append(chr(remainder + ord("A")))
+    return "".join(s[::-1])
+
+
+def solution_171(columnTitle: str) -> int:
+    res = 0
+    for x in columnTitle:
+        res *= 26
+        res += ord(x) - ord("A") + 1
+    return res

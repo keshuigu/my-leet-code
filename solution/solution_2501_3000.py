@@ -27,3 +27,32 @@ def solution_2807(head: Optional[ListNode]) -> Optional[ListNode]:
         p = q
         q = q.next
     return head
+
+
+def solution_2707(s: str, dictionary: List[str]) -> int:
+    """
+    设 n 是 s 的长度，现在有两种基本的分割方案：
+
+    把 s 的最后一个字符 s[n−1] 当做是额外字符，那么问题转为长度为 n−1 的子问题。
+    找到一个 j 使得 s 的后缀 s[j...n−1] 构成的子串在 dictionary，那么问题转为长度为 j 的子问题。
+    因此，定义 d[i] 为 sss 前缀 s[0...i−1] 的子问题，那么 d[i] 取下面两种情况的最小值：
+    1. 把 s[i−1]当做是额外字符，d[i]=d[i−1]+1
+    2. 遍历所有的 j(j∈[0,i−1])，如果子字符串 s[j...i−1]存在于 dictionary 中，那么 d[i]=mind[j]
+
+    初始状态 d[0]=0d[0] = 0d[0]=0，最终答案为 d[n]d[n]d[n]。
+    查找子串 s[j...i−1]s[j...i-1]s[j...i−1] 是否存在于 dictionary 可以使用哈希表。
+    另外在实现动态规划时，可以使用记忆化搜索，也可以使用递推，这两种方式在时空复杂度方面并没有明显差异。
+    """
+    n = len(s)
+    dp = [0] * (n + 1)  # dp[i]代表s[0:i]
+    trie = Trie()
+    for tmp in dictionary:
+        trie.insert(tmp[::-1])
+    for i in range(1, n + 1):
+        dp[i] = dp[i - 1] + 1
+        node = trie
+        for j in range(i - 1, -1, -1):  # 逆序遍历i-1到0
+            node, ok = track(node, s[j])
+            if ok:
+                dp[i] = min(dp[i], dp[j])
+    return dp[n]

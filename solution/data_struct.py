@@ -1,4 +1,5 @@
 import queue
+from typing import *
 
 
 class Stack:
@@ -74,21 +75,6 @@ class DListNode:
         return ret
 
 
-class DListNode:
-    def __init__(self, val=0, next=None, prev=None):
-        self.val = val
-        self.next = next
-        self.prev = prev
-
-    def __str__(self):
-        ret = str(self.val)
-        temp = self.next
-        while temp is not None:
-            ret += '->' + str(temp.val)
-            temp = temp.next
-        return ret
-
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -106,3 +92,73 @@ class TreeNode:
                 bfs_q.put(t.left)
                 bfs_q.put(t.right)
         return str(ret)
+
+
+class MyTrie:
+    def __init__(self):
+        self.dict = {}
+        self.leave = False
+
+    def insert(self, word: str) -> None:
+        if len(word) == 0:
+            self.leave = True
+            return
+        tmp = word[0]
+        if tmp not in self.dict:
+            self.dict[tmp] = Trie()
+        self.dict[tmp].insert(word[1:])
+
+    def search(self, word: str) -> bool:
+        if len(word) == 0:
+            return self.leave
+        tmp = word[0]
+        if tmp not in self.dict:
+            return False
+        return self.dict[tmp].search(word[1:])
+
+    def starts_with(self, prefix: str) -> bool:
+        if len(prefix) == 0:
+            return True
+        tmp = prefix[0]
+        if tmp not in self.dict:
+            return False
+        return self.dict[tmp].starts_with(prefix[1:])
+
+
+def track(node: Optional["Trie"], ch: str) -> (Optional["Trie"], bool):
+    tmp = ord(ch) - ord("a")
+    if not node or not node.children[tmp]:
+        return None, False
+    node = node.children[tmp]
+    return node, node.leave
+
+
+class Trie:  # 仅针对26个小写字母
+    def __init__(self):
+        self.children: List[Union[None, Trie]] = [None] * 26
+        self.leave = False
+
+    def search_prefix(self, prefix: str) -> Optional["Trie"]:
+        node = self
+        for ch in prefix:
+            ch = ord(ch) - ord("a")
+            if not node.children[ch]:
+                return None
+            node = node.children[ch]
+        return node
+
+    def insert(self, word: str) -> None:
+        node = self
+        for ch in word:
+            ch = ord(ch) - ord("a")
+            if not node.children[ch]:
+                node.children[ch] = Trie()
+            node = node.children[ch]
+        node.leave = True
+
+    def search(self, word: str) -> bool:
+        node = self.search_prefix(word)
+        return node is not None and node.leave
+
+    def starts_with(self, prefix: str) -> bool:
+        return self.search_prefix(prefix) is not None

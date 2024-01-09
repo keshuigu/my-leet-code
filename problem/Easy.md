@@ -18,7 +18,7 @@
 - [x] [67.二进制求和](https://leetcode.cn/problems/add-binary/)
 - [x] [69.x的平方跟](https://leetcode.cn/problems/sqrtx/)
 - [x] [70.爬楼梯](https://leetcode.cn/problems/climbing-stairs)
-    
+
     - [参考题解](https://leetcode.cn/problems/climbing-stairs/solutions/286022/pa-lou-ti-by-leetcode-solution/)
     - [标量快速幂,矩阵快速幂](https://zhuanlan.zhihu.com/p/95902286)
     - ```python
@@ -37,8 +37,8 @@
 - [x] [88.合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
 - [x] [94.二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
 
-  - [Morris](https://leetcode.cn/problems/binary-tree-inorder-traversal/solutions/412886/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/)
- 
+    - [Morris](https://leetcode.cn/problems/binary-tree-inorder-traversal/solutions/412886/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio/)
+
 - [x] [100.相同的树](https://leetcode.cn/problems/same-tree/)
 - [x] [101.对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
 - [x] [104.二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
@@ -51,11 +51,21 @@
 - [x] [125.验证回文串](https://leetcode.cn/problems/valid-palindrome/)
 - [x] [136.只出现一次的数组](https://leetcode.cn/problems/single-number/)
 
-  - 异或运算
+    - 异或运算
 
 - [x] [141.环形链表](https://leetcode.cn/problems/linked-list-cycle/)
 - [x] [144.二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
 - [x] [145.二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
+- [x] [160.相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)
+- [x] [168.Excel表列名称](https://leetcode.cn/problems/excel-sheet-column-title/)
+
+    - 没有0的进制转换,映射时多多注意
+    - 对于此题,每位-1即成为余数,对于不同的题目,考虑怎么设置映射使得转换为余数的计算
+
+- [x] [171.Excel表列序号](https://leetcode.cn/problems/excel-sheet-column-number/)
+
+    - 从无0转有0的进制,简单很多
+
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
@@ -63,8 +73,8 @@
 - [x] [1185.一周中的第几天](https://leetcode.cn/problems/day-of-the-week/)
 - [x] [1342.将数字变成0的操作次数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/)
 
-  - [计算二进制0的个数和1的个数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/solutions/1237903/jiang-shu-zi-bian-cheng-0-de-cao-zuo-ci-ucaa4/)
-  - [求1的个数的参考](https://zhuanlan.zhihu.com/p/161927442)
+    - [计算二进制0的个数和1的个数](https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/solutions/1237903/jiang-shu-zi-bian-cheng-0-de-cao-zuo-ci-ucaa4/)
+    - [求1的个数的参考](https://zhuanlan.zhihu.com/p/161927442)
 
 - [x] [1480.一维数组的动态和](https://leetcode.cn/problems/running-sum-of-1d-array/)
 - [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
