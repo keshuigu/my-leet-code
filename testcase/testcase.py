@@ -557,3 +557,56 @@ def testcase_171():
     print(solution_171("AB"))
     print(solution_171("ZY"))
     print(solution_171("FXSHRXW"))
+
+
+def testcase_2696():
+    print(solution_2696("ABFCACDB"))
+    print(solution_2696("ACBBD"))
+    print(solution_2696("CDABCDD"))
+
+
+def testcase_169():
+    print(solution_169([3, 2, 3]))
+    print(solution_169([2, 2, 1, 1, 1, 2, 2]))
+
+
+def testcase_175():
+    preprocess(
+        """DROP TABLE Person;
+        DROP TABLE Address;
+        Create table If Not Exists Person (personId int, firstName varchar(255), lastName varchar(255));
+        Create table If Not Exists Address (addressId int, personId int, city varchar(255), state varchar(255));
+        Truncate table Person;
+        insert into Person (personId, lastName, firstName) values ('1', 'Wang', 'Allen');
+        insert into Person (personId, lastName, firstName) values ('2', 'Alice', 'Bob');
+        Truncate table Address;
+        insert into Address (addressId, personId, city, state) values ('1', '2', 'New York City', 'New York');
+        insert into Address (addressId, personId, city, state) values ('2', '3', 'Leetcode', 'California');""")
+    print(solution_175())
+
+
+def testcase_181():
+    preprocess(
+        """DROP TABLE Employee;
+        Create table If Not Exists Employee (id int, name varchar(255), salary int, managerId int);
+        Truncate table Employee;
+        insert into Employee (id, name, salary, managerId) values ('1', 'Joe', '70000', '3');
+        insert into Employee (id, name, salary, managerId) values ('2', 'Henry', '80000', '4');
+        insert into Employee (id, name, salary, managerId) values ('3', 'Sam', '60000', null);
+        insert into Employee (id, name, salary, managerId) values ('4', 'Max', '90000', null);""")
+    print(solution_181())
+
+
+def testcase_182():
+    preprocess(
+        """DROP TABLE Person;
+        Create table If Not Exists Person (id int, email varchar(255));
+        Truncate table Person;
+        insert into Person (id, email) values ('1', 'a@b.com');
+        insert into Person (id, email) values ('2', 'c@d.com');
+        insert into Person (id, email) values ('3', 'a@b.com');""")
+    print(solution_182())
+
+
+def testcase_183():
+    print(solution_183())

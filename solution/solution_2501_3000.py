@@ -56,3 +56,15 @@ def solution_2707(s: str, dictionary: List[str]) -> int:
             if ok:
                 dp[i] = min(dp[i], dp[j])
     return dp[n]
+
+
+def solution_2696(s: str) -> int:
+    stack = []
+    for ch in s:
+        if not stack:
+            stack.append(ch)
+        elif (ch == 'B' and stack[-1] == 'A') or (ch == 'D' and stack[-1] == 'C'):
+            stack.pop()
+        else:
+            stack.append(ch)
+    return len(stack)

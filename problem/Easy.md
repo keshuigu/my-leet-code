@@ -62,10 +62,31 @@
     - 没有0的进制转换,映射时多多注意
     - 对于此题,每位-1即成为余数,对于不同的题目,考虑怎么设置映射使得转换为余数的计算
 
+- [x] [169.多数元素](https://leetcode.cn/problems/majority-element/)
+
+  - 摩尔投票算法
+  - 题解证明有误,count和value并非一一对应,但是最后count必定大于0,且对应candidate
+  - ```
+    # 题解给出的证明
+    nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
+    candidate:  7  7  7  7  7  7   5  5   5  5  5  5   7  7  7  7
+    count:      1  2  1  2  1  0   1  0   1  2  1  0   1  2  3  4
+    value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4
+    # 1个5换成1
+    nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 1, 7, 7 | 7, 7, 7, 7]
+    candidate:  7  7  7  7  7  7   5  5   5  5  7  7   7  7  7  7
+    count:      1  2  1  2  1  0   1  0   1  0  1  2   3  4  5  6
+    value:      1  2  1  2  1  0  -1  0  -1 -2 -1  0   1  2  3  4
+    ```
+
 - [x] [171.Excel表列序号](https://leetcode.cn/problems/excel-sheet-column-number/)
 
     - 从无0转有0的进制,简单很多
 
+- [x] [175.组合两个表](https://leetcode.cn/problems/combine-two-tables/)
+- [x] [181.超过经理收入的员工](https://leetcode.cn/problems/employees-earning-more-than-their-managers/)
+- [x] [182.查找重复的电子邮箱](https://leetcode.cn/problems/duplicate-emails/)
+- [x] [183.从不订购的客户](https://leetcode.cn/problems/customers-who-never-order/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
@@ -79,4 +100,5 @@
 - [x] [1480.一维数组的动态和](https://leetcode.cn/problems/running-sum-of-1d-array/)
 - [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
+- [x] [2696.删除字串后的字符串最小长度](https://leetcode.cn/problems/minimum-string-length-after-removing-substrings/)
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)

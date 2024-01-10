@@ -2,6 +2,7 @@ import collections
 import math
 from typing import *
 from .data_struct import *
+from .mysql_connecter import *
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -1177,3 +1178,39 @@ def solution_171(columnTitle: str) -> int:
         res *= 26
         res += ord(x) - ord("A") + 1
     return res
+
+
+def solution_169(nums: List[int]) -> int:
+    # 简单思路哈希表即可
+    # Boyer-Moore 多数元素最后一定比其他元素多
+    count, candidate = 0, None
+    for num in nums:
+        if count == 0:
+            candidate = num
+        count += 1 if candidate == num else -1
+    return candidate
+
+
+def solution_175():
+    # 为什么会有SQL题目?
+    # PostgreSql
+    # select firstName,lastName,city,state from  Person left join  Address on Person.personId = Address.personId
+    sql = "select firstName,lastName,city,state from  Person left join  Address on Person.personId = Address.personId"
+    return execute(sql)
+
+
+def solution_181():
+    # PostgreSql
+    # select P1.name from Employee as P1 join Employee as P2 on P1.managerId = P2.id where P1.salary > P2.salary
+    sql = "select P1.name from Employee P1 join Employee P2 on P1.managerId = P2.id where P1.salary > P2.salary"
+    return execute(sql)
+
+
+def solution_182() -> Any:
+    sql = "select email from (select count(id) as num,email from Person group by email ) as ne where num > 1"
+    return execute(sql)
+
+
+def solution_183() -> Any:
+    sql = "select name as customers from Customers as c left join Orders as o on c.id = o.customerId where o.id is null"
+    return execute(sql)
