@@ -3,6 +3,7 @@ import math
 from typing import *
 from .data_struct import *
 from .mysql_connecter import *
+import os
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -1214,3 +1215,60 @@ def solution_182() -> Any:
 def solution_183() -> Any:
     sql = "select name as customers from Customers as c left join Orders as o on c.id = o.customerId where o.id is null"
     return execute(sql)
+
+
+def solution_190(n: int) -> int:
+    # res = 0
+    # for i in range(0, 31):
+    #     res += (n >> i) & 1
+    #     res <<= 1
+    # res += (n >> 31) & 1
+    # return res
+    res = 0
+    i = 0
+    while i < 32 and n > 0:
+        res = res | ((n & 1) << (31 - i))
+        n >>= 1
+        i += 1
+    return res
+
+
+def solution_190_2(n: int) -> int:
+    M1 = 0x55555555  # 01010101010101010101010101010101
+    M2 = 0x33333333  # 00110011001100110011001100110011
+    M4 = 0x0f0f0f0f  # 00001111000011110000111100001111
+    M8 = 0x00ff00ff  # 00000000111111110000000011111111
+
+    def trunc(tmp):
+        return tmp & 0xffffffff
+
+    n = trunc(n >> 1) & M1 | trunc((n & M1) << 1)
+    n = trunc(n >> 2) & M2 | trunc((n & M2) << 2)
+    n = trunc(n >> 4) & M4 | trunc((n & M4) << 4)
+    n = trunc(n >> 8) & M8 | trunc((n & M8) << 8)
+    return trunc(n >> 16) | trunc(n << 16)
+
+
+def solution_191(n: int) -> int:
+    M1 = 0x55555555  # 01010101010101010101010101010101
+    M2 = 0x33333333  # 00110011001100110011001100110011
+    M4 = 0x0f0f0f0f  # 00001111000011110000111100001111
+    M8 = 0x00ff00ff  # 00000000111111110000000011111111
+    M16 = 0x0000ffff  # 00000000000000001111111111111111
+    n = (n & M1) + ((n >> 1) & M1)
+    n = (n & M2) + ((n >> 2) & M2)
+    n = (n & M4) + ((n >> 4) & M4)
+    n = (n & M8) + ((n >> 8) & M8)
+    return (n & M16) + (n >> 16 & M16)
+
+
+def solution_193():
+    # 还有shell题目?
+    os.system("egrep '(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)|(^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$)' resources/file.txt")
+    os.system("sed -n -r  '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/p' resources/file.txt")
+
+
+def solution_195():
+    os.system("sed -n '10 p' resources/file.txt")  # 打印第10行
+    os.system("tail -n +10 resources/file.txt | head -1")  # 从第十行开始读所有行,管道传给head读第一行
+    os.system("awk 'NR == 10' resources/file.txt")  # 处理到第10行,打印

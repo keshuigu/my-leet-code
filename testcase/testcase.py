@@ -1,3 +1,5 @@
+from time import sleep
+
 from solution import *
 
 
@@ -609,4 +611,66 @@ def testcase_182():
 
 
 def testcase_183():
+    preprocess(
+        """Create table If Not Exists Customers (id int, name varchar(255));
+        Create table If Not Exists Orders (id int, customerId int);
+        Truncate table Customers;
+        insert into Customers (id, name) values ('1', 'Joe');
+        insert into Customers (id, name) values ('2', 'Henry');
+        insert into Customers (id, name) values ('3', 'Sam');
+        insert into Customers (id, name) values ('4', 'Max');
+        Truncate table Orders;
+        insert into Orders (id, customerId) values ('1', '3');
+        insert into Orders (id, customerId) values ('2', '1');""")
     print(solution_183())
+
+
+def testcase_2645():
+    print(solution_2645("b"))
+    print(solution_2645("aaa"))
+    print(solution_2645("abc"))
+
+
+def testcase_2645_2():
+    print(solution_2645_2("b"))
+    print(solution_2645_2("aaa"))
+    print(solution_2645_2("abc"))
+
+
+def testcase_2645_3():
+    print(solution_2645_3("b"))
+    print(solution_2645_3("aaa"))
+    print(solution_2645_3("abc"))
+
+
+def testcase_2645_4():
+    print(solution_2645_4("b"))
+    print(solution_2645_4("aaa"))
+    print(solution_2645_4("abc"))
+
+
+def testcase_190():
+    print(solution_190(int("11111111111111111111111111111101", 2)))
+    print(solution_190(int("00000010100101000001111010011100", 2)))
+
+
+def testcase_190_2():
+    print(solution_190_2(int("11111111111111111111111111111101", 2)))
+    print(solution_190_2(int("00000010100101000001111010011100", 2)))
+
+
+def testcase_191():
+    print(solution_191(int("11111111111111111111111111111101", 2)))
+    print(solution_191(int("01011", 2)))
+    print(solution_191(int("1000000", 2)))
+
+
+def testcase_193():
+    with open("resources/file.txt", "w") as f:
+        f.write("987-123-4567\n123 456 7890\n(123) 456-7890\n0(001) 345-0000\n")
+    solution_193()
+
+def testcase_195():
+    with open("resources/file.txt", "w") as f:
+        f.write("Line 1\nLine 2\nLine 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8\nLine 9\nLine 10\n")
+    solution_195()

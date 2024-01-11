@@ -4,7 +4,5 @@ import sys
 import os
 
 if __name__ == '__main__':
-    sys.stdout = open(os.devnull, 'w')
-    for _ in range(100000):
-        testcase_466_2()
-    sys.stdout = sys.__stdout__
+    os.system("egrep '(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)|(^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$)' resources/file.txt")
+    os.system("sed -n -r  '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/p' resources/file.txt")

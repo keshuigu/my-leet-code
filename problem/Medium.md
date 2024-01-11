@@ -10,6 +10,7 @@
     - [单调栈](https://blog.csdn.net/qq_58035032/article/details/129581665)
     - 链表反转
 
+- [x] [2645.构造有效字符串的最少插入数](https://leetcode.cn/problems/minimum-additions-to-make-valid-string/)
 - [x] [2707.在链表中插入最大公约数](https://leetcode.cn/problems/insert-greatest-common-divisors-in-linked-list/)
 
     - [动态规划,字典树](https://leetcode.cn/problems/extra-characters-in-a-string/solutions/2590667/zi-fu-chuan-zhong-de-e-wai-zi-fu-by-leet-f0lu/)

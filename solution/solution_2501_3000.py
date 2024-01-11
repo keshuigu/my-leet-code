@@ -68,3 +68,55 @@ def solution_2696(s: str) -> int:
         else:
             stack.append(ch)
     return len(stack)
+
+
+def solution_2645(word: str) -> int:
+    p, q, count = 0, 0, 0
+    pattern = 'abc'
+    while p < len(word):
+        if word[p] != pattern[q]:
+            count += 1
+        else:
+            p += 1
+        q = (q + 1) % 3
+    count += (3 - q) % 3
+    return count
+
+
+def solution_2645_2(word: str) -> int:
+    # dp
+    # d[i] = min(d[i]+2, d[i-1] -1)
+    # 第二种情况需要word[i-1] > word[i-2],也就是word[i]是排在word[i-1]后面的字母,从而构成abc串
+    n = len(word)
+    d = [0] * (n + 1)
+    d[1] = d[0] + 2
+    for i in range(2, n + 1):
+        d[i] = d[i - 1] + 2
+        if word[i - 1] > word[i - 2]:
+            d[i] = d[i - 1] - 1
+    return d[n]
+
+
+def solution_2645_3(word: str) -> int:
+    # 直接拼接
+    # 两个相邻位置之间插入字符数量
+    # (word[i] - word[i-1] -1 + 3) mod 3
+    # 头尾额外处理
+    n = len(word)
+    # word[0] 前 word[0]- 'a'
+    # word[n-1]后 'c' - word[n-1]
+    count = ord(word[0]) - ord(word[n - 1]) + 2
+    for i in range(1, n):
+        count += (ord(word[i]) - ord(word[i - 1]) + 2) % 3
+    return count
+
+
+def solution_2645_4(word: str) -> int:
+    # 直接计算
+    # 最终组数等于所有满足后者字符小于等于前者字符的情况+1
+    n = len(word)
+    count = 1
+    for i in range(1, n):
+        if word[i] <= word[i - 1]:
+            count += 1
+    return count * 3 - n

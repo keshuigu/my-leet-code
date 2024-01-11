@@ -86,10 +86,44 @@ def pop_count(num):
 def count_trailing_zeros(x):
     # 计算尾部0的个数
     return (x & -x).bit_length() - 1
-    # 1001
-    # 0111
-    # 0001
+    # 100100
+    # 011011
+    # 011100
     # return 1-1 = 0
+
+
+def count_trailing_zeros_2(x):
+    c = 31
+    x = x & -x
+    if x & 0x0000ffff:
+        c -= 16
+    if x & 0x00ffffff:
+        c -= 8
+    if x & 0x0f0f0f0f:
+        c -= 4
+    if x & 0x33333333:
+        c -= 2
+    if x & 0x55555555:
+        c -= 1
+    return c
+
+
+def count_leading_zeros(x):
+    clz = 0  # 前导0的数量,用于计算num的二进制长度
+    if x >> 16 == 0:
+        clz += 16
+        x = x << 16
+    if x >> 24 == 0:
+        clz += 8
+        x = x << 8
+    if x >> 28 == 0:
+        clz += 4
+        x = x << 4
+    if x >> 30 == 0:
+        clz += 2
+        x = x << 2
+    if x >> 31 == 0:
+        clz += 1
 
 
 def gospers_hack(k, n):
