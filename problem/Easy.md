@@ -91,6 +91,8 @@
 - [x] [191.位1的个数](https://leetcode.cn/problems/number-of-1-bits/)
 - [x] [193.有效电话号码](https://leetcode.cn/problems/valid-phone-numbers/)
 - [x] [195.第十行](https://leetcode.cn/problems/tenth-line/)
+- [x] [202.快乐数](https://leetcode.cn/problems/happy-number/)
+- [x] [203.移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
@@ -103,6 +105,7 @@
 
 - [x] [1480.一维数组的动态和](https://leetcode.cn/problems/running-sum-of-1d-array/)
 - [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
+- [x] [2085.统计出现过一次的公共字符串](https://leetcode.cn/problems/count-common-words-with-one-occurrence/)
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
 - [x] [2696.删除字串后的字符串最小长度](https://leetcode.cn/problems/minimum-string-length-after-removing-substrings/)
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)

@@ -135,3 +135,23 @@ def solution_2397_3(matrix: List[List[int]], numSelect: int) -> int:
         r = cur + lb  # 在cur最低位的1上加1
         cur = ((r ^ cur) >> count_trailing_zeros(lb) + 2) | r
     return res
+
+
+def solution_2085(words1: List[str], words2: List[str]) -> int:
+    f = {}
+    for word in words1:
+        if word not in f:
+            f[word] = 1
+        else:
+            f[word] += 1
+    for word in f:
+        if f[word] > 1:
+            f[word] = 3
+    for word in words2:
+        if word in f:
+            f[word] += 1
+    count = 0
+    for word in f:
+        if f[word] == 2:
+            count += 1
+    return count

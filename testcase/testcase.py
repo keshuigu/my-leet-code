@@ -670,7 +670,30 @@ def testcase_193():
         f.write("987-123-4567\n123 456 7890\n(123) 456-7890\n0(001) 345-0000\n")
     solution_193()
 
+
 def testcase_195():
     with open("resources/file.txt", "w") as f:
         f.write("Line 1\nLine 2\nLine 3\nLine 4\nLine 5\nLine 6\nLine 7\nLine 8\nLine 9\nLine 10\n")
     solution_195()
+
+
+def testcase_2085():
+    print(solution_2085(["leetcode", "is", "amazing", "as", "is"], ["amazing", "leetcode", "is"]))
+    print(solution_2085(["b", "bb", "bbb"], ["a", "aa", "aaa"]))
+    print(solution_2085(["a", "ab"], ["a", "a", "a", "ab"]))
+
+
+def testcase_202():
+    print(solution_202(19))
+    print(solution_202(2))
+
+
+def testcase_202_2():
+    print(solution_202_2(19))
+    print(solution_202_2(2))
+
+
+def testcase_203():
+    print(solution_203(ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))),6))
+    print(solution_203(None, 1))
+    print(solution_203(ListNode(7, ListNode(7, ListNode(7, ListNode(7, ListNode(7))))), 7))

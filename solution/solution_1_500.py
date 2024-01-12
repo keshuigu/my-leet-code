@@ -1272,3 +1272,52 @@ def solution_195():
     os.system("sed -n '10 p' resources/file.txt")  # 打印第10行
     os.system("tail -n +10 resources/file.txt | head -1")  # 从第十行开始读所有行,管道传给head读第一行
     os.system("awk 'NR == 10' resources/file.txt")  # 处理到第10行,打印
+
+
+def solution_202(n: int) -> bool:
+    f = {}
+    while True:
+        tmp = n
+        n = 0
+        while tmp:
+            n, tmp = n + (tmp % 10) ** 2, tmp // 10
+        if n == 1:
+            return True
+        if n in f:
+            return False
+        f[n] = 1
+
+
+def solution_202_2(n: int) -> bool:
+    # 任何数最终都会回到1到243之间
+    # 999 -> 243
+    # 9999 -> 324
+    # 9999999999999 -> 1053
+    # 位数会不断减少直到回到三位数
+    # 存在循环，可以快慢指针
+    def get_next(tmp):
+        total = 0
+        while tmp:
+            total, tmp = total + (tmp % 10) ** 2, tmp // 10
+        return total
+
+    s = n
+    f = get_next(n)
+    while f != 1 and s != f:
+        s = get_next(s)
+        f = get_next(get_next(f))
+    return f == 1
+
+
+def solution_203(head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    v_head = ListNode(-1)
+    v_head.next = head
+    p, q = v_head.next, v_head
+    while p:
+        if p.val == val:
+            q.next = p.next
+            p = p.next
+        else:
+            p = p.next
+            q = q.next
+    return v_head.next
