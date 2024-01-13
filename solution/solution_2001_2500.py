@@ -155,3 +155,72 @@ def solution_2085(words1: List[str], words2: List[str]) -> int:
         if f[word] == 2:
             count += 1
     return count
+
+
+def solution_2182(s: str, repeatLimit: int) -> str:
+    nums_ch = [0] * 26
+    ord_a = ord('a')
+    for ch in s:
+        nums_ch[ord(ch) - ord_a] += 1
+    i = 25
+    res = ''
+    count = 0
+    while i >= 0:
+        if nums_ch[i] == 0:
+            i -= 1
+            continue
+        else:
+            res += chr(ord_a + i)
+            nums_ch[i] -= 1
+            count += 1
+            if nums_ch[i] == 0:
+                i -= 1
+                count = 0
+                continue
+            if count == repeatLimit:
+                j = i - 1
+                while nums_ch[j] == 0:
+                    j -= 1
+                if j < 0:
+                    return res
+                res += chr(ord_a + j)
+                nums_ch[j] -= 1
+                count = 0
+    return res
+
+
+def solution_2182_2(s: str, repeatLimit: int) -> str:
+    # 优先队列
+    # 先存一下每个字符的次数
+    pq = PriorityQueue()
+    nums_ch = [0] * 26
+    ord_a = ord('a')
+    for ch in s:
+        nums_ch[ord(ch) - ord_a] += 1
+        if nums_ch[ord(ch) - ord_a] == 1:
+            pq.put(ord(ch) - ord_a)  # 保证没有重复
+    res = ''
+    count = 0
+    while not pq.empty():
+        tmp = pq.delete()
+        if tmp is None:
+            return res
+        res += chr(ord_a + tmp)
+        count += 1
+        nums_ch[tmp] -= 1
+        if nums_ch[tmp] == 0:
+            count = 0
+            continue
+        if count < repeatLimit:
+            pq.put(tmp)
+        else:
+            sub_tmp = pq.delete()
+            if sub_tmp is None:
+                return res
+            res += chr(ord_a + sub_tmp)
+            count = 0
+            nums_ch[sub_tmp] -= 1
+            if nums_ch[sub_tmp] != 0:
+                pq.put(sub_tmp)
+            pq.put(tmp)
+    return res

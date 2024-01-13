@@ -93,6 +93,8 @@
 - [x] [195.第十行](https://leetcode.cn/problems/tenth-line/)
 - [x] [202.快乐数](https://leetcode.cn/problems/happy-number/)
 - [x] [203.移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements/)
+- [x] [205.同构字符串](https://leetcode.cn/problems/isomorphic-strings/)
+- [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)

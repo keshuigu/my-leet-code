@@ -694,6 +694,31 @@ def testcase_202_2():
 
 
 def testcase_203():
-    print(solution_203(ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))),6))
+    print(solution_203(ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))), 6))
     print(solution_203(None, 1))
     print(solution_203(ListNode(7, ListNode(7, ListNode(7, ListNode(7, ListNode(7))))), 7))
+
+
+def testcase_2182():
+    print(solution_2182("cczazcc", 3))
+    print(solution_2182("aababab", 2))
+    print(solution_2182("bbbcccaaaad", 3))
+
+
+def testcase_2182_2():
+    print(solution_2182_2("cczazcc", 3))
+    print(solution_2182_2("aababab", 2))
+    print(solution_2182_2("bbbcccaaaad", 3))
+
+
+def testcase_205():
+    print(solution_205("egg", "add"))
+    print(solution_205("foo", "bar"))
+    print(solution_205("paper", "title"))
+    print(solution_205("badc", "baba"))
+
+
+def testcase_290():
+    print(solution_290("abba","dog cat cat dog"))
+    print(solution_290("abba","dog cat cat fish"))
+    print(solution_290("aaaa","dog cat cat dog"))

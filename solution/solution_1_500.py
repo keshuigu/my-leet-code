@@ -1321,3 +1321,36 @@ def solution_203(head: Optional[ListNode], val: int) -> Optional[ListNode]:
             p = p.next
             q = q.next
     return v_head.next
+
+
+def solution_205(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+    f = {}
+    my_set = set()
+    for i in range(len(s)):
+        if s[i] not in f:
+            if t[i] in my_set:
+                return False
+            my_set.add(t[i])
+            f[s[i]] = t[i]
+        elif f[s[i]] != t[i]:
+            return False
+    return True
+
+
+def solution_290(pattern: str, s: str) -> bool:
+    words = s.split(" ")
+    if len(pattern) != len(words):
+        return False
+    f_words_to_pattern = {}
+    s_pattern = set()
+    for i in range(len(words)):
+        if words[i] not in f_words_to_pattern:
+            f_words_to_pattern[words[i]] = pattern[i]
+            if pattern[i] in s_pattern:
+                return False
+            s_pattern.add(pattern[i])
+        elif f_words_to_pattern[words[i]] != pattern[i]:
+            return False
+    return True

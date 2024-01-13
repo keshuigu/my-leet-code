@@ -1,3 +1,4 @@
+import math
 import queue
 from typing import *
 
@@ -162,3 +163,64 @@ class Trie:  # 仅针对26个小写字母
 
     def starts_with(self, prefix: str) -> bool:
         return self.search_prefix(prefix) is not None
+
+
+class PriorityQueue:
+    # 最大值在最小的位置
+    def __init__(self, capacity: int = 65535) -> None:
+        self.capacity = capacity
+        self.queue: List[int] = [0] * (capacity + 1)
+        self.queue[0] = 0xffffffff  # 哨兵
+        self.size: int = 0
+
+    def empty(self) -> bool:
+        if self.size == 0:
+            return True
+        else:
+            return False
+
+    def full(self) -> bool:
+        if self.size == self.capacity:
+            return True
+        else:
+            return False
+
+    def put(self, val: int) -> None:
+        if self.full():
+            return
+        i = self.size + 1
+        self.size += 1
+        while i > 0:  # 有哨兵，可以循环到0
+            if self.queue[i // 2] < val:
+                self.queue[i] = self.queue[i // 2]
+                i = i // 2
+            else:
+                break
+        self.queue[i] = val
+
+    def delete(self) -> Union[None, int]:
+        if self.empty():
+            return None
+        max_val = self.queue[1]
+        # 取最小值进行下沉
+        tmp = self.queue[self.size]
+        self.size -= 1
+        parent = 1
+        while parent * 2 <= self.size:  # 注意循环边界，size已经-1
+            child = parent * 2
+            # 选大的一边
+            if child != self.size and self.queue[child] < self.queue[child + 1]:
+                child += 1
+            if tmp >= self.queue[child]:
+                break
+            else:
+                self.queue[parent] = self.queue[child]
+            parent = child
+        self.queue[parent] = tmp
+        return max_val
+
+    def top(self) -> Union[None, int]:
+        if self.empty():
+            return None
+        else:
+            return self.queue[1]

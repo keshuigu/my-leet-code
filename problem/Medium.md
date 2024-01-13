@@ -1,6 +1,10 @@
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
+- [x] [2182.构建限制重复的字符串](https://leetcode.cn/problems/construct-string-with-repeat-limit/)
+
+  - 自己写的最大堆运行很慢
+
 - [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)
 
     - [Gosper's Hack](https://zhuanlan.zhihu.com/p/360512296)
