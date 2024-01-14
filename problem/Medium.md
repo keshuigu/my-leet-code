@@ -1,3 +1,5 @@
+- [x] [2.两数相加](https://leetcode.cn/problems/add-two-numbers/ )
+- [x] [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/ )
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)

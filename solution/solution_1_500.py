@@ -1354,3 +1354,85 @@ def solution_290(pattern: str, s: str) -> bool:
         elif f_words_to_pattern[words[i]] != pattern[i]:
             return False
     return True
+
+
+def solution_2(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    c = 0
+    res = ListNode(-1)
+    p = res
+    while l1 and l2:
+        tmp = c + l1.val + l2.val
+        if tmp >= 10:
+            tmp, c = tmp - 10, 1
+        else:
+            c = 0
+        p.next = ListNode(tmp)
+        p = p.next
+        l1 = l1.next
+        l2 = l2.next
+    while l1:
+        tmp = c + l1.val
+        if tmp >= 10:
+            tmp, c = tmp - 10, 1
+        else:
+            c = 0
+        p.next = ListNode(tmp)
+        p = p.next
+        l1 = l1.next
+    while l2:
+        tmp = c + l2.val
+        if tmp >= 10:
+            tmp, c = tmp - 10, 1
+        else:
+            c = 0
+        p.next = ListNode(tmp)
+        p = p.next
+        l2 = l2.next
+    if c:
+        p.next = ListNode(1)
+    return res.next
+
+
+def solution_3(s: str) -> int:
+    max_count, count = 0, 0
+    last = -1
+    f = {}
+    for i in range(len(s)):
+        if s[i] in f:
+            count = i - last - 1
+            last = f[s[i]]
+            f.clear()
+            for j in range(last + 1, i):
+                f[s[j]] = j
+            if count > max_count:
+                max_count = count
+        f[s[i]] = i
+    count = len(s) - last - 1
+    return max(max_count, count)
+
+
+def solution_3_2(s: str) -> int:
+    # 理解滑动窗口
+    my_set = set()
+    n = len(s)
+    rk, ans = 0, 0
+    for i in range(n):
+        if i != 0:
+            my_set.remove(s[i - 1])
+        while rk < n and s[rk] not in my_set:
+            my_set.add(s[rk])
+            rk += 1
+        ans = max(ans, rk - i)
+    return ans
+
+
+def solution_3_3(s: str) -> int:
+    f = {}
+    ans, left = 0, 0
+    i = 0
+    for i in range(len(s)):
+        if s[i] in f and left <= f[s[i]]:
+            ans = max(ans, i - left)
+            left = f[s[i]] + 1
+        f[s[i]] = i
+    return max(ans, len(s) - left)
