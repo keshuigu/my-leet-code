@@ -1436,3 +1436,52 @@ def solution_3_3(s: str) -> int:
             left = f[s[i]] + 1
         f[s[i]] = i
     return max(ans, len(s) - left)
+
+
+def solution_82(head: Optional[ListNode]) -> Optional[ListNode]:
+    v_head = ListNode(-101, head)
+    p, q = v_head, v_head.next
+    while q and q.next:
+        if q.val == q.next.val:
+            cur = q.val
+            q = q.next.next
+            while q and q.val == cur:
+                q = q.next
+            p.next = q
+        else:
+            p = q
+            q = q.next
+    return v_head.next
+
+
+def solution_196() -> Any:
+    sql = ("DELETE from Person where id in (select id from (select p1.id from Person p1 join Person p2 on p1.email = "
+           "p2.email and p1.id > p2.id) t)")
+    execute(sql)
+
+
+def solution_197() -> Any:
+    sql = ("select w1.id from Weather w1 join Weather w2 on date_sub(w1.recordDate,interval 1 day ) = w2.recordDate "
+           "and w1.temperature>w2.temperature")
+    return execute(sql)
+
+
+def solution_206(head: Optional[ListNode]) -> Optional[ListNode]:
+    dummy_head = ListNode(-1)
+    p = head
+    while p:
+        q = p.next
+        p.next = dummy_head.next
+        dummy_head.next = p
+        p = q
+    return dummy_head.next
+
+
+def solution_217(nums: List[int]) -> bool:
+    my_set = set()
+    for num in nums:
+        if num in my_set:
+            return True
+        else:
+            my_set.add(num)
+    return False
