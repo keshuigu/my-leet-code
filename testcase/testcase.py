@@ -612,7 +612,9 @@ def testcase_182():
 
 def testcase_183():
     preprocess(
-        """Create table If Not Exists Customers (id int, name varchar(255));
+        """Drop table Customers;
+        DROP table Orders;
+        Create table If Not Exists Customers (id int, name varchar(255));
         Create table If Not Exists Orders (id int, customerId int);
         Truncate table Customers;
         insert into Customers (id, name) values ('1', 'Joe');
@@ -757,6 +759,49 @@ def testcase_3_3():
     print(solution_3_3("abba"))
     print(solution_3_3("abdsdcestgad"))
     print(solution_3_3(" "))
+
+
+def testcase_82():
+    print(solution_82(ListNode(1, ListNode(2, ListNode(3, ListNode(3, ListNode(4, ListNode(4, ListNode(5)))))))))
+    print(solution_82(ListNode(1, ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))))))
+    print(solution_82(ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(5)))))))))
+    print(solution_82(ListNode(1, ListNode(1, ListNode(2, ListNode(2, ListNode(3, ListNode(4, ListNode(4)))))))))
+
+
+def testcase_196():
+    preprocess(
+        """Drop table Person;
+        Create table If Not Exists Person (Id int, Email varchar(255));
+        Truncate table Person;
+        insert into Person (id, email) values ('1', 'john@example.com');
+        insert into Person (id, email) values ('2', 'bob@example.com');
+        insert into Person (id, email) values ('3', 'john@example.com')""")
+    print(solution_196())
+    print(execute("select * from Person"))
+
+
+def testcase_197():
+    preprocess(
+        """Drop table Weather;
+        Create table If Not Exists Weather (id int, recordDate date, temperature int);
+        Truncate table Weather;
+        insert into Weather (id, recordDate, temperature) values ('1', '2015-01-01', '10');
+        insert into Weather (id, recordDate, temperature) values ('2', '2015-01-02', '25');
+        insert into Weather (id, recordDate, temperature) values ('3', '2015-01-03', '20');
+        insert into Weather (id, recordDate, temperature) values ('4', '2015-01-04', '30');""")
+    print(solution_197())
+
+
+def testcase_206():
+    print(solution_206(ListNode(1, ListNode(2, ListNode(3, ListNode(3, ListNode(4, ListNode(4, ListNode(5)))))))))
+    print(solution_206(ListNode(1, ListNode(2))))
+    print(solution_206(None))
+
+
+def testcase_217():
+    print(solution_217([1, 2, 3, 1]))
+    print(solution_217([1, 2, 3, 4]))
+    print(solution_217([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
 
 
 def testcase_2719():
