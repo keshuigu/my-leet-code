@@ -120,3 +120,66 @@ def solution_2645_4(word: str) -> int:
         if word[i] <= word[i - 1]:
             count += 1
     return count * 3 - n
+
+
+def solution_2719(num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+    # 超时
+    # def get_sum(tmp: int) -> int:
+    #     count = 0
+    #     while tmp > 0:
+    #         count += tmp % 10
+    #         tmp = tmp // 10
+    #     return count
+    #
+    # # f(num2, min_sum, max_sum) - f(num-1, min_sum, max_sum)
+    # n1 = int(num1)
+    # n2 = int(num2)
+    # count_dp = 0
+    # for i in range(0, n1):
+    #     cur = get_sum(i)
+    #     if min_sum <= cur <= max_sum:
+    #         count_dp += 1
+    # count_n1 = count_dp
+    # for i in range(n1, n2 + 1):
+    #     cur = get_sum(i)
+    #     if min_sum <= cur <= max_sum:
+    #         count_dp += 1
+    # return (count_dp-count_n1) % 1000000007
+    # 数位DP
+    # d[][]表示还剩第i位到第0位的数字未填，而已填的数字位数之和为j时，符合条件的数字有多少个
+    N, M = 23, 401
+    MOD = 10 ** 9 + 7
+    d = [[-1] * M for _ in range(N)]
+
+    def dfs(num, i, j, limit) -> int:
+        if j > max_sum:
+            return 0
+        if i == -1:
+            return j >= min_sum
+        if not limit and d[i][j] != -1:
+            return d[i][j]
+        res = 0
+        up = ord(num[i]) - ord('0') if limit > 0 else 9
+        for x in range(up + 1):
+            res = (res + dfs(num, i - 1, j + x, limit and x == up)) % MOD
+        if not limit:
+            d[i][j] = res
+        return res
+
+    def get(num):
+        num = num[::-1]
+        return dfs(num, len(num) - 1, 0, True)
+
+    def sub(num):
+        i = len(num) - 1
+        arr = list(num)
+        while arr[i] == '0':
+            i -= 1
+        arr[i] = chr(ord(arr[i]) - 1)
+        i += 1
+        while i < len(num):
+            arr[i] = '9'
+            i += 1
+        return ''.join(arr)
+
+    return (get(num2) - get(sub(num1)) + MOD) % MOD

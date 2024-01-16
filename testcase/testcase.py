@@ -757,3 +757,9 @@ def testcase_3_3():
     print(solution_3_3("abba"))
     print(solution_3_3("abdsdcestgad"))
     print(solution_3_3(" "))
+
+
+def testcase_2719():
+    print(solution_2719("1","12",1,8))
+    print(solution_2719("3","5",1,5))
+    print(solution_2719("1","12345688",1,300))
