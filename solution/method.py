@@ -1,3 +1,6 @@
+from functools import cache
+
+
 def matrix_mul(x, y):
     """
     计算矩阵的乘积,未考虑异常
@@ -144,3 +147,26 @@ def gcd_euclid(a: int, b: int) -> int:
     while a % b != 0:
         a, b = b, a % b
     return b
+
+
+def countSpecialNumbers(n: int) -> int:
+    """
+    数位DP模板
+    """
+    s = str(n)
+
+    @cache
+    def f(i: int, mask: int, is_limit: bool, is_num: bool) -> int:
+        if i == len(s):
+            return int(is_num)  # is_num 为 True 表示得到了一个合法数字
+        res = 0
+        if not is_num:
+            res = f(i + 1, mask, False, False)  # 当前位置没填数字，且前面也没填数字
+        low = 0 if is_num else 1 # 如果前面填了数字，这里就从0开始，否则这一位至少是1，这一位也不填的结果有上面一行得到，下面只用考虑1-9的情况
+        up = int(s[i]) if is_limit else 9
+        for d in range(low, up + 1):
+            if (mask >> d & 1) == 0:
+                res += f(i + 1, mask | (1 << d), is_limit and d == up, True)  # 当前位置填数字了，钱吗
+        return res
+
+    return f(0, 0, True, False)

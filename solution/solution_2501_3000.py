@@ -147,16 +147,19 @@ def solution_2719(num1: str, num2: str, min_sum: int, max_sum: int) -> int:
     # return (count_dp-count_n1) % 1000000007
     # 数位DP
     # d[][]表示还剩第i位到第0位的数字未填，而已填的数字位数之和为j时，符合条件的数字有多少个
-    N, M = 23, 401
+    # d[0][j]表示还剩第0位的数字未填，而已填的数字位数之和为j时，符合条件的数字有多少个
+    # 显然d[0][j]取决于第0位加上j的值是否满足条件，那么取值范围是0-10
+    # d的记忆化过程是从i=0开始，i变大，j变小，但是每个状态只会计算一次
+    N, M = 23, 401  # 限定d的空间大小
     MOD = 10 ** 9 + 7
-    d = [[-1] * M for _ in range(N)]
+    d = [[-1] * M for _ in range(N)]  # 预定义默认值
 
     def dfs(num, i, j, limit) -> int:
-        if j > max_sum:
+        if j > max_sum:  # 剪枝，如果j已经比max_sum大了，可以排除
             return 0
-        if i == -1:
+        if i == -1:  # 如果i遍历到-1，说明数字已经检查完了，j如果大于min_sum就可以记为1个有效的数字
             return j >= min_sum
-        if not limit and d[i][j] != -1:
+        if not limit and d[i][j] != -1:  # 如果不是limit数，且已经存储了结果，那么返回对应的数即可
             return d[i][j]
         res = 0
         up = ord(num[i]) - ord('0') if limit > 0 else 9
@@ -167,9 +170,10 @@ def solution_2719(num1: str, num2: str, min_sum: int, max_sum: int) -> int:
         return res
 
     def get(num):
-        num = num[::-1]
+        num = num[::-1]  # 题解判断方案是高位开始到低位，因此反转数字，使得n-1位对应d[n-1]
         return dfs(num, len(num) - 1, 0, True)
 
+    # 简单得到num1-1
     def sub(num):
         i = len(num) - 1
         arr = list(num)
@@ -183,3 +187,4 @@ def solution_2719(num1: str, num2: str, min_sum: int, max_sum: int) -> int:
         return ''.join(arr)
 
     return (get(num2) - get(sub(num1)) + MOD) % MOD
+
