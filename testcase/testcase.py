@@ -805,6 +805,39 @@ def testcase_217():
 
 
 def testcase_2719():
-    print(solution_2719("1","12",1,8))
-    print(solution_2719("3","5",1,5))
-    print(solution_2719("1","12345688",1,300))
+    print(solution_2719("1", "12", 1, 8))
+    print(solution_2719("3", "5", 1, 5))
+    print(solution_2719("1", "12345688", 1, 300))
+
+
+def testcase_2744():
+    print(solution_2744(["cd", "ac", "dc", "ca", "zz"]))
+    print(solution_2744(["ab", "ba", "cc"]))
+    print(solution_2744(["aa", "ab"]))
+    print(solution_2744(["ff", "tx", "qr", "zw", "wr", "jr", "zt", "jk", "sq", "xx"]))
+
+
+def testcase_2744_2():
+    print(solution_2744_2(["cd", "ac", "dc", "ca", "zz"]))
+    print(solution_2744_2(["ab", "ba", "cc"]))
+    print(solution_2744_2(["aa", "ab"]))
+    print(solution_2744_2(["ff", "tx", "qr", "zw", "wr", "jr", "zt", "jk", "sq", "xx"]))
+
+
+def testcase_2376():
+    # print(solution_2376(20))
+    # print(solution_2376(5))
+    # print(solution_2376(135))
+    print(solution_2376(233))
+
+
+def testcase_2376_2():
+    print(solution_2376_2(20))
+    print(solution_2376_2(5))
+    print(solution_2376_2(135))
+    print(solution_2376_2(233))
+
+
+def testcase_233():
+    print(solution_233(13))
+    print(solution_233(0))

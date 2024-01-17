@@ -188,3 +188,24 @@ def solution_2719(num1: str, num2: str, min_sum: int, max_sum: int) -> int:
 
     return (get(num2) - get(sub(num1)) + MOD) % MOD
 
+
+def solution_2744(words: List[str]) -> int:
+    my_set = set(words)
+    count = 0
+    for word in words:
+        if word[::-1] == word:
+            continue
+        if word[::-1] in my_set:
+            count += 1
+    return count // 2
+
+
+def solution_2744_2(words: List[str]) -> int:
+    # 只遍历一次
+    my_set = set()
+    count = 0
+    for word in words:
+        if word in my_set:
+            count += 1
+        my_set.add(word[::-1])
+    return count

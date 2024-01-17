@@ -115,3 +115,4 @@
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
 - [x] [2696.删除字串后的字符串最小长度](https://leetcode.cn/problems/minimum-string-length-after-removing-substrings/)
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)
+- [x] [2744.最大字符串配对数目](https://leetcode.cn/problems/find-maximum-number-of-string-pairs/)

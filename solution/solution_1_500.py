@@ -1485,3 +1485,23 @@ def solution_217(nums: List[int]) -> bool:
         else:
             my_set.add(num)
     return False
+
+
+def solution_233(n: int) -> int:
+    s = str(n)
+    dp = [[-1] * len(s) for _ in range(len(s))]
+
+    def dfs(i: int, j: int, limit: bool) -> int:
+        if i == len(s):
+            return j
+        if not limit and dp[i][j] != -1:
+            return dp[i][j]
+        res = 0
+        up = int(s[i]) if limit else 9
+        for d in range(up + 1):
+            res += dfs(i + 1, j + (d == 1), limit and d == up)
+        if not limit:
+            dp[i][j] = res
+        return res
+
+    return dfs(0, 0, True)

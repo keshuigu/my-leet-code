@@ -4,5 +4,5 @@ import sys
 import os
 
 if __name__ == '__main__':
-    os.system("egrep '(^[0-9]{3}-[0-9]{3}-[0-9]{4}$)|(^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$)' resources/file.txt")
-    os.system("sed -n -r  '/^([0-9]{3}-|\([0-9]{3}\) )[0-9]{3}-[0-9]{4}$/p' resources/file.txt")
+
+    print([math.perm(9, i - 1) for i in range(1, 3)])

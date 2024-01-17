@@ -224,3 +224,44 @@ def solution_2182_2(s: str, repeatLimit: int) -> str:
                 pq.put(sub_tmp)
             pq.put(tmp)
     return res
+
+
+def solution_2376(n: int) -> int:
+    s = str(n)
+    # dp 需要的空间
+    # M = s.length
+    # n最大是个10位数
+    # 二进制从低到高第 i 位为 1 表示 i 在集合中，为 0 表示 i 不在集合中。例如集合 {0,2,3} 对应的二进制数为 1101
+    # 要求n各位互不相同，因此只需要9位就能表示所有的情况
+    # 987654321 => 111111111 => (1<<10 -1)
+    # dp = [[-1] * (1 << 10)] * len(s)# 重复指针，会出错
+    dp = [[-1] * (1 << 10) for _ in range(len(s))]
+
+    def dfs(i: int, mask: int, limit: bool, num: bool) -> int:
+        # 末尾判断
+        if i == len(s):
+            return 1 if num else 0
+        # 只有不受限制并且dp已经计算过的情况下，才能复用
+        if not limit and num and dp[i][mask] != -1:
+            return dp[i][mask]
+        res = 0
+        # 前导0，如果还没开始，比如n=999，现在检查9，那么就是009
+        if not num:
+            # 先考虑继续为0的情况
+            # 如果高位取了0，一定比n小，limit必定False
+            res += dfs(i + 1, mask, False, False)
+        # 再考虑不是0的情况
+        low = 0 if num else 1
+        high = int(s[i]) if limit else 9  # 如果顶到上限了，那么这里检查的不能超过ｎ
+        for x in range(low, high + 1):
+            if ((mask >> x) & 1) == 0:
+                res += dfs(i + 1, mask | (1 << x), limit and x == high, True)
+        dp[i][mask] = res
+        return res
+
+    count = dfs(0, 0, True, False)
+    return count
+
+
+def solution_2376_2(n: int) -> int:
+    return countSpecialNumbers(n)
