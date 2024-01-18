@@ -265,3 +265,18 @@ def solution_2376(n: int) -> int:
 
 def solution_2376_2(n: int) -> int:
     return countSpecialNumbers(n)
+
+
+def solution_2171(beans: List[int]) -> int:
+    beans.sort()
+    s = [beans[0]]
+    n = len(beans)
+    for i in range(1, n):
+        s.append(beans[i] + s[i - 1])
+    total = s[n - 1]
+    min_beans = 10 ** 10
+    for i in range(0, n):
+        tmp = total - (n - i) * beans[i]
+        if min_beans > tmp:
+            min_beans = tmp
+    return min_beans

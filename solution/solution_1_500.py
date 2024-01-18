@@ -1505,3 +1505,24 @@ def solution_233(n: int) -> int:
         return res
 
     return dfs(0, 0, True)
+
+
+def solution_219(nums: List[int], k: int) -> bool:
+    f = {}
+    for i in range(len(nums)):
+        if nums[i] in f:
+            if i - f[nums[i]] <= k:
+                return True
+        f[nums[i]] = i
+    return False
+
+
+def solution_219_2(nums: List[int], k: int) -> bool:
+    my_set = set()
+    for i in range(len(nums)):
+        if i > k:
+            my_set.remove(nums[i - k - 1])
+        if nums[i] in my_set:
+            return True
+        my_set.add(nums[i])
+    return False

@@ -3,3 +3,4 @@
 3. [`欧几里得算法`](https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675?fromtitle=%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95&fromid=4625352&fr=aladdin):又称辗转相除法，是指用于计算两个非负整数a，b的最大公约数。
 4. [`前缀树`](https://zhuanlan.zhihu.com/p/420663173):Trie树或者说前缀树是一种树形数据结构，用于高效地存储和检索字符串数据集中的键
 5. `优先队列`：
+6. `前缀和`：

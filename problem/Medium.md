@@ -4,6 +4,10 @@
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
+- [x] [2171.拿出最少数目的魔法豆](https://leetcode.cn/problems/removing-minimum-number-of-magic-beans/)
+
+  - 前缀和
+
 - [x] [2182.构建限制重复的字符串](https://leetcode.cn/problems/construct-string-with-repeat-limit/)
 
   - 自己写的最大堆运行很慢

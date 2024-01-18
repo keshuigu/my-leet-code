@@ -841,3 +841,31 @@ def testcase_2376_2():
 def testcase_233():
     print(solution_233(13))
     print(solution_233(0))
+
+
+def testcase_2171():
+    print(solution_2171([4, 1, 6, 5]))
+    print(solution_2171([2, 10, 3, 2]))
+
+
+def testcase_iq_17_06():
+    print(solution_iq_17_06(25))
+
+
+def testcase_600():
+    print(solution_600(5))
+    print(solution_600(1))
+    print(solution_600(2))
+    print(solution_600(4))
+
+
+def testcase_219():
+    print(solution_219([1, 2, 3, 1], 3))
+    print(solution_219([1, 0, 1, 1], 1))
+    print(solution_219([1, 2, 3, 1, 2, 3], 2))
+
+
+def testcase_219_2():
+    print(solution_219_2([1, 2, 3, 1], 3))
+    print(solution_219_2([1, 0, 1, 1], 1))
+    print(solution_219_2([1, 2, 3, 1, 2, 3], 2))
