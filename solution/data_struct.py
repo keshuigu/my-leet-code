@@ -224,3 +224,38 @@ class PriorityQueue:
             return None
         else:
             return self.queue[1]
+
+
+class StackWithQueue:
+    def __init__(self):
+        self.items = []
+        self.top_p = -1
+
+    def push(self, x: int) -> None:
+        self.items.append(x)
+        self.top_p += 1
+
+    def pop(self) -> int:
+        tmp_top = self.top_p
+        tmp = 0
+        while tmp_top >= 0:
+            tmp = self.items[0]
+            self.items.remove(tmp)
+            if tmp_top != 0:
+                self.items.append(tmp)
+            tmp_top -= 1
+        self.top_p -= 1
+        return tmp
+
+    def top(self) -> int:
+        tmp_top = self.top_p
+        tmp = 0
+        while tmp_top >= 0:
+            tmp = self.items[0]
+            self.items.remove(tmp)
+            self.items.append(tmp)
+            tmp_top -= 1
+        return tmp
+
+    def empty(self) -> bool:
+        return self.top_p == -1

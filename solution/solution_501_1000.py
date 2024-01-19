@@ -38,3 +38,32 @@ def solution_600(n: int) -> int:
         return res
 
     return f(0, 0, True)
+
+
+def solution_902(digits: List[str], n: int) -> int:
+    s = str(n)
+    ld = len(digits)
+    ls = len(s)
+    dp = [-1] * ls
+    my_set = set(digits)
+    min_num = int(digits[0])
+    max_num = int(digits[ld - 1])
+
+    def dfs(i, limit, num):
+        if i == ls:
+            return 1 if num else 0
+        if not limit and dp[i] != -1:
+            return dp[i]
+        res = 0
+        if not num:
+            res += dfs(i + 1, False, False)
+        low = min_num
+        up = int(s[i]) if limit else max_num
+        for d in range(low, up + 1):
+            if str(d) in my_set:
+                res += dfs(i + 1, limit and d == up, True)
+        if not limit and num:
+            dp[i] = res
+        return res
+
+    return dfs(0, True, False)

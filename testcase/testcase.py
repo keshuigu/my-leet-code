@@ -869,3 +869,35 @@ def testcase_219_2():
     print(solution_219_2([1, 2, 3, 1], 3))
     print(solution_219_2([1, 0, 1, 1], 1))
     print(solution_219_2([1, 2, 3, 1, 2, 3], 2))
+
+
+def testcase_2809():
+    print(solution_2809([1, 2, 3], [1, 2, 3], 4))
+    print(solution_2809([1, 2, 3], [3, 3, 3], 4))
+    print(solution_2809([7, 9, 8, 5, 8, 3], [0, 1, 4, 2, 3, 1], 37))
+
+
+def testcase_222():
+    print(solution_222(TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6)))))
+    print(solution_222(None))
+    print(solution_222(TreeNode(1)))
+
+
+def testcase_222_2():
+    print(solution_222_2(TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6)))))
+    print(solution_222_2(None))
+    print(solution_222_2(TreeNode(1)))
+
+
+def testcase_225():
+    s = StackWithQueue()
+    s.push(1)
+    s.push(2)
+    print(s.top())
+    print(s.pop())
+    print(s.empty())
+
+
+def testcase_902():
+    print(solution_902(digits=["1", "3", "5", "7"], n=100))
+    print(solution_902(digits=["1", "4", "9"], n=1000000000))

@@ -99,6 +99,11 @@
 - [x] [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/)
 - [x] [217.存在重复元素](https://leetcode.cn/problems/contains-duplicate/)
 - [x] [219.存在重复元素Ⅱ](https://leetcode.cn/problems/contains-duplicate-ii/)
+- [x] [222.完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)
+
+  - [二分查找](https://leetcode.cn/problems/count-complete-tree-nodes/solutions/495655/wan-quan-er-cha-shu-de-jie-dian-ge-shu-by-leetco-2/)
+
+- [x] [225.用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)

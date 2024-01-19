@@ -209,3 +209,47 @@ def solution_2744_2(words: List[str]) -> int:
             count += 1
         my_set.add(word[::-1])
     return count
+
+
+def solution_2809(nums1: List[int], nums2: List[int], x: int) -> int:
+    def my_sort(left: int, right: int):
+        if left >= right:
+            return
+        tmp = nums2[left]
+        tmp1 = nums1[left]
+        i = left
+        j = right
+        while i < j:
+            while i < j and nums2[j] >= tmp:
+                j -= 1
+            nums2[i] = nums2[j]
+            nums1[i] = nums1[j]
+            while i < j and nums2[i] <= tmp:
+                i += 1
+            nums2[j] = nums2[i]
+            nums1[j] = nums1[i]
+        nums2[i] = tmp
+        nums1[i] = tmp1
+        my_sort(left, i - 1)
+        my_sort(i + 1, right)
+
+    n = len(nums1)
+    my_sort(0, n - 1)
+    # dp[i][j]:对前i个元素进行j次操作,所能减少的total的值
+    dp = [[0] * (n + 1) for _ in range(n + 1)]
+    # sum = sum(nums1)+sum(nums2)*t-dp[n][t]
+    # dp[i][j] = max(dp[i-1][j] , dp[i-1][j-1]+nums1[i-1]+nums2[i-1]*j)
+    # 做操作肯定比不做要小
+    sum1 = sum(nums1)
+    sum2 = sum(nums2)
+    for i in range(1, n + 1):
+        for j in range(1, i + 1):
+            dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1] + nums1[i - 1] + nums2[i - 1] * j)
+        # 不能在循环里判断
+        # dp[i][i]只是移除了所有前i个元素,并不是最小的值
+        # 最小值可能存在于移除其他元素,但只用了i次
+        # 因此要在遍历结束后再找答案
+    for i in range(0, n + 1):
+        if sum2 * i + sum1 - dp[n][i] <= x:
+            return i
+    return -1

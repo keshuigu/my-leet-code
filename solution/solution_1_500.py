@@ -1526,3 +1526,56 @@ def solution_219_2(nums: List[int], k: int) -> bool:
             return True
         my_set.add(nums[i])
     return False
+
+
+def solution_222(root: Optional[TreeNode]) -> int:
+    if not root:
+        return 0
+    if not root.left and not root.right:
+        return 1
+    sl, sr = 0, 0
+    if root.left:
+        sl = solution_222(root.left)
+    if root.right:
+        sr = solution_222(root.right)
+    return 1 + sl + sr
+
+
+def solution_222_2(root: Optional[TreeNode]) -> int:
+    if not root:
+        return 0
+
+    # 二分查找 + 位运算
+    def exist(k):
+        bits = 1 << (count - 1)
+        node = root
+        while bits > 0 and node:
+            node = node.left if bits & k == 0 else node.right
+            bits >>= 1
+        return node is not None
+
+    # 遍历最左子树找到高度
+    count = 0
+    p = root.left
+    while p:
+        count += 1
+        p = p.left
+    # 节点个数位于[2**h,2**(h+1)-1]之间
+    # 检查k是否存在
+    # 位运算
+    # 12 -> 1100,第3层 -> 移除最前位 -> 100 -> 右左左
+    low = 2 ** count
+    high = 2 ** (count + 1) - 1
+    while low < high:
+        mid = (high - low + 1) // 2 + low
+        if exist(mid):
+            low = mid
+        else:
+            high = mid - 1
+    return low
+
+
+def solution_225():
+    # 用两个队列实现栈
+    # data_struct.StackWithQueue
+    ...

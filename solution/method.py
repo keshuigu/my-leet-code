@@ -162,7 +162,7 @@ def countSpecialNumbers(n: int) -> int:
         res = 0
         if not is_num:
             res = f(i + 1, mask, False, False)  # 当前位置没填数字，且前面也没填数字
-        low = 0 if is_num else 1 # 如果前面填了数字，这里就从0开始，否则这一位至少是1，这一位也不填的结果有上面一行得到，下面只用考虑1-9的情况
+        low = 0 if is_num else 1  # 如果前面填了数字，这里就从0开始，否则这一位至少是1，这一位也不填的结果有上面一行得到，下面只用考虑1-9的情况
         up = int(s[i]) if is_limit else 9
         for d in range(low, up + 1):
             if (mask >> d & 1) == 0:
@@ -170,3 +170,24 @@ def countSpecialNumbers(n: int) -> int:
         return res
 
     return f(0, 0, True, False)
+
+
+def quick_sort(nums, left, right):
+    if left >= right:
+        return
+    i = left
+    j = right
+    temp = nums[left]
+    while i < j:
+        # 因为中枢元素是nums[left],所以空洞先出现在左侧
+        while i < j and nums[j] >= temp:
+            j -= 1
+        # 不会产生覆盖
+        nums[i] = nums[j]
+        while i < j and nums[i] <= temp:
+            i += 1
+        nums[j] = nums[i]
+    nums[i] = temp
+    # 中枢元素不需要再修改
+    quick_sort(nums, left, i - 1)
+    quick_sort(nums, i + 1, right)
