@@ -253,3 +253,27 @@ def solution_2809(nums1: List[int], nums2: List[int], x: int) -> int:
         if sum2 * i + sum1 - dp[n][i] <= x:
             return i
     return -1
+
+
+def solution_2788(words: List[str], separator: str) -> List[str]:
+    res = []
+    for word in words:
+        wl = word.split(separator)
+        for w in wl:
+            if len(w) > 0:
+                res.append(w)
+    return res
+
+
+def solution_2788_2(words: List[str], separator: str) -> List[str]:
+    res = []
+    for word in words:
+        last = 0
+        for i in range(len(word)):
+            if word[i] == separator:
+                if i != last:
+                    res.append(word[last:i])
+                last = i + 1
+        if last < len(word):
+            res.append(word[last:])
+    return res

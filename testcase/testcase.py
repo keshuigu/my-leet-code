@@ -901,3 +901,26 @@ def testcase_225():
 def testcase_902():
     print(solution_902(digits=["1", "3", "5", "7"], n=100))
     print(solution_902(digits=["1", "4", "9"], n=1000000000))
+
+
+def testcase_2788():
+    print(solution_2788(words=["one.two.three", "four.five", "six"], separator="."))
+    print(solution_2788(words=["$easy$", "$problem$"], separator="$"))
+    print(solution_2788(words=["|||"], separator="|"))
+
+
+def testcase_2788_2():
+    print(solution_2788_2(words=["one.two.three", "four.five", "six"], separator="."))
+    print(solution_2788_2(words=["$easy$", "$problem$"], separator="$"))
+    print(solution_2788_2(words=["|||"], separator="|"))
+
+
+def testcase_226():
+    print(solution_226(TreeNode(2, TreeNode(3), TreeNode(1))))
+    print(solution_226(TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7, TreeNode(6), TreeNode(9)))))
+
+
+def testcase_228():
+    print(solution_228([0, 1, 2, 4, 5, 7]))
+    print(solution_228([0, 2, 3, 4, 6, 8, 9]))
+    print(solution_228([]))

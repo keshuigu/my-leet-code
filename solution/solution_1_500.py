@@ -1579,3 +1579,29 @@ def solution_225():
     # 用两个队列实现栈
     # data_struct.StackWithQueue
     ...
+
+
+def solution_226(root: Optional[TreeNode]) -> Optional[TreeNode]:
+    if not root:
+        return None
+    root.left, root.right = root.right, root.left
+    solution_226(root.left)
+    solution_226(root.right)
+    return root
+
+
+def solution_228(nums: List[int]) -> List[str]:
+    start = 0
+    res = []
+    for i in range(1, len(nums)):
+        if nums[i] - nums[i - 1] > 1:
+            if start == i - 1:
+                res.append(str(nums[start]))
+            else:
+                res.append(str(nums[start]) + '->' + str(nums[i - 1]))
+            start = i
+    if start < len(nums):
+        res.append(str(nums[start]) + '->' + str(nums[len(nums) - 1]))
+    if start == len(nums) - 1:
+        res.append(str(nums[start]))
+    return res
