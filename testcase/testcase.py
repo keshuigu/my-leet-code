@@ -945,3 +945,11 @@ def testcase_410_3():
     print(solution_410_3([1, 2, 3, 4, 5], 2))
     print(solution_410_3([1, 4, 4], 3))
     print(solution_410_3([1, 2, 3, 4, 5, 6], 4))
+
+
+def testcase_100188():
+    print(solution_100188(3, 1, 3))
+    print(solution_100188(5, 2, 4))
+    print(solution_100188(4, 1,1))
+    print(solution_100188(50, 12,4))
+    print(solution_100188(5, 1,5))
