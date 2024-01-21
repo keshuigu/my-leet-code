@@ -1605,3 +1605,88 @@ def solution_228(nums: List[int]) -> List[str]:
     if start == len(nums) - 1:
         res.append(str(nums[start]))
     return res
+
+
+def solution_410(nums: List[int], k: int) -> int:
+    def check(mx: int) -> bool:
+        cnt = 1
+        s = 0
+        for x in nums:
+            if s + x <= mx:
+                s += x
+            else:
+                if cnt == k:
+                    return False
+                cnt += 1
+                s = x
+        return True
+
+    right = sum(nums)  # 必定满足条件，分成k段，每段的和都会比这个值小
+    # 如果分成k段，每段的值都比S/K小，是不可能的，最后的结果一定比这个大
+    # 如果最大值比数组里最大的值-1小，也是不可能的
+    # 从而确定下界
+    left = max(max(nums) - 1, (right - 1) // k)
+    # 确定上下界后，二分查找可能的答案，也就是可能的分段数组的最大值
+    # 可以前缀和
+    # 逐个检查是否比mid大，大则分一段新的
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if check(mid):
+            right = mid
+        else:
+            left = mid
+    return right
+
+
+def solution_410_2(nums: List[int], k: int) -> int:
+    # 加了前缀和反而慢了
+    # 不知道为何
+    s = [nums[0]]
+    for i in range(1, len(nums)):
+        s.append(nums[i] + s[i - 1])
+
+    def check(mx: int) -> bool:
+        cnt = 1
+        last = 0
+        for j in range(len(nums)):
+            if s[j] - last > mx:
+                if cnt == k:
+                    return False
+                else:
+                    cnt += 1
+                    last = s[j - 1]
+        return True
+
+    right = sum(nums)  # 必定满足条件，分成k段，每段的和都会比这个值小
+    # 如果分成k段，每段的值都比S/K小，是不可能的，最后的结果一定比这个大
+    # 如果最大值比数组里最大的值-1小，也是不可能的
+    # 从而确定下界
+    left = max(max(nums) - 1, (right - 1) // k)
+    # 确定上下界后，二分查找可能的答案，也就是可能的分段数组的最大值
+    # 可以前缀和
+    # 逐个检查是否比mid大，大则分一段新的
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if check(mid):
+            right = mid
+        else:
+            left = mid
+    return right
+
+
+def solution_410_3(nums: List[int], k: int) -> int:
+    # dp[i][j]: 将数组前i个数分割为j段所能得到的最大连续子数组和的最小值
+    # 考虑第j段的具体范围，枚举k
+    # dp[i][j] = max(dp[k][j-1],sub(k+1,i)),k从0到i-1
+    # 最终答案为dp[n][m]
+    n = len(nums)
+    dp = [[10 ** 18] * (k + 1) for _ in range(n + 1)]
+    sub = [0]
+    for num in nums:
+        sub.append(sub[-1] + num)
+    dp[0][0] = 0
+    for i in range(1, n + 1):
+        for j in range(1, min(i, k) + 1):
+            for m in range(i):
+                dp[i][j] = min(dp[i][j], max(dp[m][j - 1], sub[i] - sub[m]))
+    return dp[n][k]

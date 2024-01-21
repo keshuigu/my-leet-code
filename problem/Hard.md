@@ -1,4 +1,9 @@
 - [x] [233.数字1的个数](https://leetcode.cn/problems/number-of-digit-one/)
+- [x] [410.分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)
+
+  - 最大化最小值/最小化最大值 -> 二分查找
+  - [二分答案](https://leetcode.cn/problems/split-array-largest-sum/solutions/2613046/er-fen-da-an-fu-ti-dan-pythonjavacgojsru-n5la/)
+
 - [x] [466.统计重复个数](https://leetcode.cn/problems/count-the-repetitions/)
 
     - [官方题解](https://leetcode.cn/problems/count-the-repetitions/solutions/208874/tong-ji-zhong-fu-ge-shu-by-leetcode-solution/)

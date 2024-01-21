@@ -924,3 +924,24 @@ def testcase_228():
     print(solution_228([0, 1, 2, 4, 5, 7]))
     print(solution_228([0, 2, 3, 4, 6, 8, 9]))
     print(solution_228([]))
+
+
+def testcase_410():
+    print(solution_410([7, 2, 5, 10, 8], 2))
+    print(solution_410([1, 2, 3, 4, 5], 2))
+    print(solution_410([1, 4, 4], 3))
+    print(solution_410([1, 2, 3, 4, 5, 6], 4))
+
+
+def testcase_410_2():
+    print(solution_410_2([7, 2, 5, 10, 8], 2))
+    print(solution_410_2([1, 2, 3, 4, 5], 2))
+    print(solution_410_2([1, 4, 4], 3))
+    print(solution_410_2([1, 2, 3, 4, 5, 6], 4))
+
+
+def testcase_410_3():
+    print(solution_410_3([7, 2, 5, 10, 8], 2))
+    print(solution_410_3([1, 2, 3, 4, 5], 2))
+    print(solution_410_3([1, 4, 4], 3))
+    print(solution_410_3([1, 2, 3, 4, 5, 6], 4))
