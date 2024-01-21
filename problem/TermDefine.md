@@ -4,3 +4,5 @@
 4. [`前缀树`](https://zhuanlan.zhihu.com/p/420663173):Trie树或者说前缀树是一种树形数据结构，用于高效地存储和检索字符串数据集中的键
 5. `优先队列`：
 6. `前缀和`：
+7. [`floyd`](https://zhuanlan.zhihu.com/p/339542626)
+8. [`差分数组`](https://leetcode.cn/problems/car-pooling/solutions/2550264/suan-fa-xiao-ke-tang-chai-fen-shu-zu-fu-9d4ra/)

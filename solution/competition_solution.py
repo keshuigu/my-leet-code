@@ -12,27 +12,23 @@ def solution_100191(word: str) -> int:
 
 
 def solution_100188(n: int, x: int, y: int) -> List[int]:
-    f = {}
-    res = [0] * n
-    if x != y:
-        f[(x-1, y-1)] = 1
-        f[(y-1, x-1)] = 1
-        res[0] += 2
+    # floyd
+    # 超时
+    f = [[10 ** 18] * n for i in range(n)]
+    f[x - 1][y - 1], f[y - 1][x - 1] = 1, 1
+    for i in range(n):
+        f[i][i] = 0
     for i in range(n - 1):
-        f[(i, i + 1)] = 1
-        f[(i + 1, i)] = 1
-        res[0] += 2
-    for j in range(2, n):
-        new_f = {}
-        for (x1, y1) in f:
-            for (x2, y2) in f:
-                if (x1, y2) in new_f:
-                    continue
-                if y1 == x2 and x1 != y2 and (x1, y2) not in f and f[(x1, y1)] + f[x2, y2] == j:
-                    new_f[(x1, y2)] = j
-                    res[j - 1] += 1
-        for k in new_f:
-            f[k] = j
+        f[i][i + 1], f[i + 1][i] = 1, 1
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                f[i][j] = min(f[i][j], (f[i][k] + f[k][j]))
+    res = [0] * n
+    for i in range(n):
+        for j in range(n):
+            res[f[i][j] - 1] += 1
+    res[-1] = 0
     return res
 
 
