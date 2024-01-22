@@ -3,6 +3,7 @@
 - [x] [82.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ )
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
+- [x] [670.最大交换](https://leetcode.cn/problems/maximum-swap/ )
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
 - [x] [2171.拿出最少数目的魔法豆](https://leetcode.cn/problems/removing-minimum-number-of-magic-beans/)
 
@@ -28,3 +29,5 @@
     - 正序不好做就考虑倒序
 
 - [x] [2807.在链表中插入最大公约数](https://leetcode.cn/problems/insert-greatest-common-divisors-in-linked-list/)
+- [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)
+- [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)

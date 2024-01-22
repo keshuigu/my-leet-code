@@ -125,3 +125,4 @@
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)
 - [x] [2744.最大字符串配对数目](https://leetcode.cn/problems/find-maximum-number-of-string-pairs/)
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
+- [x] [3014.输入单词需要的最少按键次数I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/)

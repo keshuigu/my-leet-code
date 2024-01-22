@@ -2,6 +2,9 @@ from typing import *
 
 
 def solution_100191(word: str) -> int:
+    """
+    index : 3014
+    """
     if len(word) <= 8:
         return len(word)
     if len(word) <= 16:
@@ -12,6 +15,9 @@ def solution_100191(word: str) -> int:
 
 
 def solution_100188(n: int, x: int, y: int) -> List[int]:
+    """
+    index:3015
+    """
     # floyd
     # 超时
     f = [[10 ** 18] * n for i in range(n)]
@@ -32,7 +38,28 @@ def solution_100188(n: int, x: int, y: int) -> List[int]:
     return res
 
 
+def solution_100188_2(n: int, x: int, y: int) -> List[int]:
+    # 暴力做法:BFS
+    # 每个点花费O(n)求出它到其余点的距离
+    # 花费O(n^2)时间求出所有结果
+    res = [0] * n
+    x = x - 1
+    y = y - 1
+    # 只往后找,因此每次结果加+2
+    for i in range(n):
+        for j in range(i + 1, n):
+            d1 = j - i  # 直接走
+            d2 = abs(i - x) + 1 + abs(j - y)  # i->x->y->j
+            d3 = abs(i - y) + 1 + abs(j - x)  # i->y->x->j
+            min_d = min(d1, d2, d3)
+            res[min_d - 1] += 2
+    return res
+
+
 def solution_100192(word: str) -> int:
+    """
+    index: 3016
+    """
     f = [0] * 26
     for ch in word:
         f[ord(ch) - ord('a')] += 1
@@ -43,3 +70,13 @@ def solution_100192(word: str) -> int:
     res += sum(f[16:24] * 3)
     res += sum(f[24:] * 4)
     return res
+
+
+def solution_100192_2(word: str) -> int:
+    # 排序不等式
+    cnt = Counter[str](word)
+    a = sorted(cnt.values(), reverse=True)
+    ans = 0
+    for i, c in enumerate(a):
+        ans += c * (i // 8 + 1)
+    return ans

@@ -22,3 +22,4 @@
     - [数位DP](https://leetcode.cn/problems/count-of-integers/solutions/2601111/tong-ji-zheng-shu-shu-mu-by-leetcode-sol-qxqd/)
 
 - [x] [2809.使数组和小于等于x的最少时间](https://leetcode.cn/problems/minimum-time-to-make-array-sum-at-most-x/)
+- [x] [3017.按距离统计房屋对数目II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/)

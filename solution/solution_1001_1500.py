@@ -98,3 +98,7 @@ def solution_1154(date: str) -> int:
         return day_2[month - 1] + day
     else:
         return day_1[month - 1] + day
+
+
+def solution_1094(trips:List[List[int]],capacity:int)->bool:
+    ...

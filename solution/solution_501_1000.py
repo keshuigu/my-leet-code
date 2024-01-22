@@ -67,3 +67,35 @@ def solution_902(digits: List[str], n: int) -> int:
         return res
 
     return dfs(0, True, False)
+
+
+def solution_670(num: int) -> int:
+    s = str(num)
+    chs = list(enumerate(s))
+    chs.sort(reverse=True, key=lambda x: x[1])
+    for i in range(len(chs)):
+        index, ch = chs[i]
+        if ch != s[i]:
+            for j in range(i + 1, len(chs)):
+                if chs[j][1] == ch:
+                    index = chs[j][0]
+                else:
+                    break
+            res = s[:i] + ch + s[i + 1:index] + s[i] + s[index + 1:]
+            return int(res)
+    return num
+
+
+def solution_670_2(num: int) -> int:
+    s = list(str(num))
+    max_idx = len(s) - 1
+    p = q = -1
+    for i in range(len(s) - 2, -1, -1):
+        if s[i] > s[max_idx]:
+            max_idx = i
+        elif s[i] < s[max_idx]:
+            p, q = i, max_idx
+    if p == -1:
+        return num
+    s[p], s[q] = s[q], s[p]
+    return int(''.join(s))

@@ -947,9 +947,72 @@ def testcase_410_3():
     print(solution_410_3([1, 2, 3, 4, 5, 6], 4))
 
 
-def testcase_100188():
-    print(solution_100188(3, 1, 3))
-    print(solution_100188(5, 2, 4))
-    print(solution_100188(4, 1,1))
-    print(solution_100188(50, 12,4))
-    print(solution_100188(5, 1,5))
+def testcase_3014():
+    print(solution_3014("abcde"))
+    print(solution_3014("xycdefghij"))
+
+
+def testcase_3016():
+    print(solution_3016("abcde"))
+    print(solution_3016("xyzxyzxyzxyz"))
+    print(solution_3016("aabbccddeeffgghhiiiiii"))
+
+
+def testcase_3016_2():
+    print(solution_3016_2("abcde"))
+    print(solution_3016_2("xyzxyzxyzxyz"))
+    print(solution_3016_2("aabbccddeeffgghhiiiiii"))
+
+
+def testcase_3015():
+    print(solution_3015(3, 1, 3))
+    print(solution_3015(5, 2, 4))
+    print(solution_3015(4, 1, 1))
+    print(solution_3015(50, 12, 4))
+    print(solution_3015(5, 1, 5))
+
+
+def testcase_3015_2():
+    print(solution_3015_2(3, 1, 3))
+    print(solution_3015_2(5, 2, 4))
+    print(solution_3015_2(4, 1, 1))
+    print(solution_3015_2(50, 12, 4))
+    print(solution_3015_2(5, 1, 5))
+
+
+def testcase_3017():
+    print(solution_3017(3, 1, 3))
+    print(solution_3017(5, 2, 4))
+    print(solution_3017(4, 1, 1))
+    print(solution_3017(50, 12, 4))
+    print(solution_3017(5, 1, 5))
+
+
+def testcase_3017_2():
+    print(solution_3017_2(3, 1, 3))
+    print(solution_3017_2(5, 2, 4))
+    print(solution_3017_2(4, 1, 1))
+    print(solution_3017_2(50, 12, 4))
+    print(solution_3017_2(5, 1, 5))
+
+
+def testcase_670():
+    print(solution_670(2736))
+    print(solution_670(9973))
+    print(solution_670(1993))
+    print(solution_670(99901))
+    print(solution_670(99910))
+    print(solution_670(99911))
+    print(solution_670(99919))
+    print(solution_670(99999))
+
+
+def testcase_670_2():
+    print(solution_670_2(2736))
+    print(solution_670_2(9973))
+    print(solution_670_2(1993))
+    print(solution_670_2(99901))
+    print(solution_670_2(99910))
+    print(solution_670_2(99911))
+    print(solution_670_2(99919))
+    print(solution_670_2(99999))
