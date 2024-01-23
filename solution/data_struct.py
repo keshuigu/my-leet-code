@@ -259,3 +259,62 @@ class StackWithQueue:
 
     def empty(self) -> bool:
         return self.top_p == -1
+
+
+class QueueWithStack:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+        self.size = 0
+
+    def push(self, x: int) -> None:
+        self.stack1.append(x)
+        self.size += 1
+
+    def pop(self) -> int:
+        while len(self.stack1) > 1:
+            self.stack2.append(self.stack1.pop())
+        tmp = self.stack1.pop()
+        self.size -= 1
+        while len(self.stack2) > 0:
+            self.stack1.append(self.stack2.pop())
+        return tmp
+
+    def peek(self) -> int:
+        while len(self.stack1) > 1:
+            self.stack2.append(self.stack1.pop())
+        tmp = self.stack1.pop()
+        self.stack2.append(tmp)
+        while len(self.stack2) > 0:
+            self.stack1.append(self.stack2.pop())
+        return tmp
+
+    def empty(self) -> bool:
+        return self.size == 0
+
+
+class QueueWithStack2:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+        self.size = 0
+
+    def push(self, x: int) -> None:
+        self.stack1.append(x)
+        self.size += 1
+
+    def pop(self) -> int:
+        if len(self.stack2) == 0:
+            while len(self.stack1) > 0:
+                self.stack2.append(self.stack1.pop())
+        self.size -= 1
+        return self.stack2.pop()
+
+    def peek(self) -> int:
+        if len(self.stack2) == 0:
+            while len(self.stack1) > 0:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2[-1]
+
+    def empty(self) -> bool:
+        return self.size == 0

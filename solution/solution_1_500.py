@@ -1706,3 +1706,9 @@ def solution_231_2(n: int) -> bool:
     if n <= 0:
         return False
     return n & (n - 1) == 0
+
+
+def solution_232():
+    # 用栈实现队列
+    # data_struct.QueueWithStack
+    ...

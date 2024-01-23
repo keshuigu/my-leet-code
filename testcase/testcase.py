@@ -1049,3 +1049,24 @@ def testcase_231_2():
     print(solution_231_2(3))
     print(solution_231_2(4))
     print(solution_231_2(-4))
+
+
+def testcase_232():
+    qws = QueueWithStack()
+    qws.push(1)
+    qws.push(2)
+    print(qws.peek())
+    print(qws.pop())
+    print(qws.empty())
+    print(qws.pop())
+    print(qws.empty())
+
+def testcase_232_2():
+    qws = QueueWithStack2()
+    qws.push(1)
+    qws.push(2)
+    print(qws.peek())
+    print(qws.pop())
+    print(qws.empty())
+    print(qws.pop())
+    print(qws.empty())
