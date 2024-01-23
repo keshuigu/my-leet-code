@@ -1690,3 +1690,19 @@ def solution_410_3(nums: List[int], k: int) -> int:
             for m in range(i):
                 dp[i][j] = min(dp[i][j], max(dp[m][j - 1], sub[i] - sub[m]))
     return dp[n][k]
+
+
+def solution_231(n: int) -> bool:
+    if n <= 0:
+        return False
+    return n & (-n) == n
+    # if (n | low_bit) ^ low_bit == 0:
+    #     return True
+    # else:
+    #     return False
+
+
+def solution_231_2(n: int) -> bool:
+    if n <= 0:
+        return False
+    return n & (n - 1) == 0

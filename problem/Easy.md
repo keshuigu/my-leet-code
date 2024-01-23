@@ -106,6 +106,7 @@
 - [x] [225.用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)
 - [x] [226.翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)
 - [x] [228.汇总区间](https://leetcode.cn/problems/summary-ranges/)
+- [x] [231.2的幂](https://leetcode.cn/problems/power-of-two/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
@@ -124,5 +125,9 @@
 - [x] [2696.删除字串后的字符串最小长度](https://leetcode.cn/problems/minimum-string-length-after-removing-substrings/)
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)
 - [x] [2744.最大字符串配对数目](https://leetcode.cn/problems/find-maximum-number-of-string-pairs/)
+- [x] [2765.最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray/)
+
+  - [分组循环](https://leetcode.cn/problems/longest-alternating-subarray/solutions/2615916/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-r57bz/)
+
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
 - [x] [3014.输入单词需要的最少按键次数I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/)

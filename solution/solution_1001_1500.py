@@ -1,3 +1,4 @@
+import itertools
 from typing import *
 from .data_struct import *
 
@@ -100,5 +101,10 @@ def solution_1154(date: str) -> int:
         return day_1[month - 1] + day
 
 
-def solution_1094(trips:List[List[int]],capacity:int)->bool:
-    ...
+def solution_1094(trips: List[List[int]], capacity: int) -> bool:
+    diff = [0] * 1001
+    for trip in trips:
+        diff[trip[1]] += trip[0]
+        diff[trip[2]] -= trip[0]
+    passengers = itertools.accumulate(diff)
+    return max(passengers) <= capacity

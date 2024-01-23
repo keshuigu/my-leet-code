@@ -1016,3 +1016,36 @@ def testcase_670_2():
     print(solution_670_2(99911))
     print(solution_670_2(99919))
     print(solution_670_2(99999))
+
+
+def testcase_2765():
+    print(solution_2765([2, 3, 4, 3, 4]))
+    print(solution_2765([2, 3, 5, 3, 4, 3, 2, 6, 7, 6, 7, 6, 7]))
+    print(solution_2765([4, 5, 6]))
+    print(solution_2765([21, 7, 9]))
+    print(solution_2765([14, 30, 29, 49, 3, 23, 44, 21, 26, 52]))
+    print(solution_2765([6, 12, 2, 3, 8, 9, 10, 10, 2, 1]))
+
+
+def testcase_1094():
+    print(solution_1094(trips=[[2, 1, 5], [3, 3, 7]], capacity=4))
+    print(solution_1094(trips=[[2, 1, 5], [3, 3, 7]], capacity=5))
+    print(solution_1094(
+        trips=[[1, 1, 1000], [1, 1, 1000], [1, 1, 1000], [1, 1, 1000], [1, 1, 1000], [1, 1, 1000], [1, 1, 1000],
+               [1, 1, 1000], [1, 1, 1000], [1, 1, 1000]], capacity=5))
+
+
+def testcase_231():
+    print(solution_231(1))
+    print(solution_231(16))
+    print(solution_231(3))
+    print(solution_231(4))
+    print(solution_231(-4))
+
+
+def testcase_231_2():
+    print(solution_231_2(1))
+    print(solution_231_2(16))
+    print(solution_231_2(3))
+    print(solution_231_2(4))
+    print(solution_231_2(-4))

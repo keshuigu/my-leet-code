@@ -277,3 +277,48 @@ def solution_2788_2(words: List[str], separator: str) -> List[str]:
         if last < len(word):
             res.append(word[last:])
     return res
+
+
+def solution_2765(nums: List[int]) -> int:
+    p, q = 0, 1
+    cnt = 0
+    max_cnt = 0
+    while p < len(nums) and q < len(nums):
+        if nums[q] - nums[p] == 1:
+            cnt += 1
+        else:
+            max_cnt = max(max_cnt, cnt)
+            if p > q:
+                p, q = q, p
+            if nums[q] - nums[p] == 1:
+                cnt = 1
+            else:
+                cnt = 0
+                p += 1
+                q += 1
+                continue
+        if q < p:
+            q += 2
+        else:
+            p += 2
+    max_cnt = max(max_cnt, cnt)
+    if max_cnt < 1:
+        return -1
+    else:
+        return max_cnt + 1
+
+
+def solution_2765_2(nums: List[int]) -> int:
+    ans = -1
+    i, n = 0, len(nums)
+    while i < n - 1:
+        if nums[i + 1] - nums[i] != 1:
+            i += 1
+            continue
+        i0 = i
+        i += 2
+        while i < n and nums[i] == nums[i0] + (i - i0) % 2:
+            i += 1
+        ans = max(ans, i - i0)
+        i -= 1  # 末尾有数重叠 3434 4545 4重叠
+    return ans
