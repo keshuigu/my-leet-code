@@ -107,6 +107,7 @@
 - [x] [226.翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)
 - [x] [228.汇总区间](https://leetcode.cn/problems/summary-ranges/)
 - [x] [231.2的幂](https://leetcode.cn/problems/power-of-two/)
+- [x] [232.用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
