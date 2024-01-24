@@ -322,3 +322,51 @@ def solution_2765_2(nums: List[int]) -> int:
         ans = max(ans, i - i0)
         i -= 1  # 末尾有数重叠 3434 4545 4重叠
     return ans
+
+
+def solution_2865(maxHeights: List[int]) -> int:
+    n = len(maxHeights)
+    heights = [0] * n
+    sum_height = 0
+    for i in range(n):
+        cur_height = maxHeights[i]
+        heights[i] = cur_height
+        for j in range(i - 1, -1, -1):
+            cur_height = min(maxHeights[j], cur_height)
+            heights[j] = cur_height
+        cur_height = heights[i]
+        for k in range(i + 1, n):
+            cur_height = min(maxHeights[k], cur_height)
+            heights[k] = cur_height
+        sum_height = max(sum_height, sum(heights))
+    return sum_height
+
+
+def solution_2865_2(maxHeights: List[int]) -> int:
+    """
+    单调栈的思路:
+    先不考虑i在什么位置,用单调栈的思想遍历maxHeights,求得suf或者pre
+    再从另一个方向走一遍,这一遍记录pre+suf,并逐渐更新答案
+    """
+    n = len(maxHeights)
+    suf = [0] * (n + 1) #注意长度,额外的0表示最右边的塔最高
+    stack = [n]  # 放一个哨兵节点,减少边界判断
+    sum = 0  # 维护一个sum
+    for i in range(n - 1, -1, -1):
+        while len(stack) > 1 and maxHeights[i] <= maxHeights[stack[-1]]:  # 峰顶右侧离峰顶近的高度比远的小,那么弹出
+            j = stack.pop()
+            sum -= maxHeights[j] * (stack[-1] - j)  # 这一部分原本都是maxHeights[j],现在要更新成更小的值了
+        sum += maxHeights[i] * (stack[-1] - i)  # 哨兵保证这里的stack[-1] - i是有意义的
+        suf[i] = sum
+        stack.append(i)  # 入栈
+    ans = 0
+    stack = [-1]
+    sum = 0
+    for i in range(n):
+        while len(stack) > 1 and maxHeights[i] <= maxHeights[stack[-1]]:
+            j = stack.pop()
+            sum -= maxHeights[j] * (j - stack[-1])
+        sum += maxHeights[i] * (i - stack[-1])
+        ans = max(ans, sum + suf[i + 1])
+        stack.append(i)
+    return ans

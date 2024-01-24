@@ -1061,6 +1061,7 @@ def testcase_232():
     print(qws.pop())
     print(qws.empty())
 
+
 def testcase_232_2():
     qws = QueueWithStack2()
     qws.push(1)
@@ -1070,3 +1071,28 @@ def testcase_232_2():
     print(qws.empty())
     print(qws.pop())
     print(qws.empty())
+
+
+def testcase_2865():
+    print(solution_2865([5, 3, 4, 1, 1]))
+    print(solution_2865([6, 5, 3, 9, 2, 7]))
+    print(solution_2865([3, 2, 5, 5, 2, 3]))
+    print(solution_2865([3, 3, 3, 3, 1, 5, 1, 2, 2]))
+
+
+def testcase_2865_2():
+    print(solution_2865_2([5, 3, 4, 1, 1]))
+    print(solution_2865_2([6, 5, 3, 9, 2, 7]))
+    print(solution_2865_2([3, 2, 5, 5, 2, 3]))
+    print(solution_2865_2([3, 3, 3, 3, 1, 5, 1, 2, 2]))
+
+
+def testcase_234():
+    print(solution_234(ListNode(2, ListNode(3, ListNode(3, ListNode(2))))))
+    print(solution_234(ListNode(1, ListNode(2, ListNode(3, ListNode(2, ListNode(1)))))))
+    print(solution_234(ListNode(1, ListNode(2))))
+
+
+def testcase_242():
+    print(solution_242("anagram", "nagaram"))
+    print(solution_242("car", "rat"))

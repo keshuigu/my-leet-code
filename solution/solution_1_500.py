@@ -1712,3 +1712,46 @@ def solution_232():
     # 用栈实现队列
     # data_struct.QueueWithStack
     ...
+
+
+def solution_234(head: Optional[ListNode]) -> bool:
+    # 找到中点 + 反转链表
+    if not head or not head.next:
+        return True
+    p, q = head, head
+    while p and p.next:
+        p = p.next.next
+        q = q.next
+    if p:
+        q = q.next
+    dummy_head = ListNode(-1)
+    while q:
+        q1 = q.next
+        q.next = dummy_head.next
+        dummy_head.next = q
+        q = q1
+    p1 = head
+    p2 = dummy_head.next
+    while p2:
+        if p1.val != p2.val:
+            return False
+        p1 = p1.next
+        p2 = p2.next
+    return True
+
+
+def solution_242(s: str, t: str) -> bool:
+    f = {}
+    for ch in s:
+        if ch in f:
+            f[ch] += 1
+        else:
+            f[ch] = 1
+    for ch in t:
+        if ch not in f:
+            return False
+        else:
+            f[ch] -= 1
+            if f[ch] == 0:
+                f.pop(ch)
+    return len(f) == 0
