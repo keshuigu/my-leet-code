@@ -27,8 +27,4 @@ def my_sort(nums1, nums2, left, right):
 
 
 if __name__ == '__main__':
-    n = 9793
-    s = str(n)
-    l = list(enumerate(s))
-    l.sort(reverse=True, key=lambda x: x[1])
-    print(l)
+    print(list(range(4)))

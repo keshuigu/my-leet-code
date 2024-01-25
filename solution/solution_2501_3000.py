@@ -1,3 +1,4 @@
+import itertools
 from typing import *
 from .data_struct import *
 from .method import *
@@ -349,7 +350,7 @@ def solution_2865_2(maxHeights: List[int]) -> int:
     再从另一个方向走一遍,这一遍记录pre+suf,并逐渐更新答案
     """
     n = len(maxHeights)
-    suf = [0] * (n + 1) #注意长度,额外的0表示最右边的塔最高
+    suf = [0] * (n + 1)  # 注意长度,额外的0表示最右边的塔最高
     stack = [n]  # 放一个哨兵节点,减少边界判断
     sum = 0  # 维护一个sum
     for i in range(n - 1, -1, -1):
@@ -369,4 +370,52 @@ def solution_2865_2(maxHeights: List[int]) -> int:
         sum += maxHeights[i] * (i - stack[-1])
         ans = max(ans, sum + suf[i + 1])
         stack.append(i)
+    return ans
+
+
+def solution_2859(nums: List[int], k: int) -> int:
+    n = len(nums)
+    indexes = []
+    # min_k = (1 << k) - 1
+    tmp, cnt = n, 0
+    while tmp > 0:
+        cnt += 1
+        tmp >>= 1
+    comb = itertools.combinations(range(cnt + 1), k)
+    for c in comb:
+        index = 0
+        for i in c:
+            index += 1 << i
+        if index < n:
+            indexes.append(index)
+    return sum([nums[x] for x in indexes])
+
+
+def solution_2859_2(nums: List[int], k: int) -> int:
+    # gospers_hack
+    if k == 0:
+        return nums[0]
+    n = len(nums)
+    tmp, cnt = n, 0
+    while tmp > 0:
+        cnt += 1
+        tmp >>= 1
+    # comb = itertools.combinations(range(cnt + 1), k)
+    comb = []
+    cur = (1 << k) - 1
+    limit = 1 << cnt
+    while cur < limit:
+        comb.append(cur)
+        lb = cur & -cur
+        r = cur + lb
+        cur = ((r ^ cur) >> ((lb & -lb).bit_length() - 1) + 2) | r
+    return sum([nums[x] for x in comb if x < n])
+
+
+def solution_2859_3(nums: List[int], k: int) -> int:
+    # pop_count
+    ans = 0
+    for i in range(len(nums)):
+        if pop_count(i) == k:
+            ans += nums[i]
     return ans

@@ -1096,3 +1096,24 @@ def testcase_234():
 def testcase_242():
     print(solution_242("anagram", "nagaram"))
     print(solution_242("car", "rat"))
+
+
+def testcase_2859():
+    print(solution_2859([5, 10, 1, 5, 2], 1))
+    print(solution_2859([4, 3, 2, 1], 2))
+    print(solution_2859([7, 3], 0))
+    print(solution_2859([1,2,4,1,9,7,7,6], 3))
+
+
+def testcase_2859_2():
+    print(solution_2859_2([5, 10, 1, 5, 2], 1))
+    print(solution_2859_2([4, 3, 2, 1], 2))
+    print(solution_2859_2([7, 3], 0))
+    print(solution_2859_2([1,2,4,1,9,7,7,6], 3))
+
+
+def testcase_2859_3():
+    print(solution_2859_3([5, 10, 1, 5, 2], 1))
+    print(solution_2859_3([4, 3, 2, 1], 2))
+    print(solution_2859_3([7, 3], 0))
+    print(solution_2859_3([1,2,4,1,9,7,7,6], 3))
