@@ -27,4 +27,6 @@ def my_sort(nums1, nums2, left, right):
 
 
 if __name__ == '__main__':
-    print(list(range(4)))
+    p2 = [1, 3, 2]
+    p1 = [[p] + [-1] * 3 for p in p2]
+    print(p1)

@@ -1102,18 +1102,46 @@ def testcase_2859():
     print(solution_2859([5, 10, 1, 5, 2], 1))
     print(solution_2859([4, 3, 2, 1], 2))
     print(solution_2859([7, 3], 0))
-    print(solution_2859([1,2,4,1,9,7,7,6], 3))
+    print(solution_2859([1, 2, 4, 1, 9, 7, 7, 6], 3))
 
 
 def testcase_2859_2():
     print(solution_2859_2([5, 10, 1, 5, 2], 1))
     print(solution_2859_2([4, 3, 2, 1], 2))
     print(solution_2859_2([7, 3], 0))
-    print(solution_2859_2([1,2,4,1,9,7,7,6], 3))
+    print(solution_2859_2([1, 2, 4, 1, 9, 7, 7, 6], 3))
 
 
 def testcase_2859_3():
     print(solution_2859_3([5, 10, 1, 5, 2], 1))
     print(solution_2859_3([4, 3, 2, 1], 2))
     print(solution_2859_3([7, 3], 0))
-    print(solution_2859_3([1,2,4,1,9,7,7,6], 3))
+    print(solution_2859_3([1, 2, 4, 1, 9, 7, 7, 6], 3))
+
+
+def testcase_lca():
+    print(lca_simple([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 7, 4))
+    print(lca_simple([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 5, 1))
+    print(lca_simple([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 2, 6))
+    print(lca_simple([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 7, 6))
+    print(lca_simple([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 5, 3))
+
+
+def testcase_lca_2():
+    print(lca_bin_lift([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 7, 4))
+    print(lca_bin_lift([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 5, 1))
+    print(lca_bin_lift([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 2, 6))
+    print(lca_bin_lift([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 7, 6))
+    print(lca_bin_lift([[0, 1], [0, 2], [7, 1], [3, 1], [4, 1], [3, 5], [4, 6]], 5, 3))
+
+
+def testcase_1483():
+    tree = TreeAncestor(7, [-1, 0, 0, 1, 1, 2, 2])
+    print(tree.getKthAncestor(3, 1))
+    print(tree.getKthAncestor(5, 2))
+    print(tree.getKthAncestor(6, 3))
+
+
+def testcase_2846():
+    print(solution_2846(n = 7, edges = [[0,1,1],[1,2,1],[2,3,1],[3,4,2],[4,5,2],[5,6,2]], queries = [[0,3],[3,6],[2,6],[0,6]]))
+    print(solution_2846(n = 8, edges = [[1,2,6],[1,3,4],[2,4,6],[2,5,3],[3,6,6],[3,0,8],[7,0,2]], queries = [[4,6],[0,4],[6,5],[7,4]]))

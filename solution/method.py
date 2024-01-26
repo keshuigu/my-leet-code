@@ -194,3 +194,143 @@ def quick_sort(nums, left, right):
     # 中枢元素不需要再修改
     quick_sort(nums, left, i - 1)
     quick_sort(nums, i + 1, right)
+
+
+def lca_simple(edges: List[List[int]], node1: int, node2: int) -> int:
+    n = len(edges) + 1  # 节点个数
+    depth = [0] * n
+    parent = [-1] * n
+    g = [[] for _ in range(n)]  # 存储每个节点所持有的边
+    for x, y in edges:
+        g[x].append(y)
+        g[y].append(x)
+
+    def dfs(node: int, p: int):
+        parent[node] = p
+        depth[node] = depth[p] + 1
+        for y in g[node]:
+            if y != p:
+                dfs(y, node)
+
+    dfs(0, -1)  # 标记所有节点的深度
+    while node1 != node2:
+        if depth[node1] > depth[node2]:
+            node1 = parent[node1]
+        else:
+            node2 = parent[node2]
+    return node1
+
+
+def lca_bin_lift(edges: List[List[int]], node1: int, node2: int) -> int:
+    n = len(edges) + 1  # 节点个数
+    m = n.bit_length()  # 2倍幂上升的最大次数
+    depth = [0] * n
+
+    g = [[] for _ in range(n)]  # 存储每个节点所持有的边
+    for x, y in edges:
+        g[x].append(y)
+        g[y].append(x)
+
+    parent = [[-1] * m for _ in range(n)]
+
+    # parent[x][0]表示x的父节点，
+    # parent[x][1] = parent[x][0][0] 表示x的父节点的父节点
+    # parent[x][2] = parent[x][1][1] 表示x向上四步的节点
+    # 2倍幂的上跳速度
+    def dfs(node: int, p: int):
+        parent[node][0] = p
+        depth[node] = depth[p] + 1
+        for y in g[node]:
+            if y != p:
+                dfs(y, node)
+
+    dfs(0, -1)  # 标记所有节点的深度
+    for i in range(m - 1):
+        for x in range(n):
+            if (p := parent[x][i]) != -1:
+                parent[x][i + 1] = parent[p][i]  # 更新2倍幂上跳对应的节点
+
+    def get_kth(node: int, k: int) -> int:
+        for i in range(k.bit_length()):
+            if (k >> i) & 1:
+                node = parent[node][i]
+                if node < 0:
+                    break
+        return node
+
+    # 以上为预处理，只需要做1遍
+
+    if depth[node1] > depth[node2]:
+        node1, node2 = node2, node1
+    node2 = get_kth(node2, depth[node2] - depth[node1])  # 使得node2和node1位于同一深度
+    if node1 == node2:
+        return node1
+    # 贪心上跳
+    for i in range(len(parent[node2]) - 1, -1, -1):
+        p1, p2 = parent[node1][i], parent[node2][i]
+        if p1 != p2:  # 还能继续往上跳
+            node1, node2 = p1, p2
+    # 为什么是parent[node1][0]，也就是当前node的父节点
+    # 贪心上跳的for循环没有提前结束的可能
+    # 因此一定会走完全部logn层，也就是会尝试所有可能的高度
+    # 一定会到达lca的某2个子节点，且不相同
+    # 此次无论步长是多少，都无法再更新node1和node2了
+    # 所以结果是parent[node1][0]
+    return parent[node1][0]
+
+
+class TreeAncestorTemplate:
+    def __init__(self, edges: List[List[int]]):
+        n = len(edges) + 1
+        m = n.bit_length()
+        depth = [0] * n
+        g = [[] for _ in range(n)]
+        for x, y in edges:
+            g[x].append(y)
+            g[y].append(x)
+
+        parent = [[-1] * m for _ in range(n)]
+
+        def dfs(x, p):
+            parent[x][0] = p
+            depth[x] = depth[p] + 1
+            for y in g[x]:
+                if y != p:
+                    dfs(y, x)
+
+        dfs(0, -1)
+        for i in range(m - 1):
+            for x in range(n):
+                if (p := parent[x][i]) != -1:
+                    parent[x][i + 1] = parent[p][i]
+        self.parent = parent
+        self.depth = depth
+
+    def getKthAncestor(self, node: int, k: int) -> int:
+        res = node
+        for i in range(k.bit_length()):
+            if (k >> i) & 1:
+                res = self.parent[res][i]
+        return res
+
+
+class TreeAncestor:
+    def __init__(self, n: int, parent: List[int]):
+        m = n.bit_length()
+        pa = [[-1] * m for _ in range(n)]
+        for i in range(n):
+            pa[i][0] = parent[i]
+        for i in range(m - 1):
+            for x in range(n):
+                if (p := pa[x][i]) != -1:
+                    pa[x][i + 1] = pa[p][i]
+        self.pa = pa
+
+    def getKthAncestor(self, node: int, k: int) -> int:
+        res = node
+        for i in range(k.bit_length()):
+            if (k >> i) & 1:
+                res = self.pa[res][i]
+                if res < 0:
+                    break
+        return res

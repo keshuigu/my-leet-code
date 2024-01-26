@@ -419,3 +419,62 @@ def solution_2859_3(nums: List[int], k: int) -> int:
         if pop_count(i) == k:
             ans += nums[i]
     return ans
+
+
+def solution_2846(n: int, edges: List[List[int]], queries: List[List[int]]) -> List[int]:
+    m = n.bit_length()
+    g = [[] for _ in range(n)]
+    for x, y, w in edges:
+        g[x].append([y, w])
+        g[y].append([x, w])
+    freq = [[0] * 27 for _ in range(n)]
+    depth = [0] * n
+    pa = [[-1] * m for _ in range(n)]
+
+    def dfs(n, p):
+        pa[n][0] = p
+        depth[n] = depth[p] + 1
+        for y, w in g[n]:
+            if y != p:
+                # freq[y][w] += freq[n][w] + 1
+                for k in range(27):
+                    if k == w:
+                        freq[y][w] = freq[n][w] + 1
+                    else:
+                        freq[y][k] = freq[n][k]
+                dfs(y, n)
+
+    dfs(0, -1)
+    for i in range(m - 1):
+        for x in range(n):
+            if (p := pa[x][i]) != -1:
+                pa[x][i + 1] = pa[p][i]
+
+    def get_kth(x, k):
+        for i in range(k.bit_length()):
+            if (k >> i) & 1:
+                x = pa[x][i]
+                if x < 0:
+                    return x
+        return x
+
+    res = []
+    for x1, y1 in queries:
+        x, y = x1, y1
+        if depth[x] > depth[y]:
+            x, y = y, x
+        y = get_kth(y, depth[y] - depth[x])
+        if x != y:
+            for i in range(len(pa[x]) - 1, -1, -1):
+                px, py = pa[x][i], pa[y][i]
+                if px != py:
+                    x, y = px, py
+            lca = pa[x][0]
+        else:
+            lca = x
+        max_freq, index = 0, 0
+        for i in range(27):
+            if max_freq < (f := freq[x1][i] + freq[y1][i] - freq[lca][i] * 2):
+                max_freq = f
+        res.append((sum(freq[x1]) + sum(freq[y1]) - sum(freq[lca]) * 2) - max_freq)
+    return res

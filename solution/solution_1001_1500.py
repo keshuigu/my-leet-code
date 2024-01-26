@@ -108,3 +108,9 @@ def solution_1094(trips: List[List[int]], capacity: int) -> bool:
         diff[trip[2]] -= trip[0]
     passengers = itertools.accumulate(diff)
     return max(passengers) <= capacity
+
+
+def solution_1483():
+    # lca
+    # method.TreeAncestor
+    ...

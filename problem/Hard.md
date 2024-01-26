@@ -12,6 +12,7 @@
 
 - [x] [600.不含连续1的非负整数](https://leetcode.cn/problems/non-negative-integers-without-consecutive-ones/)
 - [x] [902.最大为N的数字组合](https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/)
+- [x] [1483.树节点的第K个祖先](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/): LCA
 - [x] [1944.队列中可以看到的人数](https://leetcode.cn/problems/number-of-visible-people-in-a-queue/)
 - [x] [2376.统计特殊整数](https://leetcode.cn/problems/count-special-integers/)
 
@@ -22,4 +23,9 @@
     - [数位DP](https://leetcode.cn/problems/count-of-integers/solutions/2601111/tong-ji-zheng-shu-shu-mu-by-leetcode-sol-qxqd/)
 
 - [x] [2809.使数组和小于等于x的最少时间](https://leetcode.cn/problems/minimum-time-to-make-array-sum-at-most-x/)
+- [x] [2846.边权重均等查询](https://leetcode.cn/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/)
+
+  - LCA
+  - [0x3f的题解](https://leetcode.cn/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/solutions/2424060/lca-mo-ban-by-endlesscheng-j54b/):其中cnt为三维数组，`cnt[x][i][j]`代表的是x到2^i祖先的所有边中，权重为j的边的个数
+
 - [x] [3017.按距离统计房屋对数目II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/)
