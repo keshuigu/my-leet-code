@@ -478,3 +478,29 @@ def solution_2846(n: int, edges: List[List[int]], queries: List[List[int]]) -> L
                 max_freq = f
         res.append((sum(freq[x1]) + sum(freq[y1]) - sum(freq[lca]) * 2) - max_freq)
     return res
+
+
+def solution_2861(n: int, k: int, budget: int, composition: List[List[int]], stock: List[int], cost: List[int]) -> int:
+    ans = 0
+    mx = min(stock) + budget  # 假设每个金属只要1个，价格也是1，因此上界是min(stock)+budget
+
+    def check(num: int, comp: List[int]) -> bool:
+        money = 0
+        for s, base, c in zip(stock, comp, cost):
+            if s < base * num:
+                money += (base * num - s)*c  # 库存不够
+                if money > budget:
+                    return False
+        return True
+
+    for comp in composition:
+        low = ans  # 如果一份都造不出来，那么就还是ans
+        high = mx + 1
+        while low + 1 < high:
+            mid = (low + high) // 2
+            if check(mid, comp):
+                low = mid
+            else:
+                high = mid
+        ans = low
+    return ans

@@ -2,6 +2,7 @@
 - [x] [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/ )
 - [x] [82.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ )
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
+- [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
 - [x] [670.最大交换](https://leetcode.cn/problems/maximum-swap/ )
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
@@ -30,6 +31,7 @@
     - 正序不好做就考虑倒序
 
 - [x] [2807.在链表中插入最大公约数](https://leetcode.cn/problems/insert-greatest-common-divisors-in-linked-list/)
+- [x] [2865.最大合金数](https://leetcode.cn/problems/maximum-number-of-alloys/)
 - [x] [2865.美丽塔I](https://leetcode.cn/problems/beautiful-towers-i/)
 - [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)
 - [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)

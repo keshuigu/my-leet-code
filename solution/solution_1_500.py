@@ -1755,3 +1755,21 @@ def solution_242(s: str, t: str) -> bool:
             if f[ch] == 0:
                 f.pop(ch)
     return len(f) == 0
+
+
+def solution_275(citations: List[int]) -> int:
+    def check(n: int) -> bool:
+        if citations[-n] >= n:
+            return True
+        else:
+            return False
+
+    left = 0
+    right = len(citations) + 1
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if check(mid):
+            left = mid
+        else:
+            right = mid
+    return left

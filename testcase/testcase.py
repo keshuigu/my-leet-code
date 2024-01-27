@@ -1143,5 +1143,18 @@ def testcase_1483():
 
 
 def testcase_2846():
-    print(solution_2846(n = 7, edges = [[0,1,1],[1,2,1],[2,3,1],[3,4,2],[4,5,2],[5,6,2]], queries = [[0,3],[3,6],[2,6],[0,6]]))
-    print(solution_2846(n = 8, edges = [[1,2,6],[1,3,4],[2,4,6],[2,5,3],[3,6,6],[3,0,8],[7,0,2]], queries = [[4,6],[0,4],[6,5],[7,4]]))
+    print(solution_2846(n=7, edges=[[0, 1, 1], [1, 2, 1], [2, 3, 1], [3, 4, 2], [4, 5, 2], [5, 6, 2]],
+                        queries=[[0, 3], [3, 6], [2, 6], [0, 6]]))
+    print(solution_2846(n=8, edges=[[1, 2, 6], [1, 3, 4], [2, 4, 6], [2, 5, 3], [3, 6, 6], [3, 0, 8], [7, 0, 2]],
+                        queries=[[4, 6], [0, 4], [6, 5], [7, 4]]))
+
+
+def testcase_2861():
+    print(solution_2861(n=3, k=2, budget=15, composition=[[1, 1, 1], [1, 1, 10]], stock=[0, 0, 0], cost=[1, 2, 3]))
+    print(solution_2861(n=3, k=2, budget=15, composition=[[1, 1, 1], [1, 1, 10]], stock=[0, 0, 100], cost=[1, 2, 3]))
+    print(solution_2861(n=2, k=3, budget=10, composition=[[2, 1], [1, 2], [1, 1]], stock=[1, 1], cost=[5, 5]))
+
+
+def testcase_275():
+    print(solution_275([0, 1, 3, 5, 6]))
+    print(solution_275([1, 2, 100]))

@@ -28,5 +28,5 @@ def my_sort(nums1, nums2, left, right):
 
 if __name__ == '__main__':
     p2 = [1, 3, 2]
-    p1 = [[p] + [-1] * 3 for p in p2]
-    print(p1)
+    p1 = [2, 9, 4]
+    print(max(zip(p1, p2), key=lambda x: x[0] // x[1]))
