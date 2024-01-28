@@ -3,6 +3,12 @@
 - [x] [82.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ )
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
+- [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )
+
+  - 深搜模拟
+  - [官方题解](https://leetcode.cn/problems/water-and-jug-problem/solutions/161010/shui-hu-wen-ti-by-leetcode-solution/)
+  - [裴蜀定理](https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86)
+
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
 - [x] [670.最大交换](https://leetcode.cn/problems/maximum-swap/ )
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)

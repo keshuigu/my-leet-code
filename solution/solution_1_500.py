@@ -4,6 +4,7 @@ from typing import *
 from .data_struct import *
 from .mysql_connecter import *
 import os
+from .method import *
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -1773,3 +1774,33 @@ def solution_275(citations: List[int]) -> int:
         else:
             right = mid
     return left
+
+
+def solution_365(jug1Capacity: int, jug2Capacity: int, targetCapacity: int) -> bool:
+    if jug1Capacity + jug2Capacity < targetCapacity:
+        return False
+    if jug1Capacity == 0 or jug2Capacity == 0:
+        return targetCapacity == 0 or jug1Capacity + jug2Capacity == targetCapacity
+    return targetCapacity % gcd_euclid(jug1Capacity, jug2Capacity) == 0
+
+
+def solution_365_2(jug1Capacity: int, jug2Capacity: int, targetCapacity: int) -> bool:
+    # 保存的状态（1中的水，2中的水）
+    stack = [(0, 0)]
+    seen = set()
+    while stack:
+        remain_x, remain_y = stack.pop()
+        if remain_x + remain_y == targetCapacity:
+            return True
+        if (remain_x, remain_y) in seen:
+            continue
+        seen.add((remain_x, remain_y))
+        stack.append((jug1Capacity, remain_y))  # 加满1
+        stack.append((remain_x, jug2Capacity))  # 加满2
+        stack.append((remain_x, 0))  # 清空2
+        stack.append((0, remain_y))  # 清空1
+        stack.append(
+            (remain_x - min(remain_x, jug2Capacity - remain_y), remain_y + min(remain_x, jug2Capacity - remain_y)))
+        stack.append(
+            (remain_x + min(remain_y, jug1Capacity - remain_x), remain_y - min(remain_y, jug1Capacity - remain_x)))
+    return False

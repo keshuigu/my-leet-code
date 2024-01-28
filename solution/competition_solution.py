@@ -80,3 +80,56 @@ def solution_100192_2(word: str) -> int:
     for i, c in enumerate(a):
         ans += c * (i // 8 + 1)
     return ans
+
+
+def solution_100215(s: str) -> int:
+    tmp = s.lower()
+    cnt = 0
+    for i in range(len(tmp) - 1):
+        if tmp[i] != tmp[i + 1]:
+            cnt += 1
+    return cnt
+
+
+def solution_100206(nums: List[int]) -> int:
+    f = {}
+    for num in nums:
+        if num not in f:
+            f[num] = 1
+        else:
+            f[num] += 1
+    max_cnt = 1
+    for num in nums:
+        cnt = 2
+        if num == 1 and f[num] % 2 == 0:
+            cnt = f[num] - 1
+        elif num == 1 and f[num] % 2 != 0:
+            cnt = f[num]
+        elif f[num] >= 2:
+            tmp = num
+            while True:
+                tmp = tmp * tmp
+                if tmp not in f:
+                    cnt -= 1
+                    break
+                elif f[tmp] == 1:
+                    cnt += 1
+                    break
+                elif f[tmp] >= 2:
+                    cnt += 2
+        else:
+            cnt -= 1
+        max_cnt = max(max_cnt, cnt)
+    return max_cnt
+
+
+def solution_100195(n: int, m: int) -> int:
+    even_x = (n + 1) // 2
+    even_y = (m + 1) // 2
+    odd_x = n - even_x
+    odd_y = m - even_y
+    return even_x * odd_y + even_y * odd_x
+
+
+def solution_100179(nums: List[int], k: int) -> int:
+    ...
