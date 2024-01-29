@@ -1171,14 +1171,25 @@ def testcase_365_2():
     print(solution_365_2(2, 6, 5))
     print(solution_365_2(1, 2, 3))
 
+
 def testcase_100215():
     print(solution_100215("aAbBcC"))
     print(solution_100215("AaAaAaaA"))
 
 
 def testcase_100206():
-    print(solution_100206([5,4,1,2,2]))
-    print(solution_100206([1,3,2,4]))
-    print(solution_100206([1,3,9,81,81,9,3,4]))
-    print(solution_100206([1,3,9,81,3,4]))
-    print(solution_100206([1,1]))
+    print(solution_100206([5, 4, 1, 2, 2]))
+    print(solution_100206([1, 3, 2, 4]))
+    print(solution_100206([1, 3, 9, 81, 81, 9, 3, 4]))
+    print(solution_100206([1, 3, 9, 81, 3, 4]))
+    print(solution_100206([1, 1]))
+
+
+def testcase_514():
+    print(solution_514("godding", "gd"))
+    print(solution_514("godding", "godding"))
+
+
+def testcase_514_2():
+    print(solution_514_2("godding", "gd"))
+    print(solution_514_2("godding", "godding"))
