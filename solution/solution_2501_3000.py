@@ -1,4 +1,5 @@
 import itertools
+from collections import defaultdict
 from typing import *
 from .data_struct import *
 from .method import *
@@ -488,7 +489,7 @@ def solution_2861(n: int, k: int, budget: int, composition: List[List[int]], sto
         money = 0
         for s, base, c in zip(stock, comp, cost):
             if s < base * num:
-                money += (base * num - s)*c  # 库存不够
+                money += (base * num - s) * c  # 库存不够
                 if money > budget:
                     return False
         return True
@@ -504,3 +505,79 @@ def solution_2861(n: int, k: int, budget: int, composition: List[List[int]], sto
                 high = mid
         ans = low
     return ans
+
+
+def solution_2808(nums: List[int]) -> int:
+    """
+    超时
+    """
+    my_set = set(nums)
+    n = len(nums)
+    min_cnt = 10 ** 5
+    for num in my_set:
+        ns_indexes = set()
+        num_indexes = set()
+        for i in range(len(nums)):
+            if nums[i] == num:
+                num_indexes.add(i)
+            else:
+                ns_indexes.add(i)
+        cnt = 0
+        while True:
+            if len(ns_indexes) == 0:
+                break
+            tmp = []
+            for num_index in num_indexes:
+                p1, p2 = (num_index + 1) % n, (num_index - 1 + n) % n
+                if p1 in ns_indexes:
+                    ns_indexes.remove(p1)
+                    tmp.append(p1)
+                if p2 in ns_indexes:
+                    ns_indexes.remove(p2)
+                    tmp.append(p2)
+            for t in tmp:
+                num_indexes.add(t)
+            cnt += 1
+        min_cnt = min(min_cnt, cnt)
+    return min_cnt
+
+
+def solution_2808_2(nums: List[int]) -> int:
+    """
+    超时
+    """
+    my_set = set(nums)
+    n = len(nums)
+    min_cnt = 10 ** 5
+    for num in my_set:
+        tmp = []
+        for i in range(len(nums)):
+            if nums[i] == num:
+                tmp.append(i)
+        # 记录所有端点
+        # 端点(i,j)之间变为x的时间为(j-i//2)
+        cnt = 0
+        for i in range(len(tmp) - 1):
+            cnt = max(cnt, (tmp[i + 1] - tmp[i]) // 2)
+        # n-2 到 2 之间为 n-1,0,1需要2次
+        # (n-j+i)//2
+        cnt = max(cnt, (n - tmp[-1] + tmp[0]) // 2)
+        min_cnt = min(min_cnt, cnt)
+    return min_cnt
+
+
+def solution_2808_3(nums: List[int]) -> int:
+    """
+    和上面没差多少
+    一些细节的优化
+    """
+    mp = defaultdict(list)
+    res = n = len(nums)
+    for i, a in enumerate(nums):
+        mp[a].append(i)
+    for pos in mp.values():
+        mx = pos[0] + n - pos[-1]
+        for i in range(len(pos) - 1):
+            mx = max(mx, pos[i + 1] - pos[i])
+        res = min(res, mx // 2)
+    return res

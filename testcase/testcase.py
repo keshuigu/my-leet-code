@@ -1193,3 +1193,22 @@ def testcase_514():
 def testcase_514_2():
     print(solution_514_2("godding", "gd"))
     print(solution_514_2("godding", "godding"))
+
+
+def testcase_2808():
+    print(solution_2808([1, 2, 1, 2]))
+    print(solution_2808([2, 1, 3, 3, 2]))
+    print(solution_2808([5, 5, 5, 5]))
+    print(solution_2808([15,14,14,19]))
+
+def testcase_2808_2():
+    print(solution_2808_2([1, 2, 1, 2]))
+    print(solution_2808_2([2, 1, 3, 3, 2]))
+    print(solution_2808_2([5, 5, 5, 5]))
+    print(solution_2808_2([15,14,14,19]))
+
+def testcase_2808_3():
+    print(solution_2808_3([1, 2, 1, 2]))
+    print(solution_2808_3([2, 1, 3, 3, 2]))
+    print(solution_2808_3([5, 5, 5, 5]))
+    print(solution_2808_3([15,14,14,19]))
