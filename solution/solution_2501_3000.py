@@ -581,3 +581,18 @@ def solution_2808_3(nums: List[int]) -> int:
             mx = max(mx, pos[i + 1] - pos[i])
         res = min(res, mx // 2)
     return res
+
+
+def solution_2670(nums: List[int]) -> List[int]:
+    n = len(nums)
+    suf = [0] * (n + 1)  # s[n]用于计算最后一个下标的后缀数量
+    s = set()
+    for i in range(n - 1, 0, -1):
+        s.add(nums[i])
+        suf[i] = len(s)
+    s.clear()
+    ans = [0] * n
+    for i, x in enumerate(nums):
+        s.add(x)
+        ans[i] = len(s) - suf[i + 1]
+    return ans
