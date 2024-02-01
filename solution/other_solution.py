@@ -1,3 +1,7 @@
+from heapq import *
+from typing import *
+
+
 def solution_iq_17_06(n: int) -> int:
     s = str(n)
     length = len(s)
@@ -17,3 +21,33 @@ def solution_iq_17_06(n: int) -> int:
         return res
 
     return f(0, 0, True)
+
+
+def solution_lcp_24(nums: List[int]) -> List[int]:
+    MOD = 10 ** 9 + 7
+    ans = [0] * len(nums)
+    # python默认小根堆，因此left中值取反
+    left = []
+    right = []
+    left_sum = right_sum = 0
+    for i, b in enumerate(nums):
+        b -= i
+        if i % 2 == 0:  # 包含i的前缀长度为奇数 [0,...,i]
+            if left:
+                # 如果b比left的最大值大，那么插入到right中去
+                # 否则插入到left中
+                # 此处left_sum值已经删除了left的堆顶，并加入b
+                left_sum -= max(-left[0] - b, 0)
+            # 无论插入那边，都可以用这个函数
+            t = -heappushpop(left, -b)
+            heappush(right, t)
+            right_sum += t
+            # 现在
+            ans[i] = (right_sum - right[0] - left_sum) % MOD
+        else:  # 前缀长度为偶数,left必定比right少1,往left里插入
+            right_sum += max(b - right[0], 0)
+            t = heappushpop(right, b)
+            left_sum += t
+            heappush(left, -t)
+            ans[i] = (right_sum - left_sum) % MOD
+    return ans
