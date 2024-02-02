@@ -1,6 +1,6 @@
-import numpy as np
-
+import heapq
 
 if __name__ == '__main__':
-    y = np.array([0 for _ in range(9)], dtype=np.float64)
-    print(y)
+
+    print((1,3)<(3,1))
+    print((4,3)>(3,1))

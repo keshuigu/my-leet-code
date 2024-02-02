@@ -1,3 +1,4 @@
+import heapq
 from typing import *
 from .data_struct import *
 
@@ -54,3 +55,35 @@ def solution_1944(heights: List[int]) -> List[int]:
         else:
             res.append(count + 1)
     return res[::-1]
+
+
+def solution_1686(aliceValues: List[int], bobValues: List[int]) -> int:
+    heap = []
+    for i in range(len(aliceValues)):
+        heapq.heappush(heap, (-(aliceValues[i] + bobValues[i]), i))
+    turn = True
+    a_value = 0
+    b_value = 0
+    while len(heap) > 0:
+        _, index = heapq.heappop(heap)
+        if turn:
+            a_value += aliceValues[index]
+        else:
+            b_value += bobValues[index]
+        turn = not turn
+    if a_value == b_value:
+        return 0
+    elif a_value > b_value:
+        return 1
+    else:
+        return -1
+
+
+def solution_1686_2(aliceValues: List[int], bobValues: List[int]) -> int:
+    # 建立a[i],b[i]的数组,以他们的和排序
+    pair = sorted(zip(aliceValues, bobValues), key=lambda p: -p[0] - p[1])
+    # alice拿走下标为偶数的数，并加aliceValue
+    # bob拿走下标为奇数的数，并加bobValue
+    # diff为alice - bob
+    diff = sum(x if i % 2 == 0 else -y for i, (x, y) in enumerate(pair))
+    return (diff > 0) - (diff < 0)

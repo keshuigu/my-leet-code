@@ -1225,3 +1225,15 @@ def testcase_lcp_24():
     print(solution_lcp_24([3, 4, 5, 1, 6, 7]))
     print(solution_lcp_24([1, 2, 3, 4, 5]))
     print(solution_lcp_24([1, 1, 1, 2, 3, 4]))
+
+
+def testcase_1686():
+    print(solution_1686(aliceValues=[1, 3], bobValues=[2, 1]))
+    print(solution_1686(aliceValues=[1, 2], bobValues=[3, 1]))
+    print(solution_1686(aliceValues=[2, 4, 3], bobValues=[1, 6, 7]))
+
+
+def testcase_1686_2():
+    print(solution_1686_2(aliceValues=[1, 3], bobValues=[2, 1]))
+    print(solution_1686_2(aliceValues=[1, 2], bobValues=[3, 1]))
+    print(solution_1686_2(aliceValues=[2, 4, 3], bobValues=[1, 6, 7]))
