@@ -14,6 +14,10 @@
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
 - [x] [1686.石子游戏VI](https://leetcode.cn/problems/stone-game-vi/)
+- [x] [1690.石子游戏VII](https://leetcode.cn/problems/stone-game-vii/)
+
+  - 记忆化搜索
+
 - [x] [2171.拿出最少数目的魔法豆](https://leetcode.cn/problems/removing-minimum-number-of-magic-beans/)
 
   - 前缀和

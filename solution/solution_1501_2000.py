@@ -87,3 +87,41 @@ def solution_1686_2(aliceValues: List[int], bobValues: List[int]) -> int:
     # diff为alice - bob
     diff = sum(x if i % 2 == 0 else -y for i, (x, y) in enumerate(pair))
     return (diff > 0) - (diff < 0)
+
+
+def solution_1690(stones: List[int]) -> int:
+    s = [0]
+    for i in range(1, len(stones) + 1):
+        s.append(s[i - 1] + stones[i - 1])
+    # dfs(i,j)表示问题当前石子为[i,j],最大化自己的得分
+    # dp 保存子问题dfs(i,j)
+    # 循环不变量 dfs(i,j) = max(s[j + 1] - s[i + 1] - dfs(i + 1, j), s[j] - s[i] - dfs(i, j - 1))
+    dp = [[-1] * len(stones) for _ in range(len(stones))]
+
+    def dfs(i, j):
+        if i == j:
+            return 0
+        if dp[i][j] != -1:
+            return dp[i][j]
+        dp[i][j] = max(s[j + 1] - s[i + 1] - dfs(i + 1, j), s[j] - s[i] - dfs(i, j - 1))
+        return dp[i][j]
+
+    return dfs(0, len(stones) - 1)
+
+
+def solution_1690_2(stones: List[int]) -> int:
+    # 转递推
+    s = [0]
+    for i in range(1, len(stones) + 1):
+        s.append(s[i - 1] + stones[i - 1])
+    # dfs(i,j)表示问题当前石子为[i,j],最大化自己的得分
+    # dp 保存子问题dfs(i,j)
+    # 循环不变量 dfs(i,j) = max(s[j + 1] - s[i + 1] - dfs(i + 1, j), s[j] - s[i] - dfs(i, j - 1))
+    dp = [[-1] * len(stones) for _ in range(len(stones))]
+    for i in range(len(stones) -2, -1, -1):
+        for j in range(1, len(stones)):
+            if i == j:
+                dp[i][j] = 0
+            else:
+                dp[i][j] = max(s[j + 1] - s[i + 1] - dp[i + 1][j], s[j] - s[i] - dp[i][j - 1])
+    return dp[0][-1]

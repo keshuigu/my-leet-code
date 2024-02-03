@@ -1237,3 +1237,12 @@ def testcase_1686_2():
     print(solution_1686_2(aliceValues=[1, 3], bobValues=[2, 1]))
     print(solution_1686_2(aliceValues=[1, 2], bobValues=[3, 1]))
     print(solution_1686_2(aliceValues=[2, 4, 3], bobValues=[1, 6, 7]))
+
+
+def testcase_1690():
+    print(solution_1690([5,3,1,4,2]))
+    print(solution_1690([7,90,5,1,100,10,10,2]))
+
+def testcase_1690_2():
+    print(solution_1690_2([5, 3, 1, 4, 2]))
+    print(solution_1690_2([7, 90, 5, 1, 100, 10, 10, 2]))
