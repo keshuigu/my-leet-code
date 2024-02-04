@@ -1240,9 +1240,41 @@ def testcase_1686_2():
 
 
 def testcase_1690():
-    print(solution_1690([5,3,1,4,2]))
-    print(solution_1690([7,90,5,1,100,10,10,2]))
+    print(solution_1690([5, 3, 1, 4, 2]))
+    print(solution_1690([7, 90, 5, 1, 100, 10, 10, 2]))
+
 
 def testcase_1690_2():
     print(solution_1690_2([5, 3, 1, 4, 2]))
     print(solution_1690_2([7, 90, 5, 1, 100, 10, 10, 2]))
+
+
+def testcase_100222():
+    print(solution_100222([3, 3, 3]))
+    print(solution_100222([3, 4, 5]))
+
+
+def testcase_100194():
+    print(solution_100194([[1, 1], [2, 2], [3, 3]]))
+    print(solution_100194([[6, 2], [4, 4], [2, 6]]))
+    print(solution_100194([[3, 1], [1, 3], [1, 1]]))
+
+
+def testcase_100183():
+    print(solution_100183(nums=[1, 2, 3, 4, 5, 6], k=1))
+    print(solution_100183(nums=[-1, 3, 2, 4, 5], k=3))
+    print(solution_100183(nums=[-1, -2, -3, -4], k=2))
+
+
+def testcase_292():
+    print(solution_292(4))
+    print(solution_292(1))
+    print(solution_292(2))
+    print(solution_292(5))
+
+
+def testcase_292_2():
+    print(solution_292_2(4))
+    print(solution_292_2(1))
+    print(solution_292_2(2))
+    print(solution_292_2(5))

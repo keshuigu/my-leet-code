@@ -112,6 +112,10 @@
 - [x] [240.用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)
 - [x] [242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
+- [x] [292.Nim游戏](https://leetcode.cn/problems/nim-game/)
+
+  - [Nim游戏](https://baike.baidu.com/item/Nim%E6%B8%B8%E6%88%8F/6737105)
+
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)

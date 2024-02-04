@@ -134,3 +134,72 @@ def solution_100195(n: int, m: int) -> int:
 def solution_100179(nums: List[int], k: int) -> int:
     # TODO
     ...
+
+
+def solution_100222(nums: List[int]) -> str:
+    if not nums[0] + nums[1] > nums[2]:
+        return 'none'
+    if not nums[0] + nums[2] > nums[1]:
+        return 'none'
+    if not nums[1] + nums[2] > nums[0]:
+        return 'none'
+    ms = set()
+    for num in nums:
+        ms.add(num)
+    if len(ms) == 1:
+        return 'equilateral'
+    if len(ms) == 2:
+        return 'isosceles'
+    if len(ms) == 3:
+        return 'scalene'
+
+
+def solution_100194(points: List[List[int]]) -> int:
+    cnt = 0
+    for point1 in points:
+        for point2 in points:
+            if point1 == point2:
+                continue
+            if point1[0] <= point2[0] and point1[1] >= point2[1]:
+                flag = False
+                for point3 in points:
+                    if point3 == point2 or point3 == point1:
+                        continue
+                    if point1[0] <= point3[0] <= point2[0] and point1[1] >= point3[1] >= point2[1]:
+                        flag = True
+                        break
+                if flag:
+                    continue
+                else:
+                    cnt += 1
+    return cnt
+
+
+def solution_100183(nums: List[int], k: int) -> int:
+    s = [0]
+    for i in range(1, len(nums) + 1):
+        s.append(s[i - 1] + nums[i - 1])
+    f = {}
+    for i, x in enumerate(nums):
+        if x not in f:
+            f[x] = [i]
+        else:
+            f[x].append(i)
+    max_sum = -10 ** 19
+    for i, x in enumerate(nums):
+        tmp = x + k
+        if tmp in f:
+            for index in f[tmp]:
+                if index > i:
+                    max_sum = max(max_sum, s[index + 1] - s[i])
+        tmp = x - k
+        if tmp in f:
+            for index in f[tmp]:
+                if index > i:
+                    max_sum = max(max_sum, s[index + 1] - s[i])
+    return max_sum if max_sum > -10 ** 19 else 0
+
+
+def solution_100193(points: List[List[int]]) -> int:
+    # TODO
+    ...

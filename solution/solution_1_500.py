@@ -1804,3 +1804,19 @@ def solution_365_2(jug1Capacity: int, jug2Capacity: int, targetCapacity: int) ->
         stack.append(
             (remain_x + min(remain_y, jug1Capacity - remain_x), remain_y - min(remain_y, jug1Capacity - remain_x)))
     return False
+
+
+def solution_292(n: int) -> bool:
+    return n % 4 != 0
+
+
+def solution_292_2(n: int) -> bool:
+    """
+    超时
+    """
+    if n <= 3:
+        return True
+    dp = [True] * (n + 1)
+    for i in range(4, n + 1):
+        dp[i] = (not dp[i - 1]) or (not dp[i - 2]) or (not dp[i - 3])
+    return dp[n]
