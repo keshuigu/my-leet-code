@@ -1,3 +1,4 @@
+import math
 from typing import *
 
 
@@ -203,3 +204,67 @@ def solution_100183(nums: List[int], k: int) -> int:
 def solution_100193(points: List[List[int]]) -> int:
     # TODO
     ...
+
+
+def solution_100214(nums: List[int]) -> int:
+    s = 0
+    cnt = 0
+    for num in nums:
+        s += num
+        if s == 0:
+            cnt += 1
+    return cnt
+
+
+def solution_100204(word: str, k: int) -> int:
+    n = len(word)
+    cnt = (n + k - 1) // k
+    for i in range(k, n, k):
+        length = n - i
+        if word[0:length] == word[i:i + length]:
+            cnt = min(i // k, cnt)
+    return cnt
+
+
+def solution_100189(image: List[List[int]], threshold: int) -> List[List[int]]:
+    def check(center):
+        x, y = center[0], center[1]
+        for i in range(x - 1, x + 2, 1):
+            if abs(image[i][y - 1] - image[i][y]) > threshold or abs(image[i][y] - image[i][y + 1]) > threshold:
+                return False
+        for i in range(y - 1, y + 2, 1):
+            if abs(image[x - 1][i] - image[x][i]) > threshold or abs(image[x][i] - image[x + 1][i]) > threshold:
+                return False
+        return True
+
+    m = len(image)
+    n = len(image[0])
+    result = [[-1] * n for _ in range(m)]
+    for i in range(1, m - 1):
+        for j in range(1, n - 1):
+            center = (i, j)
+            if check(center):
+                result[i][j] = (sum(image[i - 1][j - 1:j + 2]) + sum(image[i][j - 1:j + 2]) + sum(
+                    image[i + 1][j - 1:j + 2])) // 9
+    cnt = [[0] * n for _ in range(m)]
+    for i in range(1, m - 1):
+        for j in range(1, n - 1):
+            if result[i][j] != -1:
+                x, y = i, j
+                for k in range(x - 1, x + 2):
+                    for s in range(y - 1, y + 2):
+                        if cnt[k][s] > 0:
+                            image[k][s] = image[k][s] + result[i][j]
+                        else:
+                            image[k][s] = result[i][j]
+                        cnt[k][s] += 1
+    for i in range(m):
+        for j in range(n):
+            if cnt[i][j] > 0:
+                image[i][j] = image[i][j] // cnt[i][j]
+
+    return image
+
+
+def solution_100203(word: str, k: int) -> int:
+    return solution_100204(word, k)

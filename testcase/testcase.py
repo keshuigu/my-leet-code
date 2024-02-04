@@ -1278,3 +1278,20 @@ def testcase_292_2():
     print(solution_292_2(1))
     print(solution_292_2(2))
     print(solution_292_2(5))
+
+
+def testcase_100214():
+    print(solution_100214([2, 3, -5]))
+    print(solution_100214([3, 2, 3, -4]))
+
+
+def testcase_100204():
+    print(solution_100204(word="abacaba", k=3))
+    print(solution_100204(word="abacaba", k=4))
+    print(solution_100204(word="abcbabcd", k=2))
+
+
+def testcase_100189():
+    print(solution_100189(image=[[5, 6, 7, 10], [8, 9, 10, 10], [11, 12, 13, 10]], threshold=3))
+    print(solution_100189(image=[[10, 20, 30], [15, 25, 35], [20, 30, 40], [25, 35, 45]], threshold=12))
+    print(solution_100189(image=[[5, 6, 7], [8, 9, 10], [11, 12, 13]], threshold=1))
