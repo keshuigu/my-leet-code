@@ -274,7 +274,7 @@ def solution_100189_2(image: List[List[int]], threshold: int) -> List[List[int]]
     ...
 
 
-def solution_100203(word: str, k: int) -> int:
+def solution_100203_2(word: str, k: int) -> int:
     # TODO
     ...
 
