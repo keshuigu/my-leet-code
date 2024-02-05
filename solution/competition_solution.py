@@ -177,6 +177,9 @@ def solution_100194(points: List[List[int]]) -> int:
 
 
 def solution_100183(nums: List[int], k: int) -> int:
+    """
+    超时
+    """
     s = [0]
     for i in range(1, len(nums) + 1):
         s.append(s[i - 1] + nums[i - 1])
@@ -264,6 +267,16 @@ def solution_100189(image: List[List[int]], threshold: int) -> List[List[int]]:
                 image[i][j] = image[i][j] // cnt[i][j]
 
     return image
+
+
+def solution_100189_2(image: List[List[int]], threshold: int) -> List[List[int]]:
+    # TODO
+    ...
+
+
+def solution_100203(word: str, k: int) -> int:
+    # TODO
+    ...
 
 
 def solution_100203(word: str, k: int) -> int:

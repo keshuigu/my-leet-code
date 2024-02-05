@@ -1,4 +1,5 @@
 import heapq
+from collections import deque
 from typing import *
 from .data_struct import *
 
@@ -118,10 +119,55 @@ def solution_1690_2(stones: List[int]) -> int:
     # dp 保存子问题dfs(i,j)
     # 循环不变量 dfs(i,j) = max(s[j + 1] - s[i + 1] - dfs(i + 1, j), s[j] - s[i] - dfs(i, j - 1))
     dp = [[-1] * len(stones) for _ in range(len(stones))]
-    for i in range(len(stones) -2, -1, -1):
+    for i in range(len(stones) - 2, -1, -1):
         for j in range(1, len(stones)):
             if i == j:
                 dp[i][j] = 0
             else:
                 dp[i][j] = max(s[j + 1] - s[i + 1] - dp[i + 1][j], s[j] - s[i] - dp[i][j - 1])
     return dp[0][-1]
+
+
+def solution_1696(nums: List[int], k: int) -> int:
+    """
+    超时
+    """
+    n = len(nums)
+    dp = [-10 ** 9] * n
+    dp[n - 1] = nums[n - 1]
+
+    def dfs(i):
+        if dp[i] != -10 ** 9:
+            return dp[i]
+        res = -10 ** 9
+        for j in range(1, k + 1):
+            if i + j >= n:
+                continue
+            res = max(res, dfs(i + j))
+        dp[i] = res + nums[i]
+        return dp[i]
+
+    return dfs(0)
+
+
+def solution_1696_2(nums: List[int], k: int) -> int:
+    """
+    单调队列
+    """
+    n = len(nums)
+    f = [0] * n
+    q = deque([0])  # 双端队列
+    f[0] = nums[0]
+    for i in range(1, n):
+        # 移出队列首元素，保证队列中所有元素都在k步内能到达i
+        # 至多需要移除1位，因为i移动步长为1，每次移动都会检查是否需要移除队首
+        if q[0] < i - k:
+            q.popleft()
+        # 维护的队列保证f[q[0]]为整个窗口中的最大值
+        # 从窗口中到达i的过程中，一定是f[q[0]]到f[i]使得f[i]最大
+        f[i] = f[q[0]] + nums[i]
+        # 维护单调递减的性质
+        while q and f[i] > f[q[-1]]:
+            q.pop()
+        q.append(i)
+    return f[-1]

@@ -1172,17 +1172,17 @@ def testcase_365_2():
     print(solution_365_2(1, 2, 3))
 
 
-def testcase_100215():
-    print(solution_100215("aAbBcC"))
-    print(solution_100215("AaAaAaaA"))
+def testcase_3019():
+    print(solution_3019("aAbBcC"))
+    print(solution_3019("AaAaAaaA"))
 
 
-def testcase_100206():
-    print(solution_100206([5, 4, 1, 2, 2]))
-    print(solution_100206([1, 3, 2, 4]))
-    print(solution_100206([1, 3, 9, 81, 81, 9, 3, 4]))
-    print(solution_100206([1, 3, 9, 81, 3, 4]))
-    print(solution_100206([1, 1]))
+def testcase_3020():
+    print(solution_3020([5, 4, 1, 2, 2]))
+    print(solution_3020([1, 3, 2, 4]))
+    print(solution_3020([1, 3, 9, 81, 81, 9, 3, 4]))
+    print(solution_3020([1, 3, 9, 81, 3, 4]))
+    print(solution_3020([1, 1]))
 
 
 def testcase_514():
@@ -1295,3 +1295,15 @@ def testcase_100189():
     print(solution_100189(image=[[5, 6, 7, 10], [8, 9, 10, 10], [11, 12, 13, 10]], threshold=3))
     print(solution_100189(image=[[10, 20, 30], [15, 25, 35], [20, 30, 40], [25, 35, 45]], threshold=12))
     print(solution_100189(image=[[5, 6, 7], [8, 9, 10], [11, 12, 13]], threshold=1))
+
+
+def testcase_1696():
+    print(solution_1696(nums=[1, -1, -2, 4, -7, 3], k=2))
+    print(solution_1696(nums=[10, -5, -2, 4, 0, 3], k=3))
+    print(solution_1696(nums=[1, -5, -20, 4, -1, 3, -6, -3], k=2))
+
+
+def testcase_1696_2():
+    print(solution_1696_2(nums=[1, -1, -2, 4, -7, 3], k=2))
+    print(solution_1696_2(nums=[10, -5, -2, 4, 0, 3], k=3))
+    print(solution_1696_2(nums=[1, -5, -20, 4, -1, 3, -6, -3], k=2))

@@ -144,3 +144,4 @@
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
 - [x] [2859.计算K置位下标对应元素的和](https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/)
 - [x] [3014.输入单词需要的最少按键次数I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/)
+- [x] [3019.按键变更的次数](https://leetcode.cn/problems/number-of-changing-keys/)

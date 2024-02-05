@@ -149,3 +149,27 @@ def solution_3017_2(n: int, x: int, y: int) -> List[int]:
             add(1, n - i)
 
     return list(accumulate(diff))[1:]
+
+
+def solution_3019(s: str) -> int:
+    return solution_100215(s)
+
+
+def solution_3020(nums: List[int]) -> int:
+    """
+    慢
+    """
+    return solution_100206(nums)
+
+
+def solution_3020_2(nums: List[int]) -> int:
+    # TODO
+    ...
+
+
+def solution_3021(n: int, m: int) -> int:
+    return solution_100195(n, m)
+
+
+def solution_3022(nums: List[int], k: int) -> int:
+    return solution_100179(nums, k)

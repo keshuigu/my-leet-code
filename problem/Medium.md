@@ -47,3 +47,5 @@
 - [x] [2865.美丽塔I](https://leetcode.cn/problems/beautiful-towers-i/)
 - [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)
 - [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)
+- [x] [3020.子集中元素的最大数量](https://leetcode.cn/problems/find-the-maximum-number-of-elements-in-subset/)
+- [x] [3021.Alice和Bob玩鲜花游戏](https://leetcode.cn/problems/alice-and-bob-playing-flower-game/)
