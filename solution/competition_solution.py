@@ -1,4 +1,3 @@
-import math
 from typing import *
 
 
@@ -100,8 +99,10 @@ def solution_100206(nums: List[int]) -> int:
         else:
             f[num] += 1
     max_cnt = 1
+    # 从f中拿就可以了
     for num in nums:
         cnt = 2
+        # cnt = f[num]- (f[num]%2^1)
         if num == 1 and f[num] % 2 == 0:
             cnt = f[num] - 1
         elif num == 1 and f[num] % 2 != 0:
@@ -130,11 +131,37 @@ def solution_100195(n: int, m: int) -> int:
     odd_x = n - even_x
     odd_y = m - even_y
     return even_x * odd_y + even_y * odd_x
+    # return n*m//2
 
 
 def solution_100179(nums: List[int], k: int) -> int:
-    # TODO
-    ...
+    """
+    1. 拆位
+    2. 试填法
+    3. 相邻合并 -> 连续子数组合并
+
+    从左到右考虑数字
+    如果某一段数字能合并成0，那么操作次数就是这一段的长度-1
+    如果某一段数字不能合并成0，那么操作次数就是这一段的长度（从其他地方借0）
+
+    考虑每一位的时候，需要带上高位可以变成0的位
+    """
+    ans = mask = 0  # mask表示需要考虑的位置
+    for b in range(29, -1, -1):
+        mask |= 1 << b  # 当前考虑的位
+        cnt = 0
+        and_res = -1  # 全为1的数字
+        for x in nums:
+            and_res &= x & mask
+            if and_res:
+                cnt += 1  # 还得合并
+            else:  # 这一段合并完了
+                and_res = -1  # 合并下一段
+        # 题目条件 k<len(nums), 故cnt > k时视为无法变0
+        if cnt > k:
+            ans |= 1 << b
+            mask ^= 1 << b  # 反悔，这一位不要了，因为他只能是1
+    return ans
 
 
 def solution_100222(nums: List[int]) -> str:

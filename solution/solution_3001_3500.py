@@ -163,8 +163,22 @@ def solution_3020(nums: List[int]) -> int:
 
 
 def solution_3020_2(nums: List[int]) -> int:
-    # TODO
-    ...
+    cnt = Counter[int](nums)
+    ans = cnt[1] - (cnt[1] % 2 ^ 1)  # 没有1该值为-1 = 0-1
+    del cnt[1]
+    for x in cnt:
+        res = 0
+        while True:
+            if x not in cnt:
+                res -= 1
+                break
+            if cnt[x] == 1:
+                res += 1
+                break
+            res += 2
+            x *= x
+        ans = max(ans, res)
+    return ans
 
 
 def solution_3021(n: int, m: int) -> int:

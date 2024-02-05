@@ -1,5 +1,3 @@
-from time import sleep
-
 from solution import *
 
 
@@ -1183,6 +1181,24 @@ def testcase_3020():
     print(solution_3020([1, 3, 9, 81, 81, 9, 3, 4]))
     print(solution_3020([1, 3, 9, 81, 3, 4]))
     print(solution_3020([1, 1]))
+
+
+def testcase_3020_2():
+    print(solution_3020_2([5, 4, 1, 2, 2]))
+    print(solution_3020_2([1, 3, 2, 4]))
+    print(solution_3020_2([1, 3, 9, 81, 81, 9, 3, 4]))
+    print(solution_3020_2([1, 3, 9, 81, 3, 4]))
+    print(solution_3020_2([1, 1]))
+
+
+def testcase_3021():
+    print(solution_3021(3, 5))
+
+
+def testcase_3022():
+    print(solution_3022(nums=[3, 5, 3, 2, 7], k=2))
+    print(solution_3022(nums=[7, 3, 15, 14, 2, 8], k=4))
+    print(solution_3022(nums=[10, 7, 10, 3, 9, 14, 9, 4], k=1))
 
 
 def testcase_514():

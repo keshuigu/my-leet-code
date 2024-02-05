@@ -1,6 +1,8 @@
 import heapq
+from typing import Counter
 
 if __name__ == '__main__':
-
-    print((1,3)<(3,1))
-    print((4,3)>(3,1))
+    p = [2, 2, 3]
+    cnt = Counter[int](p)
+    print(cnt)
+    print(cnt[1])

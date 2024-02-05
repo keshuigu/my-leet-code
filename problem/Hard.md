@@ -34,3 +34,6 @@
       其中cnt为三维数组，`cnt[x][i][j]`代表的是x到2^i祖先的所有边中，权重为j的边的个数
 
 - [x] [3017.按距离统计房屋对数目II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/)
+- [x] [3022.给定操作次数内使剩余元素的或值最小](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/)
+
+  - [拆位, 试填, 连续子数组合并 from 0x3f](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/solutions/2622658/shi-tian-fa-pythonjavacgo-by-endlesschen-ysom/)
