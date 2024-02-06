@@ -1,4 +1,6 @@
+from collections import defaultdict
 from itertools import accumulate
+from math import inf
 
 from .competition_solution import *
 
@@ -191,6 +193,21 @@ def solution_3024(nums: List[int]) -> str:
     return solution_100222(nums)
 
 
+def solution_3024_2(nums: List[int]) -> str:
+    """
+    简洁一点
+    """
+    nums.sort()
+    x, y, z = nums
+    if x + y <= z:  # y+z一定大于等于x,x+z一定大于等于y
+        return 'none'
+    if x == z:
+        return 'equilateral'
+    if x == y or y == z:
+        return 'isosceles'
+    return 'scalene'
+
+
 def solution_3025(points: List[List[int]]) -> int:
     return solution_100194(points)
 
@@ -203,8 +220,28 @@ def solution_3026(nums: List[int], k: int) -> int:
 
 
 def solution_3026_2(nums: List[int], k: int) -> int:
-    # TODO
-    ...
+    """
+    前缀和与哈希表
+
+    满足 |nums[i] - nums[j]|==k
+    计算 s[j+1]-s[i]的最大值
+    枚举 j, 问题变成计算s[i]的最小值
+
+    维护哈希表,key 是 nums[i], value是s[i]的最小值
+    """
+    # 前缀和
+    ans = -inf
+    s = 0
+    f = defaultdict(lambda: inf)
+    for x in nums:
+        # 维护前缀和的最小值,不包含x
+        f[x] = min(f[x], s)
+        s += x
+        # 在遍历中找符合条件的nums[j]和nums[i]
+        # 这样保证这里出现的有效的x-k和x+k的下标一定比x小
+        # 满足构成子数组的要求
+        ans = max(ans, s - f[x - k], s - f[x + k])
+    return ans if ans > -inf else 0
 
 
 def solution_3027(points: List[List[int]]) -> int:

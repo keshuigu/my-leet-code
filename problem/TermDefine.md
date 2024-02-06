@@ -8,7 +8,6 @@
 6. `前缀和`：
 7. [`floyd`](https://zhuanlan.zhihu.com/p/339542626)
 8. [`差分数组`](https://leetcode.cn/problems/car-pooling/solutions/2550264/suan-fa-xiao-ke-tang-chai-fen-shu-zu-fu-9d4ra/)
-9. `LCA`:[参考资料1](https://oi-wiki.org/graph/lca/), [参考题解](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/solutions/2305895/mo-ban-jiang-jie-shu-shang-bei-zeng-suan-v3rw/)
 
     1. 对于数组a,定义差分数组为d[0]=a[0],d[i]=a[i]-a[i-1]
     2. 性质1: 从左到右累加d中的元素,可以得到数组a
@@ -16,4 +15,6 @@
         - 把d[i]增加x,把d[j+1]减少x
         - 把a的子数组a[i]到a[j]都加上x
 
-9. [`排序不等式`](https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E4%B8%8D%E7%AD%89%E5%BC%8F)
+9. `LCA`:[参考资料1](https://oi-wiki.org/graph/lca/), [参考题解](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/solutions/2305895/mo-ban-jiang-jie-shu-shang-bei-zeng-suan-v3rw/)
+10. [`排序不等式`](https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E4%B8%8D%E7%AD%89%E5%BC%8F)
+11. [离散化+二维前缀和](https://www.cnblogs.com/tyriis/p/15362478.html):TODO

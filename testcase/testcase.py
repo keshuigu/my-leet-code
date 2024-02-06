@@ -1270,6 +1270,11 @@ def testcase_3024():
     print(solution_3024([3, 4, 5]))
 
 
+def testcase_3024_2():
+    print(solution_3024_2([3, 3, 3]))
+    print(solution_3024_2([3, 4, 5]))
+
+
 def testcase_3025():
     print(solution_3025([[1, 1], [2, 2], [3, 3]]))
     print(solution_3025([[6, 2], [4, 4], [2, 6]]))
@@ -1280,6 +1285,12 @@ def testcase_3026():
     print(solution_3026(nums=[1, 2, 3, 4, 5, 6], k=1))
     print(solution_3026(nums=[-1, 3, 2, 4, 5], k=3))
     print(solution_3026(nums=[-1, -2, -3, -4], k=2))
+
+
+def testcase_3026_2():
+    print(solution_3026_2(nums=[1, 2, 3, 4, 5, 6], k=1))
+    print(solution_3026_2(nums=[-1, 3, 2, 4, 5], k=3))
+    print(solution_3026_2(nums=[-1, -2, -3, -4], k=2))
 
 
 def testcase_292():
@@ -1335,3 +1346,9 @@ def testcase_lcp_30():
     print(solution_lcp_30(nums=[100, 100, 100, -250, -60, -140, -50, -50, 100, 150]))
     print(solution_lcp_30(nums=[-200, -300, 400, 0]))
     print(solution_lcp_30(nums=[-1, -1, 10]))
+
+
+def testcase_3027():
+    print(solution_3027([[1, 1], [2, 2], [3, 3]]))
+    print(solution_3027([[6, 2], [4, 4], [2, 6]]))
+    print(solution_3027([[3, 1], [1, 3], [1, 1]]))

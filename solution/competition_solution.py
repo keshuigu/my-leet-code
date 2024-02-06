@@ -1,3 +1,4 @@
+from math import inf
 from typing import *
 
 
@@ -232,8 +233,17 @@ def solution_100183(nums: List[int], k: int) -> int:
 
 
 def solution_100193(points: List[List[int]]) -> int:
-    # TODO
-    ...
+    # 排序, 保证按照横坐标从小到大排序，后续枚举只需要考虑纵坐标
+    # 横坐标相同时，按纵坐标从大到小排序
+    points.sort(key=lambda p: (p[0], -p[1]))
+    ans = 0
+    for i, (_, y0) in enumerate(points):
+        max_y = -inf
+        for (_, y1) in points[i + 1:]:
+            if max_y < y1 <= y0:
+                max_y = y1
+                ans += 1
+    return ans
 
 
 def solution_100214(nums: List[int]) -> int:
