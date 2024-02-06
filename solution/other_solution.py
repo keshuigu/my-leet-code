@@ -1,3 +1,4 @@
+import heapq
 from heapq import *
 from typing import *
 
@@ -51,3 +52,28 @@ def solution_lcp_24(nums: List[int]) -> List[int]:
             heappush(left, -t)
             ans[i] = (right_sum - left_sum) % MOD
     return ans
+
+
+def solution_lcp_30(nums: List[int]) -> int:
+    heap = []
+    cnt = 0
+    cur = 1
+    if sum(nums) < 0:
+        return -1
+    for num in nums:
+        if num < 0:
+            heapq.heappush(heap, num)
+        cur += num
+        while heap and cur <= 0:
+            tmp = heapq.heappop(heap)
+            cur -= tmp
+            nums.append(tmp)
+            cnt += 1
+        # 如果cur<=0,当前num一定为负，heap一定不为空
+        # 弹出最大的一定能使得cur为正
+        # 不需要加到最后
+        # 一定有结果
+        # if cur <= 0:
+        #     cur -= heapq.heappop(heap)
+        #     cnt += 1
+    return cnt

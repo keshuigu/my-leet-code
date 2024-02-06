@@ -1,7 +1,5 @@
 from itertools import accumulate
-from typing import *
-from .data_struct import *
-from .method import *
+
 from .competition_solution import *
 
 
@@ -187,3 +185,43 @@ def solution_3021(n: int, m: int) -> int:
 
 def solution_3022(nums: List[int], k: int) -> int:
     return solution_100179(nums, k)
+
+
+def solution_3024(nums: List[int]) -> str:
+    return solution_100222(nums)
+
+
+def solution_3025(points: List[List[int]]) -> int:
+    return solution_100194(points)
+
+
+def solution_3026(nums: List[int], k: int) -> int:
+    """
+    超时
+    """
+    return solution_100183(nums, k)
+
+
+def solution_3026_2(nums: List[int], k: int) -> int:
+    # TODO
+    ...
+
+
+def solution_3027(points: List[List[int]]) -> int:
+    return solution_100193(points)
+
+
+def solution_3028(nums: List[int]) -> int:
+    return solution_100214(nums)
+
+
+def solution_3029(word: str, k: int) -> int:
+    return solution_100204(word, k)
+
+
+def solution_3030(image: List[List[int]], threshold: int) -> List[List[int]]:
+    return solution_100189(image, threshold)
+
+
+def solution_3031(word: str, k: int) -> int:
+    return solution_100204(word, k)

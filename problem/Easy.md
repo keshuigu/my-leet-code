@@ -145,3 +145,5 @@
 - [x] [2859.计算K置位下标对应元素的和](https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/)
 - [x] [3014.输入单词需要的最少按键次数I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/)
 - [x] [3019.按键变更的次数](https://leetcode.cn/problems/number-of-changing-keys/)
+- [x] [3024.三角形类型](https://leetcode.cn/problems/type-of-triangle-ii/)
+- [x] [3028.边界上的蚂蚁](https://leetcode.cn/problems/ant-on-the-boundary/)

@@ -49,3 +49,7 @@
 - [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)
 - [x] [3020.子集中元素的最大数量](https://leetcode.cn/problems/find-the-maximum-number-of-elements-in-subset/)
 - [x] [3021.Alice和Bob玩鲜花游戏](https://leetcode.cn/problems/alice-and-bob-playing-flower-game/)
+- [x] [3025.人员站位的方案数 I](https://leetcode.cn/problems/find-the-number-of-ways-to-place-people-i/)
+- [x] [3026.最大好子数组和](https://leetcode.cn/problems/maximum-good-subarray-sum/)
+- [x] [3029.将单词恢复初始状态所需的最短时间 I](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-i/)
+- [x] [3030.找出网格的区域平均强度](https://leetcode.cn/problems/find-the-grid-of-region-average/)

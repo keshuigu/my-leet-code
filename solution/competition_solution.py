@@ -296,15 +296,5 @@ def solution_100189(image: List[List[int]], threshold: int) -> List[List[int]]:
     return image
 
 
-def solution_100189_2(image: List[List[int]], threshold: int) -> List[List[int]]:
-    # TODO
-    ...
-
-
-def solution_100203_2(word: str, k: int) -> int:
-    # TODO
-    ...
-
-
 def solution_100203(word: str, k: int) -> int:
     return solution_100204(word, k)
