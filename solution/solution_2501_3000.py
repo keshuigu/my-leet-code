@@ -1,6 +1,6 @@
 import itertools
 from collections import defaultdict
-from typing import *
+
 from .data_struct import *
 from .method import *
 
@@ -596,3 +596,55 @@ def solution_2670(nums: List[int]) -> List[int]:
         s.add(x)
         ans[i] = len(s) - suf[i + 1]
     return ans
+
+
+def solution_2641(root: Optional[TreeNode]) -> Optional[TreeNode]:
+    s = []
+
+    def dfs1(p, level):
+        if not p:
+            return
+        if len(s) < level:
+            s.append(p.val)
+        else:
+            s[level - 1] += p.val
+        dfs1(p.left, level + 1)
+        dfs1(p.right, level + 1)
+
+    def dfs2(p, level, q):
+        if not p:
+            return
+        lv = p.left.val if p.left else 0
+        rv = p.right.val if p.right else 0
+        p.val = s[level - 1] - p.val - q
+        dfs2(p.left, level + 1, rv)
+        dfs2(p.right, level + 1, lv)
+
+    dfs1(root, 1)
+    dfs2(root, 1, 0)
+    return root
+
+
+def solution_2641_2(root: Optional[TreeNode]) -> Optional[TreeNode]:
+    # BFS
+    root.val = 0
+    q = [root]
+    while q:
+        tmp = q
+        q = []
+        next_level_sum = 0
+        for node in tmp:
+            if node.left:
+                q.append(node.left)
+                next_level_sum += node.left.val
+            if node.right:
+                q.append(node.right)
+                next_level_sum += node.right.val
+
+        for node in tmp:
+            child_sum = (node.left.val if node.left else 0) + (node.right.val if node.right else 0)
+            if node.left:
+                node.left.val = next_level_sum - child_sum
+            if node.right:
+                node.right.val = next_level_sum - child_sum
+    return root

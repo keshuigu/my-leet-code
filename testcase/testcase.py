@@ -1352,3 +1352,15 @@ def testcase_3027():
     print(solution_3027([[1, 1], [2, 2], [3, 3]]))
     print(solution_3027([[6, 2], [4, 4], [2, 6]]))
     print(solution_3027([[3, 1], [1, 3], [1, 1]]))
+
+
+def testcase_2641():
+    # root=[5, 4, 9, 1, 10, null, 7]
+    print(solution_2641(TreeNode(5, TreeNode(4), TreeNode(9))))
+    print(solution_2641(TreeNode(5, TreeNode(4, TreeNode(1), TreeNode(10)), TreeNode(9, None, TreeNode(7)))))
+
+
+def testcase_2641_2():
+    # root=[5, 4, 9, 1, 10, null, 7]
+    print(solution_2641_2(TreeNode(5, TreeNode(4), TreeNode(9))))
+    print(solution_2641_2(TreeNode(5, TreeNode(4, TreeNode(1), TreeNode(10)), TreeNode(9, None, TreeNode(7)))))
