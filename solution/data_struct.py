@@ -1,4 +1,3 @@
-import math
 import queue
 from typing import *
 
@@ -77,10 +76,37 @@ class DListNode:
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val, left=None, right=None):
+        if type(val) is list:
+            self._init_with_list(val)
+            return
         self.val = val
         self.left = left
         self.right = right
+
+    def _init_with_list(self, tree: List[Any]):
+        self.val = tree[0]
+        p = self
+        q = [p]
+        level = 0
+        while q:
+            tmp = q
+            q = []
+            level += 1
+            sub_nodes = tree[2 ** level - 1:2 ** (level + 1) - 1]
+            index = 0
+            for node in tmp:
+                if not node:
+                    index += 2
+                    continue
+                node.left = TreeNode(sub_nodes[index]) if sub_nodes[index] is not None else None
+                q.append(node.left)
+                index += 1
+                node.right = TreeNode(sub_nodes[index]) if sub_nodes[index] is not None else None
+                q.append(node.right)
+                index += 1
+            if 2 ** (level + 1) >= len(tree):
+                return
 
     def __str__(self):
         bfs_q = queue.Queue()

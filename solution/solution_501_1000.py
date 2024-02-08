@@ -1,6 +1,6 @@
-from typing import *
-from .data_struct import *
 from functools import cache
+
+from .data_struct import *
 
 
 def solution_876(head: Optional[ListNode]) -> Optional[ListNode]:
@@ -189,3 +189,36 @@ def solution_514_2(ring: str, key: str) -> int:
         return memo[j][i]
 
     return dfs(0, 0) + len(t)
+
+
+def solution_993(root: Optional[TreeNode], x: int, y: int) -> bool:
+    q = [root]
+    while q:
+        tmp = q
+        q = []
+        index = -1
+        x_index = -1
+        y_index = -1
+        for node in tmp:
+            index += 1
+            if node.left:
+                q.append(node.left)
+                if node.left.val == x:
+                    x_index = index
+                if node.left.val == y:
+                    y_index = index
+            index += 1
+            if node.right:
+                q.append(node.right)
+                if node.right.val == x:
+                    x_index = index
+                if node.right.val == y:
+                    y_index = index
+        if x_index == -1 and y_index == -1:
+            continue
+        if x_index == -1 or y_index == -1:
+            return False
+        elif abs(x_index - y_index) == 1 and ((x_index + y_index) // 2) % 2 == 0:
+            return False
+        else:
+            return True

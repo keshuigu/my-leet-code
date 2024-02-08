@@ -1364,3 +1364,11 @@ def testcase_2641_2():
     # root=[5, 4, 9, 1, 10, null, 7]
     print(solution_2641_2(TreeNode(5, TreeNode(4), TreeNode(9))))
     print(solution_2641_2(TreeNode(5, TreeNode(4, TreeNode(1), TreeNode(10)), TreeNode(9, None, TreeNode(7)))))
+
+
+def testcase_993():
+    print(solution_993(root=TreeNode([1, 2, 3, 4, None, None, None]), x=4, y=3))
+    print(solution_993(root=TreeNode([1, 2, 3, None, 4, None, 5]), x=5, y=4))
+    print(solution_993(root=TreeNode([1, 2, 3, None, 4, None, None]), x=2, y=3))
+    print(solution_993(root=TreeNode([1, 2, None, 3, 4, None, None,  None, None, 5,None, None, None, None, None]), x=2,
+                       y=4))
