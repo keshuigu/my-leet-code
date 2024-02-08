@@ -1,6 +1,6 @@
 - [weekly-contest-381](https://leetcode.cn/contest/weekly-contest-381/): 时限内完成1 3
 
-    - [x] [输入单词需要的最少按键次数 I](https://leetcode.cn/contest/weekly-contest-381/problems/minimum-number-of-pushes-to-type-word-i/): [题目3014](../problem/Easy.md/)
+    - [x] [输入单词需要的最少按键次数 I](https://leetcode.cn/contest/weekly-contest-381/problems/minimum-number-of-pushes-to-type-word-i/): [题目3014](../problem/Easy.md)
     - [x] [按距离统计房屋对数目 I](https://leetcode.cn/contest/weekly-contest-381/problems/count-the-number-of-houses-at-a-certain-distance-i/): [题目3015](../problem/Medium.md)
     - [x] [输入单词需要的最少按键次数 II](https://leetcode.cn/contest/weekly-contest-381/problems/minimum-number-of-pushes-to-type-word-ii/): [题目3016](../problem/Medium.md)
     - [x] [按距离统计房屋对数目 II](https://leetcode.cn/contest/weekly-contest-381/problems/count-the-number-of-houses-at-a-certain-distance-ii/): [题目3017](../problem/Hard.md)
@@ -24,4 +24,6 @@
     - [x] [边界上的蚂蚁](https://leetcode.cn/problems/ant-on-the-boundary/): [题目3028](../problem/Easy.md)
     - [x] [将单词恢复初始状态所需的最短时间 I](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-i/): [题目3029](../problem/Medium.md)
     - [x] [找出网格的区域平均强度](https://leetcode.cn/problems/find-the-grid-of-region-average/): [题目3030](../problem/Medium.md)
-    - [x] [将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/): [题目3031](../problem/Hard.md)
+    - [x] [将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/): [题目3031](../problem/Hard.md) 
+  
+      - [z函数(扩展KMP)](https://personal.utdallas.edu/~besp/demo/John2010/z-algorithm.htm)

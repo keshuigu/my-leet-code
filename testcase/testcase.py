@@ -1323,6 +1323,12 @@ def testcase_3031():
     print(solution_3031(word="abacaba", k=4))
     print(solution_3031(word="abcbabcd", k=2))
 
+def testcase_3031_2():
+    print(solution_3031_2(word="abacaba", k=3))
+    print(solution_3031_2(word="abacaba", k=4))
+    print(solution_3031_2(word="abcbabcd", k=2))
+
+
 
 def testcase_3030():
     print(solution_3030(image=[[5, 6, 7, 10], [8, 9, 10, 10], [11, 12, 13, 10]], threshold=3))

@@ -18,3 +18,6 @@
 9. `LCA`:[参考资料1](https://oi-wiki.org/graph/lca/), [参考题解](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/solutions/2305895/mo-ban-jiang-jie-shu-shang-bei-zeng-suan-v3rw/)
 10. [`排序不等式`](https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E4%B8%8D%E7%AD%89%E5%BC%8F)
 11. [离散化+二维前缀和](https://www.cnblogs.com/tyriis/p/15362478.html):TODO
+12. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/):TODO
+    
+    - [ ] [2132.用邮票贴满网格图](https://leetcode.cn/problems/stamping-the-grid/)

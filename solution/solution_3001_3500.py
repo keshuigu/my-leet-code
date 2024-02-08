@@ -1,6 +1,5 @@
 from collections import defaultdict
 from itertools import accumulate
-from math import inf
 
 from .competition_solution import *
 
@@ -262,3 +261,23 @@ def solution_3030(image: List[List[int]], threshold: int) -> List[List[int]]:
 
 def solution_3031(word: str, k: int) -> int:
     return solution_100204(word, k)
+
+
+def solution_3031_2(word: str, k: int) -> int:
+    """
+    z函数(扩展KMP)
+    """
+    n = len(word)
+    z = [0] * n
+    left = right = 0  # z-box范围
+    for i in range(1, n):
+        if i <= right:  # i在z-box内
+            z[i] = min(z[i - left], right - i + 1)
+        # 向后暴力匹配
+        while i + z[i] < n and word[z[i]] == word[i + z[i]]:
+            left, right = i, i + z[i]
+            z[i] += 1
+        # 后缀完全匹配前缀
+        if i % k == 0 and z[i] >= n - i:
+            return i // k
+    return (n - 1) // k + 1
