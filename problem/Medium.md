@@ -2,6 +2,7 @@
 - [x] [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/ )
 - [x] [82.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ )
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
+- [x] [236.二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )
 

@@ -1,10 +1,10 @@
 import collections
 import math
-from typing import *
-from .data_struct import *
-from .mysql_connecter import *
 import os
+
+from .data_struct import *
 from .method import *
+from .mysql_connecter import *
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -1820,3 +1820,101 @@ def solution_292_2(n: int) -> bool:
     for i in range(4, n + 1):
         dp[i] = (not dp[i - 1]) or (not dp[i - 2]) or (not dp[i - 3])
     return dp[n]
+
+
+def solution_236(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> Optional[TreeNode]:
+    f = {}
+    depth = {}
+
+    def dfs(p, q):
+        depth[p] = depth[q] + 1
+        f[p] = q
+        if p.left:
+            f[p.left] = p
+            dfs(p.left, p)
+        if p.right:
+            f[p.right] = p
+            dfs(p.right, p)
+
+    depth[root] = 0
+    f[root] = None
+    if root.left:
+        dfs(root.left, root)
+    if root.right:
+        dfs(root.right, root)
+
+    while p != q:
+        if depth[p] > depth[q]:
+            p = f[p]
+        else:
+            q = f[q]
+    return p
+
+
+def solution_236_2(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> Optional[TreeNode]:
+    if root is None or root == p or root == q:
+        return root
+    left = solution_236_2(root.left, p, q)
+    right = solution_236_2(root.right, p, q)
+    if left and right:
+        return root
+    return left or right
+
+
+def solution_236_3(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> Optional[TreeNode]:
+    """
+    适合一棵树做多次查询
+    预处理过程只需要做一边
+    """
+    f = {}
+    depth = {}
+    cnt = 1
+
+    def dfs(p, q):
+        nonlocal cnt
+        cnt += 1
+        depth[p] = depth[q] + 1
+        f[p] = q
+        if p.left:
+            f[p.left] = p
+            dfs(p.left, p)
+        if p.right:
+            f[p.right] = p
+            dfs(p.right, p)
+
+    depth[root] = 0
+    f[root] = None
+    if root.left:
+        dfs(root.left, root)
+    if root.right:
+        dfs(root.right, root)
+
+    m = cnt.bit_length()
+    for x in f:
+        tmp = f[x]
+        f[x] = [None] * m
+        f[x][0] = tmp
+    for i in range(m - 1):
+        for x in f:
+            if (tmp_node := f[x][i]) is not None:
+                f[x][i + 1] = f[tmp_node][i]  # 更新2倍幂上跳对应的节点
+
+    def get_kth(node, k: int) -> int:
+        for i in range(k.bit_length()):
+            if (k >> i) & 1:
+                node = f[node][i]
+                if node is None:
+                    break
+        return node
+
+    if depth[p] > depth[q]:
+        p, q = q, p
+    q = get_kth(q, depth[q] - depth[p])  # 使得node2和node1位于同一深度
+    if p == q:
+        return p
+    # 贪心上跳
+    for i in range(len(f[q]) - 1, -1, -1):
+        p1, p2 = f[p][i], f[q][i]
+        if p1 != p2:  # 还能继续往上跳
+            p, q = p1, p2
+    return f[p][0]

@@ -1323,11 +1323,11 @@ def testcase_3031():
     print(solution_3031(word="abacaba", k=4))
     print(solution_3031(word="abcbabcd", k=2))
 
+
 def testcase_3031_2():
     print(solution_3031_2(word="abacaba", k=3))
     print(solution_3031_2(word="abacaba", k=4))
     print(solution_3031_2(word="abcbabcd", k=2))
-
 
 
 def testcase_3030():
@@ -1376,5 +1376,22 @@ def testcase_993():
     print(solution_993(root=TreeNode([1, 2, 3, 4, None, None, None]), x=4, y=3))
     print(solution_993(root=TreeNode([1, 2, 3, None, 4, None, 5]), x=5, y=4))
     print(solution_993(root=TreeNode([1, 2, 3, None, 4, None, None]), x=2, y=3))
-    print(solution_993(root=TreeNode([1, 2, None, 3, 4, None, None,  None, None, 5,None, None, None, None, None]), x=2,
+    print(solution_993(root=TreeNode([1, 2, None, 3, 4, None, None, None, None, 5, None, None, None, None, None]), x=2,
                        y=4))
+
+
+def testcase_236():
+    q = TreeNode(4)
+    p = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), q))
+    print(solution_236(TreeNode(3, p, TreeNode(1, TreeNode(0), TreeNode(8))), p, q))
+
+def testcase_236_2():
+    q = TreeNode(4)
+    p = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), q))
+    print(solution_236_2(TreeNode(3, p, TreeNode(1, TreeNode(0), TreeNode(8))), p, q))
+
+
+def testcase_236_3():
+    q = TreeNode(4)
+    p = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), q))
+    print(solution_236_3(TreeNode(3, p, TreeNode(1, TreeNode(0), TreeNode(8))), p, q))
