@@ -1,3 +1,4 @@
+from itertools import pairwise
 from math import inf
 from typing import *
 
@@ -354,6 +355,13 @@ def solution_100186(nums: List[int], pattern: List[int]) -> int:
 
 
 def solution_100219(words: List[str]) -> int:
+    """
+    奇回文串的特点：偶回文串的特点 + 正中间任意填 -> 最后再填
+
+    优先填短的
+
+    只考虑左半边怎么填
+    """
     # n = len(words)
     # arrays = [0] * 26
     # lens = [len(x) for x in words]
@@ -379,10 +387,31 @@ def solution_100219(words: List[str]) -> int:
     #
     #     if flag:
     #         cnt += 1
-    ...
+    cnt = Counter[int]()
+    for word in words:
+        cnt += Counter[int](word)
+
+    # 计算可用来组成回文串左右两侧的字母个数
+    # 只需统计一侧可用字母个数
+    left = sum(c // 2 for c in cnt.values())
+    # 按照字符串长度，从小到大填入字母
+    ans = 0
+    words.sort(key=len)
+    for word in words:
+        m = len(word) // 2
+        if left < m:
+            break
+        left -= m  # 拿出m个字符放入word
+        ans += 1
+    # 不用管奇数的情况
+    # 最后留着没用的字符可以随便填上去
+    return ans
 
 
 def solution_100198(nums: List[int], pattern: List[int]) -> int:
+    """
+    KMP
+    """
     n = len(nums)
     m = len(pattern)
     cnt = 0
@@ -420,3 +449,28 @@ def solution_100198(nums: List[int], pattern: List[int]) -> int:
             q = pat_next[q]
 
     return cnt
+
+
+def solution_100198_2(nums: List[int], pattern: List[int]) -> int:
+    """
+    Z 函数
+
+    把 pattern 拼在b前面
+    中间插入间隔符
+
+    根据Z函数的定义，只要z[i] = m,就找到了1个匹配
+    """
+    m = len(pattern)
+    pattern.append(2)
+    pattern.extend((y > x) - (y < x) for x, y in pairwise(nums))
+
+    n = len(pattern)
+    z = [0] * n
+    l = r = 0
+    for i in range(1, n):
+        if i <= r:
+            z[i] = min(z[i - l], r - i + 1)
+        while i + z[i] < n and pattern[z[i]] == pattern[i + z[i]]:
+            l, r = i, i + z[i]
+            z[i] += 1
+    return sum(lcp == m for lcp in z[m + 1:])

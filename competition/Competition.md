@@ -24,8 +24,12 @@
     - [x] [边界上的蚂蚁](https://leetcode.cn/problems/ant-on-the-boundary/): [题目3028](../problem/Easy.md)
     - [x] [将单词恢复初始状态所需的最短时间 I](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-i/): [题目3029](../problem/Medium.md)
     - [x] [找出网格的区域平均强度](https://leetcode.cn/problems/find-the-grid-of-region-average/): [题目3030](../problem/Medium.md)
-    - [x] [将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/): [题目3031](../problem/Hard.md) 
-  
-      - [z函数(扩展KMP)](https://personal.utdallas.edu/~besp/demo/John2010/z-algorithm.htm)
+    - [x] [将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/): [题目3031](../problem/Hard.md)
+
+        - [z函数(扩展KMP)](https://personal.utdallas.edu/~besp/demo/John2010/z-algorithm.htm)
 
 - [weekly-contest-384](https://leetcode.cn/contest/weekly-contest-384/): 时限内完成1 2 4
+
+    - TODO: 等待题目序号
+    - 3: 贪心
+    - 4: KMP Z-函数
