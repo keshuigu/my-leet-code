@@ -27,3 +27,5 @@
     - [x] [将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/): [题目3031](../problem/Hard.md) 
   
       - [z函数(扩展KMP)](https://personal.utdallas.edu/~besp/demo/John2010/z-algorithm.htm)
+
+- [weekly-contest-384](https://leetcode.cn/contest/weekly-contest-384/): 时限内完成1 2 4

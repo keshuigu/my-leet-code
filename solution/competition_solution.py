@@ -308,3 +308,115 @@ def solution_100189(image: List[List[int]], threshold: int) -> List[List[int]]:
 
 def solution_100203(word: str, k: int) -> int:
     return solution_100204(word, k)
+
+
+def solution_100230(matrix: List[List[int]]) -> List[List[int]]:
+    n = len(matrix)
+    m = len(matrix[0])
+    ans = [[-1] * m for _ in range(n)]
+    tmp = set()
+    for j in range(m):
+        tmp.clear()
+        max_c = -1
+        for i in range(n):
+            if matrix[i][j] != -1:
+                ans[i][j] = matrix[i][j]
+                max_c = max(max_c, matrix[i][j])
+            else:
+                tmp.add(i)
+        for index in tmp:
+            ans[index][j] = max_c
+    return ans
+
+
+def solution_100186(nums: List[int], pattern: List[int]) -> int:
+    n = len(nums)
+    m = len(pattern)
+    cnt = 0
+    for i in range(n - m):
+        flag = True
+        for j in range(m):
+            if pattern[j] == 1:
+                if nums[i + j + 1] <= nums[i + j]:
+                    flag = False
+                    break
+            elif pattern[j] == 0:
+                if nums[i + j + 1] != nums[i + j]:
+                    flag = False
+                    break
+            elif pattern[j] == -1:
+                if nums[i + j + 1] >= nums[i + j]:
+                    flag = False
+                    break
+        if flag:
+            cnt += 1
+    return cnt
+
+
+def solution_100219(words: List[str]) -> int:
+    # n = len(words)
+    # arrays = [0] * 26
+    # lens = [len(x) for x in words]
+    # lens.sort()
+    # cnt = 0
+    # for word in words:
+    #     for char in word:
+    #         arrays[ord(char) - ord('a')] += 1
+    # for length in lens:
+    #     flag = False
+    #     if length % 2 == 0:
+    #         for i in range(26):
+    #             if arrays[i] >= length:
+    #                 arrays[i] -= length
+    #                 length = 0
+    #                 flag = True
+    #             if arrays[i] % 2 == 0:
+    #                 length -= arrays[i]
+    #                 arrays[i] = 0
+    #             else:
+    #                 length -= (arrays[i] - 1)
+    #                 arrays[i] = 1
+    #
+    #     if flag:
+    #         cnt += 1
+    ...
+
+
+def solution_100198(nums: List[int], pattern: List[int]) -> int:
+    n = len(nums)
+    m = len(pattern)
+    cnt = 0
+
+    def compute_next(p):
+        ret = [0] * m
+        ret[0] = -1
+        j = -1
+        for k in range(1, m):
+            while j > -1 and pattern[j + 1] != pattern[k]:
+                j = ret[j]
+            if p[j + 1] == pattern[k]:
+                j += 1
+            ret[k] = j
+        return ret
+
+    pat_next = compute_next(pattern)
+    q = -1
+    tmp = []
+    for i in range(n - 1):
+        cur = nums[i + 1] - nums[i]
+        if cur > 0:
+            tmp.append(1)
+        elif cur == 0:
+            tmp.append(0)
+        else:
+            tmp.append(-1)
+    for i in range(n - 1):
+        while q > -1 and pattern[q + 1] != tmp[i]:
+            q = pat_next[q]
+        if pattern[q + 1] == tmp[i]:
+            q += 1
+        if q == m - 1:
+            cnt += 1
+            q = pat_next[q]
+
+    return cnt

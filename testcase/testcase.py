@@ -1395,3 +1395,16 @@ def testcase_236_3():
     q = TreeNode(4)
     p = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), q))
     print(solution_236_3(TreeNode(3, p, TreeNode(1, TreeNode(0), TreeNode(8))), p, q))
+
+
+def testcase_100230():
+    print(solution_100230([[1,2,-1],[4,-1,6],[7,8,9]]))
+    print(solution_100230([[3,-1],[5,2]]))
+
+def testcase_100186():
+    print(solution_100186(nums = [1,2,3,4,5,6], pattern = [1,1]))
+    print(solution_100186(nums = [1,4,4,1,3,5,5,3], pattern = [1,0,-1]))
+
+def testcase_100198():
+    print(solution_100198(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
+    print(solution_100198(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
