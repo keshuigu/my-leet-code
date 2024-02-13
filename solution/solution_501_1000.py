@@ -1,3 +1,4 @@
+from collections import defaultdict
 from functools import cache
 
 from .data_struct import *
@@ -222,3 +223,32 @@ def solution_993(root: Optional[TreeNode], x: int, y: int) -> bool:
             return False
         else:
             return True
+
+
+def solution_987(root: Optional[TreeNode]) -> List[List[int]]:
+    f = defaultdict(list)
+
+    def helper(p: TreeNode, row, col):
+        if not p:
+            return
+        f[(row, col)].append(p.val)
+        helper(p.left, row + 1, col - 1)
+        helper(p.right, row + 1, col + 1)
+
+    helper(root, 0, 0)
+    keys = []
+    for key in f:
+        keys.append(key)
+        f[key] = sorted(f[key])
+    keys.sort(key=lambda p: (p[1], p[0]))
+    cur_col = keys[0][1]
+    index = 0
+    ans = [[]]
+    for key in keys:
+        if key[1] == cur_col:
+            ans[index].extend(f[key])
+        else:
+            cur_col = key[1]
+            index += 1
+            ans.append(f[key])
+    return ans

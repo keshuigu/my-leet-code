@@ -1416,3 +1416,9 @@ def testcase_100198():
 def testcase_100198_2():
     print(solution_100198_2(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
     print(solution_100198_2(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
+
+
+def testcase_987():
+    print(solution_987(root=TreeNode([3,9,20,None,None,15,7])))
+    print(solution_987(root=TreeNode([1,2,3,4,5,6,7])))
+    print(solution_987(root=TreeNode([1,2,3,4,6,5,7])))

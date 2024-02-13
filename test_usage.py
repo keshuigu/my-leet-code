@@ -1,9 +1,7 @@
 import heapq
-from typing import Counter
+from typing import *
 
 if __name__ == '__main__':
-    words = ["aac", "def", "ghi", "jkl"]
-    cnt = Counter[int]()
-    for word in words:
-        cnt += Counter[int](word)
-    print(cnt)
+    f = DefaultDict[int,list](list)
+    f[12].append(3)
+    print(f[12])

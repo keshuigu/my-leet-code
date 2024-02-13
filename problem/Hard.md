@@ -16,6 +16,7 @@
 
 - [x] [600.不含连续1的非负整数](https://leetcode.cn/problems/non-negative-integers-without-consecutive-ones/)
 - [x] [902.最大为N的数字组合](https://leetcode.cn/problems/numbers-at-most-n-given-digit-set/)
+- [x] [987.二叉树的垂序遍历](https://leetcode.cn/problems/vertical-order-traversal-of-a-binary-tree)
 - [x] [1483.树节点的第K个祖先](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/): LCA
 - [x] [1944.队列中可以看到的人数](https://leetcode.cn/problems/number-of-visible-people-in-a-queue/)
 - [x] [2376.统计特殊整数](https://leetcode.cn/problems/count-special-integers/)
