@@ -1419,6 +1419,18 @@ def testcase_100198_2():
 
 
 def testcase_987():
-    print(solution_987(root=TreeNode([3,9,20,None,None,15,7])))
-    print(solution_987(root=TreeNode([1,2,3,4,5,6,7])))
-    print(solution_987(root=TreeNode([1,2,3,4,6,5,7])))
+    print(solution_987(root=TreeNode([3, 9, 20, None, None, 15, 7])))
+    print(solution_987(root=TreeNode([1, 2, 3, 4, 5, 6, 7])))
+    print(solution_987(root=TreeNode([1, 2, 3, 4, 6, 5, 7])))
+
+
+def testcase_102():
+    print(solution_102(root=TreeNode([3, 9, 20, None, None, 15, 7])))
+    print(solution_102(root=TreeNode([1, None, None])))
+    print(solution_102(root=None))
+
+
+def testcase_107():
+    print(solution_107(root=TreeNode([3, 9, 20, None, None, 15, 7])))
+    print(solution_107(root=TreeNode([1, None, None])))
+    print(solution_107(root=None))

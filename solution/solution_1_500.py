@@ -1918,3 +1918,41 @@ def solution_236_3(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[
         if p1 != p2:  # 还能继续往上跳
             p, q = p1, p2
     return f[p][0]
+
+
+def solution_102(root: Optional[TreeNode]) -> List[List[int]]:
+    if not root:
+        return []
+    q = [root]
+    ans = []
+    while q:
+        tmp = q
+        q = []
+        res = []
+        for node in tmp:
+            res.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        ans.append(res)
+    return ans
+
+
+def solution_107(root: Optional[TreeNode]) -> List[List[int]]:
+    if not root:
+        return []
+    q = [root]
+    ans = []
+    while q:
+        tmp = q
+        q = []
+        res = []
+        for node in tmp:
+            res.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        ans.append(res)
+    return ans[::-1]
