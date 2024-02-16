@@ -1429,6 +1429,10 @@ def testcase_102():
     print(solution_102(root=TreeNode([1, None, None])))
     print(solution_102(root=None))
 
+def testcase_103():
+    print(solution_103(root=TreeNode([3, 9, 20, None, None, 15, 7])))
+    print(solution_103(root=TreeNode([1, None, None])))
+    print(solution_103(root=None))
 
 def testcase_107():
     print(solution_107(root=TreeNode([3, 9, 20, None, None, 15, 7])))

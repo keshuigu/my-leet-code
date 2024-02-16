@@ -1939,6 +1939,28 @@ def solution_102(root: Optional[TreeNode]) -> List[List[int]]:
     return ans
 
 
+def solution_103(root: Optional[TreeNode]) -> List[List[int]]:
+    if not root:
+        return []
+    q = [root]
+    ans = []
+    reverse = False
+    while q:
+        tmp = q
+        q = []
+        res = []
+        for node in tmp:
+            res.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        if reverse:
+            res = res[::-1]
+        reverse = not reverse
+        ans.append(res)
+    return ans
+
 def solution_107(root: Optional[TreeNode]) -> List[List[int]]:
     if not root:
         return []
