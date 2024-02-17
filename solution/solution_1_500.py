@@ -1961,6 +1961,7 @@ def solution_103(root: Optional[TreeNode]) -> List[List[int]]:
         ans.append(res)
     return ans
 
+
 def solution_107(root: Optional[TreeNode]) -> List[List[int]]:
     if not root:
         return []
@@ -1978,3 +1979,20 @@ def solution_107(root: Optional[TreeNode]) -> List[List[int]]:
                 q.append(node.right)
         ans.append(res)
     return ans[::-1]
+
+
+def solution_429(root: Optional[Node]) -> List[List[int]]:
+    if not root:
+        return []
+    q = [root]
+    ans = []
+    while q:
+        tmp = q
+        q = []
+        vals = []
+        for node in tmp:
+            vals.append(node.val)
+            for child in node.children:
+                q.append(child)
+        ans.append(vals)
+    return ans

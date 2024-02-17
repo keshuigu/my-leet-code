@@ -344,3 +344,46 @@ class QueueWithStack2:
 
     def empty(self) -> bool:
         return self.size == 0
+
+
+class Node:
+    def __init__(self, val):
+        if type(val) is list:
+            self._init_with_list(val)
+            return
+        self.val = val
+        self.children = []
+
+    def _init_with_list(self, vals: List[Any]):
+        self.val = vals[0]
+        self.children = []
+        q = [self]
+        index = 2
+        while q:
+            tmp = q
+            q = []
+            for node in tmp:
+                while vals[index] is not None:
+                    cur = Node(val=vals[index])
+                    q.append(cur)
+                    node.children.append(cur)
+                    index += 1
+                    if index == len(vals):
+                        return
+                index += 1
+                if index == len(vals):
+                    return
+
+    def __str__(self):
+        q = [self]
+        res = ''
+        while q:
+            tmp = q
+            q = []
+            cur = ''
+            for node in tmp:
+                cur += str(node.val)
+                for child in node.children:
+                    q.append(child)
+            res += '[' + cur + '],'
+        return res

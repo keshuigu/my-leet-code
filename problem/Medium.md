@@ -13,7 +13,8 @@
   - [官方题解](https://leetcode.cn/problems/water-and-jug-problem/solutions/161010/shui-hu-wen-ti-by-leetcode-solution/)
   - [裴蜀定理](https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86)
 
-- [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/ )
+- [x] [429.N叉树的层序遍历](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/)
+- [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/)
 - [x] [670.最大交换](https://leetcode.cn/problems/maximum-swap/ )
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
