@@ -1,3 +1,5 @@
+from collections import defaultdict
+from functools import cache
 from itertools import pairwise
 from math import inf
 from typing import *
@@ -474,3 +476,100 @@ def solution_100198_2(nums: List[int], pattern: List[int]) -> int:
             l, r = i, i + z[i]
             z[i] += 1
     return sum(lcp == m for lcp in z[m + 1:])
+
+
+def solution_100221(nums: List[int]) -> int:
+    if len(nums) <= 2:
+        return 1
+    cnt = 1
+    score = nums[0] + nums[1]
+    for i in range(2, len(nums) - 1, 2):
+        if nums[i] + nums[i + 1] == score:
+            cnt += 1
+        else:
+            return cnt
+    return cnt
+
+
+def solution_100211(s: str) -> str:
+    f = defaultdict(lambda: 0)
+    idx = {}
+    for i in range(len(s)):
+        f[s[i]] += 1
+        idx[s[i]] = i
+    max_cnt = 0
+    for ch in f:
+        if f[ch] > max_cnt:
+            max_cnt = f[ch]
+    res = []
+    for ch in f:
+        if f[ch] == max_cnt:
+            res.append((idx[ch], ch))
+    res.sort()
+    ans = ''
+    for _, ch in res:
+        ans += ch
+    return ans
+
+
+def solution_100220(nums: List[int]) -> int:
+    if len(nums) <= 2:
+        return 1
+
+    @cache
+    def dfs(i, j, score, cnt):
+        if i >= j:
+            return cnt
+        if nums[i] + nums[i + 1] == score:
+            ans1 = dfs(i + 2, j, score, cnt + 1)
+        else:
+            ans1 = cnt
+        if nums[j - 1] + nums[j] == score:
+            ans2 = dfs(i, j - 2, score, cnt + 1)
+        else:
+            ans2 = cnt
+        if nums[i] + nums[j] == score:
+            ans3 = dfs(i + 1, j - 1, score, cnt + 1)
+        else:
+            ans3 = cnt
+        return max(ans1, ans2, ans3)
+
+    return max(dfs(2, len(nums) - 1, nums[0] + nums[1], 1),
+               dfs(0, len(nums) - 3, nums[-2] + nums[-1], 1),
+               dfs(1, len(nums) - 2, nums[0] + nums[-1], 1))
+
+
+def solution_100205(nums: List[int]) -> int:
+    # nums.sort()
+    # inc = -1
+    # cur = nums[0]
+    # index = 0
+    # w = -inf
+    # i = 0
+    # while i < len(nums) - 1:
+    #     i += 1
+    #     cur += 1
+    #     if nums[i] == cur:
+    #         continue
+    #     elif nums[i] - cur == -1 and inc < 0:
+    #         inc = i
+    #     elif nums[i] - cur == -1 and inc >= 0:
+    #         inc = i
+    #     elif nums[i] - cur == -2 and inc < 0:
+    #         inc = i
+    #     else:
+    #         w = max(i - index, w)
+    #         if inc >= 0:
+    #             i = inc
+    #         cur = nums[i]
+    #         index = i
+    #         inc = -1
+    # w = max(len(nums) - index, w)
+    # return w
+    nums.sort()
+    f = defaultdict(int)
+    for num in nums:
+        f[num + 1] = f[num] + 1  # 当前数加1, 可以使得上个为num的数后续增加一个数字
+        # 先算num+1, 否则会重复计算自身
+        f[num] = f[num - 1] + 1  # 当前数不加1, 可以使得上个为num-1的数后续增加一个数字
+    return max(f.values())

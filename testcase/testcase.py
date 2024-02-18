@@ -1398,19 +1398,19 @@ def testcase_236_3():
     print(solution_236_3(TreeNode(3, p, TreeNode(1, TreeNode(0), TreeNode(8))), p, q))
 
 
-def testcase_100230():
-    print(solution_100230([[1, 2, -1], [4, -1, 6], [7, 8, 9]]))
-    print(solution_100230([[3, -1], [5, 2]]))
+def testcase_3033():
+    print(solution_3033([[1, 2, -1], [4, -1, 6], [7, 8, 9]]))
+    print(solution_3033([[3, -1], [5, 2]]))
 
 
-def testcase_100186():
-    print(solution_100186(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
-    print(solution_100186(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
+def testcase_3034():
+    print(solution_3034(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
+    print(solution_3034(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
 
 
-def testcase_100198():
-    print(solution_100198(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
-    print(solution_100198(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
+def testcase_3036():
+    print(solution_3036(nums=[1, 2, 3, 4, 5, 6], pattern=[1, 1]))
+    print(solution_3036(nums=[1, 4, 4, 1, 3, 5, 5, 3], pattern=[1, 0, -1]))
 
 
 def testcase_100198_2():
@@ -1444,3 +1444,32 @@ def testcase_107():
 
 def testcase_429():
     print(solution_429(root=Node([1, None, 3, 2, 4, None, 5, 6])))
+
+
+def testcase_100221():
+    print(solution_100221([3, 2, 1, 4, 5]))
+    print(solution_100221([3, 2, 6, 1, 4]))
+
+
+def testcase_100211():
+    print(solution_100211("aabcbbca"))
+    print(solution_100211("abcd"))
+
+
+def testcase_100220():
+    print(solution_100220([3, 2, 1, 2, 3, 4]))
+    print(solution_100220([3, 2, 6, 1, 4]))
+
+
+def testcase_100205():
+    print(solution_100205([2, 1, 5, 1, 1]))
+    print(solution_100205([1, 4, 7, 10]))
+    print(solution_100205([8, 10, 6, 12, 9, 12, 2, 3, 13, 19, 11, 18, 10, 16]))
+
+
+def testcase_589():
+    print(solution_589(root=Node([1, None, 3, 2, 4, None, 5, 6])))
+
+
+def testcase_589_2():
+    print(solution_589_2(root=Node([1, None, 3, 2, 4, None, 5, 6])))

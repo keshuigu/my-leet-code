@@ -30,6 +30,19 @@
 
 - [weekly-contest-384](https://leetcode.cn/contest/weekly-contest-384/): 时限内完成1 2 4
 
-    - TODO: 等待题目序号
-    - 3: 贪心
-    - 4: KMP Z-函数
+    - [x] [修改矩阵](https://leetcode.cn/problems/modify-the-matrix/description/): [题目3033](../problem/Easy.md)
+    - [x] [匹配模式数组的子数组数目 I](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/): [题目3034](../problem/Medium.md)
+    - [x] [回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/): [题目3035](../problem/Medium.md)
+
+        - 贪心
+
+    - [x] [匹配模式数组的子数组数目 II](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-ii/): [题目3036](../problem/Hard.md)
+
+        - KMP Z-函数
+
+- [biweekly-contest-124](https://leetcode.cn/contest/biweekly-contest-124/): 时限内完成1 2 3
+
+    - [x] [相同分数的最大操作数目 I](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/): [TODO](../problem/Easy.md)
+    - [x] [进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/): [题目3039](../problem/Medium.md)
+    - [x] [相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/): [TODO](../problem/Medium.md)
+    - [x] [修改数组后最大化数组中的连续元素数目](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/): [TODO](../problem/Hard.md)

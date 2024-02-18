@@ -1,7 +1,7 @@
 from collections import defaultdict
 from itertools import accumulate
 
-from .competition_solution import *
+from .contest_solution import *
 
 
 def solution_3014(word: str) -> int:
@@ -281,3 +281,19 @@ def solution_3031_2(word: str, k: int) -> int:
         if i % k == 0 and z[i] >= n - i:
             return i // k
     return (n - 1) // k + 1
+
+
+def solution_3033(matrix: List[List[int]]) -> List[List[int]]:
+    return solution_100230(matrix)
+
+
+def solution_3034(nums: List[int], pattern: List[int]) -> int:
+    return solution_100186(nums, pattern)
+
+
+def solution_3035(words: List[str]) -> int:
+    return solution_100219(words)
+
+
+def solution_3036(nums: List[int], pattern: List[int]) -> int:
+    return solution_100198(nums, pattern)

@@ -252,3 +252,30 @@ def solution_987(root: Optional[TreeNode]) -> List[List[int]]:
             index += 1
             ans.append(f[key])
     return ans
+
+
+def solution_589(root: Optional[Node]) -> List[int]:
+    if not root:
+        return []
+    res = []
+
+    def helper(p):
+        res.append(p.val)
+        for child in p.children:
+            helper(child)
+
+    helper(root)
+    return res
+
+
+def solution_589_2(root: Optional[Node]) -> List[int]:
+    if not root:
+        return []
+    ans = []
+    s = [root]
+    while s:
+        cur = s.pop()
+        ans.append(cur.val)
+        for child in cur.children[::-1]:
+            s.append(child)
+    return ans

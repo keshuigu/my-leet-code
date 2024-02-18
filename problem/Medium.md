@@ -59,3 +59,5 @@
 - [x] [3026.最大好子数组和](https://leetcode.cn/problems/maximum-good-subarray-sum/)
 - [x] [3029.将单词恢复初始状态所需的最短时间 I](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-i/)
 - [x] [3030.找出网格的区域平均强度](https://leetcode.cn/problems/find-the-grid-of-region-average/)
+- [x] [3034.匹配模式数组的子数组数目 I](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/)
+- [x] [3035.回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/)

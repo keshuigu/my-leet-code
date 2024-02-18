@@ -118,6 +118,7 @@
 
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
+- [x] [589.N叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/middle-of-the-linked-list/)
 - [x] [993.二叉树的堂兄弟节点](https://leetcode.cn/problems/cousins-in-binary-tree/)
 - [x] [1154.一年中的第几天](https://leetcode.cn/problems/day-of-the-year/)
@@ -148,3 +149,4 @@
 - [x] [3019.按键变更的次数](https://leetcode.cn/problems/number-of-changing-keys/)
 - [x] [3024.三角形类型](https://leetcode.cn/problems/type-of-triangle-ii/)
 - [x] [3028.边界上的蚂蚁](https://leetcode.cn/problems/ant-on-the-boundary/)
+- [x] [3033.修改矩阵](https://leetcode.cn/problems/modify-the-matrix/description/)
