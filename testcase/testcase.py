@@ -1473,3 +1473,20 @@ def testcase_589():
 
 def testcase_589_2():
     print(solution_589_2(root=Node([1, None, 3, 2, 4, None, 5, 6])))
+
+
+def testcase_100212():
+    print(solution_100212(["a", "aba", "ababa", "aa"]))
+    print(solution_100212(["pa", "papa", "ma", "mama"]))
+    print(solution_100212(["abab", "ab"]))
+
+
+def testcase_100229():
+    print(solution_100229(arr1=[1, 10, 100], arr2=[1000]))
+    print(solution_100229(arr1=[1, 2, 3], arr2=[4, 4, 4]))
+
+
+def testcase_100217():
+    print(solution_100217([[1, 1], [9, 9], [1, 1]]))
+    print(solution_100217([[7]]))
+    print(solution_100217([[9, 7, 8], [4, 6, 5], [2, 8, 6]]))

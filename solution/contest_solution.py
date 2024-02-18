@@ -573,3 +573,128 @@ def solution_100205(nums: List[int]) -> int:
         # 先算num+1, 否则会重复计算自身
         f[num] = f[num - 1] + 1  # 当前数不加1, 可以使得上个为num-1的数后续增加一个数字
     return max(f.values())
+
+
+def solution_100212(words: List[str]) -> int:
+    def isPrefixAndSuffix(str1, str2):
+        if len(str1) > len(str2):
+            return False
+        n = len(str1)
+        m = len(str2)
+        if str1 != str2[0:n]:
+            return False
+        if str1 != str2[m - n:]:
+            return False
+        return True
+
+    cnt = 0
+    for i in range(len(words)):
+        for j in range(i + 1, len(words)):
+            if isPrefixAndSuffix(words[i], words[j]):
+                cnt += 1
+    return cnt
+
+
+def solution_100229(arr1: List[int], arr2: List[int]) -> int:
+    def get_pre_len(t1, t2):
+        cnt = 0
+        for i in range(min(len(t1), len(t2))):
+            if t1[i] != t2[i]:
+                return cnt
+            cnt += 1
+        return cnt
+
+    s1 = set()
+    for a1 in arr1:
+        tmp = a1
+        while tmp > 0:
+            if tmp not in s1:
+                s1.add(tmp)
+            tmp = tmp // 10
+    s2 = set()
+    for a2 in arr2:
+        tmp = a2
+        while tmp > 0:
+            if tmp not in s1:
+                s2.add(tmp)
+            tmp = tmp // 10
+
+    t1 = list(s1)
+    t1.sort(reverse=True)
+    t2 = list(s2)
+    t2.sort(reverse=True)
+
+    max_len = 0
+    max_num = 0
+    for pre1 in t1:
+        if pre1 <= max_num:
+            continue
+        for pre2 in t2:
+            if pre2 <= max_num:
+                break
+            if max_len < (cur := get_pre_len(str(pre1), str(pre2))):
+                max_len = cur
+                max_num = 10 ** (max_len - 1)
+    return max_len
+
+
+def solution_100217(mat: List[List[int]]) -> int:
+    m = len(mat)
+    n = len(mat[0])
+
+    def check(c):
+        if c < 10:
+            return False
+        for i in range(2, int(c ** 0.5) + 1):
+            if c % i == 0:
+                return False
+        return True
+
+    def get_one(x0, y0, x, y):
+        res = []
+        cur = 0
+        while -1 < x0 < m and -1 < y0 < n:
+            cur = cur * 10 + mat[x0][y0]
+            if check(cur):
+                res.append(cur)
+            x0 += x
+            y0 += y
+        return res
+
+    f = defaultdict(int)
+    for i in range(m):
+        for j in range(n):
+            if cur := get_one(i, j, 1, 0):
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, -1, 0)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, 1, 1)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, -1, 1)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, 0, 1)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, 1, -1)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, -1, -1)) != -1:
+                for x in cur:
+                    f[x] += 1
+            if (cur := get_one(i, j, 0, -1)) != -1:
+                for x in cur:
+                    f[x] += 1
+
+    max_cnt = -1
+    max_num = -1
+    for num in f:
+        if f[num] == max_cnt:
+            max_num = max(num, max_num)
+        elif f[num] > max_cnt:
+            max_cnt = f[num]
+            max_num = num
+    return max_num
