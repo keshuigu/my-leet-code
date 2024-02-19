@@ -1,4 +1,3 @@
-from collections import defaultdict
 from itertools import accumulate
 
 from .contest_solution import *
@@ -297,3 +296,20 @@ def solution_3035(words: List[str]) -> int:
 
 def solution_3036(nums: List[int], pattern: List[int]) -> int:
     return solution_100198(nums, pattern)
+
+
+def solution_3039(s: str) -> str:
+    return solution_100211(s)
+
+
+def solution_3039_2(s: str) -> str:
+    """
+    1. 不会有重复字母
+    2. 出现次数最多的字母
+    3. 最后一次出现的下标
+    """
+    last = {c: i for i, c in enumerate(s)}
+    cnt = Counter(s)
+    mx = max(cnt.values())
+    ids = sorted(last[ch] for ch, c in cnt.items() if c == mx)
+    return ''.join(s[id] for id in ids)

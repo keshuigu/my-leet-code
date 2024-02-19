@@ -61,3 +61,4 @@
 - [x] [3030.找出网格的区域平均强度](https://leetcode.cn/problems/find-the-grid-of-region-average/)
 - [x] [3034.匹配模式数组的子数组数目 I](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/)
 - [x] [3035.回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/)
+- [x] [3039.进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/)

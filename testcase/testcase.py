@@ -1451,9 +1451,14 @@ def testcase_100221():
     print(solution_100221([3, 2, 6, 1, 4]))
 
 
-def testcase_100211():
-    print(solution_100211("aabcbbca"))
-    print(solution_100211("abcd"))
+def testcase_3039():
+    print(solution_3039("aabcbbca"))
+    print(solution_3039("abcd"))
+
+
+def testcase_3039_2():
+    print(solution_3039_2("aabcbbca"))
+    print(solution_3039_2("abcd"))
 
 
 def testcase_100220():
@@ -1490,3 +1495,17 @@ def testcase_100217():
     print(solution_100217([[1, 1], [9, 9], [1, 1]]))
     print(solution_100217([[7]]))
     print(solution_100217([[9, 7, 8], [4, 6, 5], [2, 8, 6]]))
+
+
+def testcase_590():
+    print(solution_590(Node([1, None, 3, 2, 4, None, 5, 6])))
+    print(solution_590(Node(
+        [1, None, 2, 3, 4, 5, None, None, 6, 7, None, 8, None, 9, 10, None, None, 11, None, 12, None, 13, None, None,
+         14])))
+
+
+def testcase_590_2():
+    print(solution_590_2(Node([1, None, 3, 2, 4, None, 5, 6])))
+    print(solution_590_2(Node(
+        [1, None, 2, 3, 4, 5, None, None, 6, 7, None, 8, None, 9, 10, None, None, 11, None, 12, None, 13, None, None,
+         14])))

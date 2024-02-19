@@ -279,3 +279,35 @@ def solution_589_2(root: Optional[Node]) -> List[int]:
         for child in cur.children[::-1]:
             s.append(child)
     return ans
+
+
+def solution_590(root: Optional[Node]) -> List[int]:
+    if not root:
+        return []
+    ans = []
+
+    def helper(node):
+        for child in node.children:
+            helper(child)
+        ans.append(node.val)
+
+    helper(root)
+    return ans
+
+
+def solution_590_2(root: Optional[Node]) -> List[int]:
+    if not root:
+        return []
+    ans = []
+    s = [root]
+    prev = None
+    while s:
+        cur = s.pop()
+        if not cur.children or prev == cur.children[-1]:
+            ans.append(cur.val)
+            prev = cur
+            continue
+        s.append(cur)
+        for child in cur.children[::-1]:
+            s.append(child)
+    return ans
