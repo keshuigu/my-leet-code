@@ -1998,4 +1998,40 @@ def solution_429(root: Optional[Node]) -> List[List[int]]:
     return ans
 
 
+def solution_105(preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+    f = {val: idx for idx, val in enumerate(inorder)}
+    n = len(preorder)
 
+    def helper(pre_left, pre_right, in_left, in_right):
+        if pre_left > pre_right:
+            return None
+        p = TreeNode(preorder[pre_left])
+        if pre_left == pre_right:
+            return p
+        idx = f[p.val]
+        length = idx - in_left
+        p.left = helper(pre_left + 1, pre_left + length, in_left, idx - 1)
+        p.right = helper(pre_left + length + 1, pre_right, idx + 1, in_right)
+        return p
+
+    return helper(0, n - 1, 0, n - 1)
+
+
+def solution_105_2(preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+    root = TreeNode(preorder[0])
+    s = [root]
+    index = 0
+    cur = inorder[index]
+    for val in preorder[1:]:
+        node = s[-1]
+        if node.val == cur:
+            while s and s[-1].val == cur:
+                index += 1
+                cur = inorder[index]
+                node = s.pop()
+            node.right = TreeNode(val)
+            s.append(node.right)
+        else:
+            node.left = TreeNode(val)
+            s.append(node.left)
+    return root

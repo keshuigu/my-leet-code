@@ -1509,3 +1509,15 @@ def testcase_590_2():
     print(solution_590_2(Node(
         [1, None, 2, 3, 4, 5, None, None, 6, 7, None, 8, None, 9, 10, None, None, 11, None, 12, None, 13, None, None,
          14])))
+
+
+def testcase_105():
+    print(solution_105([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
+    print(solution_105([-1], [-1]))
+    print(solution_105([1, 2], [2, 1]))
+
+
+def testcase_105_2():
+    print(solution_105_2([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
+    print(solution_105_2([-1], [-1]))
+    print(solution_105_2([1, 2], [2, 1]))
