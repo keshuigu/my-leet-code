@@ -2035,3 +2035,42 @@ def solution_105_2(preorder: List[int], inorder: List[int]) -> Optional[TreeNode
             node.left = TreeNode(val)
             s.append(node.left)
     return root
+
+
+def solution_106(inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+    f = {x: i for i, x in enumerate(inorder)}
+    n = len(postorder)
+
+    def helper(i_left, i_right, p_left, p_right):
+        if i_left > i_right:
+            return None
+        p = TreeNode(postorder[p_right])
+        if i_left == i_right:
+            return p
+        idx = f[postorder[p_right]]
+        length = idx - i_left
+        p.left = helper(i_left, idx - 1, p_left, p_left + length - 1)
+        p.right = helper(idx + 1, i_right, p_left + length, p_right - 1)
+        return p
+
+    return helper(0, n - 1, 0, n - 1)
+
+
+def solution_106_2(inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+    root = TreeNode(postorder[-1])
+    s = [root]
+    idx = len(inorder) - 1
+    cur = inorder[idx]
+    for val in reversed(postorder[:-1:]):
+        node = s[-1]
+        if node.val == cur:
+            while s and s[-1].val == cur:
+                idx -= 1
+                cur = inorder[idx]
+                node = s.pop()
+            node.left = TreeNode(val)
+            s.append(node.left)
+        else:
+            node.right = TreeNode(val)
+            s.append(node.right)
+    return root

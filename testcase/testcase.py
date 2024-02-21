@@ -1521,3 +1521,15 @@ def testcase_105_2():
     print(solution_105_2([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
     print(solution_105_2([-1], [-1]))
     print(solution_105_2([1, 2], [2, 1]))
+
+
+def testcase_106():
+    print(solution_106([9, 3, 15, 20, 7], [9, 15, 7, 20, 3]))
+    print(solution_106([-1], [-1]))
+    print(solution_106([1, 2], [2, 1]))
+
+
+def testcase_106_2():
+    print(solution_106_2([9, 3, 15, 20, 7], [9, 15, 7, 20, 3]))
+    print(solution_106_2([-1], [-1]))
+    print(solution_106_2([1, 2], [2, 1]))
