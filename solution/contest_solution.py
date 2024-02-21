@@ -595,49 +595,6 @@ def solution_100212(words: List[str]) -> int:
     return cnt
 
 
-def solution_100229(arr1: List[int], arr2: List[int]) -> int:
-    def get_pre_len(t1, t2):
-        cnt = 0
-        for i in range(min(len(t1), len(t2))):
-            if t1[i] != t2[i]:
-                return cnt
-            cnt += 1
-        return cnt
-
-    s1 = set()
-    for a1 in arr1:
-        tmp = a1
-        while tmp > 0:
-            if tmp not in s1:
-                s1.add(tmp)
-            tmp = tmp // 10
-    s2 = set()
-    for a2 in arr2:
-        tmp = a2
-        while tmp > 0:
-            if tmp not in s1:
-                s2.add(tmp)
-            tmp = tmp // 10
-
-    t1 = list(s1)
-    t1.sort(reverse=True)
-    t2 = list(s2)
-    t2.sort(reverse=True)
-
-    max_len = 0
-    max_num = 0
-    for pre1 in t1:
-        if pre1 <= max_num:
-            continue
-        for pre2 in t2:
-            if pre2 <= max_num:
-                break
-            if max_len < (cur := get_pre_len(str(pre1), str(pre2))):
-                max_len = cur
-                max_num = 10 ** (max_len - 1)
-    return max_len
-
-
 def solution_100217(mat: List[List[int]]) -> int:
     m = len(mat)
     n = len(mat[0])

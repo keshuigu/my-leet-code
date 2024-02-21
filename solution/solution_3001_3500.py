@@ -312,4 +312,120 @@ def solution_3039_2(s: str) -> str:
     cnt = Counter(s)
     mx = max(cnt.values())
     ids = sorted(last[ch] for ch, c in cnt.items() if c == mx)
-    return ''.join(s[id] for id in ids)
+    return ''.join(s[i] for i in ids)
+
+
+def solution_3038(nums: List[int]) -> int:
+    return solution_100221(nums)
+
+
+def solution_3040(nums: List[int]) -> int:
+    return solution_100220(nums)
+
+
+def solution_3040_2(nums: List[int]) -> int:
+    """
+    子问题是从两侧向内缩小的 -> 区间DP
+    dfs(i, j) = 操作 a[i] ... a[j] 这一段子数组(闭区间[i, j])的最多可以进行的操作字数
+    O(n^2)
+    """
+
+    @cache
+    def dfs(i, j, target):
+        if i >= j:
+            return 0
+        res = 0
+        if nums[i] + nums[i + 1] == target:
+            res = max(res, dfs(i + 2, j, target) + 1)
+        if nums[j - 1] + nums[j] == target:
+            res = max(res, dfs(i, j - 2, target) + 1)
+        if nums[i] + nums[j] == target:
+            res = max(res, dfs(i + 1, j - 1, target) + 1)
+        return res
+
+    n = len(nums)
+    res1 = dfs(2, n - 1, nums[0] + nums[1])
+    res2 = dfs(0, n - 3, nums[-1] + nums[-2])
+    res3 = dfs(1, n - 2, nums[0] + nums[-1])
+    return max(res1, res2, res3) + 1
+
+
+def solution_3041(nums: List[int]) -> int:
+    """
+    排序的正确性
+    选出来的排序后的序列是 b
+    b[i] +1 = b[i+1] -> 操作前, 不会出现b[i] > b[i+1]
+    """
+    return solution_100205(nums)
+
+
+def solution_3041_2(nums: List[int]) -> int:
+    """
+    子序列DP
+    1. 01背包: 子序列相邻元素无关
+    2. 最长递增子序列 LIS: 子序列相邻元素相关
+        2.1 O(n^2) (f[i] nums[i]) 找 j<i 且 nums[j] < nums[i], 从这样的f[j] 转移过来取max
+
+    如果不考虑nums变化
+    dfs(i) = dfs(j)+1:
+        满足 nums[i] = nums[j]+1, 二分找右边第一个nums[i]+1
+        从而O(log n)时间找到转移来源
+
+    考虑nums是否加1
+    dfs(i,add_one) = max(dfs(j,0), dfs(j,1))+1
+        满足 nums[i] = nums[j]+ add_one 或者 num[i] = nums[j] + add_one + 1
+        分别递归到 dfs(j,1) 和 dfs(j,0)
+    """
+
+    def bisearch(l, r, x):
+        while l + 1 < r:
+            mid = (l + r) // 2
+            if nums[mid] > x:
+                r = mid
+            else:
+                l = mid
+        if l == -1 or nums[l] < x:
+            return -1
+        return l
+
+    n = len(nums)
+    if n == 1:
+        return 1
+    nums.sort()
+    dp = [[0] * 2 for _ in range(n)]
+    dp[0][0], dp[0][1] = 1, 1
+    ans = 1
+    for i in range(1, n):
+        dp[i][0], dp[i][1] = 1, 1
+        right = i
+        cur = nums[i]
+        while (j := bisearch(-1, right, cur)) != -1:
+            dp[i][1] = max(dp[i][1], dp[j][0] + 1)
+            right = j
+        while (j := bisearch(-1, right, cur - 1)) != -1:
+            dp[i][0] = max(dp[i][0], dp[j][0] + 1)
+            dp[i][1] = max(dp[i][1], dp[j][1] + 1)
+            right = j
+        while (j := bisearch(-1, right, cur - 2)) != -1:
+            dp[i][0] = max(dp[i][0], dp[j][1] + 1)
+            right = j
+        ans = max(dp[i][0], dp[i][1], ans)
+    return ans
+
+
+def solution_3042(words: List[str]) -> int:
+    return solution_100212(words)
+
+
+def solution_3043(arr1: List[int], arr2: List[int]) -> int:
+    # TODO
+    ...
+
+
+def solution_3044(mat: List[List[int]]) -> int:
+    return solution_100217(mat)
+
+
+def solution_3045():
+    # TODO
+    ...

@@ -151,3 +151,5 @@
 - [x] [3024.三角形类型](https://leetcode.cn/problems/type-of-triangle-ii/)
 - [x] [3028.边界上的蚂蚁](https://leetcode.cn/problems/ant-on-the-boundary/)
 - [x] [3033.修改矩阵](https://leetcode.cn/problems/modify-the-matrix/description/)
+- [x] [3038.相同分数的最大操作数目 I](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/)
+- [x] [3042.统计前后缀下标对 I](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/)

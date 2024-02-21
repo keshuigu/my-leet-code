@@ -67,3 +67,6 @@
 - [x] [3034.匹配模式数组的子数组数目 I](https://leetcode.cn/problems/number-of-subarrays-that-match-a-pattern-i/)
 - [x] [3035.回文字符串的最大数量](https://leetcode.cn/problems/maximum-palindromes-after-operations/)
 - [x] [3039.进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/)
+- [x] [3040.相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/)
+- [x] [3043.最长公共前缀的长度](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/)
+- [x] [3044.出现频率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)

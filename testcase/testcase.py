@@ -1446,9 +1446,9 @@ def testcase_429():
     print(solution_429(root=Node([1, None, 3, 2, 4, None, 5, 6])))
 
 
-def testcase_100221():
-    print(solution_100221([3, 2, 1, 4, 5]))
-    print(solution_100221([3, 2, 6, 1, 4]))
+def testcase_3038():
+    print(solution_3038([3, 2, 1, 4, 5]))
+    print(solution_3038([3, 2, 6, 1, 4]))
 
 
 def testcase_3039():
@@ -1461,15 +1461,27 @@ def testcase_3039_2():
     print(solution_3039_2("abcd"))
 
 
-def testcase_100220():
-    print(solution_100220([3, 2, 1, 2, 3, 4]))
-    print(solution_100220([3, 2, 6, 1, 4]))
+def testcase_3040():
+    print(solution_3040([3, 2, 1, 2, 3, 4]))
+    print(solution_3040([3, 2, 6, 1, 4]))
 
 
-def testcase_100205():
-    print(solution_100205([2, 1, 5, 1, 1]))
-    print(solution_100205([1, 4, 7, 10]))
-    print(solution_100205([8, 10, 6, 12, 9, 12, 2, 3, 13, 19, 11, 18, 10, 16]))
+def testcase_3040_2():
+    print(solution_3040_2([3, 2, 1, 2, 3, 4]))
+    print(solution_3040_2([3, 2, 6, 1, 4]))
+
+
+def testcase_3041():
+    print(solution_3041([2, 1, 5, 1, 1]))
+    print(solution_3041([1, 4, 7, 10]))
+    print(solution_3041([8, 10, 6, 12, 9, 12, 2, 3, 13, 19, 11, 18, 10, 16]))
+
+
+def testcase_3041_2():
+    print(solution_3041_2([2, 1, 5, 1, 1]))
+    print(solution_3041_2([1, 4, 7, 10]))
+    print(solution_3041_2([8, 10, 6, 12, 9, 12, 2, 3, 13, 19, 11, 18, 10, 16]))
+    print(solution_3041_2([12, 11, 8, 7, 2, 10, 18, 12]))
 
 
 def testcase_589():
@@ -1480,21 +1492,21 @@ def testcase_589_2():
     print(solution_589_2(root=Node([1, None, 3, 2, 4, None, 5, 6])))
 
 
-def testcase_100212():
-    print(solution_100212(["a", "aba", "ababa", "aa"]))
-    print(solution_100212(["pa", "papa", "ma", "mama"]))
-    print(solution_100212(["abab", "ab"]))
+def testcase_3042():
+    print(solution_3042(["a", "aba", "ababa", "aa"]))
+    print(solution_3042(["pa", "papa", "ma", "mama"]))
+    print(solution_3042(["abab", "ab"]))
 
 
-def testcase_100229():
-    print(solution_100229(arr1=[1, 10, 100], arr2=[1000]))
-    print(solution_100229(arr1=[1, 2, 3], arr2=[4, 4, 4]))
+def testcase_3043():
+    print(solution_3043(arr1=[1, 10, 100], arr2=[1000]))
+    print(solution_3043(arr1=[1, 2, 3], arr2=[4, 4, 4]))
 
 
-def testcase_100217():
-    print(solution_100217([[1, 1], [9, 9], [1, 1]]))
-    print(solution_100217([[7]]))
-    print(solution_100217([[9, 7, 8], [4, 6, 5], [2, 8, 6]]))
+def testcase_3044():
+    print(solution_3044([[1, 1], [9, 9], [1, 1]]))
+    print(solution_3044([[7]]))
+    print(solution_3044([[9, 7, 8], [4, 6, 5], [2, 8, 6]]))
 
 
 def testcase_590():
