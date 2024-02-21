@@ -1,6 +1,7 @@
 from itertools import accumulate
 
 from .contest_solution import *
+from .data_struct import *
 
 
 def solution_3014(word: str) -> int:
@@ -418,14 +419,46 @@ def solution_3042(words: List[str]) -> int:
 
 
 def solution_3043(arr1: List[int], arr2: List[int]) -> int:
-    # TODO
-    ...
+    st = set()
+    for s in map(str, arr1):
+        for i in range(1, len(s) + 1):
+            st.add(s[:i])
+    ans = 0
+    for s in map(str, arr2):
+        for i in range(1, len(s) + 1):
+            if s[:i] not in st:
+                break
+            ans = max(ans,i)
+    return ans
 
 
 def solution_3044(mat: List[List[int]]) -> int:
     return solution_100217(mat)
 
 
-def solution_3045():
-    # TODO
-    ...
+def solution_3045(words: List[str]) -> int:
+    """
+    字典树
+
+    1. 把字符串按照前缀分组
+    2. 用树实现
+    3. 本题做法
+    把 s 转成一个pair列表 [(s[0],s[n-1]),...,(s[n-1],s[0])]
+    判断 words[i] 对应的 pair 列表是不是word[j]对应的 pair 列表的前缀
+    """
+    ans = 0
+    root = TireOf3045()
+    for s in words:
+        tmp = list(zip(s, s[::-1]))
+        i = 0
+        p = root
+        while i < len(tmp):
+            ans += p.cnt
+            pair = tmp[i]
+            if pair not in p.son:
+                p.son[pair] = TireOf3045()
+            p = p.son[pair]
+            i += 1
+        ans += p.cnt
+        p.cnt += 1
+    return ans

@@ -1545,3 +1545,10 @@ def testcase_106_2():
     print(solution_106_2([9, 3, 15, 20, 7], [9, 15, 7, 20, 3]))
     print(solution_106_2([-1], [-1]))
     print(solution_106_2([1, 2], [2, 1]))
+
+
+def testcase_3045():
+    print(solution_3045(["a","a"]))
+    print(solution_3045(["a","aba","ababa","aa"]))
+    print(solution_3045(["pa","papa","ma","mama"]))
+    print(solution_3045(["abab","ab"]))

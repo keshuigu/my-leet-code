@@ -387,3 +387,9 @@ class Node:
                     q.append(child)
             res += '[' + cur + '],'
         return res
+
+
+class TireOf3045:
+    def __init__(self):
+        self.son = dict() # key 是 pair value 是Node
+        self.cnt = 0 # 以该节点结尾的字符串的出现次数
