@@ -21,6 +21,7 @@
 - [x] [429.N叉树的层序遍历](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/)
 - [x] [447.回旋镖的数量](https://leetcode.cn/problems/number-of-boomerangs/)
 - [x] [670.最大交换](https://leetcode.cn/problems/maximum-swap/ )
+- [x] [889.根据前序遍历和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
 - [x] [1686.石子游戏VI](https://leetcode.cn/problems/stone-game-vi/)

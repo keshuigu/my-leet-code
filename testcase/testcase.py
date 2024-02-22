@@ -1548,7 +1548,11 @@ def testcase_106_2():
 
 
 def testcase_3045():
-    print(solution_3045(["a","a"]))
-    print(solution_3045(["a","aba","ababa","aa"]))
-    print(solution_3045(["pa","papa","ma","mama"]))
-    print(solution_3045(["abab","ab"]))
+    print(solution_3045(["a", "a"]))
+    print(solution_3045(["a", "aba", "ababa", "aa"]))
+    print(solution_3045(["pa", "papa", "ma", "mama"]))
+    print(solution_3045(["abab", "ab"]))
+
+
+def testcase_889():
+    print(solution_889([1, 2, 4, 5, 3, 6, 7], [4, 5, 2, 6, 7, 3, 1]))

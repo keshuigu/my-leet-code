@@ -311,3 +311,23 @@ def solution_590_2(root: Optional[Node]) -> List[int]:
         for child in cur.children[::-1]:
             s.append(child)
     return ans
+
+
+def solution_889(preorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+    f = {x: i for i, x in enumerate(postorder)}
+
+    def helper(pre_l, pre_r, post_l, post_r):
+        if pre_l > pre_r or post_l > post_r:
+            return None
+        node = TreeNode(preorder[pre_l])
+        if pre_r == pre_l:
+            return node
+        left_val = preorder[pre_l + 1]
+        idx = f[left_val]
+        length = idx - post_l + 1
+        node.left = helper(pre_l + 1, pre_l + length, post_l, post_l + length - 1)
+        node.right = helper(pre_l + length + 1, pre_r, post_l + length, post_r - 1)
+        return node
+
+    n = len(postorder)
+    return helper(0, n - 1, 0, n - 1)
