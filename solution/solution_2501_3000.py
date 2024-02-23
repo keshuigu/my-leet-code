@@ -648,3 +648,24 @@ def solution_2641_2(root: Optional[TreeNode]) -> Optional[TreeNode]:
             if node.right:
                 node.right.val = next_level_sum - child_sum
     return root
+
+
+def solution_2583(root: Optional[TreeNode], k: int) -> int:
+    res = []
+    q = [root]
+    while q:
+        tmp = q
+        q = []
+        vals = []
+        for node in tmp:
+            vals.append(node.val)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        res.append(sum(vals))
+    if len(res) >= k:
+        res.sort(reverse=True)
+        return res[k - 1]
+    else:
+        return -1
