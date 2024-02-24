@@ -41,6 +41,10 @@
 
     - [Gosper's Hack](https://zhuanlan.zhihu.com/p/360512296)
 
+- [x] [2476.二叉搜索树最近节点查询](https://leetcode.cn/problems/closest-nodes-queries-in-a-binary-search-tree/)
+
+  - 树可能不平衡,退化为O(n)
+
 - [x] [2487.从链表中移除节点](https://leetcode.cn/problems/remove-nodes-from-linked-list/)
 
     - [单调栈](https://blog.csdn.net/qq_58035032/article/details/129581665)
@@ -71,4 +75,4 @@
 - [x] [3039.进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/)
 - [x] [3040.相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/)
 - [x] [3043.最长公共前缀的长度](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/)
-- [x] [3044.出现频率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)
+- [x] [3044.出现频z率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)

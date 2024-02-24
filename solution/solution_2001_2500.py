@@ -1,4 +1,5 @@
-from typing import *
+from bisect import bisect_left
+
 from .data_struct import *
 from .method import *
 
@@ -280,3 +281,47 @@ def solution_2171(beans: List[int]) -> int:
         if min_beans > tmp:
             min_beans = tmp
     return min_beans
+
+
+def solution_2476(root: Optional[TreeNode], queries: List[int]) -> List[List[int]]:
+    # TL
+    ans = []
+    for q in queries:
+        p = root
+        left = -1
+        right = -1
+        while p is not None:
+            if q < p.val:
+                right = p.val
+                p = p.left
+            elif q > p.val:
+                left = p.val
+                p = p.right
+            else:
+                left = right = q
+                break
+        ans.append([left, right])
+    return ans
+
+
+def solution_2476_2(root: Optional[TreeNode], queries: List[int]) -> List[List[int]]:
+    a = []
+
+    def dfs(node: Optional[TreeNode]) -> None:
+        if node is None:
+            return
+        dfs(node.left)
+        a.append(node.val)
+        dfs(node.right)
+
+    dfs(root)
+    n = len(a)
+    ans = []
+    for q in queries:
+        j = bisect_left(a, q)
+        mx = a[j] if j < n else -1
+        if j == n or a[j] != q:
+            j -= 1
+        mn = a[j] if j >= 0 else -1
+        ans.append([mn, mx])
+    return ans
