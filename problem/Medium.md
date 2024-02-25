@@ -10,6 +10,7 @@
 - [x] [106.从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 - [x] [107.二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
+- [x] [235.二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [x] [236.二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )

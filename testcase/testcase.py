@@ -1565,9 +1565,20 @@ def testcase_2583():
 
 def testcase_2476():
     print(solution_2476(TreeNode([6, 2, 13, 1, 4, 9, 15, None, None, None, None, None, None, 14, None]), [2, 5, 16]))
-    print(solution_2476(TreeNode([4,None,9]), [3]))
+    print(solution_2476(TreeNode([4, None, 9]), [3]))
 
 
 def testcase_2476_2():
     print(solution_2476_2(TreeNode([6, 2, 13, 1, 4, 9, 15, None, None, None, None, None, None, 14, None]), [2, 5, 16]))
-    print(solution_2476_2(TreeNode([4,None,9]), [3]))
+    print(solution_2476_2(TreeNode([4, None, 9]), [3]))
+
+
+def testcase_235():
+    p = TreeNode(2, TreeNode(0), TreeNode(4, TreeNode(3), TreeNode(5)))
+    q = TreeNode(8, TreeNode(7), TreeNode(9))
+    print(solution_235(TreeNode(6, p, q), p, q))
+
+def testcase_235_2():
+    p = TreeNode(2, TreeNode(0), TreeNode(4, TreeNode(3), TreeNode(5)))
+    q = TreeNode(8, TreeNode(7), TreeNode(9))
+    print(solution_235_2(TreeNode(6, p, q), p, q))

@@ -2074,3 +2074,31 @@ def solution_106_2(inorder: List[int], postorder: List[int]) -> Optional[TreeNod
             node.right = TreeNode(val)
             s.append(node.right)
     return root
+
+
+def solution_235(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> Optional[TreeNode]:
+    if not root or root == q or root == p:
+        return root
+    left = solution_235(root.left, p, q)
+    right = solution_235(root.right, p, q)
+    if left and right:
+        return root
+    if left:
+        return left
+    if right:
+        return right
+    return None
+
+
+def solution_235_2(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[TreeNode]) -> Optional[TreeNode]:
+    cur = root
+    while cur:
+        val = cur.val
+        if val > p.val and val > q.val:
+            cur = cur.left
+            continue
+        if val < p.val and val < q.val:
+            cur = cur.right
+            continue
+        return cur
+    return cur
