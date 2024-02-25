@@ -1578,7 +1578,22 @@ def testcase_235():
     q = TreeNode(8, TreeNode(7), TreeNode(9))
     print(solution_235(TreeNode(6, p, q), p, q))
 
+
 def testcase_235_2():
     p = TreeNode(2, TreeNode(0), TreeNode(4, TreeNode(3), TreeNode(5)))
     q = TreeNode(8, TreeNode(7), TreeNode(9))
     print(solution_235_2(TreeNode(6, p, q), p, q))
+
+
+def testcase_w_386_1():
+    print(weekly_contest_386_solution_1([1, 1, 2, 2, 3, 4]))
+    print(weekly_contest_386_solution_1([1, 1, 1, 1]))
+
+
+def testcase_w_386_2():
+    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [2, 2], [3, 1]], topRight=[[3, 3], [4, 4], [6, 6]]))
+    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [2, 2], [1, 2]], topRight=[[3, 3], [4, 4], [3, 4]]))
+    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [3, 3], [3, 1]], topRight=[[2, 2], [4, 4], [4, 2]]))
+    print(weekly_contest_386_solution_2(bottomLeft=[[1, 2], [1, 2]], topRight=[[4, 5], [2, 3]]))
+    print(weekly_contest_386_solution_2([[2, 2], [1, 3]], [[3, 4], [5, 5]]))
+    print(weekly_contest_386_solution_2([[2, 2], [3, 1]], [[5, 5], [5, 5]]))

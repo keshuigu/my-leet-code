@@ -2,13 +2,9 @@ import bisect
 from typing import *
 
 if __name__ == '__main__':
-    f = DefaultDict[int, list](list)
-    f[12].append(3)
-    print(f[12])
-    s = [1, 2, 3]
-    s.sort(reverse=True)
-    s = [1, 2, 3, 4, 5, 7]
+    a= [[1,2],[0,4]]
+    b = [[4,7],[0,8]]
+    s = list(zip(a,b))
+    s.sort(key=lambda x:x[0][0])
     print(s)
-    x = bisect.bisect_left(s, 6)
-    print(x)
-    print(s)
+

@@ -47,9 +47,17 @@
     - [x] [相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/): [题目3040](../problem/Medium.md)
     - [x] [修改数组后最大化数组中的连续元素数目](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/): [题目3041](../problem/Hard.md)
 
-- [weekly-contest-385](https://leetcode.cn/contest/biweekly-contest-124/): 时限内完成1 3, 2 超时
+- [weekly-contest-385](https://leetcode.cn/contest/weekly-contest-385/): 时限内完成1 3, 2 超时
 
     - [x] [统计前后缀下标对 I](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/): [题目3042](../problem/Easy.md)
     - [x] [最长公共前缀的长度](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/): [题目3043](../problem/Medium.md)
     - [x] [出现频率最高的素数](https://leetcode.cn/problems/most-frequent-prime/): [题目3044](../problem/Medium.md)
     - [x] [统计前后缀下标对 II](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-ii/): [题目3045](../problem/Hard.md)
+
+- [weekly-contest-386](https://leetcode.cn/contest/weekly-contest-386/): 时限内完成1
+
+  - [ ] [](https://leetcode.cn/problems/split-the-array/): [TODO](../problem/Easy.md)
+  - [ ] [](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/): [TODO](../problem/Medium.md)
+  - [ ] [](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/): [TODO](../problem/Medium.md)
+  - [ ] [](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/): [TODO](../problem/Hard.md)
+
