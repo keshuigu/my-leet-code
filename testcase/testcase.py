@@ -1597,3 +1597,8 @@ def testcase_w_386_2():
     print(weekly_contest_386_solution_2(bottomLeft=[[1, 2], [1, 2]], topRight=[[4, 5], [2, 3]]))
     print(weekly_contest_386_solution_2([[2, 2], [1, 3]], [[3, 4], [5, 5]]))
     print(weekly_contest_386_solution_2([[2, 2], [3, 1]], [[5, 5], [5, 5]]))
+
+
+def testcase_938():
+    print(solution_938(TreeNode([10, 5, 15, 3, 7, None, 18]), 7,15))
+    print(solution_938(TreeNode([10,5,15,3,7,13,18,1,None,6]), 6,10))

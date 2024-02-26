@@ -93,18 +93,29 @@ class TreeNode:
             tmp = q
             q = []
             level += 1
-            sub_nodes = tree[2 ** level - 1:2 ** (level + 1) - 1]
+            if 2 ** (level + 1) >= len(tree):
+                sub_nodes = tree[2 ** level - 1:]
+            else:
+                sub_nodes = tree[2 ** level - 1:2 ** (level + 1) - 1]
             index = 0
+            if len(sub_nodes) == 0:
+                return
             for node in tmp:
                 if not node:
                     index += 2
                     continue
+                if index >= len(sub_nodes):
+                    break
                 node.left = TreeNode(sub_nodes[index]) if sub_nodes[index] is not None else None
                 q.append(node.left)
                 index += 1
+                if index >= len(sub_nodes):
+                    break
                 node.right = TreeNode(sub_nodes[index]) if sub_nodes[index] is not None else None
                 q.append(node.right)
                 index += 1
+                if index >= len(sub_nodes):
+                    break
             if 2 ** (level + 1) >= len(tree):
                 return
 
@@ -391,5 +402,5 @@ class Node:
 
 class TireOf3045:
     def __init__(self):
-        self.son = dict() # key 是 pair value 是Node
-        self.cnt = 0 # 以该节点结尾的字符串的出现次数
+        self.son = dict()  # key 是 pair value 是Node
+        self.cnt = 0  # 以该节点结尾的字符串的出现次数

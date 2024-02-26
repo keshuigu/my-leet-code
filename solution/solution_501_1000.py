@@ -331,3 +331,14 @@ def solution_889(preorder: List[int], postorder: List[int]) -> Optional[TreeNode
 
     n = len(postorder)
     return helper(0, n - 1, 0, n - 1)
+
+
+def solution_938(root: Optional[TreeNode], low: int, high: int) -> int:
+    if not root:
+        return 0
+    x = root.val
+    if x > high:
+        return solution_938(root.left, low, high)
+    if x < low:
+        return solution_938(root.right, low, high)
+    return x + solution_938(root.left, low, high) + solution_938(root.right, low, high)
