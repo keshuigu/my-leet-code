@@ -1600,5 +1600,10 @@ def testcase_w_386_2():
 
 
 def testcase_938():
-    print(solution_938(TreeNode([10, 5, 15, 3, 7, None, 18]), 7,15))
-    print(solution_938(TreeNode([10,5,15,3,7,13,18,1,None,6]), 6,10))
+    print(solution_938(TreeNode([10, 5, 15, 3, 7, None, 18]), 7, 15))
+    print(solution_938(TreeNode([10, 5, 15, 3, 7, 13, 18, 1, None, 6]), 6, 10))
+
+
+def testcase_2867():
+    print(solution_2867(n=5, edges=[[1, 2], [1, 3], [2, 4], [2, 5]]))
+    print(solution_2867(n = 6, edges = [[1,2],[1,3],[2,4],[3,5],[3,6]]))

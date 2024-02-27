@@ -34,6 +34,10 @@
     - [0x3f的题解](https://leetcode.cn/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/solutions/2424060/lca-mo-ban-by-endlesscheng-j54b/):
       其中cnt为三维数组，`cnt[x][i][j]`代表的是x到2^i祖先的所有边中，权重为j的边的个数
 
+- [x] [2867.统计树中的合法路径数目](https://leetcode.cn/problems/count-valid-paths-in-a-tree/): TODO 树DP
+
+  - [0x3f的题解](https://leetcode.cn/problems/count-valid-paths-in-a-tree/solutions/2456716/tu-jie-on-xian-xing-zuo-fa-pythonjavacgo-tjz2/):枚举中间
+
 - [x] [3017.按距离统计房屋对数目II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/)
 - [x] [3022.给定操作次数内使剩余元素的或值最小](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/)
 
