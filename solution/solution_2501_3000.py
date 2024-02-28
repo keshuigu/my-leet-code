@@ -710,3 +710,11 @@ def solution_2867(n: int, edges: List[List[int]]) -> int:
             s += size[y]
         ans += s  # 从 x 出发的路径
     return ans
+
+
+def solution_2673(n: int, cost: List[int]) -> int:
+    ans = 0
+    for i in range(n // 2, 0, -1):
+        ans += abs(cost[2 * i - 1] - cost[2 * i])
+        cost[i - 1] += max(cost[2 * i - 1], cost[2 * i])
+    return ans
