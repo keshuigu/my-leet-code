@@ -23,6 +23,7 @@
 
     - [数位DP模板](https://leetcode.cn/problems/count-special-integers/solutions/1746956/shu-wei-dp-mo-ban-by-endlesscheng-xtgx/)
 
+- [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): TODO 换根DP
 - [x] [2719.统计整数数目](https://leetcode.cn/problems/count-of-integers/)
 
     - [数位DP](https://leetcode.cn/problems/count-of-integers/solutions/2601111/tong-ji-zheng-shu-shu-mu-by-leetcode-sol-qxqd/)

@@ -1606,9 +1606,14 @@ def testcase_938():
 
 def testcase_2867():
     print(solution_2867(n=5, edges=[[1, 2], [1, 3], [2, 4], [2, 5]]))
-    print(solution_2867(n = 6, edges = [[1,2],[1,3],[2,4],[3,5],[3,6]]))
+    print(solution_2867(n=6, edges=[[1, 2], [1, 3], [2, 4], [3, 5], [3, 6]]))
 
 
 def testcase_2673():
-    print(solution_2673(7,[1,5,2,2,3,3,1]))
-    print(solution_2673(3,[5,3,3]))
+    print(solution_2673(7, [1, 5, 2, 2, 3, 3, 1]))
+    print(solution_2673(3, [5, 3, 3]))
+
+
+def testcase_2581():
+    print(solution_2581(edges=[[0, 1], [1, 2], [1, 3], [4, 2]], guesses=[[1, 3], [0, 1], [1, 0], [2, 4]], k=3))
+    print(solution_2581(edges=[[0, 1], [1, 2], [2, 3], [3, 4]], guesses=[[1, 0], [3, 4], [2, 1], [3, 2]], k=1))

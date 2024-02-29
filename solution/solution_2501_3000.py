@@ -718,3 +718,46 @@ def solution_2673(n: int, cost: List[int]) -> int:
         ans += abs(cost[2 * i - 1] - cost[2 * i])
         cost[i - 1] += max(cost[2 * i - 1], cost[2 * i])
     return ans
+
+
+def solution_2581(edges: List[List[int]], guesses: List[List[int]], k: int) -> int:
+    n = len(edges) + 1
+    g = [[] for _ in range(n)]
+    for a, b in edges:
+        g[a].append(b)
+        g[b].append(a)
+    cnt = [0] * n
+    fa = [-1] * n
+
+    def dfs1(x, p):
+        fa[x] = p
+        for y in g[x]:
+            if y != p:
+                dfs1(y, x)
+
+    dfs1(0, -1)
+    guesses_set = set()
+    for u, v in guesses:
+        guesses_set.add((u, v))
+        if fa[v] == u:
+            cnt[0] += 1
+    ans = 0 if cnt[0] < k else 1
+
+    def dfs2(x, p):
+        nonlocal ans
+        c = cnt[p]
+        if (x, p) in guesses_set:
+            c += 1
+        if (p, x) in guesses_set:
+            c -= 1
+        if c >= k:
+            ans += 1
+        cnt[x] = c
+        for y in g[x]:
+            if y != p:
+                dfs2(y, x)
+
+    for t in g[0]:
+        dfs2(t, 0)
+
+    return ans
