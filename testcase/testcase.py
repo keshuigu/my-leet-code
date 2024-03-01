@@ -1617,3 +1617,16 @@ def testcase_2673():
 def testcase_2581():
     print(solution_2581(edges=[[0, 1], [1, 2], [1, 3], [4, 2]], guesses=[[1, 3], [0, 1], [1, 0], [2, 4]], k=3))
     print(solution_2581(edges=[[0, 1], [1, 2], [2, 3], [3, 4]], guesses=[[1, 0], [3, 4], [2, 1], [3, 2]], k=1))
+
+
+def testcase_2369():
+    print(solution_2369([4, 4, 4, 5, 6]))
+    print(solution_2369([1, 1, 1, 2]))
+    print(solution_2369([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+
+
+
+def testcase_2369_2():
+    print(solution_2369_2([4, 4, 4, 5, 6]))
+    print(solution_2369_2([1, 1, 1, 2]))
+    print(solution_2369_2([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))

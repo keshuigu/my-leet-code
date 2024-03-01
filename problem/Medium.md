@@ -38,6 +38,7 @@
 
   - 自己写的最大堆运行很慢
 
+- [x] [2369.检查数组是否存在有效划分](https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/)
 - [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)
 
     - [Gosper's Hack](https://zhuanlan.zhihu.com/p/360512296)
