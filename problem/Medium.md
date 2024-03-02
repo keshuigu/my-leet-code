@@ -80,3 +80,5 @@
 - [x] [3040.相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/)
 - [x] [3043.最长公共前缀的长度](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/)
 - [x] [3044.出现频z率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)
+- [x] [3047.求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/)
+- [x] [3048.标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/)
