@@ -345,3 +345,47 @@ def solution_2368(n: int, edges: List[List[int]], restricted: List[int]) -> int:
 
     dfs(0, -1)
     return ans
+
+
+
+def solution_2369(nums: List[int]) -> bool:
+    n = len(nums)
+
+    @cache
+    def dfs(left):
+        if left >= n - 1:
+            return False
+        if left + 2 == n:
+            if nums[left] == nums[left + 1]:
+                return True
+            else:
+                return False
+        if left + 3 == n:
+            if nums[left] == nums[left + 1] == nums[-1]:
+                return True
+            elif nums[left] + 1 == nums[left + 1] and nums[left + 1] + 1 == nums[left + 2]:
+                return True
+            else:
+                return False
+        res = False
+        if nums[left] == nums[left + 1]:
+            res = res or dfs(left + 2)
+        if nums[left] == nums[left + 1] == nums[left + 2]:
+            res = res or dfs(left + 3)
+        if nums[left] + 1 == nums[left + 1] and nums[left + 1] + 1 == nums[left + 2]:
+            res = res or dfs(left + 3)
+        return res
+
+    return dfs(0)
+
+
+def solution_2369_2(nums: List[int]) -> bool:
+    n = len(nums)
+    f = [True] + [False] * n
+    # nums 的前 i 个数能否有效划分
+    for i, x in enumerate(nums):
+        if (i > 0 and f[i - 1] and x == nums[i - 1]) or (
+                i > 1 and f[i - 2] and (
+                (x == nums[i - 1] == nums[i - 2]) or (x == nums[i - 1] + 1 == nums[i - 2] + 2))):
+            f[i + 1] = True
+    return f[n]
