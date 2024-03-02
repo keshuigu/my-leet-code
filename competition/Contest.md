@@ -56,8 +56,8 @@
 
 - [weekly-contest-386](https://leetcode.cn/contest/weekly-contest-386/): 时限内完成1
 
-  - [ ] [](https://leetcode.cn/problems/split-the-array/): [TODO](../problem/Easy.md)
-  - [ ] [](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/): [TODO](../problem/Medium.md)
-  - [ ] [](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/): [TODO](../problem/Medium.md)
-  - [ ] [](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/): [TODO](../problem/Hard.md)
+  - [x] [分割数组](https://leetcode.cn/problems/split-the-array/): [题目3046](../problem/Easy.md)
+  - [x] [求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/): [题目3047](../problem/Medium.md)
+  - [x] [标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/): [题目3048](../problem/Medium.md)
+  - [x] [标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/): [题目3049](../problem/Hard.md)
 

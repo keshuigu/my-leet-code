@@ -1,3 +1,5 @@
+import heapq
+from bisect import bisect_left
 from itertools import accumulate
 
 from .contest_solution import *
@@ -428,7 +430,7 @@ def solution_3043(arr1: List[int], arr2: List[int]) -> int:
         for i in range(1, len(s) + 1):
             if s[:i] not in st:
                 break
-            ans = max(ans,i)
+            ans = max(ans, i)
     return ans
 
 
@@ -462,3 +464,173 @@ def solution_3045(words: List[str]) -> int:
         ans += p.cnt
         p.cnt += 1
     return ans
+
+
+def solution_3046(nums: List[int]) -> bool:
+    return weekly_contest_386_solution_1(nums)
+
+
+def solution_3047(bottomLeft: List[List[int]], topRight: List[List[int]]) -> int:
+    """
+    交集面积：
+    1. 左下角坐标：两个正方形左下角坐标的横纵最大值 max(x00,x10),max(y00,y10)
+    2. 右上角坐标：两个正方形左下角坐标的横纵最小值 min(x01,x11),min(y01,y11)
+    """
+    ans = 0
+    for i in range(len(bottomLeft)):
+        for j in range(i + 1, len(bottomLeft)):
+            x0 = max(bottomLeft[i][0], bottomLeft[j][0])
+            y0 = max(bottomLeft[i][1], bottomLeft[j][1])
+            x1 = min(topRight[i][0], topRight[j][0])
+            y1 = min(topRight[i][1], topRight[j][1])
+            size = min(x1 - x0, y1 - y0)
+            if size > 0:
+                ans = max(ans, size * size)
+    return ans
+
+
+def solution_3048(nums: List[int], changeIndices: List[int]) -> int:
+    """
+    已知答案去判断能否成立，相比直接求答案更容易时： 二分答案
+    需保证能够二分答案
+    对于本题：
+    答案越大，越能够搞定所有数字变为0并验证的可能性
+    -> 有单调性,可以二分答案
+
+    验证时间越晚越好，用来变0的时间越多
+    """
+
+    # 考虑前mx天
+    def check(mx: int):
+        last_t = [-1] * n
+        for t, idx in enumerate(changeIndices[:mx]):
+            last_t[idx - 1] = t
+        if -1 in last_t:
+            return False
+        cnt = 0
+        for i, idx in enumerate(changeIndices[:mx]):
+            idx -= 1
+            if i == last_t[idx]:  # 一定要标记，后面没机会了
+                if nums[idx] > cnt:
+                    return False
+                cnt -= nums[idx]
+            else:
+                cnt += 1
+        return True
+
+    n = len(nums)
+    m = len(changeIndices)
+    left = n + sum(nums) - 1
+    right = m + 1
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if check(mid):
+            right = mid
+        else:
+            left = mid
+    return right if right < m + 1 else -1
+    # left = n + sum(nums)
+    # # bisect_left 返回值是range中的idx
+    # ans = left + bisect_left(range(left, m + 1), True, key=check)
+    # return -1 if ans > m else ans
+
+
+def solution_3049(nums: List[int], changeIndices: List[int]) -> int:
+    """
+    已知答案去判断能否成立，相比直接求答案更容易时： 二分答案
+    需保证能够二分答案
+    对于本题：
+    答案越大，越能够搞定所有数字变为0并验证的可能性
+    -> 有单调性,可以二分答案
+
+    减一   (慢速复习) -> 随意复习
+    置零   (快速复习) -> 涉及到changeIndices
+    标记   (考试)    -> 参加任意一门课程的考试 -> 排的越靠后越好
+
+    先慢速复习，再快速复习，那么前面的慢速复习做别的事情更好
+
+    ** 对于一门课程，要么全部用慢速复习，要么在某一天快速复习
+
+    倒着遍历，如果这一天不是快速复习，那么和第三题一样 cnt+=1
+    如果遇到快速复习的那天
+    1. 执行快速复习 需消耗1天进行考试
+    2. 不快速复习
+        1. nums[i] = 0
+        2. nums[i] = 1
+        3. cnt = 0 无法快速复习，没时间拿来考试了
+            -> 不一定只能提早慢速复习
+            -> 反悔贪心
+            -> 取一个原本用快速复习搞定的，且nums[i]最小的，反悔这门课程的用时(快速复习的一天+考试的一天)
+            -> 多出来的这 2 天时间，用来做当前这门课程的快速复习+考试
+    从右往左遍历结束后，检查没有考试的课程，用慢速复习搞定
+    """
+    n = len(nums)
+    m = len(changeIndices)
+    first_t = [-1] * n
+    for t in range(m - 1, -1, -1):
+        first_t[changeIndices[t] - 1] = t
+
+    def check(mx: int) -> bool:
+        cnt = 0
+        done = [False] * n  # 可以直接统计天数
+        h = []
+        for t in range(mx - 1, -1, -1):
+            i = changeIndices[t] - 1
+            v = nums[i]
+            if v <= 1 or first_t[i] != t:
+                cnt += 1  # 留着给前面，用来-1或者标记
+                continue
+            if cnt == 0:
+                # 没办法反悔,现在没有快速复习的科目或者花时间最少的科目也比现在的科目大
+                if not h or v <= h[0][0]:
+                    cnt += 1  # 留着给前面，用来-1或者标记
+                    continue
+                # 反悔
+                done[heapq.heappop(h)[1]] = False
+                cnt += 2
+            # 入堆
+            done[i] = True
+            cnt -= 1  # t这天nums[i]置0 cnt中一天用于标记
+            heapq.heappush(h, (v, i))
+
+        for i, b in enumerate(done):
+            if not b:
+                cnt -= nums[i] + 1  # 慢速复习+考试
+        return cnt >= 0
+
+    total = n + sum(nums)
+
+    def check2(mx: int) -> bool:
+        cnt = 0
+        slow = total
+        h = []
+        for t in range(mx - 1, -1, -1):
+            i = changeIndices[t] - 1
+            v = nums[i]
+            if v <= 1 or first_t[i] != t:
+                cnt += 1  # 留着给前面，用来-1或者标记
+                continue
+            if cnt == 0:
+                # 没办法反悔,现在没有快速复习的科目或者花时间最少的科目也比现在的科目大
+                if not h or v <= h[0]:
+                    cnt += 1  # 留着给前面，用来-1或者标记
+                    continue
+                # 反悔
+                slow += heapq.heappop(h) + 1
+                cnt += 2
+            slow -= v + 1
+            cnt -= 1
+            heapq.heappush(h, v)
+        return cnt >= slow
+
+    # left = n - 1
+    # right = m + 1
+    # while left + 1 < right:
+    #     mid = (left + right) // 2
+    #     if check(mid):
+    #         right = mid
+    #     else:
+    #         left = mid
+    # return right if right < m + 1 else -1
+    ans = n + bisect_left(range(n, m + 1), True, key=check2)
+    return -1 if ans > m else ans

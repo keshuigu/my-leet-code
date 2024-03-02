@@ -38,6 +38,7 @@
 
   - 自己写的最大堆运行很慢
 
+- [x] [2368.受限条件下可到达节点的数目](https://leetcode.cn/problems/reachable-nodes-with-restrictions/)
 - [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)
 
     - [Gosper's Hack](https://zhuanlan.zhihu.com/p/360512296)
@@ -77,4 +78,6 @@
 - [x] [3039.进行操作使字符串为空](https://leetcode.cn/problems/apply-operations-to-make-string-empty/)
 - [x] [3040.相同分数的最大操作数目 II](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-ii/)
 - [x] [3043.最长公共前缀的长度](https://leetcode.cn/problems/find-the-length-of-the-longest-common-prefix/)
-- [x] [3044.出现频z率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)
+- [x] [3044.出现频率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)
+- [x] [3047.求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/)
+- [x] [3048.标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/)

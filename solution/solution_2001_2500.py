@@ -325,3 +325,23 @@ def solution_2476_2(root: Optional[TreeNode], queries: List[int]) -> List[List[i
         mn = a[j] if j >= 0 else -1
         ans.append([mn, mx])
     return ans
+
+
+def solution_2368(n: int, edges: List[List[int]], restricted: List[int]) -> int:
+    g = [[] * n for _ in range(n)]
+    for a, b in edges:
+        g[a].append(b)
+        g[b].append(a)
+
+    ans = 0
+    s_r = set(restricted)
+
+    def dfs(node, p):
+        nonlocal ans
+        ans += 1
+        for x in g[node]:
+            if x not in s_r and x != p:
+                dfs(x, node)
+
+    dfs(0, -1)
+    return ans

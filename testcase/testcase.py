@@ -1585,18 +1585,18 @@ def testcase_235_2():
     print(solution_235_2(TreeNode(6, p, q), p, q))
 
 
-def testcase_w_386_1():
-    print(weekly_contest_386_solution_1([1, 1, 2, 2, 3, 4]))
-    print(weekly_contest_386_solution_1([1, 1, 1, 1]))
+def testcase_3046():
+    print(solution_3046([1, 1, 2, 2, 3, 4]))
+    print(solution_3046([1, 1, 1, 1]))
 
 
-def testcase_w_386_2():
-    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [2, 2], [3, 1]], topRight=[[3, 3], [4, 4], [6, 6]]))
-    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [2, 2], [1, 2]], topRight=[[3, 3], [4, 4], [3, 4]]))
-    print(weekly_contest_386_solution_2(bottomLeft=[[1, 1], [3, 3], [3, 1]], topRight=[[2, 2], [4, 4], [4, 2]]))
-    print(weekly_contest_386_solution_2(bottomLeft=[[1, 2], [1, 2]], topRight=[[4, 5], [2, 3]]))
-    print(weekly_contest_386_solution_2([[2, 2], [1, 3]], [[3, 4], [5, 5]]))
-    print(weekly_contest_386_solution_2([[2, 2], [3, 1]], [[5, 5], [5, 5]]))
+def testcase_3047():
+    print(solution_3047(bottomLeft=[[1, 1], [2, 2], [3, 1]], topRight=[[3, 3], [4, 4], [6, 6]]))
+    print(solution_3047(bottomLeft=[[1, 1], [2, 2], [1, 2]], topRight=[[3, 3], [4, 4], [3, 4]]))
+    print(solution_3047(bottomLeft=[[1, 1], [3, 3], [3, 1]], topRight=[[2, 2], [4, 4], [4, 2]]))
+    print(solution_3047(bottomLeft=[[1, 2], [1, 2]], topRight=[[4, 5], [2, 3]]))
+    print(solution_3047([[2, 2], [1, 3]], [[3, 4], [5, 5]]))
+    print(solution_3047([[2, 2], [3, 1]], [[5, 5], [5, 5]]))
 
 
 def testcase_938():
@@ -1617,3 +1617,20 @@ def testcase_2673():
 def testcase_2581():
     print(solution_2581(edges=[[0, 1], [1, 2], [1, 3], [4, 2]], guesses=[[1, 3], [0, 1], [1, 0], [2, 4]], k=3))
     print(solution_2581(edges=[[0, 1], [1, 2], [2, 3], [3, 4]], guesses=[[1, 0], [3, 4], [2, 1], [3, 2]], k=1))
+
+
+def testcase_3048():
+    print(solution_3048(nums=[2, 2, 0], changeIndices=[2, 2, 2, 2, 3, 2, 2, 1]))
+    print(solution_3048(nums=[1, 3], changeIndices=[1, 1, 1, 2, 1, 1, 1]))
+    print(solution_3048(nums=[0, 1], changeIndices=[2, 2, 2]))
+
+
+def testcase_2368():
+    print(solution_2368(n=7, edges=[[0, 1], [1, 2], [3, 1], [4, 0], [0, 5], [5, 6]], restricted=[4, 5]))
+    print(solution_2368(n=7, edges=[[0, 1], [0, 2], [0, 5], [0, 4], [3, 2], [6, 5]], restricted=[4, 2, 1]))
+
+
+def testcase_3049():
+    print(solution_3049(nums = [3,2,3], changeIndices = [1,3,2,2,2,2,3]))
+    print(solution_3049(nums = [0,0,1,2], changeIndices = [1,2,1,2,1,2,1,2]))
+    print(solution_3049(nums = [1,2,3], changeIndices = [1,2,3]))

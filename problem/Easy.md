@@ -154,3 +154,4 @@
 - [x] [3033.修改矩阵](https://leetcode.cn/problems/modify-the-matrix/description/)
 - [x] [3038.相同分数的最大操作数目 I](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/)
 - [x] [3042.统计前后缀下标对 I](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/)
+- [x] [3046.分割数组](https://leetcode.cn/problems/split-the-array/)
