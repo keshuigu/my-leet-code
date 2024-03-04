@@ -56,8 +56,22 @@
 
 - [weekly-contest-386](https://leetcode.cn/contest/weekly-contest-386/): 时限内完成1
 
-  - [x] [分割数组](https://leetcode.cn/problems/split-the-array/): [题目3046](../problem/Easy.md)
-  - [x] [求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/): [题目3047](../problem/Medium.md)
-  - [x] [标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/): [题目3048](../problem/Medium.md)
-  - [x] [标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/): [题目3049](../problem/Hard.md)
+    - [x] [分割数组](https://leetcode.cn/problems/split-the-array/): [题目3046](../problem/Easy.md)
+    - [x] [求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/): [题目3047](../problem/Medium.md)
+    - [x] [标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/): [题目3048](../problem/Medium.md)
+    - [x] [标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/): [题目3049](../problem/Hard.md)
 
+- [biweekly-contest-125](https://leetcode.cn/contest/biweekly-contest-125/):时限内完成1 2, 3超时
+
+    - [x] [超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/):[TODO](../problem/Easy.md)
+    - [x] [超过阈值的最少操作数 II](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-ii/):[TODO](../problem/Medium.md)
+    - [ ] [在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/):[TODO](../problem/Medium.md)
+    - [ ] [最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/):[TODO](../problem/Hard.md)
+
+
+- [weekly-contest-387](https://leetcode.cn/contestweekly-contest-387/):时限内完成1 2, 3超时
+
+    - [ ] []():[TODO](../problem/Easy.md)
+    - [ ] []():[TODO](../problem/Medium.md)
+    - [ ] []():[TODO](../problem/Medium.md)
+    - [ ] []():[TODO](../problem/Hard.md)

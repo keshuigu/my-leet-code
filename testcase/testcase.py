@@ -1625,7 +1625,6 @@ def testcase_2369():
     print(solution_2369([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 
-
 def testcase_2369_2():
     print(solution_2369_2([4, 4, 4, 5, 6]))
     print(solution_2369_2([1, 1, 1, 2]))
@@ -1644,6 +1643,46 @@ def testcase_2368():
 
 
 def testcase_3049():
-    print(solution_3049(nums = [3,2,3], changeIndices = [1,3,2,2,2,2,3]))
-    print(solution_3049(nums = [0,0,1,2], changeIndices = [1,2,1,2,1,2,1,2]))
-    print(solution_3049(nums = [1,2,3], changeIndices = [1,2,3]))
+    print(solution_3049(nums=[3, 2, 3], changeIndices=[1, 3, 2, 2, 2, 2, 3]))
+    print(solution_3049(nums=[0, 0, 1, 2], changeIndices=[1, 2, 1, 2, 1, 2, 1, 2]))
+    print(solution_3049(nums=[1, 2, 3], changeIndices=[1, 2, 3]))
+
+
+def testcase_bw_125_1():
+    print(biweekly_contest_125_solution_1([2, 11, 10, 1, 3], 10))
+    print(biweekly_contest_125_solution_1(nums=[1, 1, 2, 4, 9], k=1))
+    print(biweekly_contest_125_solution_1(nums=[1, 1, 2, 4, 9], k=9))
+
+
+def testcase_bw_125_2():
+    print(biweekly_contest_125_solution_2(nums=[2, 11, 10, 1, 3], k=10))
+    print(biweekly_contest_125_solution_2(nums=[1, 1, 2, 4, 9], k=20))
+
+
+def testcase_bw_125_3():
+    print(
+        biweekly_contest_125_solution_3(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]], signalSpeed=1))
+
+
+def testcase_bw_125_3_2():
+    print(biweekly_contest_125_solution_3_2(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]],
+                                            signalSpeed=1))
+
+
+def testcase_w_387_1():
+    print(weekly_contest_387_solution_1(nums = [2,1,3]))
+    print(weekly_contest_387_solution_1(nums = [5,4,3,8]))
+
+
+def testcase_w_387_2():
+    print(weekly_contest_387_solution_2(grid = [[7,6,3],[6,6,1]], k = 18))
+    print(weekly_contest_387_solution_2(grid = [[7,2,9],[1,5,0],[2,6,6]], k = 20))
+
+
+def testcase_w_387_3():
+    print(weekly_contest_387_solution_3(grid = [[1,2,2],[1,1,0],[0,1,0]]))
+    print(weekly_contest_387_solution_3(grid = [[0,1,0,1,0],[2,1,0,1,2],[2,2,2,0,1],[2,2,2,2,2],[2,1,2,2,2]]))
+
+
+def testcase_w_387_4():
+    print(weekly_contest_387_solution_4())

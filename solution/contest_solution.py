@@ -1,3 +1,4 @@
+import heapq
 from collections import defaultdict
 from functools import cache
 from itertools import pairwise
@@ -663,3 +664,149 @@ def weekly_contest_386_solution_1(nums: List[int]) -> bool:
         return False
     else:
         return True
+
+
+def biweekly_contest_125_solution_1(nums: List[int], k: int) -> int:
+    cnt = 0
+    for num in nums:
+        if num < k:
+            cnt += 1
+    return cnt
+
+
+def biweekly_contest_125_solution_2(nums: List[int], k: int) -> int:
+    heapq.heapify(nums)
+    cnt = 0
+    while nums[0] < k and len(nums) >= 2:
+        t1 = heapq.heappop(nums)
+        t2 = heapq.heappop(nums)
+        t3 = min(t1, t2) * 2 + max(t1, t2)
+        heapq.heappush(nums, t3)
+        cnt += 1
+    return cnt
+
+
+def biweekly_contest_125_solution_3(edges: List[List[int]], signalSpeed: int) -> List[int]:
+    n = len(edges) + 1
+    f = defaultdict(dict)
+    for a, b, w in edges:
+        f[a][b] = w
+        f[b][a] = w
+
+    @cache
+    def dfs(x, p, distance):
+        res = 0
+        if distance % signalSpeed == 0:
+            res += 1
+            distance = 0
+        for i in range(n):
+            if i != p and i in f[x]:
+                res += dfs(i, x, distance + (f[x][i] % signalSpeed))
+        return res
+
+    count = [0] * n
+    for i in range(n):
+        total_len = 0
+        for j in f[i]:
+            res = dfs(j, i, f[i][j])
+            count[i] += res * total_len
+            total_len += res
+    return count
+
+
+def biweekly_contest_125_solution_3_2(edges: List[List[int]], signalSpeed: int) -> List[int]:
+    n = len(edges) + 1
+    f = defaultdict(dict)
+    for a, b, w in edges:
+        f[a][b] = w
+        f[b][a] = w
+
+    def dfs(x, p, distance):
+        if distance % signalSpeed == 0:
+            tmp.append((x, distance))
+            distance = 0
+        for i in range(n):
+            if i != p and i in f[x]:
+                if f[x][i] % signalSpeed == 0:
+                    dfs(i, x, distance)
+                else:
+                    dfs(i, x, distance + f[x][i])
+
+    count = [0] * n
+    for i in range(n):
+        total_len = 0
+        for j in f[i]:
+            tmp = []
+            dfs(j, i, f[i][j])
+            count[i] += len(tmp) * total_len
+            total_len += len(tmp)
+    return count
+
+
+def weekly_contest_387_solution_1(nums: List[int]) -> List[int]:
+    arr1 = [nums[0]]
+    arr2 = [nums[1]]
+    for num in nums[2:]:
+        if arr1[-1] > arr2[-1]:
+            arr1.append(num)
+        else:
+            arr2.append(num)
+    return arr1 + arr2
+
+
+def weekly_contest_387_solution_2(grid: List[List[int]], k: int) -> int:
+    m = len(grid)
+    n = len(grid[0])
+    ans = [[0] * (n + 1) for _ in range(m + 1)]
+    cnt = 0
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if i == j == 0:
+                continue
+            ans[i][j] = ans[i - 1][j] + ans[i][j - 1] - ans[i - 1][j - 1] + grid[i - 1][j - 1]
+            if ans[i][j] <= k:
+                cnt += 1
+    return cnt
+
+
+def weekly_contest_387_solution_3(grid: List[List[int]]) -> int:
+    n = len(grid)
+    mid = (n // 2) + 1
+    cnt = defaultdict(int)
+    for i in range(mid):
+        cnt[grid[i][i]] += 1
+        cnt[grid[i][n - 1 - i]] += 1
+        cnt[grid[mid - 1 + i][mid - 1]] += 1
+    cnt[grid[mid - 1][mid - 1]] -= 2
+    cnt_total = defaultdict(int)
+    for i in range(n):
+        for j in range(n):
+            cnt_total[grid[i][j]] += 1
+    cnt_total[0] -= cnt[0]
+    cnt_total[1] -= cnt[1]
+    cnt_total[2] -= cnt[2]
+    tiles = (mid - 1) * 3 + 1
+    tiles_total = n * n - tiles
+    # i = 0
+    changes_1 = tiles - cnt[0]
+    changes_2 = min(tiles_total - cnt_total[1], tiles_total - cnt_total[2])
+    changes = changes_1 + changes_2
+    # i = 1
+    changes_1 = tiles - cnt[1]
+    changes_2 = min(tiles_total - cnt_total[0], tiles_total - cnt_total[2])
+    changes = min(changes, changes_1 + changes_2)
+    # i = 2
+    changes_1 = tiles - cnt[2]
+    changes_2 = min(tiles_total - cnt_total[0], tiles_total - cnt_total[1])
+    changes = min(changes, changes_1 + changes_2)
+    return changes
+
+
+def weekly_contest_387_solution_4(nums: List[int]) -> List[int]:
+    arr1 = [nums[0]]
+    arr2 = [nums[1]]
+    f = defaultdict(int)
+    h = []
+    for num in nums:
+        heapq.heappush(h, num)
+
