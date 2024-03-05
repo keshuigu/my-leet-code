@@ -1648,41 +1648,68 @@ def testcase_3049():
     print(solution_3049(nums=[1, 2, 3], changeIndices=[1, 2, 3]))
 
 
-def testcase_bw_125_1():
-    print(biweekly_contest_125_solution_1([2, 11, 10, 1, 3], 10))
-    print(biweekly_contest_125_solution_1(nums=[1, 1, 2, 4, 9], k=1))
-    print(biweekly_contest_125_solution_1(nums=[1, 1, 2, 4, 9], k=9))
+def testcase_3065():
+    print(solution_3065([2, 11, 10, 1, 3], 10))
+    print(solution_3065(nums=[1, 1, 2, 4, 9], k=1))
+    print(solution_3065(nums=[1, 1, 2, 4, 9], k=9))
 
 
-def testcase_bw_125_2():
-    print(biweekly_contest_125_solution_2(nums=[2, 11, 10, 1, 3], k=10))
-    print(biweekly_contest_125_solution_2(nums=[1, 1, 2, 4, 9], k=20))
+def testcase_3066():
+    print(solution_3066(nums=[2, 11, 10, 1, 3], k=10))
+    print(solution_3066(nums=[1, 1, 2, 4, 9], k=20))
 
 
-def testcase_bw_125_3():
+def testcase_3067():
     print(
-        biweekly_contest_125_solution_3(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]], signalSpeed=1))
+        solution_3067(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]], signalSpeed=1))
 
 
-def testcase_bw_125_3_2():
-    print(biweekly_contest_125_solution_3_2(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]],
-                                            signalSpeed=1))
+def testcase_3069():
+    print(solution_3069(nums=[2, 1, 3]))
+    print(solution_3069(nums=[5, 4, 3, 8]))
 
 
-def testcase_w_387_1():
-    print(weekly_contest_387_solution_1(nums = [2,1,3]))
-    print(weekly_contest_387_solution_1(nums = [5,4,3,8]))
+def testcase_3070():
+    print(solution_3070(grid=[[7, 6, 3], [6, 6, 1]], k=18))
+    print(solution_3070(grid=[[7, 2, 9], [1, 5, 0], [2, 6, 6]], k=20))
 
 
-def testcase_w_387_2():
-    print(weekly_contest_387_solution_2(grid = [[7,6,3],[6,6,1]], k = 18))
-    print(weekly_contest_387_solution_2(grid = [[7,2,9],[1,5,0],[2,6,6]], k = 20))
+def testcase_3071():
+    print(solution_3071(grid=[[1, 2, 2], [1, 1, 0], [0, 1, 0]]))
+    print(solution_3071(
+        grid=[[0, 1, 0, 1, 0], [2, 1, 0, 1, 2], [2, 2, 2, 0, 1], [2, 2, 2, 2, 2], [2, 1, 2, 2, 2]]))
 
 
-def testcase_w_387_3():
-    print(weekly_contest_387_solution_3(grid = [[1,2,2],[1,1,0],[0,1,0]]))
-    print(weekly_contest_387_solution_3(grid = [[0,1,0,1,0],[2,1,0,1,2],[2,2,2,0,1],[2,2,2,2,2],[2,1,2,2,2]]))
+def testcase_3072():
+    # print(solution_3072())
+    ...
 
 
-def testcase_w_387_4():
-    print(weekly_contest_387_solution_4())
+def testcase_1976():
+    print(solution_1976(n=7,
+                        roads=[[0, 6, 7], [0, 1, 2], [1, 2, 3], [1, 3, 3], [6, 3, 3], [3, 5, 1], [6, 5, 1], [2, 5, 1],
+                               [0, 4, 5], [4, 6, 2]]))
+    print(solution_1976(n=2, roads=[[1, 0, 10]]))
+    print(solution_1976(n=6,
+                        roads=[[3, 0, 4], [0, 2, 3], [1, 2, 2], [4, 1, 3], [2, 5, 5], [2, 3, 1], [0, 4, 1], [2, 4, 6],
+                               [4, 3, 1]]))
+
+
+def testcase_1976_2():
+    print(solution_1976_2(n=7,
+                          roads=[[0, 6, 7], [0, 1, 2], [1, 2, 3], [1, 3, 3], [6, 3, 3], [3, 5, 1], [6, 5, 1], [2, 5, 1],
+                                 [0, 4, 5], [4, 6, 2]]))
+    print(solution_1976_2(n=2, roads=[[1, 0, 10]]))
+    print(solution_1976_2(n=6,
+                          roads=[[3, 0, 4], [0, 2, 3], [1, 2, 2], [4, 1, 3], [2, 5, 5], [2, 3, 1], [0, 4, 1], [2, 4, 6],
+                                 [4, 3, 1]]))
+
+
+def testcase_1976_3():
+    print(solution_1976_3(n=7,
+                          roads=[[0, 6, 7], [0, 1, 2], [1, 2, 3], [1, 3, 3], [6, 3, 3], [3, 5, 1], [6, 5, 1], [2, 5, 1],
+                                 [0, 4, 5], [4, 6, 2]]))
+    print(solution_1976_3(n=2, roads=[[1, 0, 10]]))
+    print(solution_1976_3(n=6,
+                          roads=[[3, 0, 4], [0, 2, 3], [1, 2, 2], [4, 1, 3], [2, 5, 5], [2, 3, 1], [0, 4, 1], [2, 4, 6],
+                                 [4, 3, 1]]))

@@ -63,15 +63,15 @@
 
 - [biweekly-contest-125](https://leetcode.cn/contest/biweekly-contest-125/):时限内完成1 2, 3超时
 
-    - [x] [超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/):[TODO](../problem/Easy.md)
-    - [x] [超过阈值的最少操作数 II](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-ii/):[TODO](../problem/Medium.md)
-    - [ ] [在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/):[TODO](../problem/Medium.md)
-    - [ ] [最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/):[TODO](../problem/Hard.md)
+    - [x] [超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/):[题目3065](../problem/Easy.md)
+    - [x] [超过阈值的最少操作数 II](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-ii/):[题目3066](../problem/Medium.md)
+    - [ ] [在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/):[题目3067](../problem/Medium.md)
+    - [ ] [最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/):[题目3068](../problem/Hard.md)
 
 
-- [weekly-contest-387](https://leetcode.cn/contestweekly-contest-387/):时限内完成1 2, 3超时
+- [weekly-contest-387](https://leetcode.cn/contestweekly-contest-387/):时限内完成1 2 3
 
-    - [ ] []():[TODO](../problem/Easy.md)
-    - [ ] []():[TODO](../problem/Medium.md)
-    - [ ] []():[TODO](../problem/Medium.md)
-    - [ ] []():[TODO](../problem/Hard.md)
+    - [x] [将元素分配到两个数组中 I](https://leetcode.cn/problems/distribute-elements-into-two-arrays-i/):[题目3069](../problem/Easy.md)
+    - [x] [元素和小于等于k的子矩阵的数目](https://leetcode.cn/problems/count-submatrices-with-top-left-element-and-sum-less-than-k/):[题目3070](../problem/Medium.md)
+    - [x] [在矩阵上写出字母Y所需的最少操作次数](https://leetcode.cn/problems/minimum-operations-to-write-the-letter-y-on-a-grid/):[题目3071](../problem/Medium.md)
+    - [ ] [将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/):[题目3072](../problem/Hard.md)

@@ -38,7 +38,7 @@
    `shell`交互,输入题目序号,自动使用题目给出的测试用例进行测试
    ![题目1的测试](./asserts/testpy_example.png)
 
-3. 使用`test_time.py`
+3. 使用`test_time.py`: 图一乐,小数据情况下意义不大
 
    `shell`交互,输入题目序号,自动使用题目给出的测试用例进行时间测试
    ![题目2487的测试](./asserts/test_time_example.png)

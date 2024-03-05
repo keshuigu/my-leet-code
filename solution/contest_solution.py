@@ -714,35 +714,6 @@ def biweekly_contest_125_solution_3(edges: List[List[int]], signalSpeed: int) ->
     return count
 
 
-def biweekly_contest_125_solution_3_2(edges: List[List[int]], signalSpeed: int) -> List[int]:
-    n = len(edges) + 1
-    f = defaultdict(dict)
-    for a, b, w in edges:
-        f[a][b] = w
-        f[b][a] = w
-
-    def dfs(x, p, distance):
-        if distance % signalSpeed == 0:
-            tmp.append((x, distance))
-            distance = 0
-        for i in range(n):
-            if i != p and i in f[x]:
-                if f[x][i] % signalSpeed == 0:
-                    dfs(i, x, distance)
-                else:
-                    dfs(i, x, distance + f[x][i])
-
-    count = [0] * n
-    for i in range(n):
-        total_len = 0
-        for j in f[i]:
-            tmp = []
-            dfs(j, i, f[i][j])
-            count[i] += len(tmp) * total_len
-            total_len += len(tmp)
-    return count
-
-
 def weekly_contest_387_solution_1(nums: List[int]) -> List[int]:
     arr1 = [nums[0]]
     arr2 = [nums[1]]
@@ -809,4 +780,3 @@ def weekly_contest_387_solution_4(nums: List[int]) -> List[int]:
     h = []
     for num in nums:
         heapq.heappush(h, num)
-

@@ -634,3 +634,43 @@ def solution_3049(nums: List[int], changeIndices: List[int]) -> int:
     # return right if right < m + 1 else -1
     ans = n + bisect_left(range(n, m + 1), True, key=check2)
     return -1 if ans > m else ans
+
+
+def solution_3065(nums: List[int], k: int) -> int:
+    return biweekly_contest_125_solution_1(nums, k)
+
+
+def solution_3066(nums: List[int], k: int) -> int:
+    return biweekly_contest_125_solution_2(nums, k)
+
+
+def solution_3067(edges: List[List[int]], signalSpeed: int) -> List[int]:
+    # TL
+    return biweekly_contest_125_solution_3(edges, signalSpeed)
+
+
+def solution_3067_2(edges: List[List[int]], signalSpeed: int) -> List[int]:
+    # TODO
+    ...
+
+
+def solution_3068():
+    # TODO
+    ...
+
+
+def solution_3069(nums: List[int]) -> List[int]:
+    return weekly_contest_387_solution_1(nums)
+
+
+def solution_3070(grid: List[List[int]], k: int) -> int:
+    return weekly_contest_387_solution_2(grid, k)
+
+
+def solution_3071(grid: List[List[int]]) -> int:
+    return weekly_contest_387_solution_3(grid)
+
+
+def solution_3072(nums: List[int]) -> List[int]:
+    # TODO
+    ...

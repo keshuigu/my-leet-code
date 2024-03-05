@@ -1,5 +1,6 @@
 import heapq
 from collections import deque
+from math import inf
 from typing import *
 from .data_struct import *
 
@@ -171,3 +172,95 @@ def solution_1696_2(nums: List[int], k: int) -> int:
             q.pop()
         q.append(i)
     return f[-1]
+
+
+def solution_1976(n: int, roads: List[List[int]]) -> int:
+    """
+    # Dijkstra + dp
+    # f[i]表示节点0到节点i的最短路个数
+    # dis[x]+g[x][y] < dis[y] -> f[y]=f[x] 0到y的最短路更新了
+    # dis[x]+g[x][y] = dis[y] -> f[y]=f[y]+f[x] 0到y的最短路不变,但是多了一种走法
+    """
+    # 朴素 Dijkstra（适用于稠密图）
+    mod_num = 10 ** 9 + 7
+    g = [[inf for _ in range(n)] for _ in range(n)]
+    for x, y, d in roads:
+        g[x][y] = d
+        g[y][x] = d
+    dist = [inf] * n
+    dist[0] = 0
+    f = [0] * n
+    f[0] = 1
+    done = [False] * n
+    while True:
+        x = -1
+        for i, ok in enumerate(done):
+            if not ok and (x < 0 or dist[i] < dist[x]):
+                x = i  # 找当前最短
+        if x == n - 1:  # d[n-1]已经是最短的了,且没有一样短的
+            return f[n - 1]
+        done[x] = True  # 选择x
+        dx = dist[x]
+        for y, d in enumerate(g[x]):
+            new_dis = dx + d
+            if new_dis < dist[y]:
+                dist[y] = new_dis
+                f[y] = f[x]
+            elif new_dis == dist[y]:
+                f[y] = (f[y] + f[x]) % mod_num
+
+
+def solution_1976_2(n: int, roads: List[List[int]]) -> int:
+    # 堆优化 Dijkstra（适用于稀疏图）
+    mod_num = 10 ** 9 + 7
+    g = [[inf for _ in range(n)] for _ in range(n)]
+    for x, y, d in roads:
+        g[x][y] = d
+        g[y][x] = d
+    dist = [inf] * n
+    dist[0] = 0
+    f = [0] * n
+    f[0] = 1
+    h = [(dist[0], 0)]  # 注意元组大小比较顺序
+    while True:
+        dx, x = heapq.heappop(h)
+        if x == n - 1:
+            return f[n - 1]
+        if dx > dist[x]:
+            continue
+        for y, d in enumerate(g[x]):
+            new_dis = dx + d
+            if new_dis < dist[y]:
+                dist[y] = new_dis
+                heapq.heappush(h, (new_dis, y))
+                f[y] = f[x]
+            elif new_dis == dist[y]:
+                f[y] = (f[y] + f[x]) % mod_num
+
+
+def solution_1976_3(n: int, roads: List[List[int]]) -> int:
+    # 堆优化 Dijkstra（适用于稀疏图）
+    mod_num = 10 ** 9 + 7
+    g = [[] for _ in range(n)]
+    for x, y, d in roads:
+        g[x].append((y, d))
+        g[y].append((x, d))
+    dist = [inf] * n
+    dist[0] = 0
+    f = [0] * n
+    f[0] = 1
+    h = [(dist[0], 0)]  # 注意元组大小比较顺序
+    while True:
+        dx, x = heapq.heappop(h)
+        if x == n - 1:
+            return f[n - 1]
+        if dx > dist[x]:
+            continue
+        for y, d in g[x]:
+            new_dis = dx + d
+            if new_dis < dist[y]:
+                dist[y] = new_dis
+                heapq.heappush(h, (new_dis, y))
+                f[y] = f[x]
+            elif new_dis == dist[y]:
+                f[y] = (f[y] + f[x]) % mod_num
