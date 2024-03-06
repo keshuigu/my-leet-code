@@ -65,8 +65,8 @@
 
     - [x] [超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/):[题目3065](../problem/Easy.md)
     - [x] [超过阈值的最少操作数 II](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-ii/):[题目3066](../problem/Medium.md)
-    - [ ] [在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/):[题目3067](../problem/Medium.md)
-    - [ ] [最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/):[题目3068](../problem/Hard.md)
+    - [x] [在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/):[题目3067](../problem/Medium.md)
+    - [x] [最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/):[题目3068](../problem/Hard.md)
 
 
 - [weekly-contest-387](https://leetcode.cn/contestweekly-contest-387/):时限内完成1 2 3

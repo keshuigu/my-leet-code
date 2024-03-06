@@ -680,7 +680,7 @@ def biweekly_contest_125_solution_2(nums: List[int], k: int) -> int:
     while nums[0] < k and len(nums) >= 2:
         t1 = heapq.heappop(nums)
         t2 = heapq.heappop(nums)
-        t3 = min(t1, t2) * 2 + max(t1, t2)
+        t3 = min(t1, t2) * 2 + max(t1, t2)  # t3 = t1*2 + t2
         heapq.heappush(nums, t3)
         cnt += 1
     return cnt
@@ -699,8 +699,12 @@ def biweekly_contest_125_solution_3(edges: List[List[int]], signalSpeed: int) ->
         if distance % signalSpeed == 0:
             res += 1
             distance = 0
-        for i in range(n):
-            if i != p and i in f[x]:
+        # 无效遍历太多
+        # for i in range(n):
+        #     if i != p and i in f[x]:
+        #         res += dfs(i, x, distance + (f[x][i] % signalSpeed))
+        for i in f[x]:
+            if i != p:
                 res += dfs(i, x, distance + (f[x][i] % signalSpeed))
         return res
 
@@ -758,6 +762,7 @@ def weekly_contest_387_solution_3(grid: List[List[int]]) -> int:
     cnt_total[2] -= cnt[2]
     tiles = (mid - 1) * 3 + 1
     tiles_total = n * n - tiles
+
     # i = 0
     changes_1 = tiles - cnt[0]
     changes_2 = min(tiles_total - cnt_total[1], tiles_total - cnt_total[2])
@@ -770,13 +775,13 @@ def weekly_contest_387_solution_3(grid: List[List[int]]) -> int:
     changes_1 = tiles - cnt[2]
     changes_2 = min(tiles_total - cnt_total[0], tiles_total - cnt_total[1])
     changes = min(changes, changes_1 + changes_2)
+
+    # for x in cnt_total:
+    #     cnt_total[x] -= cnt[x]
+    # not_changes = 0
+    # for i in range(3):
+    #     for j in range(3):
+    #         if i != j:
+    #             not_changes = max(not_changes,cnt[i]+cnt_total[j])
+    # changes = n*n - not_changes
     return changes
-
-
-def weekly_contest_387_solution_4(nums: List[int]) -> List[int]:
-    arr1 = [nums[0]]
-    arr2 = [nums[1]]
-    f = defaultdict(int)
-    h = []
-    for num in nums:
-        heapq.heappush(h, num)

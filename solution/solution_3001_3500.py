@@ -650,13 +650,118 @@ def solution_3067(edges: List[List[int]], signalSpeed: int) -> List[int]:
 
 
 def solution_3067_2(edges: List[List[int]], signalSpeed: int) -> List[int]:
-    # TODO
-    ...
+    n = len(edges) + 1
+    g = [[] for _ in range(n)]
+    for x, y, w in edges:
+        g[x].append((y, w))
+        g[y].append((x, w))
+
+    def dfs(x, fa, path_sum):
+        cnt = 0 if path_sum % signalSpeed else 1
+        for y, wt in g[x]:
+            if y != fa:
+                cnt += dfs(y, x, path_sum + wt)
+        return cnt
+
+    ans = [0] * n
+    for i, gi in enumerate(g):
+        s = 0
+        for y, w in gi:
+            cnt = dfs(y, i, w)
+            ans[i] += cnt * s
+            s += cnt
+    return ans
 
 
-def solution_3068():
-    # TODO
-    ...
+def solution_3068(nums: List[int], k: int, edges: List[List[int]]) -> int:
+    """
+    1. 对于一条路径上的边都操作一次
+    => 1-2-3-4
+    => 1 0 0 1
+    => 只把路径的起点和终点异或了K, 其余中间节点不变
+
+    2. 被操作的两个数, 可以分为哪些情况?
+        两个数都没有异或K => 多了两个异或K的数
+        两个数都异或了K   => 少了两个异或K的数
+        1个异或K, 1个没有 => 总和不变
+        => 无论操作多少次,总有偶数个数异或了K
+
+    3. 问题变成 从nums中选偶数个数,异或K,得到的最大元素和是多少
+    4. 每个数字独立考虑, 是否异或K DP
+    """
+    n = len(nums)
+    f = [[0, 0] for _ in range(n)]
+    f[0][0] = nums[0]
+    f[0][1] = nums[0] ^ k
+    for i, num in enumerate(nums):
+        if i == 0:
+            continue
+        f[i][0] = max(f[i - 1][0] + num, f[i - 1][1] + (num ^ k))
+        f[i][1] = max(f[i - 1][0] + (num ^ k), f[i - 1][1] + num)
+    return f[-1][0]
+
+
+def solution_3068_2(nums: List[int], k: int, edges: List[List[int]]) -> int:
+    """
+    树形DP
+    """
+    g = [[] for _ in nums]
+    for x, y in edges:
+        g[x].append(y)
+        g[y].append(x)
+
+    def dfs(x, fa):
+        f0, f1 = 0, -inf
+        for y in g[x]:
+            if y != fa:
+                r0, r1 = dfs(y, x)
+                f0, f1 = max(f0 + r0, f1 + r1), max(f1 + r0, f0 + r1)
+        return max(f0 + nums[x], f1 + (nums[x] ^ k)), max(f1 + nums[x], f0 + (nums[x] ^ k))
+
+    return dfs(0, -1)[0]
+
+
+def solution_3068_3(nums: List[int], k: int, edges: List[List[int]]) -> int:
+    """
+    贪心1
+    """
+    s = sum(nums)
+    a = []
+    b = []
+    for x in nums:
+        d = (x ^ k) - x
+        if d > 0:
+            a.append(d)  # 变大的
+        else:
+            b.append(d)
+    sa = sum(a)
+    if len(a) % 2 == 0:
+        return s + sa
+    else:
+        res = s + sa - min(a)
+        if b and res < (tmp := s + sa + max(b)):
+            res = tmp
+        return res
+
+
+def solution_3068_4(nums: List[int], k: int, edges: List[List[int]]) -> int:
+    """
+    贪心2
+    排序找异或使得结果变大的最大两个值
+    """
+    li = []
+    c = 0
+    for v in nums:
+        c += v
+        li.append((v ^ k) - v)
+    li.sort()
+    for i in range(len(li) - 1, 0, -2):
+        x = li[i] + li[i - 1]
+        if x > 0:  # 异或后变大了
+            c += x
+        else:
+            break
+    return c
 
 
 def solution_3069(nums: List[int]) -> List[int]:
@@ -672,5 +777,23 @@ def solution_3071(grid: List[List[int]]) -> int:
 
 
 def solution_3072(nums: List[int]) -> List[int]:
-    # TODO
-    ...
+    # 树状数组
+    sorted_nums = sorted(set(nums))
+    m = len(sorted_nums)
+    a = [nums[0]]
+    b = [nums[1]]
+    t1 = Fenwick(m + 1)
+    t2 = Fenwick(m + 1)
+    t1.add(bisect_left(sorted_nums, nums[0]) + 1, 1)
+    t2.add(bisect_left(sorted_nums, nums[1]) + 1, 1)
+    for x in nums[2:]:
+        v = bisect_left(sorted_nums, x) + 1
+        gc1 = len(a) - t1.pre(v)  # a中元素个数 减去 现在t1中已有的比v小的元素个数
+        gc2 = len(b) - t2.pre(v)
+        if gc1 > gc2 or gc1 == gc2 and len(a) <= len(b):
+            a.append(x)
+            t1.add(v, 1)
+        else:
+            b.append(x)
+            t2.add(v, 1)
+    return a + b

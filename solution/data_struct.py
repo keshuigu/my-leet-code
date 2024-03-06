@@ -404,3 +404,25 @@ class TireOf3045:
     def __init__(self):
         self.son = dict()  # key 是 pair value 是Node
         self.cnt = 0  # 以该节点结尾的字符串的出现次数
+
+
+class Fenwick:
+    __slots__ = 'tree'
+
+    def __init__(self, n: int):
+        self.tree = [0] * n
+
+    def add(self, i: int, v: int) -> None:
+        """
+        把下标为i的元素增加v
+        """
+        while i < len(self.tree):
+            self.tree[i] += v
+            i += i & -i  # i加上low bit
+
+    def pre(self, i: int) -> int:
+        res = 0
+        while i > 0:
+            res += self.tree[i]
+            i &= i - 1  # i减去low bit <=> i -= i & (-i)
+        return res

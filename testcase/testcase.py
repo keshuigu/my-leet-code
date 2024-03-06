@@ -1664,6 +1664,11 @@ def testcase_3067():
         solution_3067(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]], signalSpeed=1))
 
 
+def testcase_3067_2():
+    print(
+        solution_3067_2(edges=[[0, 1, 1], [1, 2, 5], [2, 3, 13], [3, 4, 9], [4, 5, 2]], signalSpeed=1))
+
+
 def testcase_3069():
     print(solution_3069(nums=[2, 1, 3]))
     print(solution_3069(nums=[5, 4, 3, 8]))
@@ -1716,14 +1721,15 @@ def testcase_1976_3():
 
 
 def testcase_2917():
-    print(solution_2917(nums = [7,12,9,8,9,15], k = 4))
-    print(solution_2917(nums = [2,12,1,11,4,5], k = 6))
-    print(solution_2917(nums = [10,8,5,9,11,6,8], k = 1))
+    print(solution_2917(nums=[7, 12, 9, 8, 9, 15], k=4))
+    print(solution_2917(nums=[2, 12, 1, 11, 4, 5], k=6))
+    print(solution_2917(nums=[10, 8, 5, 9, 11, 6, 8], k=1))
 
 
 def testcase_257():
-    print(solution_257(root = TreeNode([1,2,3,None,5])))
-    print(solution_257(root = TreeNode(1)))
+    print(solution_257(root=TreeNode([1, 2, 3, None, 5])))
+    print(solution_257(root=TreeNode(1)))
+
 
 def testcase_258():
     print(solution_258(38))
@@ -1735,3 +1741,25 @@ def testcase_258_2():
     print(solution_258_2(38))
     print(solution_258_2(0))
     print(solution_258_2(10))
+
+
+def testcase_3068():
+    print(solution_3068(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
+    print(solution_3068(nums=[2, 3], k=7, edges=[[0, 1]]))
+    print(solution_3068(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))
+def testcase_3068_2():
+    print(solution_3068_2(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
+    print(solution_3068_2(nums=[2, 3], k=7, edges=[[0, 1]]))
+    print(solution_3068_2(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))
+
+
+def testcase_3068_3():
+    print(solution_3068_3(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
+    print(solution_3068_3(nums=[2, 3], k=7, edges=[[0, 1]]))
+    print(solution_3068_3(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))
+
+
+def testcase_3068_4():
+    print(solution_3068_4(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
+    print(solution_3068_4(nums=[2, 3], k=7, edges=[[0, 1]]))
+    print(solution_3068_4(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))

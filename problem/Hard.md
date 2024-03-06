@@ -50,3 +50,7 @@
 - [x] [3041.修改数组后最大化数组中的连续元素数目](https://leetcode.cn/problems/maximize-consecutive-elements-in-an-array-after-modification/)
 - [x] [3045.统计前后缀下标对 II](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-ii/)
 - [x] [3049.标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/)
+- [x] [3068.最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/)
+- [x] [3072.将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/):
+
+  - [TODO 树状数组-> 307](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/)

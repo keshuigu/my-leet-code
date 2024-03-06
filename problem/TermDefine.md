@@ -21,3 +21,5 @@
 12. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/):TODO
     
     - [ ] [2132.用邮票贴满网格图](https://leetcode.cn/problems/stamping-the-grid/)
+
+13. [heapify的时间复杂度为什么是O(n)](https://www.jianshu.com/p/147bb9ee41b1):同一层的节点最多交换的次数都是相同的,第1层最多交换k-1次,第2层最多交换k-2次...

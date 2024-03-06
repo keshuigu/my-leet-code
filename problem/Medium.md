@@ -83,3 +83,4 @@
 - [x] [3044.出现频z率最高的素数](https://leetcode.cn/problems/most-frequent-prime/)
 - [x] [3047.求交集区域内的最大正方形面积](https://leetcode.cn/problems/find-the-largest-area-of-square-inside-two-rectangles/)
 - [x] [3048.标记所有下标的最早秒数 I](https://leetcode.cn/problems/earliest-second-to-mark-indices-i/)
+- [x] [3067.在带权树网络中统计可连接服务器对数目](https://leetcode.cn/problems/count-pairs-of-connectable-servers-in-a-weighted-tree-network/)
