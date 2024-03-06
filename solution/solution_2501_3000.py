@@ -761,3 +761,18 @@ def solution_2581(edges: List[List[int]], guesses: List[List[int]], k: int) -> i
         dfs2(t, 0)
 
     return ans
+
+
+def solution_2917(nums: List[int], k: int) -> int:
+    cnt = defaultdict(int)
+    for num in nums:
+        cur = 0
+        while num > 0:
+            cnt[cur] += num & 1
+            num = num >> 1
+            cur += 1
+    ans = 0
+    for c in cnt:
+        if cnt[c] >= k:
+            ans += 1 << c
+    return ans

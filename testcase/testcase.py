@@ -1713,3 +1713,9 @@ def testcase_1976_3():
     print(solution_1976_3(n=6,
                           roads=[[3, 0, 4], [0, 2, 3], [1, 2, 2], [4, 1, 3], [2, 5, 5], [2, 3, 1], [0, 4, 1], [2, 4, 6],
                                  [4, 3, 1]]))
+
+
+def testcase_2917():
+    print(solution_2917(nums = [7,12,9,8,9,15], k = 4))
+    print(solution_2917(nums = [2,12,1,11,4,5], k = 6))
+    print(solution_2917(nums = [10,8,5,9,11,6,8], k = 1))
