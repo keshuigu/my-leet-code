@@ -1719,3 +1719,19 @@ def testcase_2917():
     print(solution_2917(nums = [7,12,9,8,9,15], k = 4))
     print(solution_2917(nums = [2,12,1,11,4,5], k = 6))
     print(solution_2917(nums = [10,8,5,9,11,6,8], k = 1))
+
+
+def testcase_257():
+    print(solution_257(root = TreeNode([1,2,3,None,5])))
+    print(solution_257(root = TreeNode(1)))
+
+def testcase_258():
+    print(solution_258(38))
+    print(solution_258(0))
+    print(solution_258(10))
+
+
+def testcase_258_2():
+    print(solution_258_2(38))
+    print(solution_258_2(0))
+    print(solution_258_2(10))

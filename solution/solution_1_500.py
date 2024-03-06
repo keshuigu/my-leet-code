@@ -2102,3 +2102,35 @@ def solution_235_2(root: Optional[TreeNode], p: Optional[TreeNode], q: Optional[
             continue
         return cur
     return cur
+
+
+def solution_257(root: Optional[TreeNode]) -> List[str]:
+    paths = []
+
+    def dfs(node, path):
+        path += "->" + str(node.val)
+        if not node.left and not node.right:
+            if len(path) > 0:
+                paths.append(path[2:])
+            return
+        if node.left:
+            dfs(node.left, path)
+        if node.right:
+            dfs(node.right, path)
+
+    dfs(root, "")
+    return paths
+
+
+def solution_258(num: int) -> int:
+    while num >= 10:
+        total = 0
+        while num > 0:
+            total += num % 10
+            num = num // 10
+        num = total
+    return num
+
+
+def solution_258_2(num: int) -> int:
+    return (num - 1) % 9 + 1 if num else 0

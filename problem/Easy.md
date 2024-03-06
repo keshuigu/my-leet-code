@@ -111,6 +111,11 @@
 - [x] [234.回文链表](https://leetcode.cn/problems/palindrome-linked-list/)
 - [x] [240.用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)
 - [x] [242.有效的字母异位词](https://leetcode.cn/problems/valid-anagram/)
+- [x] [257.二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/)
+- [x] [258.各位相加](https://leetcode.cn/problems/valid-anagram/)
+
+  - [数根](https://en.wikipedia.org/wiki/Digital_root)
+
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [292.Nim游戏](https://leetcode.cn/problems/nim-game/)
 
