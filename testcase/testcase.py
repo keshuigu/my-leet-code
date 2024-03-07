@@ -1747,6 +1747,8 @@ def testcase_3068():
     print(solution_3068(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
     print(solution_3068(nums=[2, 3], k=7, edges=[[0, 1]]))
     print(solution_3068(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))
+
+
 def testcase_3068_2():
     print(solution_3068_2(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
     print(solution_3068_2(nums=[2, 3], k=7, edges=[[0, 1]]))
@@ -1763,3 +1765,21 @@ def testcase_3068_4():
     print(solution_3068_4(nums=[1, 2, 1], k=3, edges=[[0, 1], [0, 2]]))
     print(solution_3068_4(nums=[2, 3], k=7, edges=[[0, 1]]))
     print(solution_3068_4(nums=[7, 7, 7, 7, 7, 7], k=3, edges=[[0, 1], [0, 2], [0, 3], [0, 4], [0, 5]]))
+
+
+def testcase_2575():
+    print(solution_2575(word="998244353", m=3))
+    print(solution_2575(word="1010", m=10))
+
+
+def testcase_263():
+    print(solution_263(6))
+    print(solution_263(1))
+    print(solution_263(14))
+
+
+def testcase_268():
+    print(solution_268([3,0,1]))
+    print(solution_268([0,1]))
+    print(solution_268([9,6,4,2,3,5,7,0,1]))
+    print(solution_268([0]))

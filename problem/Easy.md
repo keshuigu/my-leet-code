@@ -116,6 +116,8 @@
 
   - [数根](https://en.wikipedia.org/wiki/Digital_root)
 
+- [x] [263.丑数](https://leetcode.cn/problems/ugly-number/)
+- [x] [268.丢失的数字](https://leetcode.cn/problems/missing-number/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [292.Nim游戏](https://leetcode.cn/problems/nim-game/)
 

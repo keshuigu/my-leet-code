@@ -2134,3 +2134,34 @@ def solution_258(num: int) -> int:
 
 def solution_258_2(num: int) -> int:
     return (num - 1) % 9 + 1 if num else 0
+
+
+def solution_263(n: int) -> bool:
+    if n <= 0:
+        return False
+    # if n == 1:
+    #     return True
+    # while n != 1:
+    #     if n % 5 == 0:
+    #         n = n // 5
+    #         continue
+    #     if n % 3 == 0:
+    #         n = n // 3
+    #         continue
+    #     if n % 2 == 0:
+    #         n = n // 2
+    #         continue
+    #     return False
+    # return True
+    while n % 2 == 0:
+        n //= 2
+    while n % 3 == 0:
+        n //= 3
+    while n % 5 == 0:
+        n //= 5
+    return n == 1
+
+
+def solution_268(nums: List[int]) -> int:
+    n = len(nums)
+    return sum(range(n + 1)) - sum(nums)

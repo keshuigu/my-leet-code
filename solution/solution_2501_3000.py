@@ -776,3 +776,17 @@ def solution_2917(nums: List[int], k: int) -> int:
         if cnt[c] >= k:
             ans += 1 << c
     return ans
+
+
+def solution_2575(word: str, m: int) -> List[int]:
+    r = 0
+    ans = []
+    for c in word:
+        r += (ord(c) - ord('0'))
+        r = r % m
+        if r == 0:
+            ans.append(1)
+        else:
+            ans.append(0)
+            r = (r * 10) % m
+    return ans
