@@ -23,7 +23,7 @@
 
     - [数位DP模板](https://leetcode.cn/problems/count-special-integers/solutions/1746956/shu-wei-dp-mo-ban-by-endlesscheng-xtgx/)
 
-- [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): TODO 换根DP
+- [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): 换根DP
 - [x] [2719.统计整数数目](https://leetcode.cn/problems/count-of-integers/)
 
     - [数位DP](https://leetcode.cn/problems/count-of-integers/solutions/2601111/tong-ji-zheng-shu-shu-mu-by-leetcode-sol-qxqd/)
@@ -35,7 +35,7 @@
     - [0x3f的题解](https://leetcode.cn/problems/minimum-edge-weight-equilibrium-queries-in-a-tree/solutions/2424060/lca-mo-ban-by-endlesscheng-j54b/):
       其中cnt为三维数组，`cnt[x][i][j]`代表的是x到2^i祖先的所有边中，权重为j的边的个数
 
-- [x] [2867.统计树中的合法路径数目](https://leetcode.cn/problems/count-valid-paths-in-a-tree/): TODO 树DP
+- [x] [2867.统计树中的合法路径数目](https://leetcode.cn/problems/count-valid-paths-in-a-tree/): 树DP
 
   - [0x3f的题解](https://leetcode.cn/problems/count-valid-paths-in-a-tree/solutions/2456716/tu-jie-on-xian-xing-zuo-fa-pythonjavacgo-tjz2/):枚举中间
 
@@ -51,6 +51,4 @@
 - [x] [3045.统计前后缀下标对 II](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-ii/)
 - [x] [3049.标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/)
 - [x] [3068.最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/)
-- [x] [3072.将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/):
-
-  - [TODO 树状数组-> 307](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/)
+- [x] [3072.将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/): 树状数组

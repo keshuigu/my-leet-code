@@ -1,0 +1,28 @@
+## Waiting List
+
+1. [离散化+二维前缀和](https://www.cnblogs.com/tyriis/p/15362478.html):TODO
+2. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/):TODO
+    
+    - [ ] [2132.用邮票贴满网格图](https://leetcode.cn/problems/stamping-the-grid/)
+
+3. [x] [2673.使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/): TODO 树DP
+4. [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): TODO 换根DP
+5. [ ] [307.区域和检索-数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/): TODO 树状数组
+
+## 0x3f's problem set
+
+### [位运算操作技巧](https://leetcode.cn/circle/discuss/CaOJ45/), [题单](https://leetcode.cn/circle/discuss/dHn9Vk/)
+
+### [二维前缀和](https://leetcode.cn/circle/discuss/UUuRex/)
+
+### [差分数组](https://leetcode.cn/circle/discuss/FfMCgb/)
+
+### [滑动窗口](https://leetcode.cn/circle/discuss/0viNMK/)
+
+### [二分算法](https://leetcode.cn/circle/discuss/SqopEo/)
+
+### [单调栈](https://leetcode.cn/circle/discuss/9oZFK9/)
+
+### [网格图](https://leetcode.cn/circle/discuss/YiXPXW/)
+
+### [图论算法](https://leetcode.cn/circle/discuss/01LUak/)
