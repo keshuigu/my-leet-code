@@ -1,5 +1,7 @@
 - [x] [2.两数相加](https://leetcode.cn/problems/add-two-numbers/ )
 - [x] [3.无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/ )
+- [x] [15.三数之和](https://leetcode.cn/problems/3sum)
+- [x] [18.四数之和](https://leetcode.cn/problems/4sum)
 - [x] [82.删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/ )
 - [x] [102.二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
 - [x] [103.二叉树的锯齿形层序遍历](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/)
@@ -9,6 +11,7 @@
 
 - [x] [106.从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 - [x] [107.二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)
+- [x] [167.两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
 - [x] [208.实现Trie树](https://leetcode.cn/problems/implement-trie-prefix-tree/ )
 - [x] [235.二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [x] [236.二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)

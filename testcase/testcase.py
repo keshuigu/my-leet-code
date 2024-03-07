@@ -1779,7 +1779,35 @@ def testcase_263():
 
 
 def testcase_268():
-    print(solution_268([3,0,1]))
-    print(solution_268([0,1]))
-    print(solution_268([9,6,4,2,3,5,7,0,1]))
+    print(solution_268([3, 0, 1]))
+    print(solution_268([0, 1]))
+    print(solution_268([9, 6, 4, 2, 3, 5, 7, 0, 1]))
     print(solution_268([0]))
+
+
+def testcase_15():
+    print(solution_15([-1, 0, 1, 2, -1, -4]))
+    print(solution_15([0, 1, 1]))
+    print(solution_15([0, 0, 0]))
+
+
+def testcase_15_2():
+    print(solution_15_2([-1, 0, 1, 2, -1, -4]))
+    print(solution_15_2([0, 1, 1]))
+    print(solution_15_2([0, 0, 0]))
+
+
+def testcase_167():
+    print(solution_167(numbers=[2, 7, 11, 15], target=9))
+    print(solution_167(numbers=[2, 3, 4], target=6))
+    print(solution_167(numbers=[-1, 0], target=-1))
+
+
+def testcase_18():
+    print(solution_18(nums=[1, 0, -1, 0, -2, 2], target=0))
+    print(solution_18(nums=[2, 2, 2, 2, 2], target=8))
+
+
+def testcase_18_2():
+    print(solution_18_2(nums=[1, 0, -1, 0, -2, 2], target=0))
+    print(solution_18_2(nums=[2, 2, 2, 2, 2], target=8))

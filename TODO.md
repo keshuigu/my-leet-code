@@ -26,3 +26,10 @@
 ### [网格图](https://leetcode.cn/circle/discuss/YiXPXW/)
 
 ### [图论算法](https://leetcode.cn/circle/discuss/01LUak/)
+
+## 0x3f's 基础算法精讲
+
+1. [两数之和 三数之和](https://www.bilibili.com/video/BV1bP411c7oJ/)
+   
+   - [x] [167.两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)   
+   - [x] [15.三数之和](https://leetcode.cn/problems/3sum)   

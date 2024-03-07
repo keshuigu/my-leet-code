@@ -5,6 +5,7 @@ import os
 from .data_struct import *
 from .method import *
 from .mysql_connecter import *
+from collections import defaultdict
 
 
 def solution_1(nums: List[int], target: int) -> List[int]:
@@ -2165,3 +2166,144 @@ def solution_263(n: int) -> bool:
 def solution_268(nums: List[int]) -> int:
     n = len(nums)
     return sum(range(n + 1)) - sum(nums)
+
+
+def solution_15(nums: List[int]) -> List[List[int]]:
+    f = {}
+    ans = set()
+    for num in nums:
+        if num in f:
+            f[num] += 1
+        else:
+            f[num] = 1
+    for num1 in f:
+        f[num1] -= 1
+        for num2 in f:
+            if f[num2] <= 0:
+                continue
+            f[num2] -= 1
+            target = -num1 - num2
+            if target in f and f[target] > 0:
+                tmp = [target, num1, num2]
+                tmp.sort()
+                ans.add((tmp[0], tmp[1], tmp[2]))
+            f[num2] += 1
+        f[num1] += 1
+    res = []
+    for x in ans:
+        res.append([x[0], x[1], x[2]])
+    return res
+
+
+def solution_15_2(nums: List[int]) -> List[List[int]]:
+    n = len(nums)
+    nums.sort()
+    ans = []
+    for i in range(n):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        if sum(nums[i:i + 3]) > 0:  # 后面不可能为0
+            break
+        if nums[i] + nums[-2] + nums[-1] < 0:  # 这个位置不可能为0
+            continue
+        target = - nums[i]
+        p, q = i + 1, n - 1
+        while p < q:
+            cur = nums[p] + nums[q]
+            if cur < target:
+                p += 1
+            elif cur > target:
+                q -= 1
+            else:
+                ans.append([nums[i], nums[p], nums[q]])
+                # 可能还有答案
+                p += 1
+                while p < q and nums[p] == nums[p - 1]:
+                    p += 1
+                q -= 1
+                while p < q and nums[q] == nums[q + 1]:
+                    q -= 1
+    return ans
+
+
+def solution_167(numbers: List[int], target: int) -> List[int]:
+    n = len(numbers)
+    p, q = 0, n - 1
+    while p < q:
+        cur = numbers[p] + numbers[q]
+        if cur < target:
+            p += 1
+        elif cur > target:
+            q -= 1
+        else:
+            return [p + 1, q + 1]
+
+
+def solution_18(nums: List[int], target: int) -> List[List[int]]:
+    # no optimize
+    nums.sort()
+    n = len(nums)
+    ans = []
+    for i in range(n - 3):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        for j in range(i + 1, n - 2):
+            if j > i + 1 and nums[j] == nums[j - 1]:
+                continue
+            p, q = j + 1, n - 1
+            while p < q:
+                cur = nums[p] + nums[q] + nums[i] + nums[j]
+                if cur == target:
+                    ans.append([nums[i], nums[j], nums[p], nums[q]])
+                    p += 1
+                    while p < q and nums[p] == nums[p - 1]:
+                        p += 1
+                    q -= 1
+                    while p < q and nums[q] == nums[q + 1]:
+                        q -= 1
+                elif cur > target:
+                    q -= 1
+                    continue
+                else:
+                    p += 1
+                    continue
+    return ans
+
+
+def solution_18_2(nums: List[int], target: int) -> List[List[int]]:
+    # 剪枝
+    nums.sort()
+    n = len(nums)
+    ans = []
+    for i in range(n - 3):
+        if sum(nums[i:i + 4]) > target:
+            break
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        if nums[i] + nums[-3] + nums[-2] + nums[-1] < target:
+            continue
+        for j in range(i + 1, n - 2):
+            if sum(nums[j:j + 3]) + nums[i] > target:
+                break
+            if j > i + 1 and nums[j] == nums[j - 1]:
+                continue
+            if nums[i] + nums[j] + nums[-2] + nums[-1] < target:
+                continue
+            p, q = j + 1, n - 1
+            while p < q:
+                cur = nums[p] + nums[q] + nums[i] + nums[j]
+                if cur == target:
+                    ans.append([nums[i], nums[j], nums[p], nums[q]])
+                    p += 1
+                    while p < q and nums[p] == nums[p - 1]:
+                        p += 1
+                    q -= 1
+                    while p < q and nums[q] == nums[q + 1]:
+                        q -= 1
+                elif cur > target:
+                    q -= 1
+                    continue
+                else:
+                    p += 1
+                    continue
+    return ans
