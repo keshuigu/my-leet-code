@@ -69,6 +69,7 @@
 
 - [x] [2807.在链表中插入最大公约数](https://leetcode.cn/problems/insert-greatest-common-divisors-in-linked-list/)
 - [x] [2808.使循环数组所有元素相等的最少秒数](https://leetcode.cn/problems/minimum-seconds-to-equalize-a-circular-array/)
+- [x] [2834.找出美丽数组的最小和](https://leetcode.cn/problems/find-the-minimum-possible-sum-of-a-beautiful-array/)
 - [x] [2865.最大合金数](https://leetcode.cn/problems/maximum-number-of-alloys/)
 - [x] [2865.美丽塔I](https://leetcode.cn/problems/beautiful-towers-i/)
 - [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)

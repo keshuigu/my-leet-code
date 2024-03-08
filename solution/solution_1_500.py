@@ -2307,3 +2307,54 @@ def solution_18_2(nums: List[int], target: int) -> List[List[int]]:
                     p += 1
                     continue
     return ans
+
+
+def solution_278(n: int, isBadVersion: Callable[[int], bool]) -> int:
+    left, right = -1, n + 1
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if isBadVersion(mid):
+            right = mid
+        else:
+            left = mid
+    return right
+
+
+def solution_283(nums: List[int]) -> None:
+    n = len(nums)
+    # while p_zero < n and nums[p_zero] != 0:
+    #     p_zero += 1
+    # p_non_zero = p_zero + 1
+    # while p_non_zero < n and nums[p_non_zero] == 0:
+    #     p_non_zero += 1
+    # if p_non_zero > n:
+    #     return
+    p_zero, p_non_zero = 0, 0
+    while p_zero < n and p_non_zero < n:
+        while p_zero < n and nums[p_zero] != 0:
+            p_zero += 1
+        p_non_zero = max(p_non_zero, p_zero)
+        while p_non_zero < n and nums[p_non_zero] == 0:
+            p_non_zero += 1
+        if p_non_zero >= n:
+            break
+        nums[p_non_zero], nums[p_zero] = 0, nums[p_non_zero]
+
+
+def solution_303():
+    # 前缀和
+    # data_struct#NumArray
+    ...
+
+
+def solution_326(n: int) -> bool:
+    if n < 1:
+        return False
+    while n != 1:
+        if n % 3 == 0:
+            n //= 3
+        else:
+            return False
+    return True
+    # return n > 0 && 1162261467 % n == 0;
+    # 1162261467 = 3**19

@@ -790,3 +790,15 @@ def solution_2575(word: str, m: int) -> List[int]:
             ans.append(0)
             r = (r * 10) % m
     return ans
+
+
+def solution_2834(n: int, target: int) -> int:
+    mod_num = 10**9+7
+    mid = target // 2
+    sum = 0
+    cnt1 = min(mid, n)
+    sum = ((cnt1 + 1) * cnt1) // 2
+    if mid < n:
+        cnt = n - mid
+        sum += (target + target + cnt - 1) * cnt // 2
+    return sum %mod_num

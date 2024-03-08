@@ -426,3 +426,15 @@ class Fenwick:
             res += self.tree[i]
             i &= i - 1  # i减去low bit <=> i -= i & (-i)
         return res
+
+
+class NumArray:
+    __slots__ = "sums"
+
+    def __init__(self, nums: List[int]):
+        self.sums = [0] * (len(nums) + 1)
+        for i, num in enumerate(nums):
+            self.sums[i + 1] = self.sums[i] + num
+
+    def sumRange(self, left: int, right: int):
+        return self.sums[right + 1] - self.sums[left]

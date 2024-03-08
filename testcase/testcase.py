@@ -1811,3 +1811,53 @@ def testcase_18():
 def testcase_18_2():
     print(solution_18_2(nums=[1, 0, -1, 0, -2, 2], target=0))
     print(solution_18_2(nums=[2, 2, 2, 2, 2], target=8))
+
+
+def testcase_2834():
+    print(solution_2834(n=2, target=3))
+    print(solution_2834(n=3, target=3))
+    print(solution_2834(n=1, target=1))
+    print(solution_2834(n=5, target=4))
+    print(solution_2834(n=13, target=50))
+    print(solution_2834(n=39636, target=49035))
+
+
+def testcase_278():
+    def getisBadVersion(fail_version: int) -> Callable:
+        def isBadVersion(version: int) -> bool:
+            return version >= fail_version
+
+        return isBadVersion
+
+    print(solution_278(5, getisBadVersion(4)))
+    print(solution_278(1, getisBadVersion(1)))
+    print(solution_278(30, getisBadVersion(5)))
+
+
+def testcase_283():
+    a = [0, 1, 0, 3, 12]
+    solution_283(a)
+    print(a)
+    a = [0]
+    solution_283(a)
+    print(a)
+    a = [1, 0]
+    solution_283(a)
+    print(a)
+    a = [1, 2, 3, 0, 4, 5, 0, 0, 0]
+    solution_283(a)
+    print(a)
+
+
+def testcase_303():
+    obj = NumArray(nums=[-2, 0, 3, -5, 2, -1])
+    print(obj.sumRange(0, 2))
+    print(obj.sumRange(2, 5))
+    print(obj.sumRange(0, 5))
+
+
+def testcase_326():
+    print(solution_326(27))
+    print(solution_326(0))
+    print(solution_326(9))
+    print(solution_326(45))

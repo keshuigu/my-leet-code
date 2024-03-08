@@ -118,11 +118,15 @@
 
 - [x] [263.丑数](https://leetcode.cn/problems/ugly-number/)
 - [x] [268.丢失的数字](https://leetcode.cn/problems/missing-number/)
+- [x] [278.第一个错误的版本](https://leetcode.cn/problems/first-bad-version/)
+- [x] [283.移动零](https://leetcode.cn/problems/move-zeroes/)
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [292.Nim游戏](https://leetcode.cn/problems/nim-game/)
 
   - [Nim游戏](https://baike.baidu.com/item/Nim%E6%B8%B8%E6%88%8F/6737105)
 
+- [x] [303.区域和检索-数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)
+- [x] [326.3的幂](https://leetcode.cn/problems/power-of-three/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [589.N叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
