@@ -32,4 +32,13 @@
 1. [两数之和 三数之和](https://www.bilibili.com/video/BV1bP411c7oJ/)
    
    - [x] [167.两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)   
-   - [x] [15.三数之和](https://leetcode.cn/problems/3sum)   
+   - [x] [15.三数之和](https://leetcode.cn/problems/3sum)
+   - [ ] [16.最接近的三数之和](https://leetcode.cn/problems/3sum-closest/)
+   - [x] [18.四数之和](https://leetcode.cn/problems/4sum/)
+   - [ ] [2824.统计和小于目标的下标对数目](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/)
+   - [ ] [611.有效三角形的个数](https://leetcode.cn/problems/valid-triangle-number/)
+
+2. [盛最多水的容器 接雨水](https://www.bilibili.com/video/BV1Qg411q7ia/)
+
+   - [x] [11.盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)   
+   - [x] [42.接雨水](https://leetcode.cn/problems/trapping-rain-water/)

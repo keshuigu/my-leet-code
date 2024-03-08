@@ -2358,3 +2358,74 @@ def solution_326(n: int) -> bool:
     return True
     # return n > 0 && 1162261467 % n == 0;
     # 1162261467 = 3**19
+
+
+def solution_11(height: List[int]) -> int:
+    l, r = 0, len(height) - 1
+    area = 0
+    while l < r:
+        if (cur := height[l]) <= height[r]:
+            area = max(area, (r - l) * (min(height[l], height[r])))
+            l += 1
+            while height[l] < cur and l < r:
+                l += 1  # 面积不可能变大
+        else:
+            cur = height[r]
+            area = max(area, (r - l) * (min(height[l], height[r])))
+            r -= 1
+            while height[r] < cur and l < r:
+                r -= 1  # 面积不可能变大
+    return area
+
+
+def solution_42(height: List[int]) -> int:
+    # 前后缀分解
+    n = len(height)
+    pre = [0] * n
+    suf = [0] * n
+    mp = 0
+    ms = 0
+    for i in range(n):
+        mp = max(mp, height[i])
+        pre[i] = mp
+    for i in range(n - 1, -1, -1):
+        ms = max(ms, height[i])
+        suf[i] = ms
+    ans = 0
+    for i in range(n):
+        ans += min(pre[i], suf[i]) - height[i]
+    return ans
+
+
+def solution_42_2(height: List[int]) -> int:
+    l, r = 0, len(height) - 1
+    ml = height[l]
+    mr = height[r]
+    ans = 0
+    while l < r:  # l=r必定是最高峰
+        if ml < mr:
+            ans += ml - height[l]  # ml一定大于等于height[l],因为ml先更新为最大值
+            l += 1
+            if l < r:
+                ml = max(ml, height[l])
+        else:
+            ans += mr - height[r]
+            r -= 1
+            if l < r:
+                mr = max(mr, height[r])
+    return ans
+
+
+def solution_42_3(height: List[int]) -> int:
+    s = []
+    ans = 0
+    for i, h in enumerate(height):
+        while s and h >= height[s[-1]]:  # 单调递减栈
+            bottom_h = height[s.pop()]  # 栈顶为最小值
+            if not s:
+                break
+            left = s[-1]  # 次小值
+            dh = min(height[left], h) - bottom_h
+            ans += dh * (i - left - 1)
+        s.append(i)
+    return ans

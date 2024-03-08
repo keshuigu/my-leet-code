@@ -1,3 +1,4 @@
+- [x] [42.接雨水](https://leetcode.cn/problems/trapping-rain-water)
 - [x] [233.数字1的个数](https://leetcode.cn/problems/number-of-digit-one/)
 - [x] [410.分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)
 
