@@ -24,6 +24,10 @@
 
     - [数位DP模板](https://leetcode.cn/problems/count-special-integers/solutions/1746956/shu-wei-dp-mo-ban-by-endlesscheng-xtgx/)
 
+- [x] [2386.找出数组的第K大和](https://leetcode.cn/problems/find-the-k-sum-of-an-array/):二分/堆
+
+    - [0x3f's题解](https://leetcode.cn/problems/find-the-k-sum-of-an-array/solutions/1764389/zhuan-huan-dui-by-endlesscheng-8yiq/)
+
 - [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): 换根DP
 - [x] [2719.统计整数数目](https://leetcode.cn/problems/count-of-integers/)
 
@@ -38,12 +42,13 @@
 
 - [x] [2867.统计树中的合法路径数目](https://leetcode.cn/problems/count-valid-paths-in-a-tree/): 树DP
 
-  - [0x3f的题解](https://leetcode.cn/problems/count-valid-paths-in-a-tree/solutions/2456716/tu-jie-on-xian-xing-zuo-fa-pythonjavacgo-tjz2/):枚举中间
+    - [0x3f的题解](https://leetcode.cn/problems/count-valid-paths-in-a-tree/solutions/2456716/tu-jie-on-xian-xing-zuo-fa-pythonjavacgo-tjz2/):
+      枚举中间
 
 - [x] [3017.按距离统计房屋对数目II](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-ii/)
 - [x] [3022.给定操作次数内使剩余元素的或值最小](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/)
 
-  - [拆位, 试填, heq连续子数组合并 from 0x3f](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/solutions/2622658/shi-tian-fa-pythonjavacgo-by-endlesschen-ysom/)
+    - [拆位, 试填, heq连续子数组合并 from 0x3f](https://leetcode.cn/problems/minimize-or-of-remaining-elements-using-operations/solutions/2622658/shi-tian-fa-pythonjavacgo-by-endlesschen-ysom/)
 
 - [x] [3027.人员站位的方案数 II](https://leetcode.cn/problems/find-the-number-of-ways-to-place-people-ii/)
 - [x] [3031.将单词恢复初始状态所需的最短时间 II](https://leetcode.cn/problems/minimum-time-to-revert-word-to-initial-state-ii/)

@@ -1,3 +1,4 @@
+import heapq
 from bisect import bisect_left
 
 from .data_struct import *
@@ -347,7 +348,6 @@ def solution_2368(n: int, edges: List[List[int]], restricted: List[int]) -> int:
     return ans
 
 
-
 def solution_2369(nums: List[int]) -> bool:
     n = len(nums)
 
@@ -389,3 +389,55 @@ def solution_2369_2(nums: List[int]) -> bool:
                 (x == nums[i - 1] == nums[i - 2]) or (x == nums[i - 1] + 1 == nums[i - 2] + 2))):
             f[i + 1] = True
     return f[n]
+
+
+def solution_2386(nums: List[int], k: int) -> int:
+    ms = 0
+    for i, x in enumerate(nums):
+        if x >= 0:
+            ms += x
+        else:
+            nums[i] = -x
+    nums.sort()
+    h = [(0, 0)]  # 空子序列
+    # Dijkstra
+    for _ in range(k - 1):
+        s, i = heapq.heappop(h)
+        if i < len(nums):
+            # 在子序列的末尾添加nums[i]
+            heapq.heappush(h, (s + nums[i], i + 1))  # 下一个添加/替换的元素下标为 i+1
+            if i:  # 替换子序列的末尾元素为 nums[i]
+                heapq.heappush(h, (s + nums[i] - nums[i - 1], i + 1))
+    return ms - h[0][0]
+
+
+def solution_2386_2(nums: List[int], k: int) -> int:
+    """
+    二分答案 + dp
+    # 判断是否有至少k个子序列，其元素和s不超过sum_limit
+    """
+    s = 0
+    for i, x in enumerate(nums):
+        if x >= 0:
+            s += x
+        else:
+            nums[i] = -x
+    nums.sort()
+
+    def check(sum_limit: int) -> bool:
+        cnt = 1  # 空序列
+
+        def dfs(i: int, s: int) -> None:
+            nonlocal cnt
+            if cnt == k or i == len(nums) or s + nums[i] > sum_limit:
+                return
+            cnt += 1  # 选了i 子序列+1
+            dfs(i + 1, s + nums[i])
+            dfs(i + 1, s)
+
+        dfs(0, 0)
+        return cnt == k
+
+    # 0到sum(nums)-1
+    # 二分
+    return s - bisect_left(range(sum(nums)), True, key=check)
