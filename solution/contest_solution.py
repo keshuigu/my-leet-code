@@ -785,3 +785,47 @@ def weekly_contest_387_solution_3(grid: List[List[int]]) -> int:
     #             not_changes = max(not_changes,cnt[i]+cnt_total[j])
     # changes = n*n - not_changes
     return changes
+
+
+def weekly_contest_388_solution_1(apple: List[int], capacity: List[int]) -> int:
+    sa = sum(apple)
+    capacity.sort(reverse=True)
+    cnt = 0
+    while cnt < len(capacity) and sa > 0:
+        sa -= capacity[cnt]
+        cnt += 1
+    return cnt
+
+
+def weekly_contest_388_solution_2(happiness: List[int], k: int) -> int:
+    happiness.sort(reverse=True)
+    ans = 0
+    cnt = 0
+    while k > 0:
+        ans += max(0, happiness[cnt] - cnt)
+        cnt += 1
+        k -= 1
+    return ans
+
+
+def weekly_contest_388_solution_3(arr: List[str]) -> List[str]:
+    f = defaultdict(int)
+    for s in arr:
+        for i in range(1, len(s) + 1):
+            for j in range(0, len(s) + 1 - i):
+                f[s[j:j + i]] += 1
+    ans = []
+    for s in arr:
+        tmp = []
+        tf = defaultdict(int)
+        for i in range(1, len(s) + 1):
+            for j in range(0, len(s) + 1 - i):
+                f[s[j:j + i]] -= 1
+                tf[s[j:j + i]] += 1
+        for c in tf:
+            if f[c] == 0:
+                tmp.append(c)
+            f[c] += tf[c]
+        tmp.sort(key=lambda x: (len(x), x))
+        ans.append(tmp[0] if len(tmp) > 0 else "")
+    return ans

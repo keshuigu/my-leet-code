@@ -74,4 +74,11 @@
     - [x] [将元素分配到两个数组中 I](https://leetcode.cn/problems/distribute-elements-into-two-arrays-i/):[题目3069](../problem/Easy.md)
     - [x] [元素和小于等于k的子矩阵的数目](https://leetcode.cn/problems/count-submatrices-with-top-left-element-and-sum-less-than-k/):[题目3070](../problem/Medium.md)
     - [x] [在矩阵上写出字母Y所需的最少操作次数](https://leetcode.cn/problems/minimum-operations-to-write-the-letter-y-on-a-grid/):[题目3071](../problem/Medium.md)
-    - [ ] [将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/):[题目3072](../problem/Hard.md)
+    - [x] [将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/):[题目3072](../problem/Hard.md)
+
+- [weekly-contest-388](https://leetcode.cn/contestweekly-contest-388/):时限内完成1 2 3
+
+    - [x] [重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/):[题目TODO](../problem/Easy.md)
+    - [x] [幸福值最大化的选择方案](https://leetcode.cn/problems/maximize-happiness-of-selected-children/):[题目TODO](../problem/Medium.md)
+    - [x] [数组中的最短非公共子字符串](https://leetcode.cn/problems/shortest-uncommon-substring-in-an-array/):[题目TODO](../problem/Medium.md)
+    - [ ] [K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/):[题目TODO](../problem/Hard.md)

@@ -1894,5 +1894,22 @@ def testcase_2386_2():
 
 
 def testcase_299():
-    print(solution_299("1807","7810"))
-    print(solution_299("1123","0111"))
+    print(solution_299("1807", "7810"))
+    print(solution_299("1123", "0111"))
+
+
+def testcase_w_388_1():
+    print(weekly_contest_388_solution_1(apple=[1, 3, 2], capacity=[4, 3, 1, 5, 2]))
+    print(weekly_contest_388_solution_1(apple=[5, 5, 5], capacity=[2, 4, 2, 7]))
+
+
+def testcase_w_388_2():
+    print(weekly_contest_388_solution_2(happiness=[1, 2, 3], k=2))
+    print(weekly_contest_388_solution_2(happiness=[1, 1, 1, 1], k=2))
+    print(weekly_contest_388_solution_2(happiness=[2, 3, 4, 5], k=1))
+
+
+def testcase_w_388_3():
+    print(weekly_contest_388_solution_3(arr=["cab", "ad", "bad", "c"]))
+    print(weekly_contest_388_solution_3(arr=["abc", "bcd", "abcd"]))
+    print(weekly_contest_388_solution_3(arr=["vbb", "grg", "lexn", "oklqe", "yxav"]))
