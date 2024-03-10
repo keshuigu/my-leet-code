@@ -1891,3 +1891,8 @@ def testcase_2386():
 def testcase_2386_2():
     print(solution_2386_2(nums=[2, 4, -2], k=5))
     print(solution_2386_2(nums=[1, -2, 3, 4, -10, 12], k=16))
+
+
+def testcase_299():
+    print(solution_299("1807","7810"))
+    print(solution_299("1123","0111"))

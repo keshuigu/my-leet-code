@@ -2429,3 +2429,21 @@ def solution_42_3(height: List[int]) -> int:
             ans += dh * (i - left - 1)
         s.append(i)
     return ans
+
+
+def solution_299(secret: str, guess: str) -> str:
+    cnt_s = defaultdict(int)
+    cnt_g = defaultdict(int)
+    n = len(secret)
+    for i in range(n):
+        cnt_s[secret[i]] += 1
+        cnt_g[guess[i]] += 1
+    cow = 0
+    for num in cnt_s:
+        if num in cnt_g:
+            cow += min(cnt_g[num], cnt_s[num])
+    bull = 0
+    for i in range(n):
+        if secret[i] == guess[i]:
+            bull += 1
+    return str(bull) + 'A' + str(cow - bull) + 'B'
