@@ -1898,21 +1898,21 @@ def testcase_299():
     print(solution_299("1123", "0111"))
 
 
-def testcase_w_388_1():
-    print(weekly_contest_388_solution_1(apple=[1, 3, 2], capacity=[4, 3, 1, 5, 2]))
-    print(weekly_contest_388_solution_1(apple=[5, 5, 5], capacity=[2, 4, 2, 7]))
+def testcase_3074():
+    print(solution_3074(apple=[1, 3, 2], capacity=[4, 3, 1, 5, 2]))
+    print(solution_3074(apple=[5, 5, 5], capacity=[2, 4, 2, 7]))
 
 
-def testcase_w_388_2():
-    print(weekly_contest_388_solution_2(happiness=[1, 2, 3], k=2))
-    print(weekly_contest_388_solution_2(happiness=[1, 1, 1, 1], k=2))
-    print(weekly_contest_388_solution_2(happiness=[2, 3, 4, 5], k=1))
+def testcase_3075():
+    print(solution_3075(happiness=[1, 2, 3], k=2))
+    print(solution_3075(happiness=[1, 1, 1, 1], k=2))
+    print(solution_3075(happiness=[2, 3, 4, 5], k=1))
 
 
-def testcase_w_388_3():
-    print(weekly_contest_388_solution_3(arr=["cab", "ad", "bad", "c"]))
-    print(weekly_contest_388_solution_3(arr=["abc", "bcd", "abcd"]))
-    print(weekly_contest_388_solution_3(arr=["vbb", "grg", "lexn", "oklqe", "yxav"]))
+def testcase_3076():
+    print(solution_3076(arr=["cab", "ad", "bad", "c"]))
+    print(solution_3076(arr=["abc", "bcd", "abcd"]))
+    print(solution_3076(arr=["vbb", "grg", "lexn", "oklqe", "yxav"]))
 
 
 def testcase_2129_0():
@@ -1934,3 +1934,15 @@ def testcase_2129_2():
     print(solution_2129_2("First leTTeR of EACH Word"))
     print(solution_2129_2("i lOve leetcode"))
     print(solution_2129_2("L hv"))
+
+
+def testcase_3077_0():
+    print(22)
+    print(64)
+    print(-1)
+
+
+def testcase_3077():
+    print(solution_3077(nums=[1, 2, 3, -1, 2], k=3))
+    print(solution_3077(nums=[12, -2, -2, -2, -2], k=5))
+    print(solution_3077(nums=[-1, -2, -3], k=1))

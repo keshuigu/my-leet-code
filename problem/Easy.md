@@ -167,3 +167,6 @@
 - [x] [3038.相同分数的最大操作数目 I](https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/)
 - [x] [3042.统计前后缀下标对 I](https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/)
 - [x] [3046.分割数组](https://leetcode.cn/problems/split-the-array/)
+- [x] [3065.超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/)
+- [x] [3069.将元素分配到两个数组中 I](https://leetcode.cn/problems/distribute-elements-into-two-arrays-i/)
+- [x] [3074.重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/)

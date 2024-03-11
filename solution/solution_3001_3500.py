@@ -797,3 +797,19 @@ def solution_3072(nums: List[int]) -> List[int]:
             b.append(x)
             t2.add(v, 1)
     return a + b
+
+
+def solution_3074(apple: List[int], capacity: List[int]) -> int:
+    return weekly_contest_388_solution_1(apple, capacity)
+
+
+def solution_3075(happiness: List[int], k: int) -> int:
+    return weekly_contest_388_solution_2(happiness, k)
+
+
+def solution_3076(arr: List[str]) -> List[str]:
+    return weekly_contest_388_solution_3(arr)
+
+
+def solution_3077(nums: List[int], k: int) -> int:
+    return weekly_contest_388_solution_4(nums, k)

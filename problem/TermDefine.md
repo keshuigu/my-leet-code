@@ -20,3 +20,5 @@
 11. [离散化+二维前缀和](https://www.cnblogs.com/tyriis/p/15362478.html)
 12. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/)
 13. [heapify的时间复杂度为什么是O(n)](https://www.jianshu.com/p/147bb9ee41b1):同一层的节点最多交换的次数都是相同的,第1层最多交换k-1次,第2层最多交换k-2次...
+14. [划分型DP](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/solutions/2678061/qian-zhui-he-hua-fen-xing-dpshi-zi-bian-ap5z5/)
+15. 后缀数组, 后缀自动机

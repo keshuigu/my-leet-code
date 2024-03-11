@@ -78,7 +78,7 @@
 
 - [weekly-contest-388](https://leetcode.cn/contestweekly-contest-388/):时限内完成1 2 3
 
-    - [x] [重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/):[题目TODO](../problem/Easy.md)
-    - [x] [幸福值最大化的选择方案](https://leetcode.cn/problems/maximize-happiness-of-selected-children/):[题目TODO](../problem/Medium.md)
-    - [x] [数组中的最短非公共子字符串](https://leetcode.cn/problems/shortest-uncommon-substring-in-an-array/):[题目TODO](../problem/Medium.md)
-    - [ ] [K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/):[题目TODO](../problem/Hard.md)
+    - [x] [重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/):[题目3074](../problem/Easy.md)
+    - [x] [幸福值最大化的选择方案](https://leetcode.cn/problems/maximize-happiness-of-selected-children/):[题目3075](../problem/Medium.md)
+    - [x] [数组中的最短非公共子字符串](https://leetcode.cn/problems/shortest-uncommon-substring-in-an-array/):[题目3076](../problem/Medium.md)
+    - [x] [K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/):[题目3077](../problem/Hard.md)

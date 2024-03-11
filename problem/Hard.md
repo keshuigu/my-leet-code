@@ -58,3 +58,4 @@
 - [x] [3049.标记所有下标的最早秒数 II](https://leetcode.cn/problems/earliest-second-to-mark-indices-ii/)
 - [x] [3068.最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/)
 - [x] [3072.将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/): 树状数组
+- [x] [3077.K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/): 划分型DP

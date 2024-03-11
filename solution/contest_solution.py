@@ -1,7 +1,7 @@
 import heapq
 from collections import defaultdict
 from functools import cache
-from itertools import pairwise
+from itertools import pairwise, accumulate
 from math import inf
 from typing import *
 
@@ -829,3 +829,50 @@ def weekly_contest_388_solution_3(arr: List[str]) -> List[str]:
         tmp.sort(key=lambda x: (len(x), x))
         ans.append(tmp[0] if len(tmp) > 0 else "")
     return ans
+
+
+def weekly_contest_388_solution_4(nums: List[int], k: int) -> int:
+    """
+    划分型 DP
+    关键词: 划分,不相交
+
+    1. 通常来说, f[i][j] 表示 前j个数分成i段
+        对于本题,每段选一个子数组,对应最大能量值
+    2. 不选num[j-1]: 问题变成 前j-1个数分成i段
+        f[i][j-1] = f[i][j]
+    3. 选num[j-1]: 考虑当前最后一个子数组的多种情况
+        f[i][j] = max { f[i-1][L] + (s[j] - s[L]) * w }  # s前缀和
+        L 最大值为 j-1
+        L 最小值为 i-1
+        w = (-1) ^ (i + 1) * (k - i + 1)
+    4. 答案 = f[k][n]
+        初始值f[0][j] = 0
+             f[i][i-1(<i)] = -inf
+    5. 暴力:
+        枚举i(0...k),枚举j(0...n),枚举L(i-1...j-1)
+        O(n*n*k)
+    6. max_{L = i-1}^{j-1} { f[i-1][L] + (s[j] - s[L]) * w } 优化
+    f[i][i] => 枚举 L= i-1
+    f[i][i+1] => 枚举 L = i-1, i
+    ...
+        max_{L = i-1}^{j-1} { f[i-1][L] + (s[j] - s[L]) * w }
+    =   max_{L = i-1}^{j-1} { f[i-1][L] + s[j]* w - s[L] * w }
+    =   s[j]* w + max_{L = i-1}^{j-1} { f[i-1][L] - s[L] * w }
+
+    f[i][j] => 枚举 L = (i-1, i, ..., j-1) 可以利用计算 f[i][j-1]的结果
+
+
+    最终转移方程:
+    f[i][j] = max(f[i][j-1], s[j]*w +mx)
+    mx = max_{L = i-1}^{j-1} { f[i-1][L] - s[L] * w }
+    """
+    n = len(nums)
+    s = list(accumulate(nums, initial=0))
+    f = [[0] * (n + 1) for _ in range(k + 1)]
+    for i in range(1, k + 1):
+        f[i][i - 1] = mx = -inf
+        w = (1 if i % 2 else -1) * (k - i + 1)
+        for j in range(i, n - k + i + 1):  # 右侧要留下至少k-i个数字
+            mx = max(mx, f[i - 1][j - 1] - s[j - 1] * w)
+            f[i][j] = max(f[i][j - 1], s[j] * w + mx)
+    return f[k][n]
