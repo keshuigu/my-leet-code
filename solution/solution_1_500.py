@@ -2447,3 +2447,24 @@ def solution_299(secret: str, guess: str) -> str:
         if secret[i] == guess[i]:
             bull += 1
     return str(bull) + 'A' + str(cow - bull) + 'B'
+
+
+def solution_338(n: int) -> List[int]:
+    # DP 最高有效位
+    high_bit = 0
+    i = 1
+    ans = [0] * (n + 1)
+    while i <= n:
+        if i & (i - 1) == 0:
+            high_bit = i
+        ans[i] = ans[i - high_bit] + 1
+        i += 1
+    return ans
+
+
+def solution_338_2(n: int) -> List[int]:
+    # DP 最低有效位
+    ans = [0] * (n + 1)
+    for i in range(1, n + 1):
+        ans[i] = ans[i >> 1] + (1 & i)
+    return ans

@@ -1946,3 +1946,13 @@ def testcase_3077():
     print(solution_3077(nums=[1, 2, 3, -1, 2], k=3))
     print(solution_3077(nums=[12, -2, -2, -2, -2], k=5))
     print(solution_3077(nums=[-1, -2, -3], k=1))
+
+
+def testcase_338():
+    print(solution_338(2))
+    print(solution_338(5))
+
+
+def testcase_338_2():
+    print(solution_338_2(2))
+    print(solution_338_2(5))
