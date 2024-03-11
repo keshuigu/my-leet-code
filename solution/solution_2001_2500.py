@@ -441,3 +441,35 @@ def solution_2386_2(nums: List[int], k: int) -> int:
     # 0到sum(nums)-1
     # 二分
     return s - bisect_left(range(sum(nums)), True, key=check)
+
+
+def solution_2129(title: str) -> str:
+    words = title.split(" ")
+    n = len(words)
+    for i in range(n):
+        words[i] = words[i].lower()
+        if len(words[i]) > 2:
+            words[i] = chr(ord(words[i][0]) - 32) + words[i][1:]
+    return ' '.join(words)
+
+
+def solution_2129_2(title: str) -> str:
+    title = list(title)
+    n = len(title)
+    blank_p = -1
+    for i in range(n):
+        if title[i] == ' ':
+            if i - blank_p <= 3:
+                title[blank_p + 1] = chr(ord(title[blank_p + 1]) + 32)
+            blank_p = i
+            continue
+        else:
+            if i - 1 == blank_p:
+                if (cur := ord(title[i])) >= 97:
+                    title[i] = chr(cur - 32)
+            else:
+                if (cur := ord(title[i])) < 97:
+                    title[i] = chr(cur + 32)
+    if n - blank_p <= 3:
+        title[blank_p + 1] = chr(ord(title[blank_p + 1]) + 32)
+    return ''.join(title)

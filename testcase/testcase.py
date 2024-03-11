@@ -1913,3 +1913,24 @@ def testcase_w_388_3():
     print(weekly_contest_388_solution_3(arr=["cab", "ad", "bad", "c"]))
     print(weekly_contest_388_solution_3(arr=["abc", "bcd", "abcd"]))
     print(weekly_contest_388_solution_3(arr=["vbb", "grg", "lexn", "oklqe", "yxav"]))
+
+
+def testcase_2129_0():
+    print("Capitalize The Title")
+    print("First Letter of Each Word")
+    print("i Love Leetcode")
+    print("l hv")
+
+
+def testcase_2129():
+    print(solution_2129("capiTalIze tHe titLe"))
+    print(solution_2129("First leTTeR of EACH Word"))
+    print(solution_2129("i lOve leetcode"))
+    print(solution_2129_2("L hv"))
+
+
+def testcase_2129_2():
+    print(solution_2129_2("capiTalIze tHe titLe"))
+    print(solution_2129_2("First leTTeR of EACH Word"))
+    print(solution_2129_2("i lOve leetcode"))
+    print(solution_2129_2("L hv"))
