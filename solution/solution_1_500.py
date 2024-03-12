@@ -2468,3 +2468,51 @@ def solution_338_2(n: int) -> List[int]:
     for i in range(1, n + 1):
         ans[i] = ans[i >> 1] + (1 & i)
     return ans
+
+
+def solution_342(n: int) -> bool:
+    # 如果 n 是4的幂
+    # 4的幂一定是2的幂
+    # 区分
+    # 2的幂却不是4的幂 => 4^x * 2 模3余2
+    # 4^x => (3+1)^x 与 1^x => 1 对3同余
+    if n <= 0:
+        return False
+    if (n & (n - 1) == 0) and n % 3 == 1:
+        return True
+    else:
+        return False
+
+
+def solution_342_2(n: int) -> bool:
+    mask = 0xaaaaaaaa  # 1010 1010 1010 1010 1010 1010 1010 1010
+    # mask = 0x2aaaaaaa # 0010 1010 1010 1010 1010 1010 1010 1010 忽略负数
+    return n > 0 and (n & (n - 1)) == 0 and n & mask == 0
+    # n正 n是2的幂 n只有偶数位为1
+
+
+def solution_344(s: List[str]) -> None:
+    n = len(s)
+    p, q = 0, n - 1
+    while p < q:
+        s[p], s[q] = s[q], s[p]
+        p += 1
+        q -= 1
+    return
+
+
+def solution_345(s: str) -> str:
+    ans = list(s)
+    n = len(ans)
+    a = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', }
+    p, q = 0, n - 1
+    while p < q:
+        while p < n and ans[p] not in a:
+            p += 1
+        while q > -1 and ans[q] not in a:
+            q -= 1
+        if p < q:
+            ans[p], ans[q] = ans[q], ans[p]
+            p += 1
+            q -= 1
+    return ''.join(ans)

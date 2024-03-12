@@ -1959,18 +1959,38 @@ def testcase_338_2():
 
 
 def testcase_1261():
-    root = TreeNode([-1,None,-1])
+    root = TreeNode([-1, None, -1])
     obj = FindElements(root)
     print(obj.find(1))
     print(obj.find(2))
-    root = TreeNode([-1,-1,-1,-1,-1])
+    root = TreeNode([-1, -1, -1, -1, -1])
     obj = FindElements(root)
     print(obj.find(1))
     print(obj.find(3))
     print(obj.find(5))
-    root = TreeNode([-1,None,-1,None,None,-1,None,None,None,None,None,-1])
+    root = TreeNode([-1, None, -1, None, None, -1, None, None, None, None, None, -1])
     obj = FindElements(root)
     print(obj.find(2))
     print(obj.find(3))
     print(obj.find(4))
     print(obj.find(5))
+
+
+def testcase_342():
+    print(solution_342(16))
+    print(solution_342(5))
+    print(solution_342(1))
+
+
+def testcase_344():
+    s = ["h","e","l","l","o"]
+    solution_344(s)
+    print(s)
+    s = ["H", "a", "n", "n", "a", "h"]
+    solution_344(s)
+    print(s)
+
+
+def testcase_345():
+    print(solution_345('hello'))
+    print(solution_345('leetcode'))
