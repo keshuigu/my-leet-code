@@ -1956,3 +1956,21 @@ def testcase_338():
 def testcase_338_2():
     print(solution_338_2(2))
     print(solution_338_2(5))
+
+
+def testcase_1261():
+    root = TreeNode([-1,None,-1])
+    obj = FindElements(root)
+    print(obj.find(1))
+    print(obj.find(2))
+    root = TreeNode([-1,-1,-1,-1,-1])
+    obj = FindElements(root)
+    print(obj.find(1))
+    print(obj.find(3))
+    print(obj.find(5))
+    root = TreeNode([-1,None,-1,None,None,-1,None,None,None,None,None,-1])
+    obj = FindElements(root)
+    print(obj.find(2))
+    print(obj.find(3))
+    print(obj.find(4))
+    print(obj.find(5))

@@ -438,3 +438,65 @@ class NumArray:
 
     def sumRange(self, left: int, right: int):
         return self.sums[right + 1] - self.sums[left]
+
+
+class FindElements:
+    def __init__(self, root: Optional[TreeNode]):
+        self.root = root
+        root.val = 0
+        s = [self.root]
+        p = self.root
+        while s:
+            while p:
+                s.append(p)
+                if p.left:
+                    p.left.val = p.val * 2 + 1
+                    p = p.left
+                else:
+                    p = None
+            p = s.pop()
+            if p.right:
+                p.right.val = p.val * 2 + 2
+                p = p.right
+            else:
+                p = None
+        return
+
+    def find(self, target: int) -> bool:
+        order = []
+        while target > 0:
+            if target % 2 == 1:
+                order.append(0)
+            else:
+                order.append(1)
+            target = (target - 1) // 2
+        order.reverse()
+        p = self.root
+        for o in order:
+            if o:
+                p = p.right
+                if not p:
+                    return False
+            else:
+                p = p.left
+                if not p:
+                    return False
+        return True
+
+    def find_2(self, target: int) -> bool:
+        # 位运算,所有节点值加1,会形成规律
+        # root = 1
+        # root.left = 10 root.right = 11
+        # 100 101 110 111
+        # 0走左 1走右
+        target += 1
+        cur = self.root
+        for i in range(target.bit_length() - 2, -1, -1):  # 从次高位开始枚举
+            o = 1 & (target >> i)
+            if o:
+                cur = cur.left
+            else:
+                cur = cur.right
+            if not cur:
+                return False
+        return True

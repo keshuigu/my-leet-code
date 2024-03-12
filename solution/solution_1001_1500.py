@@ -114,3 +114,7 @@ def solution_1483():
     # lca
     # method.TreeAncestor
     ...
+
+def solution_1261():
+    # data_struct.FindElements
+    ...
