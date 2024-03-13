@@ -1994,3 +1994,8 @@ def testcase_344():
 def testcase_345():
     print(solution_345('hello'))
     print(solution_345('leetcode'))
+
+
+def testcase_2864():
+    print(solution_2864('010'))
+    print(solution_2864('0101'))

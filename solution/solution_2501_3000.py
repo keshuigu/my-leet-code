@@ -793,7 +793,7 @@ def solution_2575(word: str, m: int) -> List[int]:
 
 
 def solution_2834(n: int, target: int) -> int:
-    mod_num = 10**9+7
+    mod_num = 10 ** 9 + 7
     mid = target // 2
     sum = 0
     cnt1 = min(mid, n)
@@ -801,4 +801,32 @@ def solution_2834(n: int, target: int) -> int:
     if mid < n:
         cnt = n - mid
         sum += (target + target + cnt - 1) * cnt // 2
-    return sum %mod_num
+    return sum % mod_num
+
+
+def solution_2864(s: str) -> str:
+    ls = list(s)
+    n = len(ls)
+    p, q = 0, n - 1
+    while q > -1 and ls[q] != '1':
+        q -= 1
+    if q != n - 1:
+        ls[q] = '0'
+        ls[-1] = '1'
+    else:
+        q -= 1
+    n = n - 1
+    while p < q:
+        while p < n and ls[p] != '0':
+            p += 1
+        while q > -1 and ls[q] != '1':
+            q -= 1
+        if p < q:
+            ls[p], ls[q] = '1', '0'
+            p += 1
+            while p < n and ls[p] != '0':
+                p += 1
+            q -= 1
+            while q > -1 and ls[q] != '1':
+                q -= 1
+    return ''.join(ls)

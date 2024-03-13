@@ -162,6 +162,7 @@
 
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
 - [x] [2859.计算K置位下标对应元素的和](https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/)
+- [x] [2864.最大二进制奇数](https://leetcode.cn/problems/maximum-odd-binary-number/)
 - [x] [2917.找出数组中的K-or值](https://leetcode.cn/problems/find-the-k-or-of-an-array/)
 - [x] [3014.输入单词需要的最少按键次数I](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-i/)
 - [x] [3019.按键变更的次数](https://leetcode.cn/problems/number-of-changing-keys/)
