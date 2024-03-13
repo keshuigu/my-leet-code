@@ -1983,7 +1983,7 @@ def testcase_342():
 
 
 def testcase_344():
-    s = ["h","e","l","l","o"]
+    s = ["h", "e", "l", "l", "o"]
     solution_344(s)
     print(s)
     s = ["H", "a", "n", "n", "a", "h"]
@@ -1999,3 +1999,32 @@ def testcase_345():
 def testcase_2864():
     print(solution_2864('010'))
     print(solution_2864('0101'))
+
+
+def testcase_349():
+    print(solution_349([1, 2, 2, 1], [2, 2]))
+    print(solution_349([4, 9, 5], [9, 4, 9, 8, 4]))
+
+
+def testcase_350():
+    print(solution_350([1, 2, 2, 1], [2, 2]))
+    print(solution_350([4, 4, 9, 5], [9, 4, 9, 8, 4]))
+
+
+def testcase_350_1():
+    print(solution_350_1([1, 2, 2, 1], [2, 2]))
+    print(solution_350_1([4, 4, 9, 5], [9, 4, 9, 8, 4]))
+
+
+def testcase_367():
+    print(solution_367(16))
+    print(solution_367(14))
+
+
+def testcase_367_1():
+    print(solution_367_1(16))
+    print(solution_367_1(14))
+
+def testcase_367_2():
+    print(solution_367_2(16))
+    print(solution_367_2(14))

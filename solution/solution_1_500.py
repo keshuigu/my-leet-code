@@ -2516,3 +2516,77 @@ def solution_345(s: str) -> str:
             p += 1
             q -= 1
     return ''.join(ans)
+
+
+def solution_349(nums1: List[int], nums2: List[int]) -> List[int]:
+    return list(set(nums1) & set(nums2))
+
+
+def solution_350(nums1: List[int], nums2: List[int]) -> List[int]:
+    f1 = Counter[int](nums1)
+    f2 = Counter[int](nums2)
+    f = f1 & f2
+    # return f.elements()
+    ans = []
+    for x in f:
+        for _ in range(f[x]):
+            ans.append(x)
+    return ans
+
+
+def solution_350_1(nums1: List[int], nums2: List[int]) -> List[int]:
+    # 已经排序
+    # 双指针
+    nums1.sort()
+    nums2.sort()
+    p, q = 0, 0
+    n1, n2 = len(nums1), len(nums2)
+    ans = []
+    while p < n1 and q < n2:
+        if nums1[p] == nums2[q]:
+            ans.append(nums1[p])
+            p += 1
+            q += 1
+        elif nums1[p] > nums2[q]:
+            q += 1
+        else:
+            p += 1
+    return ans
+
+
+def solution_367(num: int) -> bool:
+    x0 = num
+    x1 = x0 - (x0 * x0 - num) / (2 * x0)
+    while x0 - x1 > 10e-6 or x1 - x0 > 10e-6:
+        x0 = x1
+        x1 = x0 - (x0 * x0 - num) / (2 * x0)
+    res = int(x1)
+    return res ** 2 == num
+
+
+def solution_367_1(num: int) -> bool:
+    for i in range(num + 1):
+        if i * i == num:
+            return True
+        elif i * i > num:
+            return False
+    return False
+
+
+def solution_367_2(num: int) -> bool:
+    # 二分
+    def check(x):
+        if x * x >= num:
+            return True
+        else:
+            return False
+
+    left = 0
+    right = num + 1
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if check(mid):
+            right = mid
+        else:
+            left = mid
+    return right ** 2 == num
