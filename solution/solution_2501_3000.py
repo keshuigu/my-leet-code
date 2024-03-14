@@ -830,3 +830,15 @@ def solution_2864(s: str) -> str:
             while q > -1 and ls[q] != '1':
                 q -= 1
     return ''.join(ls)
+
+
+def solution_2789(nums: List[int]) -> int:
+    cur = nums[-1]
+    mc = cur
+    for num in nums[-2::-1]:
+        if num > cur:
+            mc = max(cur, mc)
+            cur = num
+        else:
+            cur += num
+    return max(mc, cur)

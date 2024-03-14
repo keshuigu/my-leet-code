@@ -2025,6 +2025,12 @@ def testcase_367_1():
     print(solution_367_1(16))
     print(solution_367_1(14))
 
+
 def testcase_367_2():
     print(solution_367_2(16))
     print(solution_367_2(14))
+
+
+def testcase_2789():
+    print(solution_2789([2, 3, 7, 9, 3]))
+    print(solution_2789([5, 3, 3]))

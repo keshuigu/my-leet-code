@@ -16,5 +16,5 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-   print(solution_367(65536))
-   print(solution_367_2(65536))
+   s = [2,3,4,8,6,7]
+   print(s[-2::-1])
