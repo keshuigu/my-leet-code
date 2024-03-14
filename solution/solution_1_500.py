@@ -1,3 +1,4 @@
+import bisect
 import collections
 import math
 import os
@@ -2590,3 +2591,38 @@ def solution_367_2(num: int) -> bool:
         else:
             left = mid
     return right ** 2 == num
+
+
+def solution_374(n: int, guess: Callable[[int], int]) -> int:
+    l, r = 0, n + 1
+    while l + 1 < r:
+        mid = (l + r) // 2
+        if guess(mid) == 0:
+            return mid
+        elif guess(mid) == -1:
+            r = mid
+        else:
+            l = mid
+    # never reach
+    return -1
+
+
+def solution_374_2(n: int, guess: Callable[[int], int]) -> int:
+    def check(n):
+        if guess(n) <= 0:
+            return True
+        else:
+            return False
+
+    return bisect.bisect_left(range(n + 1), x=True, key=check)
+
+
+def solution_387(s: str) -> int:
+    n = len(s)
+    f = {x: n - 1 - i for i, x in enumerate(s[::-1])}
+    cnt = Counter[int](s)
+    mi = n
+    for c in cnt:
+        if cnt[c] == 1:
+            mi = min(f[c], mi)
+    return mi if mi < n else -1

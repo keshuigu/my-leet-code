@@ -2034,3 +2034,45 @@ def testcase_367_2():
 def testcase_2789():
     print(solution_2789([2, 3, 7, 9, 3]))
     print(solution_2789([5, 3, 3]))
+
+
+def testcase_374():
+    def get_guess(pick: int) -> Callable:
+        def guess(n: int) -> int:
+            if n == pick:
+                return 0
+            elif n > pick:
+                return -1
+            else:
+                return 1
+
+        return guess
+
+    print(solution_374(10, get_guess(6)))
+    print(solution_374(1, get_guess(1)))
+    print(solution_374(2, get_guess(1)))
+    print(solution_374(2, get_guess(2)))
+
+
+def testcase_374_2():
+    def get_guess(pick: int) -> Callable:
+        def guess(n: int) -> int:
+            if n == pick:
+                return 0
+            elif n > pick:
+                return -1
+            else:
+                return 1
+
+        return guess
+
+    print(solution_374_2(10, get_guess(6)))
+    print(solution_374_2(1, get_guess(1)))
+    print(solution_374_2(2, get_guess(1)))
+    print(solution_374_2(2, get_guess(2)))
+
+
+def testcase_387():
+    print(solution_387("leetcode"))
+    print(solution_387("loveleetcode"))
+    print(solution_387("aabb"))
