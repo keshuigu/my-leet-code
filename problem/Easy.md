@@ -137,6 +137,8 @@
 - [x] [374.猜数字大小](https://leetcode.cn/problems/guess-number-higher-or-lower/)
 - [x] [383.赎金信](https://leetcode.cn/problems/ransom-note/)
 - [x] [383.字符串中的第一个唯一字符](https://leetcode.cn/problems/first-unique-character-in-a-string/)
+- [x] [389.找不同](https://leetcode.cn/problems/find-the-difference/)
+- [x] [392.判断子序列](https://leetcode.cn/problems/is-subsequence/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [589.N叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
 - [x] [589.N叉树的后序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)

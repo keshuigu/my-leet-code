@@ -473,3 +473,32 @@ def solution_2129_2(title: str) -> str:
     if n - blank_p <= 3:
         title[blank_p + 1] = chr(ord(title[blank_p + 1]) + 32)
     return ''.join(title)
+
+
+def solution_2312(m: int, n: int, prices: List[List[int]]) -> int:
+    # 定义f[i][j] 表示切割一块高i宽j的木块, 能得到的最多钱数
+    # 1. 直接卖
+    # 2. 竖着切开,枚举切割位置k, f[i][j] = max f[i][k]+f[i][j-k]
+    # 3. 横着切开,枚举切割位置k, f[i][j] = max f[k][j]+f[i-k][j]
+    # 取三种情况的最大值
+    # ans = f[m][n]
+    pr = {(h, w): p for h, w, p in prices}
+    f = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            f[i][j] = max(pr.get((i, j), 0), max(((f[i][k] + f[i][j - k]) for k in range(1, j)), default=0),
+                          max(((f[k][j] + f[i - k][j]) for k in range(1, i)), default=0))
+    return f[m][n]
+
+
+def solution_2312_2(m: int, n: int, prices: List[List[int]]) -> int:
+    f = [[0] * (n + 1) for _ in range(m + 1)]
+    # 优化1 价格直接存入f中
+    for h, w, p in prices:
+        f[h][w] = p
+    # 优化2 只需要遍历一半
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            f[i][j] = max(f[i][j], max(((f[i][k] + f[i][j - k]) for k in range(1, j // 2 + 1)), default=0),
+                          max(((f[k][j] + f[i - k][j]) for k in range(1, i // 2 + 1)), default=0))
+    return f[m][n]

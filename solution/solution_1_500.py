@@ -2626,3 +2626,28 @@ def solution_387(s: str) -> int:
         if cnt[c] == 1:
             mi = min(f[c], mi)
     return mi if mi < n else -1
+
+
+def solution_389(s: str, t: str) -> str:
+    return (Counter[str](t) - Counter[str](s)).popitem()[0]
+    # res = 0
+    # for ch in t+s:
+    #     res = res^ord(ch)
+    # return chr(res)
+
+
+def solution_392(s: str, t: str) -> bool:
+    # DP
+    # f[i][j] 表示 从i后j第一次出现的位置
+    n, m = len(s), len(t)
+    f = [[0] * 26 for _ in range(m)]
+    f.append([m] * 26)
+    for i in range(m - 1, -1, -1):
+        for j in range(26):
+            f[i][j] = i if ord(t[i]) == j + ord('a') else f[i + 1][j]
+    add = 0
+    for i in range(n):
+        if f[add][ord(s[i]) - ord('a')] == m:
+            return False
+        add = f[add][ord(s[i]) - ord('a')] + 1
+    return True

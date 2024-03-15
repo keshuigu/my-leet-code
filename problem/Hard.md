@@ -20,6 +20,7 @@
 - [x] [987.二叉树的垂序遍历](https://leetcode.cn/problems/vertical-order-traversal-of-a-binary-tree)
 - [x] [1483.树节点的第K个祖先](https://leetcode.cn/problems/kth-ancestor-of-a-tree-node/): LCA
 - [x] [1944.队列中可以看到的人数](https://leetcode.cn/problems/number-of-visible-people-in-a-queue/)
+- [x] [2312.卖木头块](https://leetcode.cn/problems/selling-pieces-of-wood/)
 - [x] [2376.统计特殊整数](https://leetcode.cn/problems/count-special-integers/)
 
     - [数位DP模板](https://leetcode.cn/problems/count-special-integers/solutions/1746956/shu-wei-dp-mo-ban-by-endlesscheng-xtgx/)

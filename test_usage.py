@@ -6,6 +6,7 @@ def solution_367(num: int) -> bool:
         x1 = x0 - (x0 * x0 - num) / (2 * x0)
     return x1
 
+
 def solution_367_2(num: int) -> bool:
     x0 = 0.1
     x1 = x0 - (x0 * x0 - num) / (2 * x0)
@@ -16,5 +17,6 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-   s = [2,3,4,8,6,7]
-   print(s[-2::-1])
+    prices = [[1,4,2],[2,2,7],[2,1,3]]
+    pr = {(h, w): p for h, w, p in prices}
+    print(pr)

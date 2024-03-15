@@ -2076,3 +2076,24 @@ def testcase_387():
     print(solution_387("leetcode"))
     print(solution_387("loveleetcode"))
     print(solution_387("aabb"))
+
+
+def testcase_2312():
+    print(solution_2312(m=3, n=5, prices=[[1, 4, 2], [2, 2, 7], [2, 1, 3]]))
+    print(solution_2312(m=4, n=6, prices=[[3, 2, 10], [1, 4, 2], [4, 1, 3]]))
+
+
+def testcase_2312_2():
+    print(solution_2312_2(m=3, n=5, prices=[[1, 4, 2], [2, 2, 7], [2, 1, 3]]))
+    print(solution_2312_2(m=4, n=6, prices=[[3, 2, 10], [1, 4, 2], [4, 1, 3]]))
+
+
+def testcase_389():
+    print(solution_389("abcd", "abcde"))
+    print(solution_389("", "y"))
+    print(solution_389("a", "aa"))
+
+
+def testcase_392():
+    print(solution_392(s = "abc", t = "ahbgdc"))
+    print(solution_392(s = "axc", t = "ahbgdc"))
