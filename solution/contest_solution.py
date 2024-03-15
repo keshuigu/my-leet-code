@@ -876,3 +876,35 @@ def weekly_contest_388_solution_4(nums: List[int], k: int) -> int:
             mx = max(mx, f[i - 1][j - 1] - s[j - 1] * w)
             f[i][j] = max(f[i][j - 1], s[j] * w + mx)
     return f[k][n]
+
+
+def biweekly_contest_126_solution_1():
+    ...
+
+
+def biweekly_contest_126_solution_2():
+    ...
+
+
+def biweekly_contest_126_solution_3():
+    ...
+
+
+def biweekly_contest_126_solution_4():
+    ...
+
+
+def weekly_contest_389_solution_1():
+    ...
+
+
+def weekly_contest_389_solution_2():
+    ...
+
+
+def weekly_contest_389_solution_3():
+    ...
+
+
+def weekly_contest_389_solution_4():
+    ...
