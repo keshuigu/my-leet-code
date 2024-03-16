@@ -842,3 +842,29 @@ def solution_2789(nums: List[int]) -> int:
         else:
             cur += num
     return max(mc, cur)
+
+
+def solution_2684(grid: List[List[int]]) -> int:
+    m = len(grid)
+    n = len(grid[0])
+    mc = 0
+
+    @cache
+    def dfs(i, j) -> int:
+        """
+        从grid[i][j]出发，移动的最大次数
+        """
+        if j == n - 1:
+            return 0
+        ans = 0
+        if i > 0 and grid[i][j] < grid[i - 1][j + 1]:
+            ans = max(ans, 1 + dfs(i - 1, j + 1))
+        if i >= 0 and grid[i][j] < grid[i][j + 1]:
+            ans = max(ans, 1 + dfs(i, j + 1))
+        if m - 1 > i and grid[i][j] < grid[i + 1][j + 1]:
+            ans = max(ans, 1 + dfs(i + 1, j + 1))
+        return ans
+
+    for i in range(m):
+        mc = max(dfs(i, 0), mc)
+    return mc

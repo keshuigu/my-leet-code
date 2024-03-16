@@ -2095,5 +2095,10 @@ def testcase_389():
 
 
 def testcase_392():
-    print(solution_392(s = "abc", t = "ahbgdc"))
-    print(solution_392(s = "axc", t = "ahbgdc"))
+    print(solution_392(s="abc", t="ahbgdc"))
+    print(solution_392(s="axc", t="ahbgdc"))
+
+
+def testcase_2684():
+    print(solution_2684(grid=[[2, 4, 3, 5], [5, 4, 9, 3], [3, 4, 2, 11], [10, 9, 13, 15]]))
+    print(solution_2684(grid=[[3, 2, 4], [2, 1, 9], [1, 1, 7]]))

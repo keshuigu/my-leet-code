@@ -65,6 +65,7 @@
 - [x] [2641.二叉树的堂兄弟节点 II](https://leetcode.cn/problems/cousins-in-binary-tree-ii/)
 - [x] [2645.构造有效字符串的最少插入数](https://leetcode.cn/problems/minimum-additions-to-make-valid-string/)
 - [x] [2673.使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/)
+- [x] [2684.矩阵中移动的最大次数](https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/)
 - [x] [2707.字符串中的额外字符](https://leetcode.cn/problems/extra-characters-in-a-string/)
 
     - [动态规划,字典树](https://leetcode.cn/problems/extra-characters-in-a-string/solutions/2590667/zi-fu-chuan-zhong-de-e-wai-zi-fu-by-leet-f0lu/)

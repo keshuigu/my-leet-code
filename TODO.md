@@ -1,18 +1,15 @@
 ## Waiting List
 
 1. [离散化+二维前缀和](https://www.cnblogs.com/tyriis/p/15362478.html):TODO
-2. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/):
-   TODO
+2. [二维差分](https://leetcode.cn/problems/stamping-the-grid/solutions/1199642/wu-nao-zuo-fa-er-wei-qian-zhui-he-er-wei-zwiu/):TODO
 
     - [ ] [2132.用邮票贴满网格图](https://leetcode.cn/problems/stamping-the-grid/)
 
-3. [x] [2673.使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/):
-   TODO 树DP
+3. [x] [2673.使二叉树所有路径值相等的最小代价](https://leetcode.cn/problems/make-costs-of-paths-equal-in-a-binary-tree/):TODO 树DP
 4. [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): TODO 换根DP
-5. [ ] [307.区域和检索-数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/):
-   TODO 树状数组
-6. [划分型DP](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/solutions/2678061/qian-zhui-he-hua-fen-xing-dpshi-zi-bian-ap5z5/):
-   有题单
+5. [ ] [307.区域和检索-数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/):TODO 树状数组
+6. [划分型DP](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/solutions/2678061/qian-zhui-he-hua-fen-xing-dpshi-zi-bian-ap5z5/):有题单
+7. [网格图DFS,BFS](https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/solutions/2269244/cong-ji-yi-hua-sou-suo-dao-di-tui-by-end-pgq3/)
 
 ## 0x3f's problem set
 
