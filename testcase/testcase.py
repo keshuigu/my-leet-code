@@ -2102,3 +2102,14 @@ def testcase_392():
 def testcase_2684():
     print(solution_2684(grid=[[2, 4, 3, 5], [5, 4, 9, 3], [3, 4, 2, 11], [10, 9, 13, 15]]))
     print(solution_2684(grid=[[3, 2, 4], [2, 1, 9], [1, 1, 7]]))
+
+
+def testcase_bw_126_3():
+    print(biweekly_contest_126_solution_3("???"))
+    print(biweekly_contest_126_solution_3("a?a?"))
+
+
+def testcase_bw_126_4():
+    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=3))
+    print(biweekly_contest_126_solution_4(nums=[2, 3, 3], k=5))
+    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=7))

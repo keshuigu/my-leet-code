@@ -85,14 +85,14 @@
 
 - [biweekly-contest-126](https://leetcode.cn/contest/biweekly-contest-126):
 
-    - [] []():[题目TODO](../problem/Easy.md)
-    - [] []():[题目TODO](../problem/Medium.md)
-    - [] []():[题目TODO](../problem/Medium.md)
-    - [] []():[题目TODO](../problem/Hard.md)
+    - [x] [求出加密整数的和](https://leetcode.cn/problems/find-the-sum-of-encrypted-integers/):[题目3079](../problem/Easy.md)
+    - [x] [执行操作标记数组中的元素](https://leetcode.cn/problems/mark-elements-on-array-by-performing-queries/):[题目3080](../problem/Medium.md)
+    - [x] [替换字符串中的问号使分数最小](https://leetcode.cn/problems/replace-question-marks-in-string-to-minimize-its-value/):[题目3081](../problem/Medium.md)
+    - [x] [求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/):[题目3082](../problem/Hard.md)
 
 - [weekly-contest-389](https://leetcode.cn/contest/weekly-contest-389):
 
-    - [] []():[题目TODO](../problem/Easy.md)
-    - [] []():[题目TODO](../problem/Medium.md)
-    - [] []():[题目TODO](../problem/Medium.md)
-    - [] []():[题目TODO](../problem/Hard.md)
+    - [x] [字符串及其反转中是否存在同一子字符串](https://leetcode.cn/problems/existence-of-a-substring-in-a-string-and-its-reverse/):[题目3083](../problem/Easy.md)
+    - [x] [统计以给定字符开头和结尾的字符串总数](https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/):[题目3084](../problem/Medium.md)
+    - [x] [成为K特殊字符串需要删除的最少字符数](https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/):[题目3085](../problem/Medium.md)
+    - [x] [拾起k个1需要的最少行动次数](https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/):[题目3086](../problem/Hard.md)

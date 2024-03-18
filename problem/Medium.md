@@ -99,3 +99,7 @@
 - [x] [3071.在矩阵上写出字母Y所需的最少操作次数](https://leetcode.cn/problems/minimum-operations-to-write-the-letter-y-on-a-grid/)
 - [x] [3075.幸福值最大化的选择方案](https://leetcode.cn/problems/maximize-happiness-of-selected-children/)
 - [x] [3076.数组中的最短非公共子字符串](https://leetcode.cn/problems/shortest-uncommon-substring-in-an-array/)
+- [x] [3080.执行操作标记数组中的元素](https://leetcode.cn/problems/mark-elements-on-array-by-performing-queries/)
+- [x] [3081.替换字符串中的问号使分数最小](https://leetcode.cn/problems/replace-question-marks-in-string-to-minimize-its-value/)
+- [x] [3084.统计以给定字符开头和结尾的字符串总数](https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/)
+- [x] [3085.成为K特殊字符串需要删除的最少字符数](https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/)

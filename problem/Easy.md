@@ -182,3 +182,5 @@
 - [x] [3065.超过阈值的最少操作数 I](https://leetcode.cn/problems/minimum-operations-to-exceed-threshold-value-i/)
 - [x] [3069.将元素分配到两个数组中 I](https://leetcode.cn/problems/distribute-elements-into-two-arrays-i/)
 - [x] [3074.重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/)
+- [x] [3079.求出加密整数的和](https://leetcode.cn/problems/find-the-sum-of-encrypted-integers/)
+- [x] [3084.字符串及其反转中是否存在同一子字符串](https://leetcode.cn/problems/existence-of-a-substring-in-a-string-and-its-reverse/)

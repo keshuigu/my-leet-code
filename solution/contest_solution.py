@@ -3,6 +3,7 @@ from collections import defaultdict
 from functools import cache
 from itertools import pairwise, accumulate
 from math import inf
+from string import ascii_lowercase
 from typing import *
 
 
@@ -882,20 +883,125 @@ def biweekly_contest_126_solution_1():
     ...
 
 
+def biweekly_contest_126_solution_1_2(nums: List[int]) -> int:
+    ans = 0
+    for s in map(str, nums):
+        ans += int(max(s)) * int('1' * len(s))
+    return ans
+
+
 def biweekly_contest_126_solution_2():
     ...
 
 
-def biweekly_contest_126_solution_3():
-    ...
+def biweekly_contest_126_solution_2_2(nums: List[int], queries: List[List[int]]):
+    n = len(nums)
+    ids = sorted(range(n), key=lambda i: nums[i])
+    s = sum(nums)
+    ans = []
+    j = 0
+    for i, k in queries:
+        s -= nums[i]
+        nums[i] = 0  # 标记　不需要判断ｉ是否标记过, -0对结果无影响
+        while j < n and k:
+            i = ids[j]
+            if nums[i]:
+                s -= nums[i]
+                nums[i] = 0
+                k -= 1
+            j += 1
+        ans.append(s)
+    return ans
 
 
-def biweekly_contest_126_solution_4():
-    ...
+def biweekly_contest_126_solution_3(s: str) -> str:
+    """
+    cost 只和字母在ｓ中的出现次数有关
+    基本不等式，分配的字母个数应该尽量接近
+    假设有ｑ个问号，循环ｑ次
+    每次把？改成出现次数最少的字母
+    => 最小堆
+    """
+    freq = Counter[str](s)
+    h = [(freq[c], c) for c in ascii_lowercase]
+    heapq.heapify(h)
+    t = []
+    for _ in range(s.count('?')):
+        f, c = h[0]
+        t.append(c)
+        heapq.heapreplace(h, (f + 1, c))  # 出现次数加１,压回堆
+    t.sort()  # 需要字典序最小
+    s = list(s)
+    j = 0
+    for i in range(len(s)):
+        if s[i] == '?':
+            s[i] = t[j]
+            j += 1
+    return ''.join(s)
+
+
+def biweekly_contest_126_solution_4(nums: List[int], k: int) -> int:
+    # 二维0-1背包
+    # f[i][j][c]表示考虑前i个商品，所选物品体积为j,选了c个物品的方案数
+    # f[i+1][j][c] = f[i][j][c] + f[i][j-nums[i]][c-1]
+    # f[0][0][0] =1
+    # ans = sum(f[n][k][c]*(2**(n-c))) c=1...n
+    mod_factor = 10 ** 9 + 7
+    n = len(nums)
+    f = [[0] * (n + 1) for _ in range(k + 1)]
+    f[0][0] = 1
+    for i, x in enumerate(nums):
+        for j in range(k, x - 1, -1):  # j<x时更新和不更新一样，没区别
+            for c in range(i + 1, 0, -1):
+                f[j][c] = (f[j][c] + f[j - x][c - 1]) % mod_factor
+    ans = 0
+    pow2 = 1
+    for i in range(n, 0, -1):
+        ans = (ans + f[k][i] * pow2) % mod_factor
+        pow2 = pow2 * 2 % mod_factor
+    return ans
+
+
+def biweekly_contest_126_solution_4_2(nums: List[int], k: int) -> int:
+    """
+    贡献法
+
+    假设和为ｋ的子序列ｓ的长度是ｃ
+    那么ｓ会出现在　２^(n-c)　个包含ｓ的子序列中
+    所以ｓ对答案的贡献就是２^(n-c)
+
+    １. 二维0-1背包
+    有ｎ个物品，每个物品的体积是nums[i]
+    恰好装满容量为ｋ的背包，并且选的物品个数恰好是ｃ的方案数
+
+    2. f[i][j] 表示考虑前i个数从中选出的子序列和为j时的能量和
+    转移来源：
+    1. f[i][j] = f[i-1][j] 子序列不含i
+    2. f[i][j] = f[i-1][j]　子序列含i，但i不贡献到和中
+    3. f[i][j] = f[i-1][j-nums[i-1]]
+
+    f[i][j] = f[i-1]*2+f[i-1][j-nums[i-1]]
+    f[0][0] = 1
+    """
+    mod_factor = 10 ** 9 + 7
+    f = [1] + [0] * k
+    for x in nums:
+        for j in range(k, -1, -1):
+            f[j] = (f[j] * 2 + (f[j - x] if j >= x else 0)) % mod_factor
+    return f[k]
 
 
 def weekly_contest_389_solution_1():
     ...
+
+
+def weekly_contest_389_solution_1_2(s: str) -> bool:
+    st = set()
+    for x, y in pairwise(s):
+        st.add((x, y))
+        if (y, x) in st:
+            return True
+    return False
 
 
 def weekly_contest_389_solution_2():
@@ -906,5 +1012,74 @@ def weekly_contest_389_solution_3():
     ...
 
 
-def weekly_contest_389_solution_4():
-    ...
+def weekly_contest_389_solution_3_2(word: str, k: int) -> int:
+    """
+    1. 求最多保留多少个字母
+    2. 出现次数最多 - 出现次数最少　<= k
+    3. 枚举出现次数最少的字母, base
+        => c < base, 全部删除
+        => c > base, 保留min(c,base+k)
+    4. return len(word)-max_save
+    """
+    cnt = sorted(Counter[str](word).values())
+    max_save = 0
+    for i, base in enumerate(cnt):
+        s = 0
+        for c in cnt[i:]:
+            s += min(c, base + k)
+        max_save = max(max_save, s)
+    return len(word) - max_save
+
+
+def weekly_contest_389_solution_4(nums: List[int], k: int, maxChanges: int) -> int:
+    """
+    1. 当前位置的1, 操作0次
+    2. 当前位置左右相邻位置的1, 操作1次
+    3. 第一操作， 生成1个1, 第二种操作， 把这个1移动过来 => 操作2次
+    4. 只用第二种操作，把在下标j的1,移动到当前下标index => abs(index-j)
+
+    优先做哪些操作
+    1. 先把index, index-1, index+1 这三个位置，至多3个1收集到
+    2. 用第一种+第二种操作，得到maxChanges个1
+    3. 如果还有需要得到的1,就用第二种操作
+
+
+    1. 先把maxChanges较大的情况考虑了
+
+    2. 如果只有操作2 => 货仓选址问题(中位数贪心)
+    先把maxChanges个1,每个1用两次操作得到
+    其余k-maxChanges个1,套用货仓选址问题解决
+
+    先把nums中所有1的位置，保存到一个pos数组中
+    pos的大小为k-maxChanges子数组的货仓选址问题
+    """
+    pos = []
+    c = 0  # 统计最大的3位连续子数组中的1的个数
+    for i, x in enumerate(nums):
+        if x == 0:
+            continue
+        pos.append(i)  # 记录1的位置
+        c = max(c, 1)
+        if i > 0 and nums[i - 1] == 1:
+            if i > 1 and nums[i - 2] == 1:
+                c = 3  # 有3个连续的1
+            else:
+                c = max(c, 2)  # 有2个连续的1 用max防止3被2覆盖
+
+    # maxChanges 较大
+    c = min(c, k)
+    if maxChanges >= k - c:
+        return max(c - 1, 0) + (k - c) * 2
+
+    n = len(pos)
+    pre_sum = list(accumulate(pos, initial=0))
+    ans = inf
+    size = k - maxChanges
+    for right in range(size, n + 1):
+        # s1+s2 是j在[left, right)中的所有pos[j]到pos[left+right/2]的距离之和
+        left = right - size
+        i = left + size // 2
+        s1 = pos[i] * (i - left) - (pre_sum[i] - pre_sum[left])
+        s2 = pre_sum[right] - pre_sum[i] - pos[i] * (right - i)
+        ans = min(ans, s1 + s2)
+    return ans + maxChanges * 2

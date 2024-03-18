@@ -60,3 +60,5 @@
 - [x] [3068.最大节点价值之和](https://leetcode.cn/problems/find-the-maximum-sum-of-node-values/)
 - [x] [3072.将元素分配到两个数组中 II](https://leetcode.cn/problems/distribute-elements-into-two-arrays-ii/): 树状数组
 - [x] [3077.K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/): 划分型DP
+- [x] [3082.求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/): 背包
+- [x] [3086.拾起k个1需要的最少行动次数](https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/): 货仓选址

@@ -10,7 +10,7 @@
 5. [ ] [307.区域和检索-数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/solutions/2524481/dai-ni-fa-ming-shu-zhuang-shu-zu-fu-shu-lyfll/):TODO 树状数组
 6. [划分型DP](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/solutions/2678061/qian-zhui-he-hua-fen-xing-dpshi-zi-bian-ap5z5/):有题单
 7. [网格图DFS,BFS](https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/solutions/2269244/cong-ji-yi-hua-sou-suo-dao-di-tui-by-end-pgq3/)
-
+8. 巫师的力量和
 ## 0x3f's problem set
 
 ### [位运算操作技巧](https://leetcode.cn/circle/discuss/CaOJ45/), [题单](https://leetcode.cn/circle/discuss/dHn9Vk/)
