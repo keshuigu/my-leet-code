@@ -20,8 +20,4 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-    h = [(1,1),(1,2),(1,3)]
-    heapq.heapify(h)
-    print(heapq.heappop(h))
-    print(heapq.heappop(h))
-    print(heapq.heappop(h))
+    print(1 or (1 and 0))

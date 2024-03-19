@@ -2104,24 +2104,36 @@ def testcase_2684():
     print(solution_2684(grid=[[3, 2, 4], [2, 1, 9], [1, 1, 7]]))
 
 
-def testcase_bw_126_1():
-    print(biweekly_contest_126_solution_1([1, 2, 3]))
-    print(biweekly_contest_126_solution_1([10, 21, 31]))
+def testcase_3079():
+    print(solution_3079([1, 2, 3]))
+    print(solution_3079([10, 21, 31]))
 
 
-def testcase_bw_126_2():
-    print(biweekly_contest_126_solution_2([1, 2, 2, 1, 2, 3, 1], queries=[[1, 2], [3, 3], [4, 2]]))
-    print(biweekly_contest_126_solution_2([1, 4, 2, 3], queries=[[1, 1], [1, 1]]))
+def testcase_3079_2():
+    print(solution_3079_2([1, 2, 3]))
+    print(solution_3079_2([10, 21, 31]))
 
 
-def testcase_bw_126_3():
-    print(biweekly_contest_126_solution_3())
+def testcase_3080():
+    print(solution_3080([1, 2, 2, 1, 2, 3, 1], queries=[[1, 2], [3, 3], [4, 2]]))
+    print(solution_3080([1, 4, 2, 3], queries=[[1, 1], [1, 1]]))
 
 
-def testcase_bw_126_4():
-    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=3))
-    print(biweekly_contest_126_solution_4(nums=[2, 3, 3], k=5))
-    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=7))
+def testcase_3081():
+    print(solution_3081("???"))
+    print(solution_3081("a?a?"))
+
+
+def testcase_3082():
+    print(solution_3082(nums=[1, 2, 3], k=3))
+    print(solution_3082(nums=[2, 3, 3], k=5))
+    print(solution_3082(nums=[1, 2, 3], k=7))
+
+
+def testcase_3082_2():
+    print(solution_3082_2(nums=[1, 2, 3], k=3))
+    print(solution_3082_2(nums=[2, 3, 3], k=5))
+    print(solution_3082_2(nums=[1, 2, 3], k=7))
 
 
 def testcase_310():
@@ -2136,34 +2148,41 @@ def testcase_310_2():
     print(solution_310_2(n=6, edges=[[0, 1], [0, 2], [0, 3], [3, 4], [4, 5]]))
 
 
-def testcase_w_389_1():
-    print(weekly_contest_389_solution_1(s = "leetcode"))
-    print(weekly_contest_389_solution_1(s = "abcba"))
-    print(weekly_contest_389_solution_1(s = "abcd"))
+def testcase_3083():
+    print(solution_3083(s="leetcode"))
+    print(solution_3083(s="abcba"))
+    print(solution_3083(s="abcd"))
 
 
-def testcase_w_389_2():
-    print(weekly_contest_389_solution_2(s = "abada", c = "a"))
-    print(weekly_contest_389_solution_2(s = "zzz", c = "z"))
-    print(weekly_contest_389_solution_2(s = "aaaa", c = "a"))
+def testcase_3083_2():
+    print(solution_3083_2(s="leetcode"))
+    print(solution_3083_2(s="abcba"))
+    print(solution_3083_2(s="abcd"))
 
 
-def testcase_w_389_3():
-    print(weekly_contest_389_solution_3(word = "aabcaba", k = 0))
-    print(weekly_contest_389_solution_3(word = "dabdcbdcdcd", k = 2))
-    print(weekly_contest_389_solution_3(word = "aaabaaa", k = 2))
+def testcase_3084():
+    print(solution_3084(s="abada", c="a"))
+    print(solution_3084(s="zzz", c="z"))
+    print(solution_3084(s="aaaa", c="a"))
 
 
-def testcase_w_389_4():
-    print(weekly_contest_389_solution_4())
+def testcase_3085():
+    print(solution_3085(word="aabcaba", k=0))
+    print(solution_3085(word="dabdcbdcdcd", k=2))
+    print(solution_3085(word="aaabaaa", k=2))
 
 
-def testcase_bw_126_3():
-    print(biweekly_contest_126_solution_3("???"))
-    print(biweekly_contest_126_solution_3("a?a?"))
+def testcase_3085_2():
+    print(solution_3085_2(word="aabcaba", k=0))
+    print(solution_3085_2(word="dabdcbdcdcd", k=2))
+    print(solution_3085_2(word="aaabaaa", k=2))
 
 
-def testcase_bw_126_4():
-    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=3))
-    print(biweekly_contest_126_solution_4(nums=[2, 3, 3], k=5))
-    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=7))
+def testcase_3086():
+    print(solution_3086(nums=[1, 1, 0, 0, 0, 1, 1, 0, 0, 1], k=3, maxChanges=1))
+    print(solution_3086(nums=[0, 0, 0, 0], k=2, maxChanges=3))
+
+
+def testcase_1793():
+    print(solution_1793([1, 4, 3, 7, 4, 5], 3))
+    print(solution_1793(nums=[5, 5, 4, 5, 4, 1, 1, 1], k=0))

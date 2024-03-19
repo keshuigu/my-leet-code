@@ -813,3 +813,55 @@ def solution_3076(arr: List[str]) -> List[str]:
 
 def solution_3077(nums: List[int], k: int) -> int:
     return weekly_contest_388_solution_4(nums, k)
+
+
+def solution_3079(nums: List[int]) -> int:
+    return biweekly_contest_126_solution_1(nums)
+
+
+def solution_3079_2(nums: List[int]) -> int:
+    return biweekly_contest_126_solution_1_2(nums)
+
+
+def solution_3080(nums: List[int], queries: List[List[int]]) -> List[int]:
+    return biweekly_contest_126_solution_2(nums, queries)
+
+
+def solution_3080_2(nums: List[int], queries: List[List[int]]) -> List[int]:
+    return biweekly_contest_126_solution_2_2(nums, queries)
+
+
+def solution_3081(s: str) -> str:
+    return biweekly_contest_126_solution_3(s)
+
+
+def solution_3082(nums: List[int], k: int) -> int:
+    return biweekly_contest_126_solution_4(nums, k)
+
+
+def solution_3082_2(nums: List[int], k: int) -> int:
+    return biweekly_contest_126_solution_4_2(nums, k)
+
+
+def solution_3083(s: str) -> bool:
+    return weekly_contest_389_solution_1(s)
+
+
+def solution_3083_2(s: str) -> bool:
+    return weekly_contest_389_solution_1_2(s)
+
+
+def solution_3084(s: str, c: str) -> int:
+    return weekly_contest_389_solution_2(s, c)
+
+
+def solution_3085(word: str, k: int) -> int:
+    return weekly_contest_389_solution_3(word, k)
+
+
+def solution_3085_2(word: str, k: int) -> int:
+    return weekly_contest_389_solution_3_2(word, k)
+
+
+def solution_3086(nums: List[int], k: int, maxChanges: int) -> int:
+    return weekly_contest_389_solution_4(nums, k, maxChanges)

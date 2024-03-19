@@ -264,3 +264,76 @@ def solution_1976_3(n: int, roads: List[List[int]]) -> int:
                 f[y] = f[x]
             elif new_dis == dist[y]:
                 f[y] = (f[y] + f[x]) % mod_num
+
+
+def solution_1793(nums: List[int], k: int) -> int:
+    # 双指针
+    p, q = k, k
+    n = len(nums)
+    m = nums[k]
+    ans = m
+    while p > -1 and q < n:
+        cur = (q - p + 1) * m
+        ans = max(cur, ans)
+        if p == 0 and q < n - 1:
+            q += 1
+            m = min(m, nums[q])
+        elif q == n - 1 and p > 0:
+            p -= 1
+            m = min(m, nums[p])
+        elif p == 0 and q == n - 1:
+            break
+        elif nums[p - 1] < nums[q + 1]:
+            q += 1
+            m = min(m, nums[q])
+        else:
+            p -= 1
+            m = min(m, nums[p])
+
+    return ans
+
+
+def solution_1793_2(nums: List[int], k: int) -> int:
+    # 双指针优化
+    n = len(nums)
+    ans = min_h = nums[k]
+    i = j = k
+    # 至多走n-1次
+    for _ in range(n - 1):
+        # 右边没法走了或者左边比右边大
+        if j == n - 1 or i and nums[i - 1] > nums[j + 1]:
+            i -= 1
+            min_h = min(min_h, nums[i])
+        else:
+            j += 1
+            min_h = min(min_h, nums[j])
+        ans = max(ans, min_h * (j - i + 1))
+    return ans
+
+
+def solution_1793_3(nums: List[int], k: int) -> int:
+    # 单调栈
+    n = len(nums)
+    left = [-1] * n
+    st = []
+    for i, x in enumerate(nums):
+        # 找左侧最近的比x小的坐标
+        while st and x <= nums[st[-1]]:
+            st.pop()
+        if st:
+            left[i] = st[-1]
+        st.append(i)
+    right = [n] * n
+    st.clear()
+    for i in range(n - 1, -1, -1):
+        x = nums[i]
+        while st and x <= nums[st[-1]]:
+            st.pop()
+        if st:
+            right[i] = st[-1]
+        st.append(i)
+    ans = 0
+    for h, l, r in zip(nums, left, right):
+        if l < k < r:
+            ans = max(ans, h * (r - l - 1))
+    return ans
