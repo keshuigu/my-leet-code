@@ -2104,6 +2104,60 @@ def testcase_2684():
     print(solution_2684(grid=[[3, 2, 4], [2, 1, 9], [1, 1, 7]]))
 
 
+def testcase_bw_126_1():
+    print(biweekly_contest_126_solution_1([1, 2, 3]))
+    print(biweekly_contest_126_solution_1([10, 21, 31]))
+
+
+def testcase_bw_126_2():
+    print(biweekly_contest_126_solution_2([1, 2, 2, 1, 2, 3, 1], queries=[[1, 2], [3, 3], [4, 2]]))
+    print(biweekly_contest_126_solution_2([1, 4, 2, 3], queries=[[1, 1], [1, 1]]))
+
+
+def testcase_bw_126_3():
+    print(biweekly_contest_126_solution_3())
+
+
+def testcase_bw_126_4():
+    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=3))
+    print(biweekly_contest_126_solution_4(nums=[2, 3, 3], k=5))
+    print(biweekly_contest_126_solution_4(nums=[1, 2, 3], k=7))
+
+
+def testcase_310():
+    print(solution_310(n=4, edges=[[1, 0], [1, 2], [1, 3]]))
+    print(solution_310(n=6, edges=[[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]))
+    print(solution_310(n=6, edges=[[0, 1], [0, 2], [0, 3], [3, 4], [4, 5]]))
+
+
+def testcase_310_2():
+    print(solution_310_2(n=4, edges=[[1, 0], [1, 2], [1, 3]]))
+    print(solution_310_2(n=6, edges=[[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]))
+    print(solution_310_2(n=6, edges=[[0, 1], [0, 2], [0, 3], [3, 4], [4, 5]]))
+
+
+def testcase_w_389_1():
+    print(weekly_contest_389_solution_1(s = "leetcode"))
+    print(weekly_contest_389_solution_1(s = "abcba"))
+    print(weekly_contest_389_solution_1(s = "abcd"))
+
+
+def testcase_w_389_2():
+    print(weekly_contest_389_solution_2(s = "abada", c = "a"))
+    print(weekly_contest_389_solution_2(s = "zzz", c = "z"))
+    print(weekly_contest_389_solution_2(s = "aaaa", c = "a"))
+
+
+def testcase_w_389_3():
+    print(weekly_contest_389_solution_3(word = "aabcaba", k = 0))
+    print(weekly_contest_389_solution_3(word = "dabdcbdcdcd", k = 2))
+    print(weekly_contest_389_solution_3(word = "aaabaaa", k = 2))
+
+
+def testcase_w_389_4():
+    print(weekly_contest_389_solution_4())
+
+
 def testcase_bw_126_3():
     print(biweekly_contest_126_solution_3("???"))
     print(biweekly_contest_126_solution_3("a?a?"))

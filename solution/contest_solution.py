@@ -879,8 +879,20 @@ def weekly_contest_388_solution_4(nums: List[int], k: int) -> int:
     return f[k][n]
 
 
-def biweekly_contest_126_solution_1():
-    ...
+def biweekly_contest_126_solution_1(nums: List[int]) -> int:
+    ans = 0
+    for num in nums:
+        m = 0
+        cnt = 0
+        while num > 0:
+            cnt += 1
+            m = max(m, num % 10)
+            num = num // 10
+        cur = 0
+        for i in range(cnt):
+            cur = cur * 10 + m
+        ans += cur
+    return ans
 
 
 def biweekly_contest_126_solution_1_2(nums: List[int]) -> int:
@@ -890,8 +902,30 @@ def biweekly_contest_126_solution_1_2(nums: List[int]) -> int:
     return ans
 
 
-def biweekly_contest_126_solution_2():
-    ...
+def biweekly_contest_126_solution_2(nums: List[int], queries: List[List[int]]) -> List[int]:
+    total = sum(nums)
+    h = []
+    seen = set()
+    for i, x in enumerate(nums):
+        heapq.heappush(h, (x, i))
+    ans = []
+    for q in queries:
+        cur = 0
+        if q[0] not in seen:
+            cur += nums[q[0]]
+            seen.add(q[0])
+        k = q[1]
+        while k > 0 and h:
+            x, idx = heapq.heappop(h)
+            if idx in seen:
+                continue
+            else:
+                seen.add(idx)
+                cur += x
+                k -= 1
+        ans.append(total - cur)
+        total = total - cur
+    return ans
 
 
 def biweekly_contest_126_solution_2_2(nums: List[int], queries: List[List[int]]):
@@ -991,8 +1025,15 @@ def biweekly_contest_126_solution_4_2(nums: List[int], k: int) -> int:
     return f[k]
 
 
-def weekly_contest_389_solution_1():
-    ...
+def weekly_contest_389_solution_1(s: str) -> bool:
+    ss = set()
+    for i in range(len(s) - 1):
+        ss.add(s[i:i + 2])
+    rs = s[::-1]
+    for i in range(len(rs) - 1):
+        if rs[i:i + 2] in ss:
+            return True
+    return False
 
 
 def weekly_contest_389_solution_1_2(s: str) -> bool:
@@ -1004,12 +1045,29 @@ def weekly_contest_389_solution_1_2(s: str) -> bool:
     return False
 
 
-def weekly_contest_389_solution_2():
-    ...
+def weekly_contest_389_solution_2(s: str, c: str) -> int:
+    cnt = 0
+    for x in s:
+        if x == c:
+            cnt += 1
+    return (cnt + 1) * cnt // 2
 
 
-def weekly_contest_389_solution_3():
-    ...
+def weekly_contest_389_solution_3(word: str, k: int) -> int:
+    cnt = Counter[str](word)
+    h = list(cnt.values())
+    h.sort()
+    ma = inf
+    for i in range(len(h)):
+        ans = sum(h[:i]) if i > 0 else 0
+        mx = h[i]
+        for j in range(len(h) - 1, i - 1, -1):
+            if h[j] - mx > k:
+                ans += h[j] - (mx + k)
+            else:
+                break
+        ma = min(ans, ma)
+    return ma
 
 
 def weekly_contest_389_solution_3_2(word: str, k: int) -> int:

@@ -1,5 +1,6 @@
 import bisect
 import collections
+import heapq
 import math
 import os
 
@@ -2651,3 +2652,75 @@ def solution_392(s: str, t: str) -> bool:
             return False
         add = f[add][ord(s[i]) - ord('a')] + 1
     return True
+
+
+def solution_310(n: int, edges: List[List[int]]) -> List[int]:
+    # O(n^2)
+    g = [[] for _ in range(n)]
+    for x, y in edges:
+        g[x].append(y)
+        g[y].append(x)
+
+    @cache
+    def dfs(x, fa):
+        ans = 0
+        for y in g[x]:
+            if y != fa:
+                ans = max(dfs(y, x), ans)
+        return ans + 1
+
+    h = []
+    for i in range(n):
+        heapq.heappush(h, (dfs(i, -1), i))
+    mx = h[0][0]
+    ans = []
+    while h:
+        l, i = heapq.heappop(h)
+        if l == mx:
+            ans.append(i)
+        else:
+            return ans
+    return ans
+
+
+def solution_310_2(n: int, edges: List[List[int]]) -> List[int]:
+    """
+    1. 树中距离最长的两个节点为x y 则 最小高度一定为 dist(x, y)//2
+    2. 找最远两点以及路径
+        1.任意p出发，找以p为起点的最长路径的终点x
+        2.以x出发，找以x为起点的最长路径的终点y
+        3.x到y之间的路径即为图中最长路径
+        https://courses.csail.mit.edu/6.046/fall01/handouts/ps9sol.pdf
+    """
+    if n == 1:
+        return [0]
+
+    g = [[] for _ in range(n)]
+    for x, y in edges:
+        g[x].append(y)
+        g[y].append(x)
+    parents = [0] * n
+
+    def bfs(start: int):
+        vis = [False] * n
+        vis[start] = True
+        q = collections.deque([start])
+        while q:
+            x = q.popleft()
+            for y in g[x]:
+                if not vis[y]:
+                    vis[y] = True
+                    parents[y] = x
+                    q.append(y)
+        return x
+
+    x = bfs(0)  # 找到与节点 0 最远的节点 x
+    y = bfs(x)  # 找到与节点 x 最远的节点 y
+
+    path = []
+    parents[x] = -1
+    while y != -1:
+        path.append(y)
+        y = parents[y]
+    m = len(path)
+    return [path[m // 2]] if m % 2 else [path[m // 2 - 1], path[m // 2]]

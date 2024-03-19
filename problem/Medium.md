@@ -18,6 +18,7 @@
 - [x] [236.二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [299.猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/)
+- [x] [310.最小高度树](https://leetcode.cn/problems/minimum-height-trees/)
 - [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )
 
   - 深搜模拟

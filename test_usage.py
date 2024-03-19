@@ -1,3 +1,6 @@
+import heapq
+
+
 def solution_367(num: int) -> bool:
     x0 = num
     x1 = x0 - (x0 * x0 - num) / (2 * x0)
@@ -17,6 +20,8 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-    prices = [[1,4,2],[2,2,7],[2,1,3]]
-    pr = {(h, w): p for h, w, p in prices}
-    print(pr)
+    h = [(1,1),(1,2),(1,3)]
+    heapq.heapify(h)
+    print(heapq.heappop(h))
+    print(heapq.heappop(h))
+    print(heapq.heappop(h))
