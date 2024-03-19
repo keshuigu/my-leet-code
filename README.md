@@ -5,6 +5,8 @@
 个人力扣刷题记录
 [瞌睡菇@Leetcode](https://leetcode.cn/u/keshuigu/)
 
+![](./asserts/path.png)
+
 #### 仓库结构
 
 - `problem`: 已完成的题目，以难度区分
