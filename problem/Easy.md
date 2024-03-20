@@ -64,9 +64,9 @@
 
 - [x] [169.多数元素](https://leetcode.cn/problems/majority-element/)
 
-  - 摩尔投票算法
-  - 题解证明有误,count和value并非一一对应,但是最后count必定大于0,且对应candidate
-  - ```
+    - 摩尔投票算法
+    - 题解证明有误,count和value并非一一对应,但是最后count必定大于0,且对应candidate
+    - ```
     # 题解给出的证明
     nums:      [7, 7, 5, 7, 5, 1 | 5, 7 | 5, 5, 7, 7 | 7, 7, 7, 7]
     candidate:  7  7  7  7  7  7   5  5   5  5  5  5   7  7  7  7
@@ -101,7 +101,7 @@
 - [x] [219.存在重复元素Ⅱ](https://leetcode.cn/problems/contains-duplicate-ii/)
 - [x] [222.完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)
 
-  - [二分查找](https://leetcode.cn/problems/count-complete-tree-nodes/solutions/495655/wan-quan-er-cha-shu-de-jie-dian-ge-shu-by-leetco-2/)
+    - [二分查找](https://leetcode.cn/problems/count-complete-tree-nodes/solutions/495655/wan-quan-er-cha-shu-de-jie-dian-ge-shu-by-leetco-2/)
 
 - [x] [225.用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)
 - [x] [226.翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)
@@ -114,7 +114,7 @@
 - [x] [257.二叉树的所有路径](https://leetcode.cn/problems/binary-tree-paths/)
 - [x] [258.各位相加](https://leetcode.cn/problems/valid-anagram/)
 
-  - [数根](https://en.wikipedia.org/wiki/Digital_root)
+    - [数根](https://en.wikipedia.org/wiki/Digital_root)
 
 - [x] [263.丑数](https://leetcode.cn/problems/ugly-number/)
 - [x] [268.丢失的数字](https://leetcode.cn/problems/missing-number/)
@@ -123,7 +123,7 @@
 - [x] [290.单词规律](https://leetcode.cn/problems/word-pattern/)
 - [x] [292.Nim游戏](https://leetcode.cn/problems/nim-game/)
 
-  - [Nim游戏](https://baike.baidu.com/item/Nim%E6%B8%B8%E6%88%8F/6737105)
+    - [Nim游戏](https://baike.baidu.com/item/Nim%E6%B8%B8%E6%88%8F/6737105)
 
 - [x] [303.区域和检索-数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)
 - [x] [326.3的幂](https://leetcode.cn/problems/power-of-three/)
@@ -158,14 +158,14 @@
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
 - [x] [2670.找出不同元素数目差数组](https://leetcode.cn/problems/find-the-distinct-difference-array/)
 
-  - 前后缀分解
+    - 前后缀分解
 
 - [x] [2696.删除字串后的字符串最小长度](https://leetcode.cn/problems/minimum-string-length-after-removing-substrings/)
 - [x] [2706.购买两块巧克力](https://leetcode.cn/problems/buy-two-chocolates/)
 - [x] [2744.最大字符串配对数目](https://leetcode.cn/problems/find-maximum-number-of-string-pairs/)
 - [x] [2765.最长交替子数组](https://leetcode.cn/problems/longest-alternating-subarray/)
 
-  - [分组循环](https://leetcode.cn/problems/longest-alternating-subarray/solutions/2615916/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-r57bz/)
+    - [分组循环](https://leetcode.cn/problems/longest-alternating-subarray/solutions/2615916/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-r57bz/)
 
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
 - [x] [2859.计算K置位下标对应元素的和](https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/)

@@ -337,3 +337,29 @@ def solution_1793_3(nums: List[int], k: int) -> int:
         if l < k < r:
             ans = max(ans, h * (r - l - 1))
     return ans
+
+
+def solution_1969(p: int) -> int:
+    """
+    结论：将[1,2^p-1]分为两部分[1,2^(p-1)-1][2^(p-1),2^p-1]
+    1与2^p-2配对，两个数所有1的位置不同
+    2与2^p-3配对，两个数所有1的位置不同
+    ...
+    每个配对都使得转换后成为11...10 和 00...01，这种形式乘积最小
+    证明参考
+    https://leetcode.cn/problems/minimum-non-zero-product-of-the-array-elements/solutions/936621/tan-xin-ji-qi-shu-xue-zheng-ming-by-endl-uumv/
+
+    故最小乘积为 (2^p-1)*[(2^p-2)^(2^(p-1)-1)]
+    快速幂
+    """
+    mod_factor = 10 ** 9 + 7
+    a = (1 << p) - 1
+    b = (1 << (p - 1)) - 1
+    c = a - 1
+    ans = 1
+    while b > 0:
+        if b & 1:
+            ans *= c % mod_factor
+        c *= c % mod_factor
+        b >>= 1
+    return ans * a % mod_factor

@@ -2186,3 +2186,10 @@ def testcase_3086():
 def testcase_1793():
     print(solution_1793([1, 4, 3, 7, 4, 5], 3))
     print(solution_1793(nums=[5, 5, 4, 5, 4, 1, 1, 1], k=0))
+
+
+def testcase_1969():
+    print(solution_1969(1))
+    print(solution_1969(2))
+    print(solution_1969(3))
+    print(solution_1969(4))
