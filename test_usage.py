@@ -1,5 +1,7 @@
 import heapq
 
+from solution import gospers_hack
+
 
 def solution_367(num: int) -> bool:
     x0 = num
@@ -20,4 +22,4 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-    print(1 or (1 and 0))
+    print(gospers_hack(0, 6))

@@ -342,3 +342,17 @@ def solution_938(root: Optional[TreeNode], low: int, high: int) -> int:
     if x < low:
         return solution_938(root.right, low, high)
     return x + solution_938(root.left, low, high) + solution_938(root.right, low, high)
+
+
+def solution_665(nums: List[int]) -> bool:
+    n = len(nums)
+    cnt = 0
+    for i in range(n - 1):
+        x, y = nums[i], nums[i + 1]
+        if x > y:
+            cnt += 1
+            if cnt > 1:
+                return False
+            if i > 0 and y < nums[i - 1]:  # 这种情况x不能改成y
+                nums[i + 1] = x
+    return True

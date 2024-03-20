@@ -2724,3 +2724,35 @@ def solution_310_2(n: int, edges: List[List[int]]) -> List[int]:
         y = parents[y]
     m = len(path)
     return [path[m // 2]] if m % 2 else [path[m // 2 - 1], path[m // 2]]
+
+
+def solution_401(turnedOn: int) -> List[str]:
+    ans = []
+    for i in range(4):
+        if i > turnedOn:
+            return ans
+        m = turnedOn - i
+        if m > 5:
+            continue
+        tmp_h = gospers_hack(i, 4)  # 0-1之间包含i个1的全部值
+        tmp_m = gospers_hack(m, 6)  # 0-64之间包含m个1的全部值 am
+        tmp_h = [str(x) for x in tmp_h if x < 12]
+        tmp_m = [str(x).zfill(2) for x in tmp_m if x < 60]
+        for h in tmp_h:
+            for m in tmp_m:
+                ans.append(f"{h}:{m}")
+    return ans
+
+
+def solution_404(root: Optional[TreeNode]) -> int:
+    leaf = lambda node: not node.left and not node.right
+
+    def dfs(node) -> int:
+        ans = 0
+        if node.left:
+            ans += node.left.val if leaf(node.left) else dfs(node.left)
+        if node.right:
+            ans += dfs(node.right)
+        return ans
+
+    return dfs(root) if root else 0

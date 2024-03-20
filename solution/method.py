@@ -131,6 +131,8 @@ def count_leading_zeros(x):
 
 
 def gospers_hack(k, n) -> List[int]:
+    if k == 0:
+        return [0]
     # 将最后一个01变成10,然后把它右边的1全部集中到最右边即可
     res = []
     cur = (1 << k) - 1  # 刚好有k个1,属于一种情况

@@ -2193,3 +2193,18 @@ def testcase_1969():
     print(solution_1969(2))
     print(solution_1969(3))
     print(solution_1969(4))
+
+
+def testcase_401():
+    print(solution_401(1))
+    print(solution_401(9))
+
+
+def testcase_404():
+    print(solution_404(TreeNode([3, 9, 20, None, None, 15, 7])))
+    print(solution_404(TreeNode(1)))
+
+
+def testcase_665():
+    print(solution_665([4, 2, 3]))
+    print(solution_665([4, 2, 1]))

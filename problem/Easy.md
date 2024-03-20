@@ -139,6 +139,8 @@
 - [x] [383.字符串中的第一个唯一字符](https://leetcode.cn/problems/first-unique-character-in-a-string/)
 - [x] [389.找不同](https://leetcode.cn/problems/find-the-difference/)
 - [x] [392.判断子序列](https://leetcode.cn/problems/is-subsequence/)
+- [x] [401.二进制手表](https://leetcode.cn/problems/binary-watch/)
+- [x] [404.左叶子之和](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [589.N叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
 - [x] [589.N叉树的后序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
