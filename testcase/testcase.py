@@ -2208,3 +2208,18 @@ def testcase_404():
 def testcase_665():
     print(solution_665([4, 2, 3]))
     print(solution_665([4, 2, 1]))
+
+
+def testcase_2671():
+    ft = FrequencyTracker()
+    ft.add(3)
+    ft.add(3)
+    print(ft.hasFrequency(2))
+    ft = FrequencyTracker()
+    ft.add(1)
+    ft.deleteOne(1)
+    print(ft.hasFrequency(1))
+    ft = FrequencyTracker()
+    print(ft.hasFrequency(2))
+    ft.add(3)
+    print(ft.hasFrequency(1))

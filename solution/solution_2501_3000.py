@@ -868,3 +868,8 @@ def solution_2684(grid: List[List[int]]) -> int:
     for i in range(m):
         mc = max(dfs(i, 0), mc)
     return mc
+
+
+def solution_2671():
+    # data_struct.FrequencyTracker
+    ...

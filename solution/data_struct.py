@@ -1,4 +1,5 @@
 import queue
+from collections import defaultdict
 from typing import *
 
 
@@ -502,4 +503,27 @@ class FindElements:
         return True
 
 
+class FrequencyTracker:
 
+    def __init__(self):
+        self.table1 = defaultdict(int)
+        self.table2 = defaultdict(int)
+
+    def add(self, number: int) -> None:
+        cur = self.table1[number]
+        self.table1[number] += 1
+        if cur > 0:
+            self.table2[cur] -= 1
+        self.table2[cur + 1] += 1
+
+    def deleteOne(self, number: int) -> None:
+        if self.table1[number] == 0:
+            return
+        cur = self.table1[number]
+        self.table1[number] -= 1
+        self.table2[cur] -= 1
+        if cur > 1:
+            self.table2[cur - 1] += 1
+
+    def hasFrequency(self, frequency: int) -> bool:
+        return frequency in self.table2 and self.table2[frequency] != 0
