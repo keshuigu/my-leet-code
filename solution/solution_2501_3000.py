@@ -1,6 +1,8 @@
+import bisect
+import heapq
 import itertools
 from collections import defaultdict
-from math import isqrt
+from math import isqrt, inf
 
 from .data_struct import *
 from .method import *
@@ -873,3 +875,82 @@ def solution_2684(grid: List[List[int]]) -> int:
 def solution_2671():
     # data_struct.FrequencyTracker
     ...
+
+
+def solution_2617(grid: List[List[int]]) -> int:
+    # TLE
+    m = len(grid)
+    n = len(grid[0])
+    f = [[-1] * n for _ in range(m)]
+    f[m - 1][n - 1] = 0
+    for i in range(m - 1, -1, -1):
+        for j in range(n - 1, -1, -1):
+            steps = grid[i][j]
+            for s in range(1, steps + 1):
+                if i + s < m and (f[i][j] < 0 or 0 <= f[i + s][j] < f[i][j]):
+                    f[i][j] = f[i + s][j]
+            for s in range(1, steps + 1):
+                if j + s < n and (f[i][j] < 0 or 0 <= f[i][j + s] < f[i][j]):
+                    f[i][j] = f[i][j + s]
+            if f[i][j] >= 0:
+                f[i][j] += 1
+    return f[0][0]
+
+
+def solution_2617_2(grid: List[List[int]]) -> int:
+    """
+    单调栈+DP
+    单调栈维护最小步数以及对应的下标,单调增
+    如果栈顶比当前值大，说明下标靠右的格子反而需要更多步数，因此这个结果不再需要了
+    二分查找快速找到对应位置,比该位置靠右的当前格子走不过去，比该位置靠左的用的步数更多
+    """
+    m, n = len(grid), len(grid[0])
+    col_stacks = [[] for _ in range(n)]
+    mn = inf
+    for i in range(m - 1, -1, -1):
+        row_st = []  # 当前行的单调栈
+        for j in range(n - 1, -1, -1):
+            g = grid[i][j]
+            col_st = col_stacks[j]
+            mn = inf if i < m - 1 or j < n - 1 else 1  # f[m-1][n-1]=1 其他为inf
+            if g:
+                # 在这一行上找
+                k = bisect.bisect_left(row_st, -(j + g), key=lambda p: p[1])
+                if k < len(row_st):
+                    mn = row_st[k][0] + 1
+                k = bisect.bisect_left(col_st, -(i + g), key=lambda p: p[1])
+                if k < len(col_st):
+                    mn = min(col_st[k][0] + 1, mn)
+            if mn < inf:
+                while row_st and mn <= row_st[-1][0]:
+                    row_st.pop()
+                row_st.append((mn, -j))
+                while col_st and mn <= col_st[-1][0]:
+                    col_st.pop()
+                col_st.append((mn, -i))
+    return mn if mn < inf else -1
+
+
+def solution_2617_3(grid: List[List[int]]) -> int:
+    """
+    贪心+最小堆
+    正向推
+    """
+    col_heaps = [[] for _ in grid[0]]
+    f = inf
+    for i, row in enumerate(grid):
+        row_h = []
+        for j, (g, col_h) in enumerate(zip(row, col_heaps)):
+            while row_h and row_h[0][1] < j:  # 无法到j列
+                heapq.heappop(row_h)
+            while col_h and col_h[0][1] < i:  # 无法到i行
+                heapq.heappop(col_h)
+            f = inf if i or j else 1
+            if row_h:
+                f = row_h[0][0] + 1
+            if col_h:
+                f = min(f, col_h[0][0] + 1)
+            if g and f < inf:
+                heapq.heappush(row_h, (f, g + j))
+                heapq.heappush(col_h, (f, g + i))
+    return f if f < inf else -1
