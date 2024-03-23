@@ -502,3 +502,7 @@ def solution_2312_2(m: int, n: int, prices: List[List[int]]) -> int:
             f[i][j] = max(f[i][j], max(((f[i][k] + f[i][j - k]) for k in range(1, j // 2 + 1)), default=0),
                           max(((f[k][j] + f[i - k][j]) for k in range(1, i // 2 + 1)), default=0))
     return f[m][n]
+
+
+def solution_2549(n: int) -> int:
+    return n - 1 if n > 1 else n

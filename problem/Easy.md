@@ -158,6 +158,7 @@
 - [x] [1672.最富有客户的资产总量](https://leetcode.cn/problems/richest-customer-wealth/)
 - [x] [2085.统计出现过一次的公共字符串](https://leetcode.cn/problems/count-common-words-with-one-occurrence/)
 - [x] [2235.两整数相加](https://leetcode.cn/problems/add-two-integers/)
+- [x] [2549.找出不同元素数目差数组](https://leetcode.cn/problems/count-distinct-numbers-on-board/)
 - [x] [2670.找出不同元素数目差数组](https://leetcode.cn/problems/find-the-distinct-difference-array/)
 
     - 前后缀分解
