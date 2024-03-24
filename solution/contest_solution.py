@@ -5,6 +5,7 @@ from itertools import pairwise, accumulate
 from math import inf
 from string import ascii_lowercase
 from typing import *
+from .data_struct import *
 
 
 def solution_100191(word: str) -> int:
@@ -1141,3 +1142,46 @@ def weekly_contest_389_solution_4(nums: List[int], k: int, maxChanges: int) -> i
         s2 = pre_sum[right] - pre_sum[i] - pos[i] * (right - i)
         ans = min(ans, s1 + s2)
     return ans + maxChanges * 2
+
+
+def weekly_contest_390_solution_1(s: str) -> int:
+    cnt = defaultdict(int)
+    l = 0
+    for i in range(len(s)):
+        flag = False
+        for j in range(i, len(s)):
+            if cnt[s[j]] == 2:
+                flag = True
+                break
+            else:
+                cnt[s[j]] += 1
+        if flag:
+            l = max(l, j - i)
+        else:
+            l = max(l, j - i + 1)
+        cnt.clear()
+    return l
+
+
+def weekly_contest_390_solution_2(k: int) -> int:
+    cnt = inf
+    for i in range(1, k + 1):
+        if k % i == 0:
+            cur = (k // i) - 1 + (i - 1)
+        else:
+            cur = (k // i) + i - 1
+        cnt = min(cur, cnt)
+    return cnt
+
+
+def weekly_contest_390_solution_3(nums: List[int], freq: List[int]) -> List[int]:
+    ans = []
+    fw = FenwickW3903(len(nums) + 1)
+    for n, f in zip(nums, freq):
+        fw.add(n - 1, f)
+        ans.append(fw.query(1, len(nums)))
+    return ans
+
+
+def weekly_contest_390_solution_4():
+    ...

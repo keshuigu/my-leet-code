@@ -96,3 +96,10 @@
     - [x] [统计以给定字符开头和结尾的字符串总数](https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/):[题目3084](../problem/Medium.md)
     - [x] [成为K特殊字符串需要删除的最少字符数](https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/):[题目3085](../problem/Medium.md)
     - [x] [拾起k个1需要的最少行动次数](https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/):[题目3086](../problem/Hard.md)
+
+- [weekly-contest-390](https://leetcode.cn/contest/weekly-contest-390): 时限内完成1 2 
+
+    - [] []():[题目](../problem/Easy.md)
+    - [] []():[题目](../problem/Medium.md)
+    - [] []():[题目](../problem/Medium.md)
+    - [] []():[题目](../problem/Hard.md)

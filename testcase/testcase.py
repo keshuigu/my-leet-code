@@ -2246,3 +2246,36 @@ def testcase_2617_3():
 def testcase_2549():
     print(solution_2549(5))
     print(solution_2549(1))
+
+
+def testcase_322():
+    print(solution_322(coins=[186, 419, 83, 408], amount=6249))
+    print(solution_322(coins=[1, 2, 5], amount=11))
+    print(solution_322(coins=[2], amount=3))
+    print(solution_322(coins=[1], amount=0))
+
+
+def testcase_322_2():
+    print(solution_322_2(coins=[186, 419, 83, 408], amount=6249))
+    print(solution_322_2(coins=[1, 2, 5], amount=11))
+    print(solution_322_2(coins=[2], amount=3))
+    print(solution_322_2(coins=[1], amount=0))
+
+
+def testcase_w_390_1():
+    print(weekly_contest_390_solution_1("bcbbbcba"))
+    print(weekly_contest_390_solution_1("aaaa"))
+
+
+def testcase_w_390_2():
+    print(weekly_contest_390_solution_2(11))
+    print(weekly_contest_390_solution_2(1))
+
+
+def testcase_w_390_3():
+    print(weekly_contest_390_solution_3(nums = [2,3,2,1], freq = [3,2,-3,1]))
+    print(weekly_contest_390_solution_3(nums = [5,5,3], freq = [2,-2,1]))
+
+
+def testcase_w_390_4():
+    print(weekly_contest_390_solution_4())

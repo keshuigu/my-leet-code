@@ -506,3 +506,5 @@ def solution_2312_2(m: int, n: int, prices: List[List[int]]) -> int:
 
 def solution_2549(n: int) -> int:
     return n - 1 if n > 1 else n
+
+
