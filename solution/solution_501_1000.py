@@ -356,3 +356,29 @@ def solution_665(nums: List[int]) -> bool:
             if i > 0 and y < nums[i - 1]:  # 这种情况x不能改成y
                 nums[i + 1] = x
     return True
+
+
+def solution_518(amount: int, coins: List[int]) -> int:
+    # f[i][j]前i种金币，还剩j金额需要凑
+    n = len(coins)
+    f = [[0] * (amount + 1) for _ in range(n + 1)]
+    f[0][0] = 1
+    for i, x in enumerate(coins):
+        for cur in range(amount + 1):
+            # 当前硬币选1个 f[i + 1][cur]= f[i + 1][cur - x]
+            # 当前硬币不选  f[i + 1][cur]= f[i][cur]
+            f[i + 1][cur] = f[i][cur] + (f[i + 1][cur - x] if cur - x >= 0 else 0)
+    return f[n][amount]
+
+
+def solution_518_2(amount: int, coins: List[int]) -> int:
+    g = [0] * (amount + 1)
+    f = [0] * (amount + 1)
+    g[0] = 1
+    for x in coins:
+        for cur in range(amount + 1):
+            # 当前硬币选1个 f[i + 1][cur]= f[i + 1][cur - x]
+            # 当前硬币不选  f[i + 1][cur]= f[i][cur]
+            f[cur] = g[cur] + (f[cur - x] if cur - x >= 0 else 0)
+        f, g = g, f
+    return g[amount]

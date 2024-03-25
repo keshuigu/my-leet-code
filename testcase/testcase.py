@@ -2279,3 +2279,14 @@ def testcase_w_390_3():
 
 def testcase_w_390_4():
     print(weekly_contest_390_solution_4())
+
+
+def testcase_518():
+    print(solution_518(5,[1,2,5]))
+    print(solution_518(3,[2]))
+    print(solution_518(10,[10]))
+
+def testcase_518_2():
+    print(solution_518_2(5,[1,2,5]))
+    print(solution_518_2(3,[2]))
+    print(solution_518_2(10,[10]))
