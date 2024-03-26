@@ -65,3 +65,4 @@
 - [x] [3077.K个不相交子数组的最大能量值](https://leetcode.cn/problems/maximum-strength-of-k-disjoint-subarrays/): 划分型DP
 - [x] [3082.求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/): 背包
 - [x] [3086.拾起k个1需要的最少行动次数](https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/): 货仓选址
+- [x] [3093.最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/): 字典树模板

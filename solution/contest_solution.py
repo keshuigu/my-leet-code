@@ -1,11 +1,9 @@
 import heapq
-from collections import defaultdict
 from functools import cache
 from itertools import pairwise, accumulate
-from math import inf
 from string import ascii_lowercase
-from typing import *
 from .data_struct import *
+from sortedcontainers import SortedList
 
 
 def solution_100191(word: str) -> int:
@@ -1163,6 +1161,23 @@ def weekly_contest_390_solution_1(s: str) -> int:
     return l
 
 
+def weekly_contest_390_solution_1_2(s: str) -> int:
+    """
+    O(n)
+    滑动窗口
+    """
+    ans = left = 0
+    cnt = Counter[str]()
+    for i, c in enumerate(s):
+        cnt[c] += 1
+        # 窗口右移，直到没有字母cnt>2
+        while cnt[c] > 2:
+            cnt[s[left]] -= 1
+            left += 1
+        ans = max(ans, i - left + 1)
+    return ans
+
+
 def weekly_contest_390_solution_2(k: int) -> int:
     cnt = inf
     for i in range(1, k + 1):
@@ -1175,31 +1190,42 @@ def weekly_contest_390_solution_2(k: int) -> int:
 
 
 def weekly_contest_390_solution_3(nums: List[int], freq: List[int]) -> List[int]:
-    ...
+    """
+    哈希表+有序集合(较复杂)
+    """
+    cnt = Counter[int]()
+    d = SortedList()
+    ans = []
+    for x, f in zip(nums, freq):
+        if cnt[x] in d:
+            d.remove(cnt[x])
+        cnt[x] += f
+        d.add(cnt[x])
+        ans.append(d[-1])
+    return ans
 
 
-def weekly_contest_390_solution_4():
-    ...
+def weekly_contest_390_solution_3_2(nums: List[int], freq: List[int]) -> List[int]:
+    """
+    哈希表+懒删堆
+    """
+    cnt = Counter[int]()
+    h = []
+    ans = []
+    for x, f in zip(nums, freq):
+        cnt[x] += f
+        heapq.heappush(h, (-cnt[x], x))
+        while cnt[h[0][1]] != -h[0][0]:
+            heapq.heappop(h)
+        ans.append(-h[0][0])
+    return ans
 
 
-def pdd_1(nums: List[int], n: int, m: int, k: int, d: int) -> int:
-    nums.sort()
-    ans = [0]
-    cur = 0
-    cnt = 0
-    while cnt < d:
-        cnt += 1
-        # k 是从 -k 变化为 0
-        # k+1 是从 1变化为-k
-        # 记录每多1次操作，对值的变化
-        cur += nums[-cnt] * k - nums[n - m - cnt] * (k + 1)
-        ans.append(cur)
-    # 找到使得cur增加最多的idx
-    mi = 0
-    mx = 0
-    for i, x in enumerate(ans):
-        if mx < x:
-            mi = i
-            mx = x
-    # [0,,n-m-mi-1]不变，[n-m-mi,n-mi]取负，
-    return sum(nums[:n - m - mi]) - k * (sum(nums[n - m - mi:n - mi]))
+def weekly_contest_390_solution_4(wordsContainer: List[str], wordsQuery: List[str]) -> List[int]:
+    t = Trie3093()
+    for i, w in enumerate(wordsContainer):
+        t.insert(w[::-1], i)
+    ans = []
+    for w in wordsQuery:
+        ans.append(t.search(w[::-1]))
+    return ans

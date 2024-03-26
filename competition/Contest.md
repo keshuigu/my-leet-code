@@ -99,7 +99,7 @@
 
 - [weekly-contest-390](https://leetcode.cn/contest/weekly-contest-390): 时限内完成1 2 
 
-    - [] []():[题目](../problem/Easy.md)
-    - [] []():[题目](../problem/Medium.md)
-    - [] []():[题目](../problem/Medium.md)
-    - [] []():[题目](../problem/Hard.md)
+    - [x] [每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/):[题目3090](../problem/Easy.md)
+    - [x] [执行操作使数据元素之和大于等于K](https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/):[题目3091](../problem/Medium.md)
+    - [x] [最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/):[题目3092](../problem/Medium.md)
+    - [x] [最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/):[题目3093](../problem/Hard.md)

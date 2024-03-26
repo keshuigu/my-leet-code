@@ -109,3 +109,5 @@
 - [x] [3081.替换字符串中的问号使分数最小](https://leetcode.cn/problems/replace-question-marks-in-string-to-minimize-its-value/)
 - [x] [3084.统计以给定字符开头和结尾的字符串总数](https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/)
 - [x] [3085.成为K特殊字符串需要删除的最少字符数](https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/)
+- [x] [3091.执行操作使数据元素之和大于等于K](https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/)
+- [x] [3092.最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/)

@@ -559,3 +559,38 @@ class Graph:
                     dist[y] = new_dis
                     heapq.heappush(h, (new_dis, y))
         return -1
+
+
+class Trie3093:
+    __slots__ = 'children', 'leave'
+
+    def __init__(self):
+        self.children: List[Union[None, Trie3093]] = [None] * 26
+        self.leave: Tuple[int, int] = (inf, -1)
+
+    def insert(self, word: str, index: int):
+        node = self
+        n = len(word)
+        if n < node.leave[0]:
+            node.leave = (n, index)
+        elif n == node.leave[0]:
+            node.leave = (n, min(node.leave[1], index))
+        for ch in word:
+            ch = ord(ch) - ord('a')
+            if not node.children[ch]:
+                node.children[ch] = Trie3093()
+            node = node.children[ch]
+            if n < node.leave[0]:
+                node.leave = (n, index)
+            elif n == node.leave[0]:
+                node.leave = (n, min(node.leave[1], index))
+
+    def search(self, word: str) -> int:
+        node = self
+        for ch in word:
+            ch = ord(ch) - ord('a')
+            if not node.children[ch]:
+                return node.leave[1]
+            else:
+                node = node.children[ch]
+        return node.leave[1]

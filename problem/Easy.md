@@ -187,3 +187,4 @@
 - [x] [3074.重新分装苹果](https://leetcode.cn/problems/apple-redistribution-into-boxes/)
 - [x] [3079.求出加密整数的和](https://leetcode.cn/problems/find-the-sum-of-encrypted-integers/)
 - [x] [3084.字符串及其反转中是否存在同一子字符串](https://leetcode.cn/problems/existence-of-a-substring-in-a-string-and-its-reverse/)
+- [x] [3090.每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/)

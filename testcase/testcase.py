@@ -2262,30 +2262,34 @@ def testcase_322_2():
     print(solution_322_2(coins=[1], amount=0))
 
 
-def testcase_w_390_1():
-    print(weekly_contest_390_solution_1("bcbbbcba"))
-    print(weekly_contest_390_solution_1("aaaa"))
+def testcase_3090():
+    print(solution_3090("bcbbbcba"))
+    print(solution_3090("aaaa"))
 
 
-def testcase_w_390_2():
-    print(weekly_contest_390_solution_2(11))
-    print(weekly_contest_390_solution_2(1))
+def testcase_3090_2():
+    print(solution_3090_2("bcbbbcba"))
+    print(solution_3090_2("aaaa"))
 
 
-def testcase_w_390_3():
-    print(weekly_contest_390_solution_3(nums=[2, 3, 2, 1], freq=[3, 2, -3, 1]))
-    print(weekly_contest_390_solution_3(nums=[5, 5, 3], freq=[2, -2, 1]))
+def testcase_3091():
+    print(solution_3091(11))
+    print(solution_3091(1))
 
 
-def testcase_w_390_4():
-    print(weekly_contest_390_solution_4())
+def testcase_3092():
+    print(solution_3092(nums=[2, 3, 2, 1], freq=[3, 2, -3, 1]))
+    print(solution_3092(nums=[5, 5, 3], freq=[2, -2, 1]))
 
 
-def testcase_pdd_1():
-    print(pdd_1([1, 2, 3, 4], 4, 1, 1, 1))
-    print(pdd_1([4, 1, 1], 3, 1, 1, 1))
-    print(pdd_1([3, 5, 1, 4, 1], 5, 4, 2, 0))
-    print(pdd_1([1, 8, 2, 9, 3, 3, 4, 5, 3, 200], 10, 4, 1, 6))
+def testcase_3092_2():
+    print(solution_3092_2(nums=[2, 3, 2, 1], freq=[3, 2, -3, 1]))
+    print(solution_3092_2(nums=[5, 5, 3], freq=[2, -2, 1]))
+
+
+def testcase_3093():
+    print(solution_3093(wordsContainer=["abcd", "bcd", "xbcd"], wordsQuery=["cd", "bcd", "xyz"]))
+    print(solution_3093(wordsContainer=["abcdefgh", "poiuygh", "ghghgh"], wordsQuery=["gh", "acbfgh", "acbfegh"]))
 
 
 def testcase_518():

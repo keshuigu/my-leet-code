@@ -865,3 +865,27 @@ def solution_3085_2(word: str, k: int) -> int:
 
 def solution_3086(nums: List[int], k: int, maxChanges: int) -> int:
     return weekly_contest_389_solution_4(nums, k, maxChanges)
+
+
+def solution_3090(s: str) -> int:
+    return weekly_contest_390_solution_1(s)
+
+
+def solution_3090_2(s: str) -> int:
+    return weekly_contest_390_solution_1_2(s)
+
+
+def solution_3091(k: int) -> int:
+    return weekly_contest_390_solution_2(k)
+
+
+def solution_3092(nums: List[int], freq: List[int]) -> List[int]:
+    return weekly_contest_390_solution_3(nums, freq)
+
+
+def solution_3092_2(nums: List[int], freq: List[int]) -> List[int]:
+    return weekly_contest_390_solution_3_2(nums, freq)
+
+
+def solution_3093(wordsContainer: List[str], wordsQuery: List[str]) -> List[int]:
+    return weekly_contest_390_solution_4(wordsContainer,wordsQuery)
