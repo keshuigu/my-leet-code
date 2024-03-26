@@ -2273,20 +2273,36 @@ def testcase_w_390_2():
 
 
 def testcase_w_390_3():
-    print(weekly_contest_390_solution_3(nums = [2,3,2,1], freq = [3,2,-3,1]))
-    print(weekly_contest_390_solution_3(nums = [5,5,3], freq = [2,-2,1]))
+    print(weekly_contest_390_solution_3(nums=[2, 3, 2, 1], freq=[3, 2, -3, 1]))
+    print(weekly_contest_390_solution_3(nums=[5, 5, 3], freq=[2, -2, 1]))
 
 
 def testcase_w_390_4():
     print(weekly_contest_390_solution_4())
 
 
+def testcase_pdd_1():
+    print(pdd_1([1, 2, 3, 4], 4, 1, 1, 1))
+    print(pdd_1([4, 1, 1], 3, 1, 1, 1))
+    print(pdd_1([3, 5, 1, 4, 1], 5, 4, 2, 0))
+    print(pdd_1([1, 8, 2, 9, 3, 3, 4, 5, 3, 200], 10, 4, 1, 6))
+
+
 def testcase_518():
-    print(solution_518(5,[1,2,5]))
-    print(solution_518(3,[2]))
-    print(solution_518(10,[10]))
+    print(solution_518(5, [1, 2, 5]))
+    print(solution_518(3, [2]))
+    print(solution_518(10, [10]))
+
 
 def testcase_518_2():
-    print(solution_518_2(5,[1,2,5]))
-    print(solution_518_2(3,[2]))
-    print(solution_518_2(10,[10]))
+    print(solution_518_2(5, [1, 2, 5]))
+    print(solution_518_2(3, [2]))
+    print(solution_518_2(10, [10]))
+
+
+def testcase_2642():
+    g = Graph(4, [[0, 2, 5], [0, 1, 2], [1, 2, 1], [3, 0, 3]])
+    print(g.shortestPath(3, 2))
+    print(g.shortestPath(0, 3))
+    g.addEdge([1, 3, 4])
+    print(g.shortestPath(0, 3))

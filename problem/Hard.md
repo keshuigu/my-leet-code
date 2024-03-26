@@ -32,6 +32,7 @@
 
 - [x] [2581.统计可能的树根数目](https://leetcode.cn/problems/count-number-of-possible-root-nodes/): 换根DP
 - [x] [2617.网格图中最少访问的格子数](https://leetcode.cn/problems/minimum-number-of-visited-cells-in-a-grid/)
+- [x] [2642.设计可以求最短路径的图类](https://leetcode.cn/problems/design-graph-with-shortest-path-calculator/)
 - [x] [2719.统计整数数目](https://leetcode.cn/problems/count-of-integers/)
 
     - [数位DP](https://leetcode.cn/problems/count-of-integers/solutions/2601111/tong-ji-zheng-shu-shu-mu-by-leetcode-sol-qxqd/)

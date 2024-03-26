@@ -1,5 +1,7 @@
+import heapq
 import queue
 from collections import defaultdict
+from math import inf
 from typing import *
 
 
@@ -527,3 +529,33 @@ class FrequencyTracker:
 
     def hasFrequency(self, frequency: int) -> bool:
         return frequency in self.table2 and self.table2[frequency] != 0
+
+
+class Graph:
+    __slots__ = 'n', 'g'
+
+    def __init__(self, n: int, edges: List[List[int]]):
+        self.n = n
+        self.g = [[] for _ in range(n)]
+        for edge in edges:
+            self.g[edge[0]].append((edge[1], edge[2]))
+
+    def addEdge(self, edge: List[int]) -> None:
+        self.g[edge[0]].append((edge[1], edge[2]))
+
+    def shortestPath(self, node1: int, node2: int) -> int:
+        dist = [inf] * self.n
+        dist[node1] = 0
+        h = [(dist[node1], node1)]
+        while h:
+            dx, x = heapq.heappop(h)
+            if x == node2:
+                return dx
+            if dx > dist[x]:
+                continue
+            for y, d in self.g[x]:
+                new_dis = dx + d
+                if new_dis < dist[y]:
+                    dist[y] = new_dis
+                    heapq.heappush(h, (new_dis, y))
+        return -1

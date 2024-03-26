@@ -1175,13 +1175,31 @@ def weekly_contest_390_solution_2(k: int) -> int:
 
 
 def weekly_contest_390_solution_3(nums: List[int], freq: List[int]) -> List[int]:
-    ans = []
-    fw = FenwickW3903(len(nums) + 1)
-    for n, f in zip(nums, freq):
-        fw.add(n - 1, f)
-        ans.append(fw.query(1, len(nums)))
-    return ans
+    ...
 
 
 def weekly_contest_390_solution_4():
     ...
+
+
+def pdd_1(nums: List[int], n: int, m: int, k: int, d: int) -> int:
+    nums.sort()
+    ans = [0]
+    cur = 0
+    cnt = 0
+    while cnt < d:
+        cnt += 1
+        # k 是从 -k 变化为 0
+        # k+1 是从 1变化为-k
+        # 记录每多1次操作，对值的变化
+        cur += nums[-cnt] * k - nums[n - m - cnt] * (k + 1)
+        ans.append(cur)
+    # 找到使得cur增加最多的idx
+    mi = 0
+    mx = 0
+    for i, x in enumerate(ans):
+        if mx < x:
+            mi = i
+            mx = x
+    # [0,,n-m-mi-1]不变，[n-m-mi,n-mi]取负，
+    return sum(nums[:n - m - mi]) - k * (sum(nums[n - m - mi:n - mi]))

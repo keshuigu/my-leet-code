@@ -508,3 +508,6 @@ def solution_2549(n: int) -> int:
     return n - 1 if n > 1 else n
 
 
+def solution_2642():
+    # data_struct.Graph
+    ...
