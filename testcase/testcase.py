@@ -2310,3 +2310,8 @@ def testcase_2642():
     print(g.shortestPath(0, 3))
     g.addEdge([1, 3, 4])
     print(g.shortestPath(0, 3))
+
+
+def testcase_2580():
+    print(solution_2580(ranges = [[6,10],[5,15]]))
+    print(solution_2580(ranges = [[1,3],[10,20],[2,5],[4,8]]))

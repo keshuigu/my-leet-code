@@ -66,6 +66,7 @@
     - 链表反转
 
 - [x] [2575.找出字符串的可整除数组](https://leetcode.cn/problems/find-the-divisibility-array-of-a-string/)
+- [x] [2580.统计将重叠区间合并成组的方案数](https://leetcode.cn/problems/count-ways-to-group-overlapping-ranges/)
 - [x] [2583.二叉树中的第K大层和](https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree/)
 - [x] [2641.二叉树的堂兄弟节点 II](https://leetcode.cn/problems/cousins-in-binary-tree-ii/)
 - [x] [2645.构造有效字符串的最少插入数](https://leetcode.cn/problems/minimum-additions-to-make-valid-string/)

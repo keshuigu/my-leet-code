@@ -954,3 +954,27 @@ def solution_2617_3(grid: List[List[int]]) -> int:
                 heapq.heappush(row_h, (f, g + j))
                 heapq.heappush(col_h, (f, g + i))
     return f if f < inf else -1
+
+
+def solution_2580(ranges: List[List[int]]) -> int:
+    mod_factor = 10 ** 9 + 7
+    ranges.sort(key=lambda x: x[0])
+    ans = [ranges[0]]
+    idx = 0
+    curl, curr = ans[idx][0], ans[idx][1]
+    for r in ranges[1:]:
+        if r[0] <= curr:
+            curr = ans[idx][1] = max(curr, r[1])
+        else:
+            ans.append(r)
+            idx += 1
+            curl, curr = ans[idx][0], ans[idx][1]
+    f = len(ans)
+    b = 2
+    ans = 1
+    while f > 0:
+        if f & 1:
+            ans = (ans * b) % mod_factor
+        b = (b * b) % mod_factor
+        f >>= 1
+    return ans
