@@ -382,3 +382,16 @@ def solution_518_2(amount: int, coins: List[int]) -> int:
             f[cur] = g[cur] + (f[cur - x] if cur - x >= 0 else 0)
         f, g = g, f
     return g[amount]
+
+
+def solution_704(nums: List[int], target: int) -> int:
+    left, right = -1, len(nums)
+    while left + 1 < right:
+        mid = (right + left) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] > target:
+            right = mid
+        else:
+            left = mid
+    return -1

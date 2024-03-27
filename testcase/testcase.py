@@ -2313,5 +2313,10 @@ def testcase_2642():
 
 
 def testcase_2580():
-    print(solution_2580(ranges = [[6,10],[5,15]]))
-    print(solution_2580(ranges = [[1,3],[10,20],[2,5],[4,8]]))
+    print(solution_2580(ranges=[[6, 10], [5, 15]]))
+    print(solution_2580(ranges=[[1, 3], [10, 20], [2, 5], [4, 8]]))
+
+
+def testcase_704():
+    print(solution_704(nums=[-1, 0, 3, 5, 9, 12], target=9))
+    print(solution_704(nums=[-1, 0, 3, 5, 9, 12], target=2))
