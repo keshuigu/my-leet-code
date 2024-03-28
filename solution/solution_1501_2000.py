@@ -363,3 +363,32 @@ def solution_1969(p: int) -> int:
         c *= c % mod_factor
         b >>= 1
     return ans * a % mod_factor
+
+
+def solution_1997(nextVisit: List[int]) -> int:
+    mod_factor = 10 ** 9 + 7
+    n = len(nextVisit)
+    # f[i]表示从n[i]到i所需要的天数
+    f = [0] * n
+    f[0] = 0
+    s = [0] * (n + 1)
+    s[1] = 0
+    for i in range(1, n):
+        cur = nextVisit[i]
+        days = s[i] - s[cur] + 2 * (i - cur)
+        f[i] = days
+        s[i + 1] = (s[i] + days) % mod_factor
+    return (s[n - 1] + 2 * (n - 1)) % mod_factor
+
+
+def solution_1997_2(nextVisit: List[int]) -> int:
+    s = [0] * len(nextVisit)
+    # f[i] 表示 i-> n[j] -> ... -> i
+    # 因此比解1少去了2 * (i - cur)
+    # 都算在f中了
+    # f[i] = 2+s[i]-s[j]
+    # s[i+1] = s[i]+f[i]
+    # s[i+1] = s[i]*2 - s[j]+2
+    for i, j in enumerate(nextVisit[:-1]):
+        s[i + 1] = (s[i] * 2 - s[j] + 2) % (10 ** 9 + 7)
+    return s[-1]

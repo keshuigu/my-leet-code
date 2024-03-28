@@ -41,6 +41,7 @@
   - 记忆化搜索
 
 - [x] [1969.到达目的地的方案数](https://leetcode.cn/problems/minimum-non-zero-product-of-the-array-elements)
+- [x] [1997.访问完所有房间的第一天](https://leetcode.cn/problems/first-day-where-you-have-been-in-all-the-rooms/)
 - [x] [1976.到达目的地的方案数](https://leetcode.cn/problems/number-of-ways-to-arrive-at-destination/)
 - [x] [2171.拿出最少数目的魔法豆](https://leetcode.cn/problems/removing-minimum-number-of-magic-beans/)
 
