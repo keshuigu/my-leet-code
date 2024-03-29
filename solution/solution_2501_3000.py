@@ -978,3 +978,25 @@ def solution_2580(ranges: List[List[int]]) -> int:
         b = (b * b) % mod_factor
         f >>= 1
     return ans
+
+
+def solution_2908(nums: List[int]) -> int:
+    n = len(nums)
+    pre = [0] * n
+    suf = [0] * n
+    cur = inf
+    for i, x in enumerate(nums):
+        if x < cur:
+            cur = x
+        pre[i] = cur
+    cur = inf
+    for i in range(n - 1, -1, -1):
+        if nums[i] < cur:
+            cur = nums[i]
+        suf[i] = cur
+
+    ans = inf
+    for i in range(1, n - 1):
+        if pre[i] < nums[i] > suf[i]:
+            ans = min(ans, pre[i] + suf[i] + nums[i])
+    return ans if ans < inf else -1
