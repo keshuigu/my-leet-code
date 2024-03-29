@@ -115,6 +115,21 @@ def solution_1483():
     # method.TreeAncestor
     ...
 
+
 def solution_1261():
     # data_struct.FindElements
     ...
+
+
+def solution_1004(nums: List[int], k: int) -> int:
+    left = 0
+    cnt = 0
+    ans = 0
+    for i in range(len(nums)):
+        cnt += 1 - nums[i]
+        while cnt > k:
+            cnt -= 1 - nums[left]
+            left += 1
+        ans = max(ans, i - left + 1)
+    return ans
+

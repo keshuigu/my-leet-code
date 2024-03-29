@@ -2338,3 +2338,6 @@ def testcase_2908():
     print(solution_2908([8, 6, 1, 5, 3]))
     print(solution_2908([5, 4, 8, 7, 10, 2]))
     print(solution_2908([6, 5, 4, 3, 4, 5]))
+def testcase_1004():
+    print(solution_1004(nums=[1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], k=2))
+    print(solution_1004(nums=[0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], k=3))
