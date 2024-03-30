@@ -85,6 +85,7 @@
 - [x] [2834.找出美丽数组的最小和](https://leetcode.cn/problems/find-the-minimum-possible-sum-of-a-beautiful-array/)
 - [x] [2865.最大合金数](https://leetcode.cn/problems/maximum-number-of-alloys/)
 - [x] [2865.美丽塔I](https://leetcode.cn/problems/beautiful-towers-i/)
+- [x] [2952.需要添加的硬币的最小数量](https://leetcode.cn/problems/minimum-number-of-coins-to-be-added/)
 - [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)
 - [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)
 - [x] [3020.子集中元素的最大数量](https://leetcode.cn/problems/find-the-maximum-number-of-elements-in-subset/)

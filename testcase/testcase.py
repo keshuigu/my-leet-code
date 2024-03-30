@@ -2338,3 +2338,38 @@ def testcase_2908():
     print(solution_2908([8, 6, 1, 5, 3]))
     print(solution_2908([5, 4, 8, 7, 10, 2]))
     print(solution_2908([6, 5, 4, 3, 4, 5]))
+
+
+def testcase_2952():
+    print(solution_2952(coins = [1,4,10], target = 19))
+    print(solution_2952(coins = [1,4,10,5,7,19], target = 19))
+    print(solution_2952(coins = [1,1,1], target = 20))
+
+
+def testcase_bw_127_1():
+    print(biweekly_contest_127_solution_1())
+
+def testcase_bw_127_2():
+    print(biweekly_contest_127_solution_2())
+
+def testcase_bw_127_3():
+    print(biweekly_contest_127_solution_3())
+
+def testcase_bw_127_4():
+    print(biweekly_contest_127_solution_4())
+
+
+def testcase_w_390_1():
+    print(weekly_contest_390_solution_1())
+
+
+def testcase_w_390_2():
+    print(weekly_contest_390_solution_2())
+
+
+def testcase_w_390_3():
+    print(weekly_contest_390_solution_3())
+
+
+def testcase_w_390_4():
+    print(weekly_contest_390_solution_4())

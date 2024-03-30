@@ -1229,3 +1229,35 @@ def weekly_contest_390_solution_4(wordsContainer: List[str], wordsQuery: List[st
     for w in wordsQuery:
         ans.append(t.search(w[::-1]))
     return ans
+
+
+def biweekly_contest_127_solution_1():
+    ...
+
+
+def biweekly_contest_127_solution_2():
+    ...
+
+
+def biweekly_contest_127_solution_3():
+    ...
+
+
+def biweekly_contest_127_solution_4():
+    ...
+
+
+def weekly_contest_391_solution_1():
+    ...
+
+
+def weekly_contest_391_solution_2():
+    ...
+
+
+def weekly_contest_391_solution_3():
+    ...
+
+
+def weekly_contest_391_solution_4():
+    ...
