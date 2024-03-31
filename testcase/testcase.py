@@ -2372,16 +2372,19 @@ def testcase_bw_127_4():
     print(biweekly_contest_127_solution_4())
 
 
-def testcase_w_390_1():
-    print(weekly_contest_390_solution_1())
+def testcase_w_391_1():
+    print(weekly_contest_391_solution_1(18))
+    print(weekly_contest_391_solution_1(23))
 
 
-def testcase_w_390_2():
-    print(weekly_contest_390_solution_2())
+def testcase_w_391_2():
+    print(weekly_contest_391_solution_2(numBottles=13, numExchange=6))
+    print(weekly_contest_391_solution_2(numBottles=10, numExchange=3))
 
 
-def testcase_w_390_3():
-    print(weekly_contest_390_solution_3())
+def testcase_w_391_3():
+    print(weekly_contest_391_solution_3(nums=[0, 1, 1, 1]))
+    print(weekly_contest_391_solution_3(nums=[1, 0, 1, 0]))
 
 
 def testcase_w_390_4():

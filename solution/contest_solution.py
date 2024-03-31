@@ -1300,16 +1300,41 @@ def biweekly_contest_127_solution_4():
     ...
 
 
-def weekly_contest_391_solution_1():
-    ...
+def weekly_contest_391_solution_1(x: int) -> int:
+    s = str(x)
+    ss = 0
+    for c in s:
+        c = ord(c) - ord("0")
+        ss += c
+    return ss if x % ss == 0 else -1
 
 
-def weekly_contest_391_solution_2():
-    ...
+def weekly_contest_391_solution_2(numBottles: int, numExchange: int) -> int:
+    cnt = 0
+    full = numBottles
+    while True:
+        cnt += full
+        if numBottles >= numExchange:
+            numBottles = numBottles - numExchange + 1
+            numExchange += 1
+            full = 1
+        else:
+            return cnt
 
 
-def weekly_contest_391_solution_3():
-    ...
+def weekly_contest_391_solution_3(nums: List[int]) -> int:
+    idx = []
+    left = 0
+    for right in range(1, len(nums)):
+        if nums[right] == nums[right - 1]:
+            idx.append((left, right - 1))
+            left = right
+    idx.append((left, len(nums) - 1))
+    ans = 0
+    for l, r in idx:
+        length = r - l + 1
+        ans += ((length + 1) * length) // 2
+    return ans
 
 
 def weekly_contest_391_solution_4():
