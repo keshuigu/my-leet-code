@@ -104,12 +104,12 @@
     - [x] [最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/):[题目](../problem/Medium.md)
     - [x] [最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/):[题目](../problem/Hard.md)
 
-- [biweekly-contest-127](https://leetcode.cn/contest/biweekly-contest-127)
+- [biweekly-contest-127](https://leetcode.cn/contest/biweekly-contest-127): 时限内完成1 2 3
 
-    - [ ] []():[题目](../problem/Easy.md)
-    - [ ] []():[题目](../problem/Medium.md)
-    - [ ] []():[题目](../problem/Medium.md)
-    - [ ] []():[题目](../problem/Hard.md)
+    - [x] [或值至少K的最短子数组 I](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-i/):[题目](../problem/Easy.md)
+    - [x] [得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/):[题目](../problem/Medium.md)
+    - [x] [或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/):[题目](../problem/Medium.md)
+    - [ ] [求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-subsequence-powers/):[题目](../problem/Hard.md)
 
 - [weekly-contest-391](https://leetcode.cn/contest/biweekly-contest-391)
 

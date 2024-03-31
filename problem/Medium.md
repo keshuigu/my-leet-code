@@ -19,6 +19,7 @@
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [299.猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/)
 - [x] [310.最小高度树](https://leetcode.cn/problems/minimum-height-trees/)
+- [x] [331.验证二叉树的前序序列化](https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/)
 - [x] [322.零钱兑换](https://leetcode.cn/problems/coin-change/)
 - [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )
 
