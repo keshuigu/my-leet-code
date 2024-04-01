@@ -1259,6 +1259,18 @@ def biweekly_contest_127_solution_2(possible: List[int]) -> int:
     return -1
 
 
+def biweekly_contest_127_solution_2_2(possible: List[int]) -> int:
+    # 每一项都是 s+=x*2-1
+    s = sum(possible) * 2 - len(possible)
+    pre = 0
+    # suf[i]= total - pre[i]
+    for i, x in enumerate(possible[:-1]):
+        pre += x * 2 - 1
+        if pre > s - pre:
+            return i + 1
+    return -1
+
+
 def biweekly_contest_127_solution_3(nums: List[int], k: int) -> int:
     cnt = defaultdict(int)
     left = 0
@@ -1296,8 +1308,76 @@ def biweekly_contest_127_solution_3(nums: List[int], k: int) -> int:
     return ans if ans < inf else -1
 
 
-def biweekly_contest_127_solution_4():
-    ...
+def biweekly_contest_127_solution_3_2(nums: List[int], k: int) -> int:
+    """
+    1. 枚举以i为右端点的子数组
+    2. OR的性质：
+    以i为右端点的子数组的OR，至多有O(log max(nums)) 个不同值
+
+    从以i为右端点的子数组 到 以i+1为右端点的子数组
+    增量式地计算子数组的OR
+    维护子数组OR以及对应的子数组的左端点的最大值
+    """
+    # O(n*log max(nums))
+    ans = inf
+    d = dict()  # key 是 OR, value 是对应的子数组的左端点的最大值
+    for i, x in enumerate(nums):
+        d = {or_ | x: left for or_, left in d.items()}  # python按顺序存，从左到右遍历，刚好left最大的会保留
+        d[x] = i
+        for or_, left in d.items():
+            if or_ >= k:
+                ans = min(ans, i - left + 1)
+    return ans if ans < inf else -1
+
+
+def biweekly_contest_127_solution_4(nums: List[int], k: int) -> int:
+    """
+    子序列：
+    相邻无关 0-1背包
+    相邻相关 最长递增子序列
+
+    递增子序列个数模板
+    dfs(i,pre)
+    不选 dfs(i-1,pre)
+    选 dfs(i-1,nums[i])
+
+    i是当前下标，j是还需要选多少个数
+    pre是上一个选的数
+    min_diff 是目前选的数的能量
+    dfs(i,j,pre,min_diff)
+
+    不选 dfs(i-1,j,pre,min_diff)
+    选 dfs(i-1,j-1,nums[i],min(min_diff,pre-nums[i]))
+
+    递归边界：
+    j=0时 返回min_diff
+    j>i+1时，即使全部选，也不足j个，返回0
+
+    """
+    MOD = 10 ** 9 + +7
+    # 所有子序列的最小的绝对值差，因此顺序无关，可以排序来简化求最小的绝对值
+    nums.sort()
+
+    # 时间复杂度
+    # 状态个数 * 单个状态的计算时间
+    # i: n个
+    # j: k个
+    # pre: n个
+    # min_diff:O(n^2)个
+    # O(n^4k)
+    @cache
+    def dfs(i, j, pre, min_diff):
+        if j > i + 1:
+            return 0
+        if j == 0:
+            return min_diff
+        res1 = dfs(i - 1, j, pre, min_diff)
+        res2 = dfs(i - 1, j - 1, nums[i], min(min_diff, pre - nums[i]))
+        return (res1 + res2) % MOD
+
+    ans = dfs(len(nums) - 1, k, inf, inf)
+    dfs.cache_clear()
+    return ans
 
 
 def weekly_contest_391_solution_1(x: int) -> int:
@@ -1337,5 +1417,30 @@ def weekly_contest_391_solution_3(nums: List[int]) -> int:
     return ans
 
 
-def weekly_contest_391_solution_4():
-    ...
+def weekly_contest_391_solution_4(points: List[List[int]]) -> int:
+    """
+    (x1, y1), (x2, y2)
+    dist = |x1 - x2| + |y1 - y2|
+
+    曼哈顿距离与切比雪夫距离关系
+    |x1 - x2| + |y1 - y2| = max(|x1'-x2'|,|y1'-y2'|)
+
+    x' = x+y
+    y' = y-x
+
+    优化，可以只维护最大最小次大次小x和y，共8个值
+    """
+    xs = SortedList()
+    ys = SortedList()
+    for x, y in points:
+        xs.add(x + y)
+        ys.add(y - x)
+    ans = inf
+    for x, y in points:
+        x, y = x + y, y - x
+        xs.remove(x)
+        ys.remove(y)
+        ans = min(ans, max(xs[-1] - xs[0], ys[-1] - ys[0]))
+        xs.add(x)
+        ys.add(y)
+    return ans

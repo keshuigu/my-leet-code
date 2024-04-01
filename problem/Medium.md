@@ -116,3 +116,7 @@
 - [x] [3085.成为K特殊字符串需要删除的最少字符数](https://leetcode.cn/problems/minimum-deletions-to-make-string-k-special/)
 - [x] [3091.执行操作使数据元素之和大于等于K](https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/)
 - [x] [3092.最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/)
+- [x] [3096.得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/)
+- [x] [3097.或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/)
+- [x] [3100.换水问题 II](https://leetcode.cn/problems/water-bottles-ii/)
+- [x] [3101.交替子数组计数](https://leetcode.cn/problems/count-alternating-subarrays/)

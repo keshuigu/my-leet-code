@@ -1,7 +1,7 @@
 import bisect
 import heapq
 import itertools
-from collections import defaultdict
+from collections import defaultdict, deque
 from math import isqrt, inf
 
 from .data_struct import *
@@ -1018,3 +1018,27 @@ def solution_2952(coins: List[int], target: int) -> int:
         cnt += 1
         x = 2 * x + 1
     return cnt
+
+
+def solution_2810(s: str) -> str:
+    ans = []
+    for c in s:
+        if c == 'i':
+            ans.reverse()
+        else:
+            ans.append(c)
+    return ''.join(ans)
+
+
+def solution_2810_2(s: str) -> str:
+    # 双端队列
+    q = deque()
+    tail = True
+    for c in s:
+        if c == 'i':
+            tail = not tail
+        elif tail:
+            q.append(c)
+        else:
+            q.appendleft(c)
+    return ''.join(q if tail else reversed(q))

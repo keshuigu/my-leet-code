@@ -66,3 +66,5 @@
 - [x] [3082.求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/): 背包
 - [x] [3086.拾起k个1需要的最少行动次数](https://leetcode.cn/problems/minimum-moves-to-pick-k-ones/): 货仓选址
 - [x] [3093.最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/): 字典树模板
+- [x] [3098.求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-subsequence-powers/): 相邻相关子序列DP
+- [x] [3102.最小化曼哈顿距离](https://leetcode.cn/problems/minimize-manhattan-distances/)

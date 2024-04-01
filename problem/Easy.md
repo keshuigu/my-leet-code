@@ -172,6 +172,7 @@
     - [分组循环](https://leetcode.cn/problems/longest-alternating-subarray/solutions/2615916/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-r57bz/)
 
 - [x] [2788.按分隔符拆分字符串](https://leetcode.cn/problems/split-strings-by-separator/)
+- [x] [2810.故障键盘](https://leetcode.cn/problems/faulty-keyboard/)
 - [x] [2859.计算K置位下标对应元素的和](https://leetcode.cn/problems/sum-of-values-at-indices-with-k-set-bits/)
 - [x] [2864.最大二进制奇数](https://leetcode.cn/problems/maximum-odd-binary-number/)
 - [x] [2908.元素和最小的山形三元组 I](https://leetcode.cn/problems/minimum-sum-of-mountain-triplets-i/)
@@ -190,3 +191,5 @@
 - [x] [3079.求出加密整数的和](https://leetcode.cn/problems/find-the-sum-of-encrypted-integers/)
 - [x] [3084.字符串及其反转中是否存在同一子字符串](https://leetcode.cn/problems/existence-of-a-substring-in-a-string-and-its-reverse/)
 - [x] [3090.每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/)
+- [x] [3095.或值至少K的最短子数组 I](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-i/)
+- [x] [3099.哈沙德数](https://leetcode.cn/problems/harshad-number/)

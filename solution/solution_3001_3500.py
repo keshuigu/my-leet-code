@@ -888,4 +888,44 @@ def solution_3092_2(nums: List[int], freq: List[int]) -> List[int]:
 
 
 def solution_3093(wordsContainer: List[str], wordsQuery: List[str]) -> List[int]:
-    return weekly_contest_390_solution_4(wordsContainer,wordsQuery)
+    return weekly_contest_390_solution_4(wordsContainer, wordsQuery)
+
+
+def solution_3095(nums: List[int], k: int) -> int:
+    return biweekly_contest_127_solution_1(nums, k)
+
+
+def solution_3096(possible: List[int]) -> int:
+    return biweekly_contest_127_solution_2(possible)
+
+
+def solution_3096_2(possible: List[int]) -> int:
+    return biweekly_contest_127_solution_2_2(possible)
+
+
+def solution_3097(nums: List[int], k: int) -> int:
+    return biweekly_contest_127_solution_3(nums, k)
+
+
+def solution_3097_2(nums: List[int], k: int) -> int:
+    return biweekly_contest_127_solution_3_2(nums, k)
+
+
+def solution_3098(nums: List[int], k: int) -> int:
+    return biweekly_contest_127_solution_4(nums, k)
+
+
+def solution_3099(x: int) -> int:
+    return weekly_contest_391_solution_1(x)
+
+
+def solution_3100(numBottles: int, numExchange: int) -> int:
+    return weekly_contest_391_solution_2(numBottles, numExchange)
+
+
+def solution_3101(nums: List[int]) -> int:
+    return weekly_contest_391_solution_3(nums)
+
+
+def solution_3102(points: List[List[int]]) -> int:
+    return weekly_contest_391_solution_4(points)

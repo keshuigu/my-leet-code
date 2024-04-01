@@ -99,21 +99,21 @@
 
 - [weekly-contest-390](https://leetcode.cn/contest/weekly-contest-390): 时限内完成1 2 
 
-    - [x] [每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/):[题目](../problem/Easy.md)
-    - [x] [执行操作使数据元素之和大于等于K](https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/):[题目](../problem/Medium.md)
-    - [x] [最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/):[题目](../problem/Medium.md)
-    - [x] [最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/):[题目](../problem/Hard.md)
+    - [x] [每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/):[题目3090](../problem/Easy.md)
+    - [x] [执行操作使数据元素之和大于等于K](https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/):[题目3091](../problem/Medium.md)
+    - [x] [最高频率的ID](https://leetcode.cn/problems/most-frequent-ids/):[题目3092](../problem/Medium.md)
+    - [x] [最长公共后缀查询](https://leetcode.cn/problems/longest-common-suffix-queries/):[题目3093](../problem/Hard.md)
 
 - [biweekly-contest-127](https://leetcode.cn/contest/biweekly-contest-127): 时限内完成1 2 3
 
-    - [x] [或值至少K的最短子数组 I](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-i/):[题目](../problem/Easy.md)
-    - [x] [得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/):[题目](../problem/Medium.md)
-    - [x] [或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/):[题目](../problem/Medium.md)
-    - [ ] [求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-subsequence-powers/):[题目](../problem/Hard.md)
+    - [x] [或值至少K的最短子数组 I](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-i/):[题目3095](../problem/Easy.md)
+    - [x] [得到更多分数的最少关卡数目](https://leetcode.cn/problems/minimum-levels-to-gain-more-points/):[题目3096](../problem/Medium.md)
+    - [x] [或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/):[题目3097](../problem/Medium.md)
+    - [x] [求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-subsequence-powers/):[题目3098](../problem/Hard.md)
 
 - [weekly-contest-391](https://leetcode.cn/contest/biweekly-contest-391)
 
-    - [ ] []():[题目](../problem/Easy.md)
-    - [ ] []():[题目](../problem/Medium.md)
-    - [ ] []():[题目](../problem/Medium.md)
-    - [ ] []():[题目](../problem/Hard.md)
+    - [x] [哈沙德数](https://leetcode.cn/problems/harshad-number/):[题目3099](../problem/Easy.md)
+    - [x] [换水问题 II](https://leetcode.cn/problems/water-bottles-ii/):[题目3100](../problem/Medium.md)
+    - [x] [交替子数组计数](https://leetcode.cn/problems/count-alternating-subarrays/):[题目3101](../problem/Medium.md)
+    - [x] [最小化曼哈顿距离](https://leetcode.cn/problems/minimize-manhattan-distances/):[题目3102](../problem/Hard.md)
