@@ -1000,3 +1000,21 @@ def solution_2908(nums: List[int]) -> int:
         if pre[i] < nums[i] > suf[i]:
             ans = min(ans, pre[i] + suf[i] + nums[i])
     return ans if ans < inf else -1
+
+
+def solution_2952(coins: List[int], target: int) -> int:
+    coins.sort()
+    x = 0
+    cnt = 0
+    for coin in coins:
+        while coin > x + 1:
+            cnt += 1
+            # add x+1
+            x = 2 * x + 1
+        x = x + coin
+        if x >= target:
+            return cnt
+    while x < target:
+        cnt += 1
+        x = 2 * x + 1
+    return cnt

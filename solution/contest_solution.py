@@ -1229,3 +1229,113 @@ def weekly_contest_390_solution_4(wordsContainer: List[str], wordsQuery: List[st
     for w in wordsQuery:
         ans.append(t.search(w[::-1]))
     return ans
+
+
+def biweekly_contest_127_solution_1(nums: List[int], k: int) -> int:
+    n = len(nums)
+    cnt = inf
+    for i in range(n):
+        for j in range(i + 1, n + 1):
+            ans = 0
+            for m in range(i, j):
+                ans |= nums[m]
+            if ans >= k:
+                cnt = min(cnt, j - i)
+    return cnt if cnt < inf else -1
+
+
+def biweekly_contest_127_solution_2(possible: List[int]) -> int:
+    n = len(possible)
+    pre = [0] * (n + 1)
+    suf = [0] * (n + 1)
+    for i, x in enumerate(possible):
+        pre[i + 1] = pre[i] + (1 if x else -1)
+    for i, x in enumerate(possible[::-1]):
+        suf[i + 1] += suf[i] + (1 if x else -1)
+    suf.reverse()
+    for i in range(1, n):
+        if pre[i] > suf[i]:
+            return i
+    return -1
+
+
+def biweekly_contest_127_solution_3(nums: List[int], k: int) -> int:
+    cnt = defaultdict(int)
+    left = 0
+    s = 0
+    ans = inf
+    for right in range(len(nums)):
+        cur = nums[right]
+        while cur > 0:
+            lb = cur & (-cur)
+            if cnt[lb] == 0:
+                s += lb
+            cnt[lb] += 1
+            cur -= lb
+        if s >= k:
+            while left < right:
+                l_cur = nums[left]
+                cur_s = s
+                while l_cur > 0:
+                    lb = l_cur & (-l_cur)
+                    if cnt[lb] == 1:
+                        cur_s -= lb
+                    l_cur -= lb
+                if cur_s >= k:
+                    l_cur = nums[left]
+                    while l_cur > 0:
+                        lb = l_cur & (-l_cur)
+                        cnt[lb] -= 1
+                        if cnt[lb] == 0:
+                            s -= lb
+                        l_cur -= lb
+                    left += 1
+                else:
+                    break
+            ans = min(ans, right - left + 1)
+    return ans if ans < inf else -1
+
+
+def biweekly_contest_127_solution_4():
+    ...
+
+
+def weekly_contest_391_solution_1(x: int) -> int:
+    s = str(x)
+    ss = 0
+    for c in s:
+        c = ord(c) - ord("0")
+        ss += c
+    return ss if x % ss == 0 else -1
+
+
+def weekly_contest_391_solution_2(numBottles: int, numExchange: int) -> int:
+    cnt = 0
+    full = numBottles
+    while True:
+        cnt += full
+        if numBottles >= numExchange:
+            numBottles = numBottles - numExchange + 1
+            numExchange += 1
+            full = 1
+        else:
+            return cnt
+
+
+def weekly_contest_391_solution_3(nums: List[int]) -> int:
+    idx = []
+    left = 0
+    for right in range(1, len(nums)):
+        if nums[right] == nums[right - 1]:
+            idx.append((left, right - 1))
+            left = right
+    idx.append((left, len(nums) - 1))
+    ans = 0
+    for l, r in idx:
+        length = r - l + 1
+        ans += ((length + 1) * length) // 2
+    return ans
+
+
+def weekly_contest_391_solution_4():
+    ...

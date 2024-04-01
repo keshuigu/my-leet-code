@@ -2783,3 +2783,31 @@ def solution_322_2(coins: List[int], amount: int) -> int:
                 f[i + 1][c] = min(f[i][c], f[i + 1][c - coins[i]] + 1)
     ans = f[n][amount]
     return ans if ans < inf else -1
+
+
+def solution_331(preorder: str) -> bool:
+    nodes = preorder.split(",")
+    s = []
+    for node in nodes:
+        s.append(node)
+        while len(s) >= 3 and s[-1] == s[-2] == '#' and s[-3] != '#':
+            s.pop()
+            s.pop()
+            s.pop()
+            s.append('#')
+    return len(s) == 1 and s[-1] == '#'
+
+
+def solution_331_2(preorder: str) -> bool:
+    """
+    入度等于出度
+    """
+    nodes = preorder.split(',')
+    diff = 1
+    for node in nodes:
+        diff -= 1
+        if diff < 0:
+            return False
+        if node != '#':
+            diff += 2
+    return diff == 0

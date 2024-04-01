@@ -19,6 +19,7 @@
 - [x] [275.H指数II](https://leetcode.cn/problems/h-index-ii/ )
 - [x] [299.猜数字游戏](https://leetcode.cn/problems/bulls-and-cows/)
 - [x] [310.最小高度树](https://leetcode.cn/problems/minimum-height-trees/)
+- [x] [331.验证二叉树的前序序列化](https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/)
 - [x] [322.零钱兑换](https://leetcode.cn/problems/coin-change/)
 - [x] [365.水壶问题](https://leetcode.cn/problems/number-of-boomerangs/ )
 
@@ -86,6 +87,7 @@
 - [x] [2834.找出美丽数组的最小和](https://leetcode.cn/problems/find-the-minimum-possible-sum-of-a-beautiful-array/)
 - [x] [2865.最大合金数](https://leetcode.cn/problems/maximum-number-of-alloys/)
 - [x] [2865.美丽塔I](https://leetcode.cn/problems/beautiful-towers-i/)
+- [x] [2952.需要添加的硬币的最小数量](https://leetcode.cn/problems/minimum-number-of-coins-to-be-added/)
 - [x] [3015.输入单词需要的最少按键次数 II](https://leetcode.cn/problems/minimum-number-of-pushes-to-type-word-ii/)
 - [x] [3016.按距离统计房屋对数目I](https://leetcode.cn/problems/count-the-number-of-houses-at-a-certain-distance-i/)
 - [x] [3020.子集中元素的最大数量](https://leetcode.cn/problems/find-the-maximum-number-of-elements-in-subset/)

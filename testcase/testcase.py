@@ -2341,3 +2341,66 @@ def testcase_2908():
 def testcase_1004():
     print(solution_1004(nums=[1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], k=2))
     print(solution_1004(nums=[0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], k=3))
+
+
+def testcase_2952():
+    print(solution_2952(coins=[1, 4, 10], target=19))
+    print(solution_2952(coins=[1, 4, 10, 5, 7, 19], target=19))
+    print(solution_2952(coins=[1, 1, 1], target=20))
+
+
+def testcase_bw_127_1():
+    print(biweekly_contest_127_solution_1(nums=[1, 2, 3], k=2))
+    print(biweekly_contest_127_solution_1(nums=[2, 1, 8], k=10))
+    print(biweekly_contest_127_solution_1(nums=[1, 2], k=0))
+    print(biweekly_contest_127_solution_1(nums=[32, 1, 25, 11, 2], k=59))
+
+
+def testcase_bw_127_2():
+    print(biweekly_contest_127_solution_2(possible=[1, 1]))
+    print(biweekly_contest_127_solution_2(possible=[1, 0, 1, 0]))
+    print(biweekly_contest_127_solution_2(possible=[1, 1, 1, 1, 1]))
+    print(biweekly_contest_127_solution_2(possible=[0, 0]))
+
+
+def testcase_bw_127_3():
+    print(biweekly_contest_127_solution_3(nums=[1, 2, 3], k=2))
+    print(biweekly_contest_127_solution_3(nums=[2, 1, 8], k=10))
+    print(biweekly_contest_127_solution_3(nums=[1, 2], k=0))
+    print(biweekly_contest_127_solution_3(nums=[32, 1, 25, 11, 2], k=59))
+    print(biweekly_contest_127_solution_3(nums=[1, 2, 12, 1, 16, 10], k=20))
+
+
+def testcase_bw_127_4():
+    print(biweekly_contest_127_solution_4())
+
+
+def testcase_w_391_1():
+    print(weekly_contest_391_solution_1(18))
+    print(weekly_contest_391_solution_1(23))
+
+
+def testcase_w_391_2():
+    print(weekly_contest_391_solution_2(numBottles=13, numExchange=6))
+    print(weekly_contest_391_solution_2(numBottles=10, numExchange=3))
+
+
+def testcase_w_391_3():
+    print(weekly_contest_391_solution_3(nums=[0, 1, 1, 1]))
+    print(weekly_contest_391_solution_3(nums=[1, 0, 1, 0]))
+
+
+def testcase_w_390_4():
+    print(weekly_contest_390_solution_4())
+
+
+def testcase_331():
+    print(solution_331(preorder="9,3,4,#,#,1,#,#,2,#,6,#,#"))
+    print(solution_331(preorder="1,#"))
+    print(solution_331(preorder="9,#,#,1"))
+
+
+def testcase_331_2():
+    print(solution_331_2(preorder="9,3,4,#,#,1,#,#,2,#,6,#,#"))
+    print(solution_331_2(preorder="1,#"))
+    print(solution_331_2(preorder="9,#,#,1"))
