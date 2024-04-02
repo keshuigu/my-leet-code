@@ -395,3 +395,23 @@ def solution_704(nums: List[int], target: int) -> int:
         else:
             left = mid
     return -1
+
+
+def solution_894(n: int) -> List[Optional[TreeNode]]:
+    @cache
+    def dfs(cnt):
+        if cnt == 0:
+            return []
+        if cnt == 1:
+            return [TreeNode(0)]
+        cnt -= 1
+        res = []
+        for c in range(1, cnt + 1, 2):
+            left = dfs(c)
+            right = dfs(cnt - c)
+            for l in left:
+                for r in right:
+                    res.append(TreeNode(0, l, r))
+        return res
+
+    return dfs(n)

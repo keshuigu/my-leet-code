@@ -2379,6 +2379,7 @@ def testcase_3097():
     print(solution_3097(nums=[32, 1, 25, 11, 2], k=59))
     print(solution_3097(nums=[1, 2, 12, 1, 16, 10], k=20))
 
+
 def testcase_3097_2():
     print(solution_3097_2(nums=[1, 2, 3], k=2))
     print(solution_3097_2(nums=[2, 1, 8], k=10))
@@ -2433,3 +2434,9 @@ def testcase_2810():
 def testcase_2810_2():
     print(solution_2810_2("string"))
     print(solution_2810_2("poiinter"))
+
+
+def testcase_894():
+    print(solution_894(3))
+    ans = solution_894(7)
+    print(ans)
