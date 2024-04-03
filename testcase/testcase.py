@@ -2452,3 +2452,9 @@ def testcase_1379_2():
     target = TreeNode(3, TreeNode(6), TreeNode(19))
     target_c = TreeNode(3, TreeNode(6), TreeNode(19))
     print(solution_1379_2(TreeNode(7, TreeNode(4), target), TreeNode(7, TreeNode(4), target_c), target))
+
+
+def testcase_209():
+    print(solution_209(7, [2, 3, 1, 2, 4, 3]))
+    print(solution_209(4, [1, 4, 4]))
+    print(solution_209(11, [1,1,1,1,1,1,1,1]))

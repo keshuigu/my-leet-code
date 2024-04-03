@@ -2811,3 +2811,16 @@ def solution_331_2(preorder: str) -> bool:
         if node != '#':
             diff += 2
     return diff == 0
+
+
+def solution_209(target: int, nums: List[int]) -> int:
+    left = 0
+    s = 0
+    ans = inf
+    for right in range(len(nums)):
+        s += nums[right]
+        while s >= target:
+            ans = min(ans, right - left + 1)
+            s -= nums[left]
+            left += 1
+    return ans if ans < inf else 0
