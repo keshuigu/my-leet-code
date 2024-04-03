@@ -133,3 +133,33 @@ def solution_1004(nums: List[int], k: int) -> int:
         ans = max(ans, i - left + 1)
     return ans
 
+
+def solution_1379(original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
+    def dfs(node, path):
+        if node == target:
+            return path
+        if not node.left and not node.right:
+            return None
+        res1, res2 = None, None
+        if node.left:
+            res1 = dfs(node.left, path + '0')
+        if node.right:
+            res2 = dfs(node.right, path + '1')
+        if not res1 and not res2:
+            return None
+        return res1 if res1 else res2
+
+    p = dfs(original, "")
+    cur = cloned
+    for x in p:
+        if x == "0":
+            cur = cur.left
+        else:
+            cur = cur.right
+    return cur
+
+
+def solution_1379_2(original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
+    if original is None or original is target:
+        return cloned
+    return solution_1379_2(original.left, cloned.left, target) or solution_1379_2(original.right, cloned.right, target)

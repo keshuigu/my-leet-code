@@ -2440,3 +2440,15 @@ def testcase_894():
     print(solution_894(3))
     ans = solution_894(7)
     print(ans)
+
+
+def testcase_1379():
+    target = TreeNode(3, TreeNode(6), TreeNode(19))
+    target_c = TreeNode(3, TreeNode(6), TreeNode(19))
+    print(solution_1379(TreeNode(7, TreeNode(4), target), TreeNode(7, TreeNode(4), target_c), target))
+
+
+def testcase_1379_2():
+    target = TreeNode(3, TreeNode(6), TreeNode(19))
+    target_c = TreeNode(3, TreeNode(6), TreeNode(19))
+    print(solution_1379_2(TreeNode(7, TreeNode(4), target), TreeNode(7, TreeNode(4), target_c), target))
