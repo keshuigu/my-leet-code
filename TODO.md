@@ -12,6 +12,7 @@
 7. [网格图DFS,BFS](https://leetcode.cn/problems/maximum-number-of-moves-in-a-grid/solutions/2269244/cong-ji-yi-hua-sou-suo-dao-di-tui-by-end-pgq3/)
 8. [树中最长路径](https://leetcode.cn/problems/minimum-height-trees/solutions/1395249/zui-xiao-gao-du-shu-by-leetcode-solution-6v6f/)
 9. [巫师的力量和]
+10. [拓扑排序](https://leetcode.cn/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/solutions/1364674/you-xiang-wu-huan-tu-zhong-yi-ge-jie-dia-6ed5/)
 ## 0x3f's problem set
 
 ### [位运算操作技巧](https://leetcode.cn/circle/discuss/CaOJ45/), [题单](https://leetcode.cn/circle/discuss/dHn9Vk/)

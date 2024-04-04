@@ -504,10 +504,37 @@ def solution_2312_2(m: int, n: int, prices: List[List[int]]) -> int:
     return f[m][n]
 
 
-def solution_2549(n: int) -> int:
-    return n - 1 if n > 1 else n
+def solution_2192(n: int, edges: List[List[int]]) -> List[List[int]]:
+    ans = [set() for _ in range(n)]
+    children = [set() for _ in range(n)]
+    for u, v in edges:
+        ans[v].add(u)
+        children[u].add(v)
+        children[u] = children[u].union(children[v])
+        for parent in ans[u]:
+            children[parent] = children[parent].union(children[u])
+        ans[v] = ans[v].union(ans[u])
+        for child in children[v]:
+            ans[child] = ans[child].union(ans[v])
+    ans = [sorted(list(x)) for x in ans]
+    return ans
 
 
-def solution_2642():
-    # data_struct.Graph
-    ...
+def solution_2192_2(n: int, edges: List[List[int]]) -> List[List[int]]:
+    g = [[] for _ in range(n)]
+    for x, y in edges:
+        g[y].append(x)  # 反向建图
+
+    def dfs(x: int) -> None:
+        vis[x] = True
+        for y in g[x]:
+            if not vis[y]:
+                dfs(y)  # 不走重复
+
+    ans = [None] * n
+    for i in range(n):
+        vis = [False] * n
+        dfs(i)
+        vis[i] = False
+        ans[i] = [j for j, b in enumerate(vis) if b]
+    return ans

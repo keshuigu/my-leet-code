@@ -55,6 +55,7 @@
 
   - 自己写的最大堆运行很慢
 
+- [x] [2192.有向无环图中一个节点的所有祖先](https://leetcode.cn/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/)
 - [x] [2368.受限条件下可到达节点的数目](https://leetcode.cn/problems/reachable-nodes-with-restrictions/)
 - [x] [2369.检查数组是否存在有效划分](https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/)
 - [x] [2397.被列覆盖的最多行数](https://leetcode.cn/problems/maximum-rows-covered-by-columns/)

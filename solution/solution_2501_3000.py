@@ -1042,3 +1042,12 @@ def solution_2810_2(s: str) -> str:
         else:
             q.appendleft(c)
     return ''.join(q if tail else reversed(q))
+
+
+def solution_2549(n: int) -> int:
+    return n - 1 if n > 1 else n
+
+
+def solution_2642():
+    # data_struct.Graph
+    ...
