@@ -105,6 +105,8 @@ class TreeNode:
                 return
             for node in tmp:
                 if not node:
+                    q.append(None)
+                    q.append(None)
                     index += 2
                     continue
                 if index >= len(sub_nodes):

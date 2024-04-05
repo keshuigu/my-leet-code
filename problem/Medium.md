@@ -36,6 +36,7 @@
 - [x] [889.根据前序遍历和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)
 - [x] [894.所有可能的真二叉树](https://leetcode.cn/problems/all-possible-full-binary-trees/)
 - [x] [1004.最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)
+- [x] [1026.节点与其祖先之间的最大差值](https://leetcode.cn/problems/maximum-difference-between-node-and-ancestor/)
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
 - [x] [1261.在搜污染的二叉树中查找元素](https://leetcode.cn/problems/find-elements-in-a-contaminated-binary-tree/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)

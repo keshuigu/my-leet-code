@@ -1,5 +1,8 @@
 import itertools
 from typing import *
+
+from sortedcontainers import SortedList
+
 from .data_struct import *
 
 
@@ -163,3 +166,22 @@ def solution_1379_2(original: TreeNode, cloned: TreeNode, target: TreeNode) -> T
     if original is None or original is target:
         return cloned
     return solution_1379_2(original.left, cloned.left, target) or solution_1379_2(original.right, cloned.right, target)
+
+
+def solution_1026(root: Optional[TreeNode]) -> int:
+    vals = SortedList()
+    ans = 0
+
+    def dfs(node: TreeNode):
+        nonlocal ans
+        ans = max(ans, abs(node.val - vals[0]), abs(node.val - vals[-1]))
+        vals.add(node.val)
+        if node.left:
+            dfs(node.left)
+        if node.right:
+            dfs(node.right)
+        vals.remove(node.val)
+
+    vals.add(root.val)
+    dfs(root)
+    return ans
