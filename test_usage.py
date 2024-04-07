@@ -22,4 +22,4 @@ def solution_367_2(num: int) -> bool:
 
 
 if __name__ == '__main__':
-    print(list(range(0,6,2)))
+    print((1-26)%26)

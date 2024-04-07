@@ -2519,16 +2519,24 @@ def testcase_1600():
 
 
 def testcase_w_392_1():
-    print(weekly_contest_392_solution_1())
+    print(weekly_contest_392_solution_1([1,4,3,3,2]))
+    print(weekly_contest_392_solution_1([3,3,3,3]))
+    print(weekly_contest_392_solution_1([3,2,1]))
+    print(weekly_contest_392_solution_1([1,2]))
 
 
 def testcase_w_392_2():
-    print(weekly_contest_392_solution_2())
+    print(weekly_contest_392_solution_2(s = "zbbz", k = 3))
+    print(weekly_contest_392_solution_2(s = "xaxcd", k = 4))
+    print(weekly_contest_392_solution_2(s = "lol", k = 0))
 
 
 def testcase_w_392_3():
-    print(weekly_contest_392_solution_3())
+    print(weekly_contest_392_solution_3(nums = [2,5,6,8,5], k = 4))
+    print(weekly_contest_392_solution_3(nums = [2,5,6,8,5], k = 7))
+    print(weekly_contest_392_solution_3(nums = [1,2,3,4,5,6], k = 4))
 
 
 def testcase_w_392_4():
-    print(weekly_contest_392_solution_4())
+    print(weekly_contest_392_solution_4(n = 5, edges = [[0,1,7],[1,3,7],[1,2,1]], query = [[0,3],[3,4]]))
+    print(weekly_contest_392_solution_4(n = 3, edges = [[0,2,7],[0,1,15],[1,2,6],[1,2,1]], query = [[1,2]]))

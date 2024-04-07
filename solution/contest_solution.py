@@ -1446,17 +1446,100 @@ def weekly_contest_391_solution_4(points: List[List[int]]) -> int:
     return ans
 
 
-def weekly_contest_392_solution_1():
-    ...
+def weekly_contest_392_solution_1(nums: List[int]) -> int:
+    ans = 1
+    n = len(nums)
+    for i in range(n):
+        cur = 1
+        for j in range(i, n - 1):
+            if nums[j] > nums[j + 1]:
+                cur += 1
+            else:
+                break
+        ans = max(cur, ans)
+        cur = 1
+        for j in range(i, n - 1):
+            if nums[j] < nums[j + 1]:
+                cur += 1
+            else:
+                break
+        ans = max(cur, ans)
+    return ans
 
 
-def weekly_contest_392_solution_2():
-    ...
+def weekly_contest_392_solution_2(s: str, k: int) -> str:
+    ans = list(s)
+    for i, c in enumerate(ans):
+        dist = ord(c) - ord('a')
+        dist = min(dist, 26 - dist)
+        if dist <= k:
+            ans[i] = 'a'
+            k -= dist
+        else:
+            ans[i] = chr(ord(c) - k)
+            break
+    return "".join(ans)
 
 
-def weekly_contest_392_solution_3():
-    ...
+def weekly_contest_392_solution_3(nums: List[int], k: int) -> int:
+    nums.sort()
+    mid = len(nums) // 2
+    ans = abs(nums[mid] - k)
+    nums[mid] = k
+    for i in range(mid - 1, -1, -1):
+        if nums[i] > k:
+            ans += nums[i] - k
+        else:
+            break
+    for i in range(mid + 1, len(nums)):
+        if nums[i] < k:
+            ans += k - nums[i]
+        else:
+            break
+    return ans
 
 
-def weekly_contest_392_solution_4():
-    ...
+def weekly_contest_392_solution_4(n: int, edges: List[List[int]], query: List[List[int]]) -> List[int]:
+    g = [[] for _ in range(n)]
+    for u, v, w in edges:
+        g[u].append((v, w))
+        g[v].append((u, w))
+
+    def dfs(x, ms):
+        nonlocal cost
+        for y, _ in g[x]:
+            if y not in ms:
+                ms.add(y)
+                dfs(y, ms)
+
+    groups = []
+    for i in range(n):
+        flag = False
+        for gr, _ in groups:
+            if i in gr:
+                flag = True
+                break
+        if flag:
+            continue
+        ss = set()
+        ss.add(i)
+        cost = -1
+        dfs(i, ss)
+        for x in ss:
+            for y, w in g[x]:
+                cost &= w
+        groups.append((ss, cost))
+    ans = []
+    for u, v in query:
+        if u == v:
+            ans.append(0)
+            continue
+        flag = False
+        for gr, cost in groups:
+            if u in gr and v in gr:
+                ans.append(cost)
+                flag = True
+                break
+        if not flag:
+            ans.append(-1)
+    return ans
