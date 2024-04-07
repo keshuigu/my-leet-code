@@ -596,3 +596,39 @@ class Trie3093:
             else:
                 node = node.children[ch]
         return node.leave[1]
+
+
+class ThroneTree:
+    def __init__(self, name: str):
+        self.name = name
+        self.children = []
+
+
+class ThroneInheritance:
+    __slots__ = "tree", "f", "death_set"
+
+    def __init__(self, kingName: str):
+        self.tree = ThroneTree(kingName)
+        self.f = {kingName: self.tree}
+        self.death_set = set()
+
+    def birth(self, parentName: str, childName: str) -> None:
+        node = self.f[parentName]
+        new_node = ThroneTree(childName)
+        node.children.append(new_node)
+        self.f[childName] = new_node
+
+    def death(self, name: str) -> None:
+        self.death_set.add(name)
+
+    def getInheritanceOrder(self) -> List[str]:
+        ans = []
+        node = self.tree
+        s = [node]
+        while s:
+            cur = s.pop()
+            if cur.name not in self.death_set:
+                ans.append(cur.name)
+            for child in cur.children[::-1]:
+                s.append(child)
+        return ans

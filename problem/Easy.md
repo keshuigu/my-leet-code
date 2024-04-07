@@ -143,7 +143,7 @@
 - [x] [404.左叶子之和](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [412.Fizz Buzz](https://leetcode.cn/problems/fizz-buzz/)
 - [x] [589.N叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
-- [x] [589.N叉树的后序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
+- [x] [590.N叉树的后序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/)
 - [x] [704.二分查找](https://leetcode.cn/problems/binary-search/)
 - [x] [876.链表的中间节点](https://leetcode.cn/problems/n-ary-tree-postorder-traversal/)
 - [x] [983.二叉搜索树的范围和](https://leetcode.cn/problems/range-sum-of-bst/)

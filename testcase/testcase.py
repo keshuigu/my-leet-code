@@ -2503,3 +2503,32 @@ def testcase_2192_2():
 def testcase_1026():
     print(solution_1026(TreeNode([8, 3, 10, 1, 6, None, 14, None, None, 4, 7, 13])))
     print(solution_1026(TreeNode([1, None, 2, None, None, None, 0, None, None, None, None, None, None, 3, None])))
+
+
+def testcase_1600():
+    t = ThroneInheritance("king")
+    t.birth("king", "andy")
+    t.birth("king", "bob")
+    t.birth("king", "catherine")
+    t.birth("andy", "matthew")
+    t.birth("bob", "alex")
+    t.birth("bob", "asha")
+    print(t.getInheritanceOrder())
+    t.death("bob")
+    print(t.getInheritanceOrder())
+
+
+def testcase_w_392_1():
+    print(weekly_contest_392_solution_1())
+
+
+def testcase_w_392_2():
+    print(weekly_contest_392_solution_2())
+
+
+def testcase_w_392_3():
+    print(weekly_contest_392_solution_3())
+
+
+def testcase_w_392_4():
+    print(weekly_contest_392_solution_4())

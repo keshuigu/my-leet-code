@@ -40,6 +40,7 @@
 - [x] [1094.拼车](https://leetcode.cn/problems/car-pooling/)
 - [x] [1261.在搜污染的二叉树中查找元素](https://leetcode.cn/problems/find-elements-in-a-contaminated-binary-tree/)
 - [x] [1599.经营摩天轮的最大利润](https://leetcode.cn/problems/maximum-profit-of-operating-a-centennial-wheel/)
+- [x] [1600.王位继承顺序](https://leetcode.cn/problems/throne-inheritance/)
 - [x] [1686.石子游戏VI](https://leetcode.cn/problems/stone-game-vi/)
 - [x] [1690.石子游戏VII](https://leetcode.cn/problems/stone-game-vii/)
 

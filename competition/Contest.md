@@ -111,9 +111,16 @@
     - [x] [或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/):[题目3097](../problem/Medium.md)
     - [x] [求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-subsequence-powers/):[题目3098](../problem/Hard.md)
 
-- [weekly-contest-391](https://leetcode.cn/contest/biweekly-contest-391)
+- [weekly-contest-391](https://leetcode.cn/contest/biweekly-contest-391): 时限内完成1 2 3
 
     - [x] [哈沙德数](https://leetcode.cn/problems/harshad-number/):[题目3099](../problem/Easy.md)
     - [x] [换水问题 II](https://leetcode.cn/problems/water-bottles-ii/):[题目3100](../problem/Medium.md)
     - [x] [交替子数组计数](https://leetcode.cn/problems/count-alternating-subarrays/):[题目3101](../problem/Medium.md)
     - [x] [最小化曼哈顿距离](https://leetcode.cn/problems/minimize-manhattan-distances/):[题目3102](../problem/Hard.md)
+
+- [weekly-contest-392](https://leetcode.cn/contest/biweekly-contest-391)
+
+    - [ ] []():[题目3](../problem/Easy.md)
+    - [ ] []():[题目3](../problem/Medium.md)
+    - [ ] []():[题目3](../problem/Medium.md)
+    - [ ] []():[题目3](../problem/Hard.md)

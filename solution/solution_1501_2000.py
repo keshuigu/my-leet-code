@@ -392,3 +392,8 @@ def solution_1997_2(nextVisit: List[int]) -> int:
     for i, j in enumerate(nextVisit[:-1]):
         s[i + 1] = (s[i] * 2 - s[j] + 2) % (10 ** 9 + 7)
     return s[-1]
+
+
+def solution_1600():
+    # data_struct.py#ThroneInheritance
+    ...

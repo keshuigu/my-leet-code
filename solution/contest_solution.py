@@ -1444,3 +1444,19 @@ def weekly_contest_391_solution_4(points: List[List[int]]) -> int:
         xs.add(x)
         ys.add(y)
     return ans
+
+
+def weekly_contest_392_solution_1():
+    ...
+
+
+def weekly_contest_392_solution_2():
+    ...
+
+
+def weekly_contest_392_solution_3():
+    ...
+
+
+def weekly_contest_392_solution_4():
+    ...
