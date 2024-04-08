@@ -2550,3 +2550,8 @@ def testcase_2009():
     print(solution_2009(nums=[4, 2, 5, 3]))
     print(solution_2009(nums=[1, 2, 3, 5, 6]))
     print(solution_2009(nums=[1, 10, 100, 1000]))
+
+
+def testcase_405():
+    print(solution_405(26))
+    print(solution_405(-1))
