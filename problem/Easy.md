@@ -194,3 +194,4 @@
 - [x] [3090.每个字符最多出现两次的最长子字符串](https://leetcode.cn/problems/maximum-length-substring-with-two-occurrences/)
 - [x] [3095.或值至少K的最短子数组 I](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-i/)
 - [x] [3099.哈沙德数](https://leetcode.cn/problems/harshad-number/)
+- [x] [3105.最长的严格递增或递减子数组](https://leetcode.cn/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/)

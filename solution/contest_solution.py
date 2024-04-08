@@ -1467,6 +1467,26 @@ def weekly_contest_392_solution_1(nums: List[int]) -> int:
     return ans
 
 
+def weekly_contest_392_solution_1_2(nums: List[int]) -> int:
+    # 分组循环
+    ans = 1
+    n = len(nums)
+    i = 0
+    while i < n - 1:
+        if nums[i + 1] == nums[i]:
+            i += 1
+            continue
+        i0 = i
+        inc = nums[i + 1] > nums[i]
+        i += 2
+        # 同时判断递增递减
+        while i < n and nums[i] != nums[i - 1] and (nums[i] > nums[i - 1]) == inc:
+            i += 1
+        ans = max(ans, i - i0)  # i0 - i-1 满足要求
+        i -= 1  # 恢复i0
+    return ans
+
+
 def weekly_contest_392_solution_2(s: str, k: int) -> str:
     ans = list(s)
     for i, c in enumerate(ans):
@@ -1543,3 +1563,26 @@ def weekly_contest_392_solution_4(n: int, edges: List[List[int]], query: List[Li
         if not flag:
             ans.append(-1)
     return ans
+
+
+def weekly_contest_392_solution_4_2(n: int, edges: List[List[int]], query: List[List[int]]) -> List[int]:
+    """
+    并查集优化
+    """
+    fa = list(range(n))
+    and_ = [-1] * n
+
+    def find(x: int) -> int:
+        if fa[x] != x:
+            fa[x] = find(fa[x])
+        return fa[x]
+
+    for x, y, w in edges:
+        x = find(x)
+        y = find(y)
+        and_[y] &= w
+        if x != y:
+            and_[y] &= and_[x]
+            fa[x] = y
+
+    return [0 if s == t else -1 if find(s) != find(t) else and_[find(s)] for s, t in query]

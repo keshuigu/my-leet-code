@@ -2518,25 +2518,43 @@ def testcase_1600():
     print(t.getInheritanceOrder())
 
 
-def testcase_w_392_1():
-    print(weekly_contest_392_solution_1([1,4,3,3,2]))
-    print(weekly_contest_392_solution_1([3,3,3,3]))
-    print(weekly_contest_392_solution_1([3,2,1]))
-    print(weekly_contest_392_solution_1([1,2]))
+def testcase_3105():
+    print(solution_3105([1, 4, 3, 3, 2]))
+    print(solution_3105([3, 3, 3, 3]))
+    print(solution_3105([3, 2, 1]))
+    print(solution_3105([1, 2]))
 
 
-def testcase_w_392_2():
-    print(weekly_contest_392_solution_2(s = "zbbz", k = 3))
-    print(weekly_contest_392_solution_2(s = "xaxcd", k = 4))
-    print(weekly_contest_392_solution_2(s = "lol", k = 0))
+def testcase_3105_2():
+    print(solution_3105_2([1, 4, 3, 3, 2]))
+    print(solution_3105_2([3, 3, 3, 3]))
+    print(solution_3105_2([3, 2, 1]))
+    print(solution_3105_2([1, 2]))
 
 
-def testcase_w_392_3():
-    print(weekly_contest_392_solution_3(nums = [2,5,6,8,5], k = 4))
-    print(weekly_contest_392_solution_3(nums = [2,5,6,8,5], k = 7))
-    print(weekly_contest_392_solution_3(nums = [1,2,3,4,5,6], k = 4))
+def testcase_3106():
+    print(solution_3106(s="zbbz", k=3))
+    print(solution_3106(s="xaxcd", k=4))
+    print(solution_3106(s="lol", k=0))
 
 
-def testcase_w_392_4():
-    print(weekly_contest_392_solution_4(n = 5, edges = [[0,1,7],[1,3,7],[1,2,1]], query = [[0,3],[3,4]]))
-    print(weekly_contest_392_solution_4(n = 3, edges = [[0,2,7],[0,1,15],[1,2,6],[1,2,1]], query = [[1,2]]))
+def testcase_3107():
+    print(solution_3107(nums=[2, 5, 6, 8, 5], k=4))
+    print(solution_3107(nums=[2, 5, 6, 8, 5], k=7))
+    print(solution_3107(nums=[1, 2, 3, 4, 5, 6], k=4))
+
+
+def testcase_3108():
+    print(solution_3108(n=5, edges=[[0, 1, 7], [1, 3, 7], [1, 2, 1]], query=[[0, 3], [3, 4]]))
+    print(solution_3108(n=3, edges=[[0, 2, 7], [0, 1, 15], [1, 2, 6], [1, 2, 1]], query=[[1, 2]]))
+
+
+def testcase_3108_2():
+    print(solution_3108_2(n=5, edges=[[0, 1, 7], [1, 3, 7], [1, 2, 1]], query=[[0, 3], [3, 4]]))
+    print(solution_3108_2(n=3, edges=[[0, 2, 7], [0, 1, 15], [1, 2, 6], [1, 2, 1]], query=[[1, 2]]))
+
+
+def testcase_2009():
+    print(solution_2009(nums=[4, 2, 5, 3]))
+    print(solution_2009(nums=[1, 2, 3, 5, 6]))
+    print(solution_2009(nums=[1, 10, 100, 1000]))

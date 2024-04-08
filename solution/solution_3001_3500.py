@@ -929,3 +929,27 @@ def solution_3101(nums: List[int]) -> int:
 
 def solution_3102(points: List[List[int]]) -> int:
     return weekly_contest_391_solution_4(points)
+
+
+def solution_3105(nums: List[int]) -> int:
+    return weekly_contest_392_solution_1(nums)
+
+
+def solution_3105_2(nums: List[int]) -> int:
+    return weekly_contest_392_solution_1_2(nums)
+
+
+def solution_3106(s: str, k: int) -> str:
+    return weekly_contest_392_solution_2(s, k)
+
+
+def solution_3107(nums: List[int], k: int) -> int:
+    return weekly_contest_392_solution_3(nums, k)
+
+
+def solution_3108(n: int, edges: List[List[int]], query: List[List[int]]) -> List[int]:
+    return weekly_contest_392_solution_4(n, edges, query)
+
+
+def solution_3108_2(n: int, edges: List[List[int]], query: List[List[int]]) -> List[int]:
+    return weekly_contest_392_solution_4_2(n, edges, query)

@@ -125,3 +125,5 @@
 - [x] [3097.或值至少K的最短子数组 II](https://leetcode.cn/problems/shortest-subarray-with-or-at-least-k-ii/)
 - [x] [3100.换水问题 II](https://leetcode.cn/problems/water-bottles-ii/)
 - [x] [3101.交替子数组计数](https://leetcode.cn/problems/count-alternating-subarrays/)
+- [x] [3106.满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/)
+- [x] [3107.使数组中位数等于K的最少操作数](https://leetcode.cn/problems/minimum-operations-to-make-median-of-array-equal-to-k/)

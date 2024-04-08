@@ -118,9 +118,9 @@
     - [x] [交替子数组计数](https://leetcode.cn/problems/count-alternating-subarrays/):[题目3101](../problem/Medium.md)
     - [x] [最小化曼哈顿距离](https://leetcode.cn/problems/minimize-manhattan-distances/):[题目3102](../problem/Hard.md)
 
-- [weekly-contest-392](https://leetcode.cn/contest/biweekly-contest-391)
+- [weekly-contest-392](https://leetcode.cn/contest/biweekly-contest-391): 时限内完成1 2 3 4
 
-    - [ ] []():[题目3](../problem/Easy.md)
-    - [ ] []():[题目3](../problem/Medium.md)
-    - [ ] []():[题目3](../problem/Medium.md)
-    - [ ] []():[题目3](../problem/Hard.md)
+    - [x] [最长的严格递增或递减子数组](https://leetcode.cn/problems/longest-strictly-increasing-or-strictly-decreasing-subarray/):[题目3105](../problem/Easy.md)
+    - [x] [满足距离约束且字典序最小的字符串](https://leetcode.cn/problems/lexicographically-smallest-string-after-operations-with-constraint/):[题目3106](../problem/Medium.md)
+    - [x] [使数组中位数等于K的最少操作数](https://leetcode.cn/problems/minimum-operations-to-make-median-of-array-equal-to-k/):[题目3107](../problem/Medium.md)
+    - [x] [带权图里旅途的最小代价](https://leetcode.cn/problems/minimum-cost-walk-in-weighted-graph/):[题目3108](../problem/Hard.md)

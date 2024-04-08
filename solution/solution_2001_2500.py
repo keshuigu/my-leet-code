@@ -538,3 +538,20 @@ def solution_2192_2(n: int, edges: List[List[int]]) -> List[List[int]]:
         vis[i] = False
         ans[i] = [j for j, b in enumerate(vis) if b]
     return ans
+
+
+def solution_2009(nums: List[int]) -> int:
+    """
+    1. 正难则反
+    2. nums去重
+    3. 滑动窗口，枚举右端点，题目的要求使得窗口在数轴上的长度恒定，从而可以确定左端点
+    """
+    nums.sort()
+    n = len(nums)
+    a = sorted(set(nums))
+    ans = left = 0
+    for i, x in enumerate(a):
+        while a[left] < x - n + 1:
+            left += 1
+        ans = max(ans, i - left + 1)
+    return n - ans
