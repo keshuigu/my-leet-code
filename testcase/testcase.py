@@ -2426,14 +2426,6 @@ def testcase_331_2():
     print(solution_331_2(preorder="9,#,#,1"))
 
 
-def testcase_t_1():
-    print(t_1(2, 3, 20))
-
-
-def testcase_t_2():
-    print(t_1(2, 3, 20))
-
-
 def testcase_2810():
     print(solution_2810("string"))
     print(solution_2810("poiinter"))
