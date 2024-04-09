@@ -2560,3 +2560,9 @@ def testcase_2529():
     print(solution_2529([-2,-1,-1,1,2,3]))
     print(solution_2529([-3,-2,-1,0,0,1,2]))
     print(solution_2529([5,20,66,1314]))
+
+
+def testcase_59():
+    print(solution_59(3))
+    print(solution_59(1))
+    print(solution_59(5))

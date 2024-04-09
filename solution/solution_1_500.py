@@ -2839,3 +2839,46 @@ def solution_405(num: int) -> str:
         num = num >> 4
         cnt += 1
     return "".join(reversed(ans))
+
+
+def solution_59(n: int) -> List[List[int]]:
+    ans = [[0] * n for _ in range(n)]
+    i = 1
+    direction = 0  # 向右 向下 向左 向上
+    x, y = 0, 0
+    left = 0
+    right = n - 1
+    up = 0
+    down = n - 1
+    while i <= n * n:
+        ans[y][x] = i
+        i+=1
+        if direction == 0:
+            if x == right:
+                up += 1
+                direction = 1
+                y += 1
+            else:
+                x += 1
+        elif direction == 1:
+            if y == down:
+                right -= 1
+                direction = 2
+                x -= 1
+            else:
+                y += 1
+        elif direction == 2:
+            if x == left:
+                down -= 1
+                direction = 3
+                y -= 1
+            else:
+                x -= 1
+        else:
+            if y == up:
+                left += 1
+                direction = 0
+                x += 1
+            else:
+                y -= 1
+    return ans
