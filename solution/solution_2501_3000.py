@@ -1051,3 +1051,25 @@ def solution_2549(n: int) -> int:
 def solution_2642():
     # data_struct.Graph
     ...
+
+
+def solution_2529(nums: List[int]) -> int:
+    left, right = -1, len(nums)
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if nums[mid] >= 0:
+            right = mid
+        else:
+            left = mid
+    # [0,left] <0
+    neg = left + 1
+    left, right = -1, len(nums)
+    while left + 1 < right:
+        mid = (left + right) // 2
+        if nums[mid] > 0:
+            right = mid
+        else:
+            left = mid
+    # [right,-1] >0
+    pos = len(nums) - right
+    return max(neg, pos)

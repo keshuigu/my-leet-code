@@ -2555,3 +2555,8 @@ def testcase_2009():
 def testcase_405():
     print(solution_405(26))
     print(solution_405(-1))
+
+def testcase_2529():
+    print(solution_2529([-2,-1,-1,1,2,3]))
+    print(solution_2529([-3,-2,-1,0,0,1,2]))
+    print(solution_2529([5,20,66,1314]))

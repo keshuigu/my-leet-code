@@ -555,3 +555,4 @@ def solution_2009(nums: List[int]) -> int:
             left += 1
         ans = max(ans, i - left + 1)
     return n - ans
+
