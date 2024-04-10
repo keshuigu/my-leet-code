@@ -2566,3 +2566,13 @@ def testcase_59():
     print(solution_59(3))
     print(solution_59(1))
     print(solution_59(5))
+
+def testcase_1702():
+    print(solution_1702("000110"))
+    print(solution_1702("01"))
+    print(solution_1702("1100"))
+
+def testcase_1702_2():
+    print(solution_1702_2("000110"))
+    print(solution_1702_2("01"))
+    print(solution_1702_2("1100"))

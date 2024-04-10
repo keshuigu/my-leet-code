@@ -397,3 +397,25 @@ def solution_1997_2(nextVisit: List[int]) -> int:
 def solution_1600():
     # data_struct.py#ThroneInheritance
     ...
+
+
+def solution_1702(binary: str) -> str:
+    idx = 0
+    for i, c in enumerate(binary):
+        if c == '0':
+            idx = i
+            break
+    cnt = Counter[str](binary[idx:])
+    if cnt['0'] <= 0:
+        return binary
+    ans = ['1'] * len(binary)
+    ans[idx + cnt['0'] - 1] = '0'
+    return "".join(ans)
+
+
+def solution_1702_2(binary: str) -> str:
+    i = binary.find('0')
+    if i < 0:  # binary 全是 '1'
+        return binary
+    cnt1 = binary.count('1', i)  # 统计 binary[i:] 中 '1' 的个数
+    return '1' * (len(binary) - 1 - cnt1) + '0' + '1' * cnt1
