@@ -2556,10 +2556,11 @@ def testcase_405():
     print(solution_405(26))
     print(solution_405(-1))
 
+
 def testcase_2529():
-    print(solution_2529([-2,-1,-1,1,2,3]))
-    print(solution_2529([-3,-2,-1,0,0,1,2]))
-    print(solution_2529([5,20,66,1314]))
+    print(solution_2529([-2, -1, -1, 1, 2, 3]))
+    print(solution_2529([-3, -2, -1, 0, 0, 1, 2]))
+    print(solution_2529([5, 20, 66, 1314]))
 
 
 def testcase_59():
@@ -2567,12 +2568,19 @@ def testcase_59():
     print(solution_59(1))
     print(solution_59(5))
 
+
 def testcase_1702():
     print(solution_1702("000110"))
     print(solution_1702("01"))
     print(solution_1702("1100"))
 
+
 def testcase_1702_2():
     print(solution_1702_2("000110"))
     print(solution_1702_2("01"))
     print(solution_1702_2("1100"))
+
+
+def testcase_1766():
+    print(solution_1766(nums=[2, 3, 3, 2], edges=[[0, 1], [1, 2], [1, 3]]))
+    print(solution_1766(nums=[5, 6, 10, 2, 3, 6, 15], edges=[[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6]]))

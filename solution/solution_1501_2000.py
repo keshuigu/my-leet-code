@@ -1,6 +1,6 @@
 import heapq
 from collections import deque
-from math import inf
+from math import inf, gcd
 from typing import *
 from .data_struct import *
 
@@ -419,3 +419,31 @@ def solution_1702_2(binary: str) -> str:
         return binary
     cnt1 = binary.count('1', i)  # 统计 binary[i:] 中 '1' 的个数
     return '1' * (len(binary) - 1 - cnt1) + '0' + '1' * cnt1
+
+
+def solution_1766(nums: List[int], edges: List[List[int]]) -> List[int]:
+    # 可预处理
+    MX = 51
+    coprime = [[j for j in range(1, MX) if gcd(i, j) == 1] for i in range(MX)]
+    n = len(nums)
+    g = [[] for _ in range(n)]
+    for i, j in edges:
+        g[i].append(j)
+        g[j].append(i)
+
+    ans = [0] * n
+    val_depth_id = [(-1, -1)] * MX
+
+    def dfs(x, fa, depth):
+        val = nums[x]
+        # 计算与 val 互质的祖先节点值中，节点深度最大的节点编号
+        ans[x] = max(val_depth_id[j] for j in coprime[val])[1]
+        tmp = val_depth_id[val]
+        val_depth_id[val] = (depth, x)
+        for y in g[x]:
+            if y != fa:
+                dfs(y, x, depth + 1)
+        val_depth_id[val] = tmp
+
+    dfs(0, -1, 0)
+    return ans
