@@ -2852,7 +2852,7 @@ def solution_59(n: int) -> List[List[int]]:
     down = n - 1
     while i <= n * n:
         ans[y][x] = i
-        i+=1
+        i += 1
         if direction == 0:
             if x == right:
                 up += 1
@@ -2882,3 +2882,16 @@ def solution_59(n: int) -> List[List[int]]:
             else:
                 y -= 1
     return ans
+
+
+def solution_409(s: str) -> int:
+    cnt = Counter(s)
+    ans = 0
+    flag = False
+    for c in cnt:
+        if cnt[c] % 2 == 0:
+            ans += cnt[c]
+        else:
+            flag = True
+            ans += cnt[c] - 1
+    return ans + 1 if flag else ans

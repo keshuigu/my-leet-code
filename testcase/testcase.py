@@ -2584,3 +2584,9 @@ def testcase_1702_2():
 def testcase_1766():
     print(solution_1766(nums=[2, 3, 3, 2], edges=[[0, 1], [1, 2], [1, 3]]))
     print(solution_1766(nums=[5, 6, 10, 2, 3, 6, 15], edges=[[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6]]))
+
+
+def testcase_409():
+    print(solution_409("abccccdd"))
+    print(solution_409("a"))
+    print(solution_409("aaaaaccc"))
