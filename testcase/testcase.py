@@ -2590,3 +2590,19 @@ def testcase_409():
     print(solution_409("abccccdd"))
     print(solution_409("a"))
     print(solution_409("aaaaaccc"))
+
+
+def testcase_707():
+    o = MyLinkedList()
+    o.addAtHead(1)
+    o.addAtTail(3)
+    o.addAtIndex(1, 2)
+    print(o.get(1))
+    o.deleteAtIndex(1)
+    print(o.get(1))
+
+    o = MyLinkedList()
+    o.addAtIndex(0, 10)
+    o.addAtIndex(0, 20)
+    o.addAtIndex(1, 30)
+    o.get(0)

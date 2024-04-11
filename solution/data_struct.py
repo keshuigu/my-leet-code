@@ -632,3 +632,83 @@ class ThroneInheritance:
             for child in cur.children[::-1]:
                 s.append(child)
         return ans
+
+
+class MyNode:
+    def __init__(self, val, next=None, prev=None):
+        self.val = val
+        self.next = next
+        self.prev = prev
+
+    def __str__(self):
+        return str(self.val)
+
+
+class MyLinkedList:
+
+    def __init__(self):
+        # dummy
+        self.dummy_head = MyNode(0)
+        self.dummy_tail = MyNode(0)
+        self.dummy_head.next = self.dummy_tail
+        self.dummy_tail.prev = self.dummy_head
+        self.size = 0
+
+    def get(self, index: int) -> int:
+        if index >= self.size or index < 0:
+            return -1
+        node = self.dummy_head
+        for i in range(index + 1):
+            node = node.next
+        return node.val
+
+    def addAtHead(self, val: int) -> None:
+        node = MyNode(val)
+        cur = self.dummy_head.next
+        node.next = cur
+        node.prev = self.dummy_head
+        cur.prev = node
+        self.dummy_head.next = node
+        self.size += 1
+
+    def addAtTail(self, val: int) -> None:
+        node = MyNode(val)
+        cur = self.dummy_tail.prev
+        node.prev = cur
+        node.next = self.dummy_tail
+        cur.next = node
+        self.dummy_tail.prev = node
+        self.size += 1
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        if index > self.size or index < 0:
+            return None
+        cur = self.dummy_head
+        for i in range(index + 1):
+            cur = cur.next
+        node = MyNode(val)
+        # cur.prev -> node -> cur
+        node.next = cur
+        node.prev = cur.prev
+        cur.prev.next = node
+        cur.prev = node
+        self.size -= 1
+
+    def deleteAtIndex(self, index: int) -> None:
+        if index >= self.size or index < 0:
+            return None
+        cur = self.dummy_head
+        for i in range(index + 1):
+            cur = cur.next
+        # cur.prev -> cur -> cur.next
+        cur.prev.next = cur.next
+        cur.next.prev = cur.prev
+        self.size -= 1
+
+    def __str__(self):
+        s = []
+        cur = self.dummy_head.next
+        while cur != self.dummy_tail:
+            s.append(cur.val)
+            cur = cur.next
+        return '->'.join(s)

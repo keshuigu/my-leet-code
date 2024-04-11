@@ -415,3 +415,8 @@ def solution_894(n: int) -> List[Optional[TreeNode]]:
         return res
 
     return dfs(n)
+
+
+def solution_707():
+    # data_struct#MyLinkedList
+    ...
